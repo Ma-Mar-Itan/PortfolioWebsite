@@ -1,0 +1,29 @@
+---
+title: "BibBrief"
+description: "Turn your bibliography into a document you can read."
+date: 2026-04-2
+categories: [Research, Automation]
+image: ../../assets/img/BibBrief.png
+image-alt: "Prototype thumbnail"
+featured: false
+featured-order: 
+---
+
+## What it does
+
+Takes a BibTeX export, the kind you download from Scopus, Web of Science, or Zotero after a literature search and converts it into a clean, structured Microsoft Word document. Every article gets its own entry: the title, a formatted reference, and the full abstract (Must be selected in the export).
+
+## Why I built it
+
+A professor wanted me to collect the abstracts of a hundred papers (turns out she was exaggerating and just wanted 20). 
+
+## Status
+
+::: {.callout-tip appearance="simple"}
+**Working prototype.** Not maintained. Fork it rather than depend on it.
+:::
+
+## Try it
+
+- [Live demo](https://bibbrief-rexvitzkduhce2j9zitkgv.streamlit.app/)
+- [Source](https://github.com/Ma-Mar-Itan/BibBrief)

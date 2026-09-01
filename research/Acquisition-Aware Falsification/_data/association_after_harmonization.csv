@@ -1,0 +1,10 @@
+Cluster_Type,Variable,p_value
+Cluster,Manufacturer_clean,8.022437883479278e-104
+Cluster,Mol Subtype,0.1457958720551735
+Cluster,Recurrence event(s),0.7656261290789362
+Residualized_Cluster,Manufacturer_clean,0.5299637547220534
+Residualized_Cluster,Mol Subtype,0.7169451321385941
+Residualized_Cluster,Recurrence event(s),0.0747248283958456
+ComBat_Cluster,Manufacturer_clean,0.1765223619396445
+ComBat_Cluster,Mol Subtype,0.8090697737506637
+ComBat_Cluster,Recurrence event(s),0.0557576773429933

@@ -1,0 +1,18 @@
+---
+title: "Prototypes"
+subtitle: "Small things built to answer a question. Some work, some are here as evidence of what didn't."
+toc: false
+page-layout: full
+listing:
+  contents: "*/index.qmd"
+  type: grid
+  grid-columns: 3
+  grid-item-border: true
+  image-height: 150px
+  fields: [image, title, description, categories]
+  sort: "date desc"
+  categories: unnumbered
+  sort-ui: false
+  filter-ui: true
+  max-description-length: 130
+---

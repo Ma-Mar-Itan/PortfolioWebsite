@@ -1,0 +1,9 @@
+---
+title: "Page not found"
+toc: false
+---
+
+That link doesn't lead anywhere — the page may have moved or never existed.
+
+Try the [home page](/index.qmd), the [blog](/blog/index.qmd), or use the search
+box in the navigation bar.

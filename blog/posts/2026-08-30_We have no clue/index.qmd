@@ -1,0 +1,39 @@
+---
+title: "We have no clue what we are doing"
+description: "A reality check that we all face at one point."
+date: 2026-08-18
+categories: [Philisophy]
+image: ../../../assets/img/thumb-1.svg
+image-alt: "Abstract layered shapes"
+---
+
+Every few weeks someone hands me a model and asks whether it's any good. The
+honest answer is usually "I can't tell yet," so I've written down the order I
+work through it.
+
+## 1. Find the target before the features
+
+The first question isn't what went into the model, it's what came out.
+Ask what the label actually measures, when it was recorded, and who decided it.
+A surprising share of models fail here: the target is a proxy for the thing
+anyone cares about, and nobody wrote down the gap.
+
+## 2. Draw the timeline
+
+Sketch when each feature becomes available relative to when the prediction is
+needed. Leakage is almost always a timeline problem wearing a statistics
+costume.
+
+## 3. Ask what the baseline was
+
+If nobody can tell you what the naive rule scores, the model has not been
+evaluated — it has been described.
+
+::: {.callout-note}
+This is a placeholder post. Replace the text; keep the front matter shape.
+:::
+
+## 4. Re-run it once
+
+Not to reproduce the numbers. To find out how long it takes, what breaks, and
+how much of the pipeline lives in someone's head.

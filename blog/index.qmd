@@ -1,0 +1,23 @@
+---
+title: "Blog"
+subtitle: "Notes on things I'm working through — usually half-finished, occasionally useful."
+toc: false
+listing:
+  contents: posts
+  type: default
+  sort: "date desc"
+  categories: unnumbered
+  feed:
+    items: 20
+    type: full
+  fields: [image, date, title, description, categories, reading-time]
+  sort-ui: [date, title]
+  filter-ui: true
+  page-size: 12
+  image-align: right
+  image-height: 140px
+  date-format: "MMM D, YYYY"
+  max-description-length: 180
+page-layout: full
+title-block-banner: false
+---

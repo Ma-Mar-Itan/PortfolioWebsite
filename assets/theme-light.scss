@@ -1,0 +1,307 @@
+/*-- scss:defaults --*/
+
+// Fonts ---------------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,500;0,600;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !default;
+$font-family-serif:      "Newsreader", Georgia, "Times New Roman", serif !default;
+$font-family-monospace:  "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace !default;
+
+$font-size-root:  17px !default;
+$line-height-base: 1.65 !default;
+$headings-font-family: $font-family-serif !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.2 !default;
+
+// Palette -------------------------------------------------------------------
+$ink:        #14181d !default;   // primary text
+$ink-muted:  #5c6672 !default;   // secondary text
+$paper:      #fdfdfc !default;   // page background
+$paper-2:    #f4f3f0 !default;   // raised surfaces
+$rule:       #e3e1dc !default;   // hairlines
+$accent:     #8a2f2f !default;   // restrained oxblood accent
+$accent-2:   #1f5f5b !default;   // secondary accent
+
+$body-bg:    $paper !default;
+$body-color: $ink !default;
+$link-color: $accent !default;
+$primary:    $accent !default;
+$secondary:  $ink-muted !default;
+
+$border-color: $rule !default;
+$border-radius: 4px !default;
+
+// Components ----------------------------------------------------------------
+$navbar-bg: $paper !default;
+$navbar-fg: $ink !default;
+$navbar-hl: $accent !default;
+
+$footer-bg: $paper !default;
+$footer-fg: $ink-muted !default;
+
+$code-bg: $paper-2 !default;
+$code-color: $accent-2 !default;
+$btn-border-radius: 3px !default;
+
+$toc-color: $ink-muted !default;
+$toc-font-size: 0.82rem !default;
+
+/*-- scss:rules --*/
+
+// Typography ----------------------------------------------------------------
+h1, .h1 { font-size: 2.3rem; letter-spacing: -0.015em; }
+h2, .h2 { font-size: 1.6rem; margin-top: 2.4rem; letter-spacing: -0.01em; }
+h3, .h3 { font-size: 1.25rem; margin-top: 1.8rem; }
+
+#title-block-header .quarto-title .title { line-height: 1.15; }
+
+.quarto-title-block .description,
+p.subtitle {
+  font-family: $font-family-serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: $ink-muted;
+}
+
+main p { max-width: 68ch; }
+
+// Justified body text -------------------------------------------------------
+// Hyphenation is not optional here: justifying a 68ch measure without it opens
+// rivers of white space. It needs a lang attribute, which Quarto sets already.
+main p,
+main li,
+.quarto-title-block .abstract p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+// Too narrow to justify, or not prose. These stay ragged-right.
+main figcaption,
+main caption,
+.hero-tagline,
+.hero-tagline p,
+.section-label,
+.section-label p,
+.column-margin,
+.column-margin p,
+.callout-title,
+.callout-title p,
+.quarto-listing p,
+.quarto-grid-item p,
+.footnotes p,
+.csl-entry,
+#refs p,
+th, td {
+  text-align: left;
+  hyphens: manual;
+}
+
+// Mermaid draws its labels as HTML inside <foreignObject>, so they inherit
+// `main p` and get stretched. Hand them back to Mermaid's own centring.
+main svg p,
+main foreignObject p,
+.nodeLabel, .nodeLabel p,
+.edgeLabel, .edgeLabel p,
+.mermaid p {
+  text-align: center;
+  hyphens: manual;
+}
+main a { text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+
+// Navbar --------------------------------------------------------------------
+.navbar {
+  border-bottom: 1px solid $rule;
+  padding-block: 0.35rem;
+}
+.navbar-brand,
+.navbar .navbar-title {
+  font-family: $font-family-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+}
+.navbar .nav-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding-inline: 0.75rem !important;
+  position: relative;
+}
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.15rem;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 160ms ease;
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after { transform: scaleX(1); }
+.navbar-logo { max-height: 26px; }
+
+// Hero ----------------------------------------------------------------------
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 1rem 0 2.5rem;
+  border-bottom: 1px solid $rule;
+  margin-bottom: 2.5rem;
+}
+.hero-text > *:first-child { margin-top: 0; }
+.hero-name {
+  font-family: $font-family-serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6rem;
+}
+.hero-tagline,
+.hero-tagline p {
+  font-size: 1.08rem;
+  color: $ink-muted;
+  max-width: 46ch;
+  margin-bottom: 1.2rem;
+}
+.hero-portrait img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid $rule;
+}
+.hero-links,
+.hero-links p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  max-width: none;
+}
+.hero-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid $rule;
+  border-radius: 999px;
+  color: $ink;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+.hero-links a:hover { border-color: $accent; color: $accent; }
+
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero-portrait { order: -1; }
+  .hero-portrait img { width: 120px; height: 120px; }
+}
+
+// Section headers on index pages --------------------------------------------
+.section-label {
+  font-family: $font-family-sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $ink-muted;
+  border-bottom: 1px solid $rule;
+  padding-bottom: 0.5rem;
+  margin: 2.5rem 0 1.25rem;
+}
+.section-label p {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  max-width: none;
+  margin: 0;
+}
+.section-label a { text-decoration: none; color: inherit; font-weight: 500; white-space: nowrap; }
+.section-label a:hover { color: $accent; }
+
+// Listings ------------------------------------------------------------------
+.quarto-listing { margin-top: 1rem; }
+
+.quarto-grid-item {
+  border: 1px solid $rule !important;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 160ms ease, transform 160ms ease;
+  background: $body-bg;
+}
+.quarto-grid-item:hover { border-color: $ink-muted; transform: translateY(-2px); }
+.quarto-grid-item .card-title {
+  font-family: $font-family-serif;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+.quarto-grid-item .card-text,
+.quarto-grid-item .listing-description { font-size: 0.87rem; color: $ink-muted; }
+.quarto-grid-item .listing-date,
+.quarto-grid-item .card-footer { font-size: 0.75rem; color: $ink-muted; }
+
+.quarto-listing-default .listing-title {
+  font-family: $font-family-serif;
+  font-size: 1.3rem;
+}
+.quarto-listing-default .listing-item {
+  border-bottom: 1px solid $rule;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.listing-date { font-variant-numeric: tabular-nums; }
+
+.quarto-category {
+  font-size: 0.7rem !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid $rule !important;
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem !important;
+  opacity: 1 !important;
+}
+.quarto-category:hover { border-color: $accent !important; color: $accent; }
+
+// Definition lists (used on the About page) -------------------------------
+main dl { margin-block: 1rem; }
+main dl dt { font-weight: 600; margin-top: 1rem; }
+main dl dd { margin-left: 0; color: $ink-muted; }
+
+// Tables --------------------------------------------------------------------
+.table > :not(caption) > * > * { padding: 0.6rem 0.75rem; }
+thead th { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: $ink-muted; }
+
+// Code ----------------------------------------------------------------------
+pre.sourceCode {
+  border: 1px solid $rule;
+  border-radius: 6px;
+  font-size: 0.82rem;
+}
+code:not(.sourceCode) { font-size: 0.86em; padding: 0.1em 0.35em; border-radius: 3px; }
+
+// Callouts ------------------------------------------------------------------
+div.callout { border-radius: 6px; }
+
+// TOC -----------------------------------------------------------------------
+#TOC .toc-actions, nav[role="doc-toc"] > h2 {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+// Footer --------------------------------------------------------------------
+.nav-footer {
+  border-top: 1px solid $rule;
+  font-size: 0.82rem;
+  margin-top: 4rem;
+}
+
+// About page ----------------------------------------------------------------
+.quarto-about-jolla .about-image { border-radius: 50%; }
+.about-links .about-link { border: 1px solid $rule; border-radius: 999px; }

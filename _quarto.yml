@@ -1,0 +1,91 @@
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 4200
+    browser: true
+
+website:
+  title: "Malek M. Itani"
+  description: "Research, writing, and prototypes."
+  site-url: https://MalekItani.com
+  favicon: assets/img/favicon.svg
+  open-graph: true
+  twitter-card: true
+  search:
+    location: navbar
+    type: overlay
+    copy-button: true
+  back-to-top-navigation: true
+  bread-crumbs: false
+
+  navbar:
+    title: "Malek M. Itani"
+    logo: assets/img/logo.svg
+    logo-alt: "Site logo"
+    pinned: false
+    collapse-below: lg
+    left:
+      - href: blog/index.qmd
+        text: Blog
+      - href: research/index.qmd
+        text: Research
+      - href: prototypes/index.qmd
+        text: Prototypes
+    right:
+      - href: about.qmd
+        text: About me
+      - icon: github
+        href: https://github.com/
+        aria-label: GitHub
+        target: _blank
+      - icon: linkedin
+        href: https://www.linkedin.com/
+        aria-label: LinkedIn
+        target: _blank
+      - icon: rss
+        href: blog/index.xml
+        aria-label: RSS feed
+
+  page-footer:
+    border: false
+    left: |
+      &copy; 2026 Malek M. Itani
+    center: |
+      Built with [Quarto](https://quarto.org)
+    right:
+      - icon: github
+        href: https://github.com/Ma-Mar-Itan
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/malek-ma-itani/
+        aria-label: LinkedIn
+      - icon: envelope
+        href: mailto:Malek.Ma.Itani@gmail.com
+        aria-label: Email
+
+format:
+  html:
+    theme:
+      light: [cosmo, assets/theme-light.scss]
+      dark: [cosmo, assets/theme-light.scss, assets/theme-dark.scss]
+    css: styles.css
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    anchor-sections: true
+    smooth-scroll: true
+    code-copy: true
+    code-overflow: wrap
+    link-external-newwindow: true
+    link-external-icon: false
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 260px
+      gutter-width: 1.5rem
+
+execute:
+  freeze: auto
+
+editor: source

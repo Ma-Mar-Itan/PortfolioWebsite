@@ -1,0 +1,6 @@
+# Options applied to every post in this folder
+title-block-banner: false
+toc: true
+toc-depth: 3
+author: "Malek Itani"
+freeze: auto

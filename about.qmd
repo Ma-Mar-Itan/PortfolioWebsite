@@ -1,0 +1,72 @@
+---
+title: "Malek M. Itani"
+subtitle: "Applied researcher and builder"
+toc: false
+about:
+  template: trestles
+  image: assets/img/portrait.svg
+  image-shape: round
+  image-width: 14em
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:Malek.Ma.Itani@gmail.com
+    - icon: github
+      text: GitHub
+      href: https://github.com/Ma-Mar-Itan
+      target: _blank
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/malek-ma-itani/
+      target: _blank
+    - icon: mortarboard
+      text: Scholar
+      href: https://scholar.google.com/
+      target: _blank
+    - icon: file-earmark-text
+      text: CV
+      href: assets/cv.pdf
+---
+
+I work on applied research problems where the statistics are only half the
+difficulty — the other half is that the data was collected by people, for
+reasons that had nothing to do with your question.
+
+Right now I'm interested in measurement: what a number has to survive before
+it deserves to be acted on. That pulls me across sampling design, time series
+drift, and the interfaces that put estimates in front of people who have to
+decide something.
+
+Outside of that I build small tools, write [here](blog/index.qmd), and keep a
+graveyard of [prototypes](prototypes/index.qmd).
+
+## Experience
+
+**Role Title** · Organization
+: 2024 – present. One line on what you own and what changed because you were
+  there.
+
+**Previous Role** · Organization
+: 2021 – 2024. One line.
+
+**Earlier Role** · Organization
+: 2019 – 2021. One line.
+
+## Education
+
+**MSc, Field of Study** · University
+: 2021. Thesis: *Title of your thesis.*
+
+**BSc, Field of Study** · University
+: 2019.
+
+## Tools
+
+Daily: R, Python, Quarto, SQL, git.
+Comfortable: Stan, Shiny, Observable, Docker.
+Occasionally: whatever the problem demands.
+
+## Elsewhere
+
+The fastest way to reach me is email. I read everything and answer most things,
+usually slowly.

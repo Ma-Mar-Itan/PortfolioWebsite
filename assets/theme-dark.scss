@@ -1,0 +1,42 @@
+/*-- scss:defaults --*/
+
+// Dark palette. Declared after theme-light.scss so these win the !default race.
+$ink:        #e8e6e1 !default;   // primary text
+$ink-muted:  #9aa1a9 !default;   // secondary text
+$paper:      #14161a !default;   // page background
+$paper-2:    #1c1f24 !default;   // raised surfaces
+$rule:       #2c3037 !default;   // hairlines
+$accent:     #e0806f !default;   // warmed oxblood for dark ground
+$accent-2:   #6fbfae !default;
+
+$body-bg:    $paper !default;
+$body-color: $ink !default;
+$link-color: $accent !default;
+$primary:    $accent !default;
+$secondary:  $ink-muted !default;
+
+$border-color: $rule !default;
+
+$navbar-bg: $paper !default;
+$navbar-fg: $ink !default;
+$navbar-hl: $accent !default;
+
+$footer-bg: $paper !default;
+$footer-fg: $ink-muted !default;
+
+$code-bg: $paper-2 !default;
+$code-color: $accent-2 !default;
+
+$card-bg: $paper !default;
+$input-bg: $paper-2 !default;
+
+/*-- scss:rules --*/
+
+.hero-portrait img { filter: brightness(0.8) saturate(0.85); }
+
+.quarto-grid-item { background: $paper-2; }
+.quarto-grid-item:hover { border-color: $ink-muted !important; }
+
+pre.sourceCode { background: $paper-2; }
+
+img.img-fluid, .quarto-grid-item img { opacity: 0.94; }

@@ -1,0 +1,17 @@
+/.quarto/
+/_site/
+/_freeze/
+.Rproj.user
+.Rhistory
+.RData
+.Rproj.user/
+__pycache__/
+.venv/
+.DS_Store
+Thumbs.db
+
+**/*.quarto_ipynb
+
+# python helpers used by research/stability-trap
+*.pyc
+.ipynb_checkpoints/

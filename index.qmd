@@ -1,0 +1,82 @@
+---
+pagetitle: "Malek M. Itani"
+description-meta: "Research, writing, and prototypes"
+page-layout: full
+toc: false
+listing:
+  - id: featured
+    contents:
+      - "research/*/index.qmd"
+      - "prototypes/*/index.qmd"
+    # Shows only pages whose front matter sets `featured: true`.
+    # Order comes from `featured-order` (1 first); pages without one fall to
+    # the end, most recent first.
+    include:
+      featured: true
+    type: grid
+    grid-columns: 3
+    grid-item-border: false
+    image-height: 160px
+    fields: [image, title, description, categories]
+    sort:
+      - "featured-order"
+      - "date desc"
+    max-items: 6
+    max-description-length: 110
+    sort-ui: false
+    filter-ui: false
+    categories: false
+    feed: false
+  - id: recent-writing
+    contents: "blog/posts"
+    type: default
+    fields: [date, title, description]
+    sort: "date desc"
+    max-items: 4
+    max-description-length: 140
+    sort-ui: false
+    filter-ui: false
+    categories: false
+    image-align: right
+---
+
+:::::: {.hero}
+
+::::: {.hero-text}
+
+```{=html}
+<div class="hero-name" role="heading" aria-level="1">Malek M. Itani</div>
+```
+
+:::: {.hero-tagline}
+Statiscian and Machine learning Researcher finding my niche in the world.
+::::
+
+:::: {.hero-links}
+[Read the blog](blog/index.qmd)
+[See the research](research/index.qmd)
+[Browse prototypes](prototypes/index.qmd)
+[About me](about.qmd)
+::::
+
+:::::
+
+::::: {.hero-portrait}
+![](assets/img/portrait.svg){fig-alt="Portrait of Malek M. Itani"}
+:::::
+
+::::::
+
+::: {.section-label}
+Selected work [All research →](research/index.qmd)
+:::
+
+::: {#featured}
+:::
+
+::: {.section-label}
+Recent writing [All posts →](blog/index.qmd)
+:::
+
+::: {#recent-writing}
+:::
