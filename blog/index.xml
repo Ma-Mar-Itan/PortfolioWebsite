@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Malek M. Itani</title>
+<link>https://ma-mar-itan.github.io/PortfolioWebsite/blog/</link>
+<atom:link href="https://ma-mar-itan.github.io/PortfolioWebsite/blog/index.xml" rel="self" type="application/rss+xml"/>
+<description>Research, writing, and prototypes.</description>
+<generator>quarto-1.10.18</generator>
+<lastBuildDate>Mon, 17 Aug 2026 21:00:00 GMT</lastBuildDate>
+<item>
+  <title>The illusion of small ponds</title>
+  <dc:creator>Malek Itani</dc:creator>
+  <link>https://ma-mar-itan.github.io/PortfolioWebsite/blog/posts/2026-08-30_The illusion of small ponds/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Every few weeks someone hands me a model and asks whether it’s any good. The honest answer is usually “I can’t tell yet,” so I’ve written down the order I work through it.</p>
+<section id="find-the-target-before-the-features" class="level2">
+<h2 class="anchored" data-anchor-id="find-the-target-before-the-features">1. Find the target before the features</h2>
+<p>The first question isn’t what went into the model, it’s what came out. Ask what the label actually measures, when it was recorded, and who decided it. A surprising share of models fail here: the target is a proxy for the thing anyone cares about, and nobody wrote down the gap.</p>
+</section>
+<section id="draw-the-timeline" class="level2">
+<h2 class="anchored" data-anchor-id="draw-the-timeline">2. Draw the timeline</h2>
+<p>Sketch when each feature becomes available relative to when the prediction is needed. Leakage is almost always a timeline problem wearing a statistics costume.</p>
+</section>
+<section id="ask-what-the-baseline-was" class="level2">
+<h2 class="anchored" data-anchor-id="ask-what-the-baseline-was">3. Ask what the baseline was</h2>
+<p>If nobody can tell you what the naive rule scores, the model has not been evaluated — it has been described.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a placeholder post. Replace the text; keep the front matter shape.</p>
+</div>
+</div>
+</section>
+<section id="re-run-it-once" class="level2">
+<h2 class="anchored" data-anchor-id="re-run-it-once">4. Re-run it once</h2>
+<p>Not to reproduce the numbers. To find out how long it takes, what breaks, and how much of the pipeline lives in someone’s head.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Thoughts</category>
+  <category>Lessons</category>
+  <guid>https://ma-mar-itan.github.io/PortfolioWebsite/blog/posts/2026-08-30_The illusion of small ponds/</guid>
+  <pubDate>Mon, 17 Aug 2026 21:00:00 GMT</pubDate>
+  <media:content url="https://ma-mar-itan.github.io/PortfolioWebsite/assets/img/Small fish.gif" medium="image" type="image/gif"/>
+</item>
+<item>
+  <title>We have no clue what we are doing</title>
+  <dc:creator>Malek Itani</dc:creator>
+  <link>https://ma-mar-itan.github.io/PortfolioWebsite/blog/posts/2026-08-30_We have no clue/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Every few weeks someone hands me a model and asks whether it’s any good. The honest answer is usually “I can’t tell yet,” so I’ve written down the order I work through it.</p>
+<section id="find-the-target-before-the-features" class="level2">
+<h2 class="anchored" data-anchor-id="find-the-target-before-the-features">1. Find the target before the features</h2>
+<p>The first question isn’t what went into the model, it’s what came out. Ask what the label actually measures, when it was recorded, and who decided it. A surprising share of models fail here: the target is a proxy for the thing anyone cares about, and nobody wrote down the gap.</p>
+</section>
+<section id="draw-the-timeline" class="level2">
+<h2 class="anchored" data-anchor-id="draw-the-timeline">2. Draw the timeline</h2>
+<p>Sketch when each feature becomes available relative to when the prediction is needed. Leakage is almost always a timeline problem wearing a statistics costume.</p>
+</section>
+<section id="ask-what-the-baseline-was" class="level2">
+<h2 class="anchored" data-anchor-id="ask-what-the-baseline-was">3. Ask what the baseline was</h2>
+<p>If nobody can tell you what the naive rule scores, the model has not been evaluated — it has been described.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a placeholder post. Replace the text; keep the front matter shape.</p>
+</div>
+</div>
+</section>
+<section id="re-run-it-once" class="level2">
+<h2 class="anchored" data-anchor-id="re-run-it-once">4. Re-run it once</h2>
+<p>Not to reproduce the numbers. To find out how long it takes, what breaks, and how much of the pipeline lives in someone’s head.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Philisophy</category>
+  <guid>https://ma-mar-itan.github.io/PortfolioWebsite/blog/posts/2026-08-30_We have no clue/</guid>
+  <pubDate>Mon, 17 Aug 2026 21:00:00 GMT</pubDate>
+  <media:content url="https://ma-mar-itan.github.io/PortfolioWebsite/assets/img/thumb-1.svg" medium="image" type="image/svg+xml"/>
+</item>
+</channel>
+</rss>

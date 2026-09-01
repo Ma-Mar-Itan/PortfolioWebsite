@@ -1,0 +1,338 @@
+[
+  {
+    "objectID": "research/index.html",
+    "href": "research/index.html",
+    "title": "Research",
+    "section": "",
+    "text": "Radiomics\n\nMedical imaging\n\nClustering\n\nReproducibility\n\n\n\nDetecting sensor induced effects on high dimensional data.\n\n\n\n2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "research/index.html#publications",
+    "href": "research/index.html#publications",
+    "title": "Research",
+    "section": "Publications",
+    "text": "Publications\n\nMalek Itani, Mahmoud Arayssi, Noura Yassine (2026). Regime-Dependent Determinants of Systemic Banking Crises: Evidence from a Finite-Mixture Logit Model Under Review.\nMalek Itani, Mahmoud Arayssi, Noura Yassine (2026). *The Illusion of Predictability: Structural Heterogeneity and Informational Noise in Corporate Greenwashing. Under Review.\nMahmoud Arayssi, Azza Bejaoui, Malek Itani (2026). What Do Lenders See ? Disentangling Gender Signals from Organizational Substance in Credit Markets. Under Review.\nMahmoud Arayssi, Malek Itani (2026). ESG Misrepresentation in Corporate Sustainability Communication: A Comprehensive Review of Greenwashing, Brownwashing, Greenhushing, and CSR Decoupling. Under Review.\nFakih, H. H., Itani, M. M., & Karam, P. (2017). Gold nanoparticles-coated polystyrene beads for the multiplex detection of viral DNA. Sensors and Actuators B: Chemical, 250, 446-452. [Paper]"
+  },
+  {
+    "objectID": "prototypes/PanelScope/index.html",
+    "href": "prototypes/PanelScope/index.html",
+    "title": "PanelScope",
+    "section": "",
+    "text": "It helps identify the largest set of variables that can be analysed together while preserving a user-defined proportion of complete panel observations. Given a country-year, firm-year, bank-year, or other entity-year dataset, PanelScope can measures how the complete-case sample changes as variables are combined, and reports the variable set that retains the most usable data subject to a stated retention requirement. It is intended as a preparatory step before estimation, making the trade-off between variable breadth and sample retention explicit and reproducible."
+  },
+  {
+    "objectID": "prototypes/PanelScope/index.html#what-it-does",
+    "href": "prototypes/PanelScope/index.html#what-it-does",
+    "title": "PanelScope",
+    "section": "",
+    "text": "It helps identify the largest set of variables that can be analysed together while preserving a user-defined proportion of complete panel observations. Given a country-year, firm-year, bank-year, or other entity-year dataset, PanelScope can measures how the complete-case sample changes as variables are combined, and reports the variable set that retains the most usable data subject to a stated retention requirement. It is intended as a preparatory step before estimation, making the trade-off between variable breadth and sample retention explicit and reproducible."
+  },
+  {
+    "objectID": "prototypes/PanelScope/index.html#why-i-built-it",
+    "href": "prototypes/PanelScope/index.html#why-i-built-it",
+    "title": "PanelScope",
+    "section": "Why I built it",
+    "text": "Why I built it\nI struggled finding the best selection of variables for a dataset of 12 features. Then my professor sent an 18,000 feature dataset."
+  },
+  {
+    "objectID": "prototypes/PanelScope/index.html#status",
+    "href": "prototypes/PanelScope/index.html#status",
+    "title": "PanelScope",
+    "section": "Status",
+    "text": "Status\n\n\n\n\n\n\nWorking prototype. Not maintained. Fork it rather than depend on it."
+  },
+  {
+    "objectID": "prototypes/PanelScope/index.html#try-it",
+    "href": "prototypes/PanelScope/index.html#try-it",
+    "title": "PanelScope",
+    "section": "Try it",
+    "text": "Try it\n\nLive demo\nSource"
+  },
+  {
+    "objectID": "prototypes/BibBrief/index.html",
+    "href": "prototypes/BibBrief/index.html",
+    "title": "BibBrief",
+    "section": "",
+    "text": "Takes a BibTeX export, the kind you download from Scopus, Web of Science, or Zotero after a literature search and converts it into a clean, structured Microsoft Word document. Every article gets its own entry: the title, a formatted reference, and the full abstract (Must be selected in the export)."
+  },
+  {
+    "objectID": "prototypes/BibBrief/index.html#what-it-does",
+    "href": "prototypes/BibBrief/index.html#what-it-does",
+    "title": "BibBrief",
+    "section": "",
+    "text": "Takes a BibTeX export, the kind you download from Scopus, Web of Science, or Zotero after a literature search and converts it into a clean, structured Microsoft Word document. Every article gets its own entry: the title, a formatted reference, and the full abstract (Must be selected in the export)."
+  },
+  {
+    "objectID": "prototypes/BibBrief/index.html#why-i-built-it",
+    "href": "prototypes/BibBrief/index.html#why-i-built-it",
+    "title": "BibBrief",
+    "section": "Why I built it",
+    "text": "Why I built it\nA professor wanted me to collect the abstracts of a hundred papers (turns out she was exaggerating and just wanted 20)."
+  },
+  {
+    "objectID": "prototypes/BibBrief/index.html#status",
+    "href": "prototypes/BibBrief/index.html#status",
+    "title": "BibBrief",
+    "section": "Status",
+    "text": "Status\n\n\n\n\n\n\nWorking prototype. Not maintained. Fork it rather than depend on it."
+  },
+  {
+    "objectID": "prototypes/BibBrief/index.html#try-it",
+    "href": "prototypes/BibBrief/index.html#try-it",
+    "title": "BibBrief",
+    "section": "Try it",
+    "text": "Try it\n\nLive demo\nSource"
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_We have no clue/index.html",
+    "href": "blog/posts/2026-08-30_We have no clue/index.html",
+    "title": "We have no clue what we are doing",
+    "section": "",
+    "text": "Every few weeks someone hands me a model and asks whether it’s any good. The honest answer is usually “I can’t tell yet,” so I’ve written down the order I work through it."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#find-the-target-before-the-features",
+    "href": "blog/posts/2026-08-30_We have no clue/index.html#find-the-target-before-the-features",
+    "title": "We have no clue what we are doing",
+    "section": "1. Find the target before the features",
+    "text": "1. Find the target before the features\nThe first question isn’t what went into the model, it’s what came out. Ask what the label actually measures, when it was recorded, and who decided it. A surprising share of models fail here: the target is a proxy for the thing anyone cares about, and nobody wrote down the gap."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#draw-the-timeline",
+    "href": "blog/posts/2026-08-30_We have no clue/index.html#draw-the-timeline",
+    "title": "We have no clue what we are doing",
+    "section": "2. Draw the timeline",
+    "text": "2. Draw the timeline\nSketch when each feature becomes available relative to when the prediction is needed. Leakage is almost always a timeline problem wearing a statistics costume."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#ask-what-the-baseline-was",
+    "href": "blog/posts/2026-08-30_We have no clue/index.html#ask-what-the-baseline-was",
+    "title": "We have no clue what we are doing",
+    "section": "3. Ask what the baseline was",
+    "text": "3. Ask what the baseline was\nIf nobody can tell you what the naive rule scores, the model has not been evaluated — it has been described.\n\n\n\n\n\n\nNote\n\n\n\nThis is a placeholder post. Replace the text; keep the front matter shape."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#re-run-it-once",
+    "href": "blog/posts/2026-08-30_We have no clue/index.html#re-run-it-once",
+    "title": "We have no clue what we are doing",
+    "section": "4. Re-run it once",
+    "text": "4. Re-run it once\nNot to reproduce the numbers. To find out how long it takes, what breaks, and how much of the pipeline lives in someone’s head."
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nThe illusion of small ponds\n\n\n\nThoughts\n\nLessons\n\n\n\nThere are no big fish in small ponds, only small fish in big ponds.\n\n\n\n\n\nAug 18, 2026\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\nWe have no clue what we are doing\n\n\n\nPhilisophy\n\n\n\nA reality check that we all face at one point.\n\n\n\n\n\nAug 18, 2026\n\n1 min\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Malek M. Itani",
+    "section": "",
+    "text": "I work on applied research problems where the statistics are only half the difficulty — the other half is that the data was collected by people, for reasons that had nothing to do with your question.\nRight now I’m interested in measurement: what a number has to survive before it deserves to be acted on. That pulls me across sampling design, time series drift, and the interfaces that put estimates in front of people who have to decide something.\nOutside of that I build small tools, write here, and keep a graveyard of prototypes."
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "Malek M. Itani",
+    "section": "Experience",
+    "text": "Experience\n\nRole Title · Organization\n\n2024 – present. One line on what you own and what changed because you were there.\n\nPrevious Role · Organization\n\n2021 – 2024. One line.\n\nEarlier Role · Organization\n\n2019 – 2021. One line."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Malek M. Itani",
+    "section": "Education",
+    "text": "Education\n\nMSc, Field of Study · University\n\n\nThesis: Title of your thesis.\n\n\nBSc, Field of Study · University"
+  },
+  {
+    "objectID": "about.html#tools",
+    "href": "about.html#tools",
+    "title": "Malek M. Itani",
+    "section": "Tools",
+    "text": "Tools\nDaily: R, Python, Quarto, SQL, git. Comfortable: Stan, Shiny, Observable, Docker. Occasionally: whatever the problem demands."
+  },
+  {
+    "objectID": "about.html#elsewhere",
+    "href": "about.html#elsewhere",
+    "title": "Malek M. Itani",
+    "section": "Elsewhere",
+    "text": "Elsewhere\nThe fastest way to reach me is email. I read everything and answer most things, usually slowly."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html",
+    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html",
+    "title": "The illusion of small ponds",
+    "section": "",
+    "text": "Every few weeks someone hands me a model and asks whether it’s any good. The honest answer is usually “I can’t tell yet,” so I’ve written down the order I work through it."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#find-the-target-before-the-features",
+    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#find-the-target-before-the-features",
+    "title": "The illusion of small ponds",
+    "section": "1. Find the target before the features",
+    "text": "1. Find the target before the features\nThe first question isn’t what went into the model, it’s what came out. Ask what the label actually measures, when it was recorded, and who decided it. A surprising share of models fail here: the target is a proxy for the thing anyone cares about, and nobody wrote down the gap."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#draw-the-timeline",
+    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#draw-the-timeline",
+    "title": "The illusion of small ponds",
+    "section": "2. Draw the timeline",
+    "text": "2. Draw the timeline\nSketch when each feature becomes available relative to when the prediction is needed. Leakage is almost always a timeline problem wearing a statistics costume."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#ask-what-the-baseline-was",
+    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#ask-what-the-baseline-was",
+    "title": "The illusion of small ponds",
+    "section": "3. Ask what the baseline was",
+    "text": "3. Ask what the baseline was\nIf nobody can tell you what the naive rule scores, the model has not been evaluated — it has been described.\n\n\n\n\n\n\nNote\n\n\n\nThis is a placeholder post. Replace the text; keep the front matter shape."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#re-run-it-once",
+    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#re-run-it-once",
+    "title": "The illusion of small ponds",
+    "section": "4. Re-run it once",
+    "text": "4. Re-run it once\nNot to reproduce the numbers. To find out how long it takes, what breaks, and how much of the pipeline lives in someone’s head."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Malek M. Itani",
+    "section": "",
+    "text": "Malek M. Itani\n\nStatiscian and Machine learning Researcher finding my niche in the world.\n\n\nRead the blog See the research Browse prototypes About me\n\n\n\n\n\n\n\nSelected work All research →\n\n\n\n\n\n\n\n\n\n\n\nAcquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI\n\n\n\nRadiomics\n\nMedical imaging\n\nClustering\n\nReproducibility\n\n\n\nDetecting sensor induced effects on high dimensional data.\n\n\n\n\n\nNo matching items\n\n\nRecent writing All posts →\n\n\n\n\n\n\nThe illusion of small ponds\n\n\nThere are no big fish in small ponds, only small fish in big ponds.\n\n\n\n\n\nAug 18, 2026\n\n\n\n\n\n\n\nWe have no clue what we are doing\n\n\nA reality check that we all face at one point.\n\n\n\n\n\nAug 18, 2026\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "prototypes/index.html",
+    "href": "prototypes/index.html",
+    "title": "Prototypes",
+    "section": "",
+    "text": "PanelScope\n\n\n\nResearch\n\nAutomation\n\n\n\nPanel-data coverage assistant.\n\n\n\n\n\n\n\n\n\n\n\n\nBibBrief\n\n\n\nResearch\n\nAutomation\n\n\n\nTurn your bibliography into a document you can read.\n\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html",
+    "href": "research/Acquisition-Aware Falsification/index.html",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "",
+    "text": "BEIRUT ARAB UNIVERSITY\nFaculty of Science\nDepartment of Mathematics\nProject · Medical Statistics\nTrapped by Stability:\nA Falsification Framework for Acquisition-Driven Radiomic Phenotypes\nPREPARED BY Malek M. Itani\nSUPERVISED BY Dr. Lama Affara\nACADEMIC YEAR 2025 – 2026"
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#radiomic-phenotype-discovery",
+    "href": "research/Acquisition-Aware Falsification/index.html#radiomic-phenotype-discovery",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "Radiomic phenotype discovery",
+    "text": "Radiomic phenotype discovery\nRadiomics allows for the extraction of quantitative information from routine medical images, and thus promises to expand the knowledge on tumour phenotype that is not captured by visual interpretation. This allows radiomics to be positioned as the main bridge between medical imaging and personalized medicine, allowing it to complement histology, genomics, and clinical covariates in risk stratification and treatment selection (Lambin et al. 2012). One particularly relevant image modality is Breast MRI as dynamic contrast-enhanced MRI, diffusion-weighted imaging, T2-weighted imaging, and enhancement kinetics enables the acquisition of information related to vascularity, cellularity, morphology, and tissue heterogeneity (Pinker et al. 2018).\nWhile the majority of previous work has focused on supervised learning, radiomics shows great potential in the unsupervised learning subfield, where patients are clustered solely based on feature space. These clusters are then studied for associations with prognosis, molecular subtype, immune state, stromal composition, or pathway activity (Li et al. 2018). This allows for the discovery of image derived subtypes of cancer through survival analysis, molecular pathways, and treatment response (Yamamoto et al. 2012; Aerts et al. 2014). Collectively, there is consensus on the great potential of radiomics to provide clinically meaningful insight on the biological variations of tumours (Gillies et al. 2016)."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#supervised-versus-unsupervised-settings",
+    "href": "research/Acquisition-Aware Falsification/index.html#supervised-versus-unsupervised-settings",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "Supervised versus unsupervised settings",
+    "text": "Supervised versus unsupervised settings\nWhat separates radiomic studies using supervised and unsupervised clustering techniques is the failure mode that supervised learning has managed to avoid albeit partially. In supervised techniques, outcomes labels are provided and exist outside of feature space, which allows the judgment of model performance to be against a predefined endpoint (molecular subtype, recurrence, or treatment response), limiting the effects of technical confounding on model inference (Parmar et al. 2015). This has allowed supervised radiomics to advance much more rapidly towards clinical use, whereas unsupervised radiomics remains lagging (Park et al. 2020). This external validation does not exist in unsupervised techniques, where clustering models are created based solely on the feature space that may contain scanner, protocol, or manufacturer effects. If technological differences in radiomic feature space is better positioned to explain the variance in structure, the clustering algorithms will recover these hardware-defined partitions before they encounter tumour-defined ones. And standard validation metrics such as silhouette score and bootstrap stability end up testing the reproducibility of these partitions rather their biological validity (Handl et al. 2005), resulting in the “stability trap”:\nMathematical reproducibility can be mistaken for biological validity."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#technical-variance-in-radiomics",
+    "href": "research/Acquisition-Aware Falsification/index.html#technical-variance-in-radiomics",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "Technical variance in radiomics",
+    "text": "Technical variance in radiomics\nThe literature describing the impact of acquisition effects on radiomic features is extensive, where many features such as voxel size and gray-level discretization become nonreproducible due to acquisition variation (Berenguer et al. 2018; Mackin et al. 2015; Duron et al. 2019; Leijenaar et al. 2015). This lack of reproducibility has resulted in inability of radiomics to completely transition from theoretical work to the mainstream clinical workflow, although the great effort at standardizing the field such as the Image Biomarker Standardisation Initiative (Zwanenburg et al. 2020; Traverso et al. 2018).\nAdding greater challenge is the unstandardized nature of MRI imaging (Nyúl and Udupa 1999), where protocols, coils and pulse sequences tend to differ across different vendors.\nPerhaps the most direct proof-of-concept comes from multi-vendor breast MRI radiomics studies, which have shown that non-biological features can accurately predict the scanner platform and field strength with area-under-the-curve values ranging from 0.91 to 1.00 (Doran et al. 2021). That same study found the pipeline’s ability to predict tumour biology was only modest (AUC = 0.673 for pathological nodal status) when using radiomic features without any clinical variables. That key result illustrates that radiomic features can encode strong technical signals, and that technical structure can directly compete with tumour biology in the same feature space."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#harmonization-and-its-limits",
+    "href": "research/Acquisition-Aware Falsification/index.html#harmonization-and-its-limits",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "Harmonization and its limits",
+    "text": "Harmonization and its limits\nFeature-level harmonization is the current solution to unwanted scanner or site effects. Developed initially for batch-effects in gene-expression data, ComBat was later extended to neuroimaging and radiomics with the goal of removing scanner, site, and protocol effects while retaining biological information (Johnson et al. 2007; Fortin et al. 2018). In radiomics, ComBat and variants have been used almost exclusively to improve cross-site comparability of radiomic features or the transportability of supervised models built on those features (Leithner et al. 2022). Harmonization has been shown to reduce batch effects and improve performance in PET radiomics studies, MRI radiomics studies, and multi-centre datasets (Da-Ano et al. 2020).\nHowever, existing evaluations of ComBat harmonization assume that the biomedical endpoint matters. That is fine for supervised prediction, but it does not match the logic of unsupervised phenotypes. For phenotype discovery, the key question is what happens to the patient partition after harmonization. If the cluster reflects manufacturer-related variance more than tumour biology, then ComBat may leave the mathematical stability intact while substituting a different partition that also passes validation checks. Standard validation metrics would not alert the investigator because the mathematical properties of the cluster haven’t changed, even though the biological meaning of the phenotype might have (Lozano-Montoya and Jimenez-Pastor 2024)."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#the-validation-gap",
+    "href": "research/Acquisition-Aware Falsification/index.html#the-validation-gap",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "The validation gap",
+    "text": "The validation gap\nIt is widely accepted that for prediction modelling, performance and internal validity is not enough but rather claims should be required to go through robustness checks, stress tests and external validation for generalizability to be accepted (Collins et al. 2015). In this context, any claim of phenotype discovery should be exposed to tests that aim to disprove biological interpretations. As such this study aims to define an acquisition-aware falsification chain for unsupervised radiomic phenotypes where the main question is not whether a reproducible cluster exists, but whether the same biological claim can survive when technical sources of variance are explicitly tested. This will require practitioners to ask whether clusters map more strongly to manufacturer than molecular subtypes? Whether the main principal components are dominated by acquisition variables? Whether cluster identity or prognostic relevance survive residualization and ComBat? Whether the stress tested clusters still meet minimum biomarker criteria (Lu et al. 2021).\nThe contribution of the present paper is therefore methodological rather than biomarker-driven. It does not argue that unsupervised radiomic discovery is invalid in general. Instead, it argues that cluster stability is not equivalent to biological validity, especially in multi-vendor datasets. A phenotype may be internally stable, visually interpretable, and apparently prognostic while still being dominated by technical variance. While the literature has already established that feature space can be dominated by acquisition techniques, and that this can be mitigated through harmonization literature (Yamamoto et al. 2012; Traverso et al. 2018; Da-Ano et al. 2020), what is still missing is a standardized end to end falsification pipeline to test whether a stable unsupervised cluster retains its identity and biological interpretation after known acquisition effects are adjusted for."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#data",
+    "href": "research/Acquisition-Aware Falsification/index.html#data",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "3.1 Data",
+    "text": "3.1 Data\nFor the purpose of our analysis, we make use of a 922-patient breast MRI dataset with 529 quantitative MRI-derived radiomic features (Saha et al. 2021). We retained variables with &lt;5% missingness and ≥ 2 unique values. Under these criteria, no features were removed. Missing values were imputed using the median and all features were standardized to have zero mean before PCA, clustering, harmonization, and survival modeling. The standardized 922 x 529 matrix is summarized in Table 1. Z-score scaling was necessary because our feature-set integrated data on enhancement kinetics, peak enhancement, signal-enhancement ratio, texture statistics, and various other feature-descriptors that were reported on different natural scales. Without standardization, methods like PCA and k-means that rely on variance would be biased by numerical scale rather than data structure.\n\nTable 1. Radiomic matrix and preprocessing summary.\n\n\n\n\n\n\n\n\n\n\nStep\nPatients\nFeatures\nResult\n\n\n\n\nRaw imaging matrix\n922\n529\nNumeric MRI-derived radiomic feature matrix after patient ID removal.\n\n\nMissingness filtering\n922\n529\nNo variables exceeded the &lt;5% missingness threshold.\n\n\nLow-variance filtering\n922\n529\nNo variables failed the &gt;=2 unique-value criterion.\n\n\nMedian imputation\n922\n529\nResidual missing values imputed feature-wise.\n\n\nZ-score standardization\n922\n529\nMean-centered and variance-scaled matrix generated.\n\n\nFinal analysis matrix\n922\n529\nInput for PCA, clustering, harmonization, and survival modeling."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#standard-phenotype-discovery",
+    "href": "research/Acquisition-Aware Falsification/index.html#standard-phenotype-discovery",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "3.2 Standard phenotype discovery",
+    "text": "3.2 Standard phenotype discovery\nPrincipal component analysis (PCA) was applied to the standardized radiomic data. The PCs that explained the most variance were selected for exploratory visualization and clustering. Clustering was performed via K-means for a group of candidate k values. Internal validity metrics were summarized with silhouette score, Calinski-Harabasz index, and Davies-Bouldin index. Bootstrap stability was assessed by repeated 80% subsampling and reported with the adjusted Rand index (ARI). Feature differences between clusters were assessed via Welch tests. This process was performed on the raw partition to determine whether the PCs possessed a coherent imaging interpretation before any technical challenge was applied."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#falsification-chain-and-technical-adjudication",
+    "href": "research/Acquisition-Aware Falsification/index.html#falsification-chain-and-technical-adjudication",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "3.3 Falsification chain and technical adjudication",
+    "text": "3.3 Falsification chain and technical adjudication\nThe falsification chain consisted of four steps. Technical enrichment was first measured by comparing cluster labels and PC structure with acquisition variables, then Phenotype discovery was secondly repeated after manufacturer residualization and ComBat harmonization. Partition identity was thirdly quantified by comparing harmonized labels with raw labels using ARI. Finally, clinical interpretability was retested after manufacturer adjustment."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#clinical-and-biomarker-evaluation",
+    "href": "research/Acquisition-Aware Falsification/index.html#clinical-and-biomarker-evaluation",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "3.4 Clinical and biomarker evaluation",
+    "text": "3.4 Clinical and biomarker evaluation\nThe top screen was assessed for recurrence-free survival in the HR+/HER2+ subgroup first, as this is where the raw phenotype exhibited its most significant survival split. Kaplan-Meier curves, log-rank tests and Cox proportional-hazards modeling were utilized. The cluster effect was then subjected to manufacturer-adjusted Cox modeling to determine whether an effect could still be interpreted after technical adjustment. Association of this post-harmonization structure with prespecified biomarker criteria was then evaluated. These criteria are deliberately minimal standards for identification and are not confirmation of biological validity."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#key-message-1-a-standard-workflow-creates-a-plausible-but-fragile-discovery",
+    "href": "research/Acquisition-Aware Falsification/index.html#key-message-1-a-standard-workflow-creates-a-plausible-but-fragile-discovery",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "4.1 Key message 1: a standard workflow creates a plausible but fragile discovery",
+    "text": "4.1 Key message 1: a standard workflow creates a plausible but fragile discovery\nAt first glance, the results give off a valid impression of a phenotypic discovery. First, principal component analysis shows a structured feature space where the top 10 principal components are able to explain 58% of the variance (See Table 2), with principal component one, two and three explaining 15.5%, 9.6% and 7.8% respectively. Scree plots and PC1-PC2 projections are reported below in Figures 1 and 2, where it is showcased that patient distribution took the form of a continuum, rather than abrupt separation, implying any form of clustering would require gradient borders rather than clear boundaries.\nK-means clustering algorithms identified k = 2 as the best partition according to the main internal validity metrics. Specifically, k = 2 achieved the highest silhouette score (0.196) and Calinski-Harabasz index (200.93), with values decreasing as k increased (Table 3). Bootstrap stability was also good: raw k = 2 partitions attained mean ARI of 0.893 with standard deviation of 0.084 (Table 4).\nFeature-level inspection provided us with a biologically-plausible interpretation, where the top-ranked cluster-separating variables were dominated by signal-enhancement ratio (SER), peak-enhancement (PE), entropy, homogeneity, and similar enhancement-texture descriptors. Cohen d values exceeded 2.2 for top-ranked SER entropy and sum-entropy features (See Table 5). This clustering phenotype’s appearance is arguably vascularity-like: one group manifests more spatially heterogeneous enhancement while the other manifests relatively homogeneous enhancement behavior. Whether a genuine biological foundation is true or not is irrelevant in this case as this is used to showcase how “biological plausibility” can be attached to the partitions.\nFinally, the raw partition looked prognostically meaningful in the HR+/HER2+ subgroup. Of the 101 patients with successful follow-up truncation, Cluster 0 had 55 patients and 2 recurrences while Cluster 1 had 46 patients and 8 recurrences. Kaplan-Meier curves were visibly separated (Figure 3), log-rank test was significant (p = 0.010), and unadjusted Cox model estimated HR = 4.76 for Cluster 1 vs Cluster 0 (95% CI 1.22-18.61; p = 0.02) as seen in Table 6. In conventional circumstances, those results might validate as a reproducible vascularity-like prognostic phenotype. In this manuscript, they form the counterexample challenged by the falsification chain.\n\nTable 2. Variance explained by the leading principal components.\n\n\n\n\nPrincipal component\nExplained variance ratio\n\n\n\n\nPC1\n0.1549\n\n\nPC2\n0.0958\n\n\nPC3\n0.0775\n\n\nPC4\n0.0532\n\n\nPC5\n0.0495\n\n\nPC6\n0.0374\n\n\nPC7\n0.0354\n\n\nPC8\n0.0296\n\n\nPC9\n0.0241\n\n\nPC10\n0.0215\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1. Scree plot of the top 20 principal components.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2. Projection of patients onto PC1 and PC2.\n\n\nTable 3. Internal cluster validity across candidate k values.\n\n\n\n\n\n\n\n\n\n\nk\nSilhouette score\nCalinski-Harabasz index\nDavies-Bouldin index\n\n\n\n\n2\n0.195653\n200.929867\n1.955482\n\n\n3\n0.157827\n179.178568\n1.932912\n\n\n4\n0.146367\n149.854570\n1.932116\n\n\n5\n0.142494\n134.423765\n1.890264\n\n\n6\n0.134233\n122.675314\n1.864758\n\n\n\n\nTable 4. Bootstrap stability of the raw k=2 phenotype.\n\n\n\n\nMetric\nValue\n\n\n\n\nBootstrap iterations\n20\n\n\nSubsample fraction\n0.80\n\n\nClustering method\nK-means\n\n\nNumber of clusters\n2\n\n\nFeature space\nFirst 10 principal components\n\n\nMean ARI\n0.8931\n\n\nSD ARI\n0.0838\n\n\nMinimum ARI\n0.7397\n\n\nMaximum ARI\n0.9837\n\n\n\n\nTable 5. Top raw cluster-separating radiomic features.\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nMean C0\nMean C1\nC1-C0\nCohen d\nq-value\n\n\n\n\nSER_map_Entropy_tissue_T1\n-0.552\n0.964\n1.516\n2.214\n1.09E-100\n\n\nSER_map_sum_entropy_tissue_T1\n-0.552\n0.963\n1.515\n2.211\n2.70E-109\n\n\nSER_map_std_dev_tissue_T1\n0.550\n-0.960\n-1.510\n-2.196\n2.45E-164\n\n\nSER_map_difference_entropy_tissue_T1\n-0.546\n0.953\n1.499\n2.162\n1.18E-103\n\n\nSER_map_Homogeneity2_tissue_T1\n0.540\n-0.942\n-1.483\n-2.114\n2.46E-95\n\n\nSER_map_Homogeneity1_tissue_T1\n0.539\n-0.940\n-1.479\n-2.104\n1.70E-97\n\n\nPE_map_std_dev_tissue_T1\n0.532\n-0.927\n-1.459\n-2.047\n1.72E-164\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3. Recurrence-free survival in HR+/HER2+ patients by raw radiomic cluster.\n\n\nTable 6. Fragile unadjusted HR+/HER2+ recurrence-free-survival signal by raw radiomic cluster.\n\n\n\n\n\n\n\n\n\n\n\nAnalysis\nEstimate\n95% CI\np-value\nInterpretation\n\n\n\n\nCluster 0\n55 patients; 2 events; event rate 3.6%\n-\n-\nLower unadjusted recurrence burden.\n\n\nCluster 1\n46 patients; 8 events; event rate 17.4%\n-\n-\nHigher unadjusted recurrence burden; not sufficient for biomarker interpretation.\n\n\nLog-rank test\n-\n-\n0.010\nSignificant unadjusted RFS difference.\n\n\nCox: Cluster 1 vs Cluster 0\nHR=4.76\n1.22-18.61\n0.02\nLarge but imprecise unadjusted effect based on only 10 events."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#key-message-2-the-apparent-phenotype-is-acquisition-dominated-not-subtype-defined",
+    "href": "research/Acquisition-Aware Falsification/index.html#key-message-2-the-apparent-phenotype-is-acquisition-dominated-not-subtype-defined",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "4.2 Key message 2: the apparent phenotype is acquisition-dominated, not subtype-defined",
+    "text": "4.2 Key message 2: the apparent phenotype is acquisition-dominated, not subtype-defined\nOnce technical acquisition factors are examined, it is found that the raw cluster becomes significantly associated with manufacturer (p = 8.0 x 10-104) while insignificant with molecular subtype (p = 0.146) or recurrence (p = 0.766) as shown in Table 7. The contingency signal was not subtle: A closer look at the data reveals that Cluster 0 was largely comprised of GE machine acquisitions, as opposed to Cluster 1, which predominantly featured Siemens (as shown in Table 8 and Figure 4).\nWhen the PC1-PC2 projections are labeled by manufacturers rather than cluster identity, the partitions become almost indistinguishable between the two graphs (Figure 5). In other words, the clustering algorithms partitioned the data according to the machine that captured the image. Examining the PC1 more closely, reveals that TR, TE, the acquisition matrix, and manufacturer were all more closely tied to PC1 than molecular subtype (which remained below about 0.04 across the top ten PCs), with eta-squared(s) reported as approximately 0.76 for TR, 0.63 for TE, 0.57 for the acquisition matrix, and 0.49 for manufacturer in Table 9. This is a standard example of the stability trap. The partition is not noisy; it is simply stable. In this context, high bootstrap ARI should be interpreted not as evidence for the clusters’ biological signal, but rather as evidence that the scanner-domain structure is itself reproducible.\n\nTable 7. Association of raw cluster assignment with clinical and technical variables.\n\n\n\n\n\n\n\n\n\nVariable\np-value\nInterpretation\n\n\n\n\nManufacturer\n8.022438E-104\nStrong association with raw cluster assignment.\n\n\nMolecular subtype\n0.145796\nNo significant association with raw cluster assignment.\n\n\nRecurrence event\n0.765626\nNo significant whole-cohort association with recurrence.\n\n\n\n\nTable 8. Raw cluster assignment by MRI manufacturer.\n\n\n\n\nCluster\nGE\nSiemens\nInterpretation\n\n\n\n\n0\n547\n39\nCluster 0 is predominantly GE.\n\n\n1\n81\n255\nCluster 1 is predominantly Siemens.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4. Manufacturer composition within each raw radiomic cluster.\n\n\n\n  \n  \n  \n    Colored by radiomic cluster\n    Colored by manufacturer\n  \n  \n    \n      \n      \n    \n    \n      \n      \n    \n  \n\n\n\nFigure 5. Raw PCA space colored by radiomic cluster and by manufacturer..\n\n\nTable 9. Acquisition-variable dominance on the leading radiomic axis.\n\n\n\n\n\n\n\n\n\nVariable\nPC1 eta-squared or association strength\nInterpretation\n\n\n\n\nTR\n0.76\nDominant pulse-sequence association with PC1.\n\n\nTE\n0.63\nStrong pulse-sequence association with PC1.\n\n\nAcquisition matrix\n0.57\nStrong technical association with PC1.\n\n\nManufacturer\n0.49\nStrong scanner-domain association with PC1.\n\n\nField strength\n0.09\nWeaker than TR/TE/manufacturer.\n\n\nSlice thickness\n0.07\nWeaker than TR/TE/manufacturer.\n\n\nMolecular subtype\n&lt;=0.04 across top-10 PCs\nBiological subtype explains much less leading-PC structure."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#key-message-3-harmonization-preserves-bootstrap-stability-but-destroys-partition-identity",
+    "href": "research/Acquisition-Aware Falsification/index.html#key-message-3-harmonization-preserves-bootstrap-stability-but-destroys-partition-identity",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "4.3 Key message 3: harmonization preserves bootstrap stability but destroys partition identity",
+    "text": "4.3 Key message 3: harmonization preserves bootstrap stability but destroys partition identity\nTechniques used to phase out acquisition effects like residualization and ComBat eliminated the visible manufacturer association, but in the process destroyed the phenotypical discovery. The ARI between residualized labels and raw labels was 0.056, while for ComBat harmonization ARI versus raw labels was 0.065. Both techniques showcased a near-total loss of the original partition identity. The important observation is that clusterability was retained and that both the residualized space and ComBat space could be split into internally consistent two-cluster solutions (with mean bootstrap ARI 0.919 and 0.903 respectively) (See Table 10 and Figure 7). Figure 6 communicates the same result visually where the raw cluster geometry matches the manufacturer geometry, but the new residualized cluster geometry no longer represents the previous raw partition.\nThe retention of clusterability despite removal of partition identity separates two concepts that are often confused. Bootstrap stability asks if a cluster solution can be repeated given the data condition. Partition identity asks if the same patients are clustered after a technical adjustment. This report found that stability is maintained while identity is not. Any validation workflow focusing on stability alone would have certified this failure as success.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6. Comparison of latent structure before and after manufacturer residualization.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7. Bootstrap stability across raw and harmonized conditions.\n\n\nTable 10. Stability versus identity across raw and harmonized conditions.\n\n\n\n\n\n\n\n\n\n\n\nCondition\nMean bootstrap ARI\nSD ARI\nARI versus raw labels\nInterpretation\n\n\n\n\nRaw\n0.893139\n0.083795\n1.000000\nStable baseline partition.\n\n\nManufacturer residualized\n0.918669\n0.046946\n0.056485\nStable but nearly unrelated to raw labels.\n\n\nComBat harmonized\n0.902907\n0.057623\n0.064988\nStable but nearly unrelated to raw labels.\n\n\n\n\nTable 11. Association tests after technical harmonization.\n\n\n\n\n\n\n\n\n\n\n\nCluster type\nManufacturer p\nMolecular subtype p\nRecurrence p\nInterpretation\n\n\n\n\nRaw cluster\n8.022438E-104\n0.145796\n0.765626\nStrong manufacturer dependence.\n\n\nResidualized cluster\n0.529964\n0.716945\n0.074725\nManufacturer dependence removed; clinical signal borderline only.\n\n\nComBat cluster\n0.176522\n0.809070\n0.055758\nManufacturer dependence attenuated; clinical signal borderline only."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#key-message-4-neither-the-hrher2-signal-nor-the-residual-size-linked-structure-supports-a-biomarker-claim",
+    "href": "research/Acquisition-Aware Falsification/index.html#key-message-4-neither-the-hrher2-signal-nor-the-residual-size-linked-structure-supports-a-biomarker-claim",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "4.4 Key message 4: neither the HR+/HER2+ signal nor the residual size-linked structure supports a biomarker claim",
+    "text": "4.4 Key message 4: neither the HR+/HER2+ signal nor the residual size-linked structure supports a biomarker claim\nPost-harmonization indicates loss of the HR+/HER2+ survival signal. When forced into a Cox model along with raw cluster, the cluster HR dropped to 2.48 and was no longer significant (95% CI 0.46-13.39; p=0.291). Manufacturer itself was also insignificant in that tiny subgroup (HR=2.99; p=0.200), but there are too few degrees of freedom to properly test two correlated predictors with only 10 events (Table 13).\nAfter technical confounders were removed, there remained a structure. However, it is more accurately characterized as a size-correlated residue than as an orthogonal discovery. Clusters determined after harmonization were no longer detectably coupled with manufacturer, and they associated most strongly with tumor bounding-box volume in the extended analysis (p∼10^-26). That residual structure did not meet the prespecified biomarker validation thresholds summarized in Table 14: The recurrence association was weak, radiomic scores did not predict recurrence after clinical covariates, and scores were not sufficiently directionally consistent within vendors to make a biomarker claim.\nThe appropriate conclusion is therefore not that radiomic clustering is useless but rather that the raw apparent discovery must be downgraded to a false positive after going through acquisition-aware falsification. The lesson is therefore the following\nPerform identity checks, check for harmonization sensitivity and test for clinical validity before interpreting stable clusters as phenotypes.\n\nTable 13. Manufacturer-adjusted Cox model in the HR+/HER2+ subgroup.\n\n\n\n\n\n\n\n\n\n\n\n\nCovariate\nCoefficient\nHazard ratio\n95% CI\np-value\nInterpretation\n\n\n\n\nRaw cluster\n0.908162\n2.479761\n0.459408-13.385089\n0.291085\nCluster effect attenuates and loses significance.\n\n\nManufacturer: Siemens vs GE\n1.096711\n2.994301\n0.559256-16.031719\n0.200157\nNon-significant in sparse subgroup; correlated with cluster.\n\n\n\n\nTable 14. Prespecified biomarker criteria for the post-harmonization residual structure.\n\n\n\n\n\n\n\n\n\nCriterion\nObserved result\nStatus\n\n\n\n\nEndpoint association\nCluster-level recurrence signals were borderline or non-robust, and adjusted clinical models did not establish a durable recurrence association.\nNot met\n\n\nIncremental predictive value\nRadiomic/vascularity-augmented models did not improve recurrence prediction beyond clinical features in nested cross-validation.\nNot met\n\n\nWithin-vendor direction consistency\nDirection and magnitude were not sufficiently reliable across vendor-restricted analyses to support a biomarker claim.\nNot met\n\n\nOverall conclusion\nResidual structure is vendor-cleaner and size-linked, but it is not validated as a biological or clinical phenotype in this cohort.\nFails biomarker threshold"
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#main-finding-the-negative-result-is-the-result",
+    "href": "research/Acquisition-Aware Falsification/index.html#main-finding-the-negative-result-is-the-result",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "5.1 Main finding: the negative result is the result",
+    "text": "5.1 Main finding: the negative result is the result\nThe main takeaway of this report is as such: a radiomic partition can be internally stable, visually coherent, and apparently prognostic while failing to represent a biological subgroup. Our initial two group partitions looked compelling when ranked against a standard metric, where it was reproducible when resampled, had a vascularity associated profile and hinted at a promising HR+/HER2+ phenotype with an increase in recurrence, but under closer inspection, the partitions aligned mostly with scanner manufacturer and pulse-sequence.\nThis brings us back to the utility of stability trap terminology. Raw phenotype was not meaningless noise, but rather it was stable because the acquisition signal was stable. High bootstrap scores became misleading because they were interpreted as signals of biological truth. Instead, the more accurate inference is more limited: the clustering algorithm identified and recovered a strong and reproducible signal present in the radiomic feature matrix. The falsification chain then demonstrates that dominant signal is primarily technical. If we must extract a positive finding from this work, therefore, it is the invalidation of the phenotype claim rather than identification of a new phenotype."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#dangers-of-language",
+    "href": "research/Acquisition-Aware Falsification/index.html#dangers-of-language",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "5.2 Dangers of Language",
+    "text": "5.2 Dangers of Language\nFeature-wise, the cluster-separating features made sense. Signal-enhancement-ratio (SER) entropy, SER homogeneity, peak enhancement (PE) variability, certain enhancement-volume ratios, and wash-in/efflux descriptors naturally suggest increased versus decreased vascularity or perfusion. Enhancement-history descriptors are especially interpretable that way in breast DCE-MRI since tumor enhancement behavior is already the central radiological finding on this exam. Those same qualities make the stability trap so malicious, though: conceptually familiar language can too easily coat a technically induced partition.\nThat is not to say the report should avoid using biologically plausible language because Enhancement features are not biologically meaningless; patients just tend not to cluster cleanly by vascular biology in early breast cancer. But that biological plausibility is not evidence. Absent acquisition vulnerability, language would not be an issue, but when leading features are acquisition sensitive, vascularity descriptors become hypothesis rather than confirmation. The profile becomes plausible but hypothetical (“these features are known to be associated with vascularity, and the clusters separate on those features”) until the acquisition-ware checks are passed."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#cluster-stability-and-partition-identity-are-separate-validation-targets",
+    "href": "research/Acquisition-Aware Falsification/index.html#cluster-stability-and-partition-identity-are-separate-validation-targets",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "5.3 Cluster stability and partition identity are separate validation targets",
+    "text": "5.3 Cluster stability and partition identity are separate validation targets\nSeparately, harmonization explains why cluster stability and partition identity are different validation goals. Harmonization did not destroy cluster stability; residualization and Combat produced perfectly stable yet novel two-cluster solutions. The important change was that cluster patient labels were no longer the same before and after harmonization.\nIn practical terms, radiomic validation will require more than silhouette scores and bootstrap stabilization. A completed phenotype paper should minimally report cluster preservation after acquisition correction, evaluation of leading PCs for technical versus biological dependencies, harmonization sensitivity of any clinical associations, and post-harmonization structure’s conformance to any prespecified biomarker criteria."
+  },
+  {
+    "objectID": "research/Acquisition-Aware Falsification/index.html#limitations",
+    "href": "research/Acquisition-Aware Falsification/index.html#limitations",
+    "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
+    "section": "5.5 Limitations",
+    "text": "5.5 Limitations\nThis study has several limitations. First, the survival analysis pertaining to HR+/HER2+ should be taken with caution due to low sample count (N=10), a problem central to medical imaging analysis. The divergence between the subgroups is dramatic, but the CI is wide. More patients would be needed if one wishes to quantify any subtype-specific prognostic effect.\nSecond, k-means clustering utilizing principal components feature space was legible and justified for the purposes of this falsification exercise. But to further strengthen the argument of technical confounding, it is recommended to apply more unsupervised classifiers.\nLastly, harmonization is not ground truth. While ComBat and residualization are able to remove technical effects the post-harmonization subgroup are not inherently biological. One must treat the harmonization as an adversary, not an assurance of validity."
+  }
+]

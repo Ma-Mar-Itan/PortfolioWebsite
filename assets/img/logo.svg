@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="MI monogram">
+  <rect x="1" y="1" width="62" height="62" rx="10" fill="none" stroke="#8a2f2f" stroke-width="2.5"/>
+  <path d="M15 46V18l17 20 17-20v28" fill="none" stroke="#8a2f2f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="496.473359pt" height="315.26047pt" viewBox="0 0 496.473359 315.26047" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-01T06:35:15.397585</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 315.26047 
+L 496.473359 315.26047 
+L 496.473359 0 
+L 0 0 
+z
+" style="fill: #fdfdfc"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 66.441172 239.18175 
+L 468.201172 239.18175 
+L 468.201172 61.77375 
+L 66.441172 61.77375 
+z
+" style="fill: #fdfdfc"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #5c6672" x="66.441172" y="249.140422" transform="rotate(-0 66.441172 249.140422)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #5c6672" x="146.793172" y="249.140422" transform="rotate(-0 146.793172 249.140422)">20</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #5c6672" x="227.145172" y="249.140422" transform="rotate(-0 227.145172 249.140422)">40</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #5c6672" x="307.497172" y="249.140422" transform="rotate(-0 307.497172 249.140422)">60</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #5c6672" x="387.849172" y="249.140422" transform="rotate(-0 387.849172 249.140422)">80</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #5c6672" x="468.201172" y="249.140422" transform="rotate(-0 468.201172 249.140422)">100</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 9.5px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #5c6672" x="267.321172" y="265.126672" transform="rotate(-0 267.321172 265.126672)">share of cluster (%)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7"/>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #14181d" x="62.941172" y="98.854131" transform="rotate(-0 62.941172 98.854131)">Cluster 0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8"/>
+     <g id="text_9">
+      <text style="font-size: 9.5px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #14181d" x="62.941172" y="209.319885" transform="rotate(-0 62.941172 209.319885)">Cluster 1</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 66.441172 69.83775 
+L 441.462878 69.83775 
+L 441.462878 120.651997 
+L 66.441172 120.651997 
+z
+" clip-path="url(#pb72b27ae96)" style="fill: #1f5f5b"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 66.441172 180.303503 
+L 163.294029 180.303503 
+L 163.294029 231.11775 
+L 66.441172 231.11775 
+z
+" clip-path="url(#pb72b27ae96)" style="fill: #1f5f5b"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 441.462878 69.83775 
+L 468.201172 69.83775 
+L 468.201172 120.651997 
+L 441.462878 120.651997 
+z
+" clip-path="url(#pb72b27ae96)" style="fill: #8a2f2f"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 163.294029 180.303503 
+L 468.201172 180.303503 
+L 468.201172 231.11775 
+L 163.294029 231.11775 
+z
+" clip-path="url(#pb72b27ae96)" style="fill: #8a2f2f"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 12px; font-family: 'Newsreader', 'Georgia', 'Times New Roman', 'DejaVu Serif', serif; text-anchor: start; fill: #14181d" x="66.441172" y="29.278125" transform="rotate(-0 66.441172 29.278125)">Each cluster is a scanner</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8.6px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5c6672" x="66.441172" y="45.985219" transform="rotate(-0 66.441172 45.985219)">The partition the pipeline discovered is, to first order, the vendor split.</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 600; font-size: 8.4px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #fdfdfc" x="253.952025" y="97.562748" transform="rotate(-0 253.952025 97.562748)">93%  (547)</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 600; font-size: 8.4px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #fdfdfc" x="114.8676" y="208.028502" transform="rotate(-0 114.8676 208.028502)">24%  (81)</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 600; font-size: 8.4px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #fdfdfc" x="315.7476" y="208.028502" transform="rotate(-0 315.7476 208.028502)">76%  (255)</text>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_9">
+     <defs>
+      <path id="m39ad60168a" d="M 0 3 
+C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
+C 2.683901 1.55874 3 0.795609 3 0 
+C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
+C 1.55874 -2.683901 0.795609 -3 0 -3 
+C -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132 
+C -2.683901 -1.55874 -3 -0.795609 -3 0 
+C -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 
+C -1.55874 2.683901 -0.795609 3 0 3 
+z
+" style="stroke: #1f5f5b"/>
+     </defs>
+     <g>
+      <use xlink:href="#m39ad60168a" x="225.614672" y="286.670345" style="fill: #1f5f5b; stroke: #1f5f5b"/>
+     </g>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 8.8px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #14181d" x="236.174672" y="289.750345" transform="rotate(-0 236.174672 289.750345)">GE</text>
+    </g>
+    <g id="line2d_10">
+     <defs>
+      <path id="mf06570d0c0" d="M 0 3 
+C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
+C 2.683901 1.55874 3 0.795609 3 0 
+C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
+C 1.55874 -2.683901 0.795609 -3 0 -3 
+C -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132 
+C -2.683901 -1.55874 -3 -0.795609 -3 0 
+C -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 
+C -1.55874 2.683901 -0.795609 3 0 3 
+z
+" style="stroke: #8a2f2f"/>
+     </defs>
+     <g>
+      <use xlink:href="#mf06570d0c0" x="266.153797" y="286.670345" style="fill: #8a2f2f; stroke: #8a2f2f"/>
+     </g>
+    </g>
+    <g id="text_16">
+     <text style="font-size: 8.8px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #14181d" x="276.713797" y="289.750345" transform="rotate(-0 276.713797 289.750345)">Siemens</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pb72b27ae96">
+   <rect x="66.441172" y="61.77375" width="401.76" height="177.408"/>
+  </clipPath>
+ </defs>
+</svg>

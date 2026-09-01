@@ -1,0 +1,30 @@
+[
+  {
+    "listing": "/research/index.html",
+    "items": [
+      "/research/Acquisition-Aware Falsification/index.html"
+    ]
+  },
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/posts/2026-08-30_The illusion of small ponds/index.html",
+      "/blog/posts/2026-08-30_We have no clue/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/research/Acquisition-Aware Falsification/index.html",
+      "/blog/posts/2026-08-30_The illusion of small ponds/index.html",
+      "/blog/posts/2026-08-30_We have no clue/index.html"
+    ]
+  },
+  {
+    "listing": "/prototypes/index.html",
+    "items": [
+      "/prototypes/PanelScope/index.html",
+      "/prototypes/BibBrief/index.html"
+    ]
+  }
+]
