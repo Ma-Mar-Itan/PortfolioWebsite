@@ -8,7 +8,7 @@ project:
 website:
   title: "Malek M. Itani"
   description: "Research, writing, and prototypes."
-  site-url: https://MalekItani.com
+  site-url: https://ma-mar-itan.github.io/PortfolioWebsite/
   favicon: assets/img/favicon.svg
   open-graph: true
   twitter-card: true
