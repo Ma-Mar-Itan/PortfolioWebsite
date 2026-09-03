@@ -1,0 +1,189 @@
+```{=html}
+<div class="geo-scrolly scene-frame decision-scene" data-default-state="observe" data-default-title="Observe">
+  <div class="mobile-state" aria-hidden="true">Observe</div>
+  <svg viewBox="0 0 1000 1100" width="1000" height="1100" role="img"
+       aria-labelledby="decision-title decision-desc">
+    <title id="decision-title">One decision's journey</title>
+    <desc id="decision-desc">A flood evacuation decision moves through observation, analysis, executive judgment, payment, communication and physical action. Its path repeatedly crosses jurisdictions and can be interrupted by administrative vetoes, including a power breaker supplying a domestic data center.</desc>
+    <defs>
+      <pattern id="decision-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+        <path d="M28 0H0V28" fill="none" stroke="var(--v-grid)"/>
+      </pattern>
+      <filter id="decision-glow" x="-100%" y="-100%" width="300%" height="300%">
+        <feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="decision-shadow" x="-20%" y="-20%" width="140%" height="160%">
+        <feDropShadow dy="10" stdDeviation="12" flood-color="#000" flood-opacity=".13"/>
+      </filter>
+      <marker id="journey-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5 0 10Z" fill="var(--v-teal)"/>
+      </marker>
+      <marker id="journey-red-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5 0 10Z" fill="var(--v-red)"/>
+      </marker>
+      <g id="journey-node">
+        <circle r="34" fill="var(--v-panel)" stroke="var(--v-rule)" stroke-width="2"/>
+        <circle r="8" fill="var(--v-teal)"/>
+      </g>
+      <g id="journey-veto">
+        <path d="M-17-14L0 0 17-14" fill="none" stroke="var(--v-red)" stroke-width="5" stroke-linecap="round"/>
+        <path d="M-17 14L0 0 17 14" fill="none" stroke="var(--v-red)" stroke-width="5" stroke-linecap="round"/>
+      </g>
+    </defs>
+
+    <rect width="1000" height="1100" fill="var(--v-paper)"/>
+    <rect width="1000" height="1100" fill="url(#decision-grid)"/>
+    <text class="kicker" x="54" y="55">ONE DECISION'S JOURNEY / 02</text>
+    <text class="micro" x="946" y="55" text-anchor="end">COASTAL FLOOD · T−09:40</text>
+
+    <!-- stage rail -->
+    <g transform="translate(58 88)">
+      <path d="M18 22H866" class="hairline"/>
+      <g class="stage-observe" transform="translate(18 22)"><circle class="stage-dot" r="9" fill="var(--v-rule)"/><text class="stage-word micro" x="0" y="32" text-anchor="middle" opacity=".55">OBSERVE</text></g>
+      <g class="stage-analyze" transform="translate(185 22)"><circle class="stage-dot" r="9" fill="var(--v-rule)"/><text class="stage-word micro" x="0" y="32" text-anchor="middle" opacity=".55">ANALYZE</text></g>
+      <g class="stage-decide" transform="translate(352 22)"><circle class="stage-dot" r="9" fill="var(--v-rule)"/><text class="stage-word micro" x="0" y="32" text-anchor="middle" opacity=".55">DECIDE</text></g>
+      <g class="stage-fund" transform="translate(519 22)"><circle class="stage-dot" r="9" fill="var(--v-rule)"/><text class="stage-word micro" x="0" y="32" text-anchor="middle" opacity=".55">FUND</text></g>
+      <g class="stage-communicate" transform="translate(686 22)"><circle class="stage-dot" r="9" fill="var(--v-rule)"/><text class="stage-word micro" x="0" y="32" text-anchor="middle" opacity=".55">COMMUNICATE</text></g>
+      <g class="stage-act" transform="translate(866 22)"><circle class="stage-dot" r="9" fill="var(--v-rule)"/><text class="stage-word micro" x="0" y="32" text-anchor="middle" opacity=".55">ACT</text></g>
+    </g>
+
+    <!-- decision card -->
+    <g transform="translate(80 178)" filter="url(#decision-shadow)">
+      <path d="M0 18L18 0H442L460 18V104H0Z" fill="var(--v-panel)" stroke="var(--v-ink)" stroke-width="2"/>
+      <text class="micro teal-text" x="28" y="32">NATIONAL DECISION 07</text>
+      <text class="title" x="28" y="77">Evacuate the coastal region?</text>
+      <circle class="pulse-dot" cx="423" cy="52" r="15" fill="var(--v-teal-soft)" stroke="var(--v-teal)"/>
+      <circle cx="423" cy="52" r="5" fill="var(--v-teal)"/>
+    </g>
+
+    <!-- subtle geographic context -->
+    <path d="M77 359C184 334 286 351 355 432C425 515 409 645 492 737C556 809 627 889 606 1032H77Z" fill="var(--v-sea)" opacity=".72"/>
+    <path d="M355 318L567 249L826 349L879 560L800 760L606 936L408 845L317 647L365 476Z" fill="var(--v-land)" stroke="var(--v-rule)" stroke-width="2"/>
+    <path d="M365 476L499 478L641 392L826 349M499 478L545 665L408 845M545 665L800 760" class="hairline" opacity=".6"/>
+    <path d="M355 318L567 249L826 349L879 560L800 760L606 936L408 845L317 647L365 476Z" fill="none" stroke="var(--v-ink)" stroke-width="4"/>
+    <text class="serif" x="592" y="560" text-anchor="middle" font-size="44" fill="var(--v-muted)" opacity=".13">Asterra</text>
+    <path d="M298 726C241 782 198 848 178 928" class="route conditional" opacity=".38"/>
+
+    <!-- full route and advancing progress -->
+    <path d="M160 415C224 332 299 327 365 374C432 422 435 508 500 564C569 624 665 578 747 642C828 706 826 805 721 849C620 891 479 861 350 925"
+          fill="none" stroke="var(--v-rule)" stroke-width="8" stroke-linecap="round" pathLength="100"/>
+    <path class="journey-progress" d="M160 415C224 332 299 327 365 374C432 422 435 508 500 564C569 624 665 578 747 642C828 706 826 805 721 849C620 891 479 861 350 925"
+          fill="none" stroke="var(--v-teal)" stroke-width="8" stroke-linecap="round" pathLength="100" marker-end="url(#journey-arrow)"/>
+
+    <!-- nodes -->
+    <g class="journey-node" transform="translate(160 415)"><use href="#journey-node"/><text class="micro" x="0" y="57" text-anchor="middle">OBSERVE</text></g>
+    <g class="journey-node" transform="translate(365 374)"><use href="#journey-node"/><text class="micro" x="0" y="57" text-anchor="middle">ANALYZE</text></g>
+    <g class="journey-node" transform="translate(500 564)"><use href="#journey-node"/><text class="micro" x="0" y="57" text-anchor="middle">DECIDE</text></g>
+    <g class="journey-node" transform="translate(747 642)"><use href="#journey-node"/><text class="micro" x="0" y="57" text-anchor="middle">FUND</text></g>
+    <g class="journey-node" transform="translate(721 849)"><use href="#journey-node"/><text class="micro" x="0" y="57" text-anchor="middle">COMMUNICATE</text></g>
+    <g class="journey-node" transform="translate(350 925)"><use href="#journey-node"/><text class="micro" x="0" y="57" text-anchor="middle">ACT</text></g>
+
+    <!-- active stage rings -->
+    <circle class="active-ring ring-observe pulse-dot" cx="160" cy="415" r="48" fill="none" stroke="var(--v-teal)" stroke-width="4"/>
+    <circle class="active-ring ring-analyze pulse-dot" cx="365" cy="374" r="48" fill="none" stroke="var(--v-teal)" stroke-width="4"/>
+    <circle class="active-ring ring-decide pulse-dot" cx="500" cy="564" r="48" fill="none" stroke="var(--v-teal)" stroke-width="4"/>
+    <circle class="active-ring ring-fund pulse-dot" cx="747" cy="642" r="48" fill="none" stroke="var(--v-teal)" stroke-width="4"/>
+    <circle class="active-ring ring-communicate pulse-dot" cx="721" cy="849" r="48" fill="none" stroke="var(--v-teal)" stroke-width="4"/>
+    <circle class="active-ring ring-act pulse-dot" cx="350" cy="925" r="48" fill="none" stroke="var(--v-teal)" stroke-width="4"/>
+
+    <!-- concise stage-specific evidence -->
+    <g class="decision-detail detail-observe">
+      <path d="M92 433L64 462" class="route"/><rect x="48" y="462" width="243" height="96" rx="12" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+      <text class="kicker teal-text" x="70" y="493">EVIDENCE ENTERS</text><text class="small" x="70" y="523">satellite · river sensors</text><text class="small" x="70" y="547">weather · emergency reports</text>
+    </g>
+    <g class="decision-detail detail-analyze">
+      <path d="M365 326V292" class="control-line conditional"/><rect x="531" y="286" width="378" height="86" rx="12" fill="var(--v-panel)" stroke="var(--v-red)"/>
+      <text class="kicker red-text" x="555" y="317">JURISDICTIONS CROSSED · 4</text><text class="small" x="555" y="348">cloud · forecast · geospatial · model</text>
+    </g>
+    <g class="decision-detail detail-decide">
+      <rect x="570" y="462" width="355" height="93" rx="12" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+      <text class="kicker teal-text" x="593" y="493">HUMANS RETAIN JUDGMENT</text><text class="small" x="593" y="524">evidence → model interpretation</text><text class="small" x="593" y="548">→ executive decision</text>
+    </g>
+    <g class="decision-detail detail-fund">
+      <rect x="608" y="707" width="324" height="87" rx="12" fill="var(--v-panel)" stroke="var(--v-red)"/>
+      <text class="kicker red-text" x="632" y="739">CLEARING LEAVES THE STATE</text><text class="small" x="632" y="770">fuel · shelters · contractors · cash</text>
+    </g>
+    <g class="decision-detail detail-communicate">
+      <rect x="76" y="751" width="351" height="88" rx="12" fill="var(--v-panel)" stroke="var(--v-red)"/>
+      <text class="kicker red-text" x="100" y="783">DISTRIBUTION IS CONDITIONAL</text><text class="small" x="100" y="814">telecom · maps · alerts · platforms</text>
+    </g>
+    <g class="decision-detail detail-act">
+      <rect x="441" y="942" width="471" height="84" rx="12" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+      <text class="kicker teal-text" x="465" y="973">THE DECISION BECOMES PHYSICAL</text><text class="small" x="465" y="1004">buses move · shelters open · hospitals redirect</text>
+    </g>
+
+    <!-- administrative pressure -->
+    <g class="pressure-layer">
+      <rect x="52" y="304" width="896" height="650" rx="18" fill="var(--v-paper)" opacity=".78"/>
+      <path d="M160 415C224 332 299 327 365 374C432 422 435 508 500 564C569 624 665 578 747 642C828 706 826 805 721 849C620 891 479 861 350 925"
+            class="broken-line" stroke-width="7" pathLength="100"/>
+      <use href="#journey-veto" x="280" y="353"/><use href="#journey-veto" x="619" y="604"/><use href="#journey-veto" x="789" y="749"/>
+      <g filter="url(#decision-shadow)">
+        <rect x="83" y="329" width="229" height="65" rx="10" fill="var(--v-panel)" stroke="var(--v-red)"/>
+        <text class="micro red-text" x="106" y="355">CAPACITY REALLOCATED</text><text class="small" x="106" y="380">analysis delayed</text>
+        <rect x="600" y="407" width="242" height="65" rx="10" fill="var(--v-panel)" stroke="var(--v-red)"/>
+        <text class="micro red-text" x="623" y="433">ENDPOINT RATE-LIMITED</text><text class="small" x="623" y="458">model degraded</text>
+        <rect x="651" y="900" width="239" height="65" rx="10" fill="var(--v-panel)" stroke="var(--v-red)"/>
+        <text class="micro red-text" x="674" y="926">TRANSACTION HELD</text><text class="small" x="674" y="951">mobilization blocked</text>
+      </g>
+      <rect x="264" y="1031" width="472" height="48" rx="24" fill="var(--v-red-soft)" stroke="var(--v-red)"/>
+      <text class="micro red-text" x="500" y="1060" text-anchor="middle">NO INVASION · NO SPECTACLE · JUST CONSTRAINT</text>
+    </g>
+
+    <!-- transformer kill switch -->
+    <g class="breaker-layer">
+      <rect x="530" y="618" width="420" height="330" rx="20" fill="var(--v-panel)" stroke="var(--v-red)" stroke-width="3" filter="url(#decision-shadow)"/>
+      <text class="kicker red-text" x="560" y="655">THE KILL SWITCH MOVED</text>
+      <text class="title" x="560" y="703">To the transformer.</text>
+      <path d="M579 820H691" class="control-line" stroke-width="7"/>
+      <path d="M691 820L760 765" class="control-line" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="691" cy="820" r="13" fill="var(--v-red)"/>
+      <circle cx="778" cy="751" r="13" fill="var(--v-red)"/>
+      <path d="M791 751H884" class="hairline" stroke-width="7" opacity=".28"/>
+      <rect x="816" y="712" width="82" height="78" rx="8" fill="var(--v-land-2)" stroke="var(--v-rule)"/>
+      <path d="M832 728h50M832 744h50M832 760h50M832 776h50" class="hairline"/>
+      <text class="micro" x="739" y="870" text-anchor="middle">GRID</text>
+      <text class="micro" x="858" y="815" text-anchor="middle">DOMESTIC DATA CENTER</text>
+      <text class="small" x="560" y="916">The border is intact. The system is dark.</text>
+    </g>
+
+    <!-- access versus control -->
+    <g class="control-layer">
+      <rect x="74" y="314" width="852" height="638" rx="22" fill="var(--v-paper)" opacity=".95" stroke="var(--v-rule)"/>
+      <text class="kicker" x="500" y="363" text-anchor="middle">THE DISTINCTION THAT MATTERS</text>
+      <g transform="translate(118 410)">
+        <rect width="332" height="402" rx="17" fill="var(--v-land-2)" stroke="var(--v-rule)"/>
+        <text class="title" x="32" y="61">Access</text>
+        <text class="small" x="32" y="95">works in normal conditions</text>
+        <path d="M32 137H298" class="hairline"/>
+        <circle cx="57" cy="191" r="10" fill="var(--v-teal)"/><text class="label" x="84" y="198">contract active</text>
+        <circle cx="57" cy="249" r="10" fill="var(--v-teal)"/><text class="label" x="84" y="256">capacity granted</text>
+        <circle cx="57" cy="307" r="10" fill="var(--v-red)"/><text class="label" x="84" y="314">revocable</text>
+      </g>
+      <g transform="translate(550 410)">
+        <rect width="332" height="402" rx="17" fill="var(--v-teal-soft)" stroke="var(--v-teal)" stroke-width="2"/>
+        <text class="title" x="32" y="61">Control</text>
+        <text class="small" x="32" y="95">survives contested conditions</text>
+        <path d="M32 137H298" class="route"/>
+        <path d="M46 189l10 10 20-24" class="route" stroke-width="5"/><text class="label" x="92" y="198">fallback operates</text>
+        <path d="M46 247l10 10 20-24" class="route" stroke-width="5"/><text class="label" x="92" y="256">data remains</text>
+        <path d="M46 305l10 10 20-24" class="route" stroke-width="5"/><text class="label" x="92" y="314">adaptation continues</text>
+      </g>
+      <text class="serif" x="500" y="889" text-anchor="middle" font-size="31">Sovereignty is the ability to complete the journey.</text>
+    </g>
+
+    <!-- transition into the data center -->
+    <g class="exit-layer">
+      <rect x="82" y="312" width="836" height="646" rx="22" fill="var(--v-paper)" opacity=".92"/>
+      <path d="M344 906V476L500 337L656 476V906" fill="var(--v-land-2)" stroke="var(--v-ink)" stroke-width="3"/>
+      <path d="M424 906V625A76 76 0 0 1 576 625V906" fill="var(--v-paper)" stroke="var(--v-teal)" stroke-width="4"/>
+      <path d="M500 337V507M344 476H656" class="hairline"/>
+      <circle class="pulse-dot" cx="500" cy="695" r="35" fill="var(--v-teal-soft)" stroke="var(--v-teal)" stroke-width="3"/>
+      <path d="M500 655V735M460 695H540" class="route" stroke-width="5"/>
+      <text class="kicker teal-text" x="500" y="266" text-anchor="middle">THE DECISION ENDS HERE</text>
+      <text class="title" x="500" y="307" text-anchor="middle">Walk through the doors.</text>
+      <text class="small" x="500" y="1002" text-anchor="middle">The machines are present. Who keeps them alive?</text>
+    </g>
+  </svg>
+</div>
+```

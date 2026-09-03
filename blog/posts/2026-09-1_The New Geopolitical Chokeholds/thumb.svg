@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="800" height="440" role="img" aria-label="A detailed coastal country fading into a transnational infrastructure network">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#151a1f" stroke-opacity=".065"/></pattern>
+    <pattern id="waves" width="52" height="28" patternUnits="userSpaceOnUse"><path d="M0 14C12 7 25 21 38 14S51 7 64 14" fill="none" stroke="#087e80" stroke-opacity=".1"/></pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="170%" height="180%"><feDropShadow dy="8" stdDeviation="10" flood-opacity=".15"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5 0 10Z" fill="#d94b36"/></marker>
+    <path id="asterra" d="M292 146C338 122 391 130 432 151C488 132 553 146 599 180L650 228C681 257 672 296 701 337L676 383C709 419 694 460 727 505L704 551C735 590 718 631 745 674L714 721C730 765 700 806 704 851C663 888 616 926 557 942C510 930 472 950 427 927C393 896 357 886 333 848C302 815 300 774 274 738C247 699 258 660 240 622C221 582 239 547 224 508C208 468 232 434 222 392C218 353 244 323 240 284C246 242 267 198 292 146Z"/>
+  </defs>
+  <rect width="800" height="440" fill="#faf9f6"/><rect width="800" height="440" fill="url(#grid)"/>
+  <rect width="205" height="440" fill="#dce8e6"/><rect width="205" height="440" fill="url(#waves)"/>
+  <text x="36" y="38" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#65707b">THE DISAPPEARING COUNTRY</text>
+  <g transform="translate(103 -6) scale(.43)">
+    <use href="#asterra" fill="#e8e4dc" stroke="#12171c" stroke-width="8" filter="url(#shadow)"/>
+    <path d="M633 271C574 305 508 341 446 370S342 391 252 405M684 522C621 543 558 572 500 604S372 639 243 632M665 756C593 772 525 805 472 846S405 891 374 912" fill="none" stroke="#087e80" stroke-opacity=".38" stroke-width="6"/>
+    <path d="M251 285C365 317 492 314 665 262M224 476C365 447 527 457 711 427M243 625C384 605 541 618 731 582M280 756C421 732 557 759 721 716" fill="none" stroke="#b9b5ac" stroke-width="4"/>
+  </g>
+  <g fill="none" stroke="#087e80" stroke-width="4">
+    <path d="M54 282C126 283 174 275 219 261L316 203L384 147" stroke-dasharray="8 8"/>
+    <path d="M316 203L355 302L293 354"/>
+    <path d="M316 203L258 160"/>
+  </g>
+  <g fill="#faf9f6" stroke="#087e80" stroke-width="3">
+    <circle cx="219" cy="261" r="10"/><circle cx="258" cy="160" r="10"/><circle cx="316" cy="203" r="10"/><circle cx="384" cy="147" r="10"/><circle cx="355" cy="302" r="10"/><circle cx="293" cy="354" r="10"/>
+  </g>
+  <g fill="#087e80"><circle cx="219" cy="261" r="3"/><circle cx="258" cy="160" r="3"/><circle cx="316" cy="203" r="3"/><circle cx="384" cy="147" r="3"/><circle cx="355" cy="302" r="3"/><circle cx="293" cy="354" r="3"/></g>
+  <g fill="none" stroke="#d94b36" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)">
+    <path d="M384 147C444 103 493 80 548 67"/><path d="M316 203C435 176 499 159 559 151"/><path d="M355 302C453 287 510 271 568 246"/><path d="M293 354C420 365 501 380 565 397"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#d94b36">
+    <g transform="translate(548 43)"><rect width="112" height="45" rx="10" fill="#fff" stroke="#d94b36"/><text x="14" y="19" font-size="10" font-weight="700" letter-spacing="1">CHIP SUPPLY</text><text x="14" y="35" font-size="11" fill="#65707b">allocated abroad</text></g>
+    <g transform="translate(559 127)"><rect width="116" height="45" rx="10" fill="#fff" stroke="#d94b36"/><text x="14" y="19" font-size="10" font-weight="700" letter-spacing="1">MODEL ACCESS</text><text x="14" y="35" font-size="11" fill="#65707b">external provider</text></g>
+    <g transform="translate(568 222)"><rect width="111" height="45" rx="10" fill="#fff" stroke="#d94b36"/><text x="14" y="19" font-size="10" font-weight="700" letter-spacing="1">CLOUD ADMIN</text><text x="14" y="35" font-size="11" fill="#65707b">root authority</text></g>
+    <g transform="translate(565 374)"><rect width="127" height="45" rx="10" fill="#fff" stroke="#d94b36"/><text x="14" y="19" font-size="10" font-weight="700" letter-spacing="1">CLEARING RAIL</text><text x="14" y="35" font-size="11" fill="#65707b">foreign settlement</text></g>
+  </g>
+  <rect x="440" y="285" width="312" height="72" rx="12" fill="#faf9f6" stroke="#c7c4bc"/>
+  <text x="596" y="315" text-anchor="middle" font-family="Georgia, serif" font-size="23" fill="#12171c">The border remains.</text>
+  <text x="596" y="342" text-anchor="middle" font-family="Georgia, serif" font-size="23" fill="#d94b36">Command has moved.</text>
+</svg>

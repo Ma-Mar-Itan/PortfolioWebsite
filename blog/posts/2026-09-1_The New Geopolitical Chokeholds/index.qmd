@@ -1,0 +1,297 @@
+---
+title: "The New Geopolitical Chokeholds"
+subtitle: "Sovereignty is no longer measured by borders or armies. It is measured by who holds the kill switch to your national decision-making."
+description: "Power has moved up the stack — from straits and pipelines to lithography, compute, cloud and payment rails, and to the small number of people who can operate any of it."
+date: 2026-09-01
+categories: [Geopolitics, AI, Infrastructure]
+image: thumb.svg
+image-alt: "A political map fading into an infrastructure and control network"
+resources:
+  - scrolly.js
+toc: false
+format:
+  closeread-html:
+    css: scrolly.css
+    include-after-body:
+      text: |
+        <script src="scrolly.js?v=3"></script>
+    cr-style:
+      section-background-color: "var(--bs-body-bg)"
+      narrative-background-color-sidebar: "transparent"
+      narrative-text-color-sidebar: "var(--bs-body-color)"
+      narrative-background-color-overlay: "rgba(18, 23, 28, 0.82)"
+      narrative-text-color-overlay: "#ffffff"
+      narrative-font-family: "Inter, -apple-system, 'Segoe UI', sans-serif"
+      narrative-font-size: "1.02rem"
+      narrative-sidebar-width: "minmax(320px, 1fr)"
+      narrative-border-radius: "10px"
+---
+
+Sovereignty is no longer measured by borders or armies. It is measured by who holds
+the kill switch to your national decision-making. It is measured by whether a state
+can continue to think, decide, transact, and act when the systems beneath it are
+placed under pressure.
+
+Modern power does not always announce itself as occupation. It appears as dependency.
+
+It appears as a cloud contract. A payment rail. A firmware update. A model API. A chip
+allocation queue. A data-center siting decision. A visa pathway. An export license.
+
+The decisive question is no longer simply whether a state possesses territory. The
+decisive question is whether the systems on which its decisions depend can be denied,
+throttled, surveilled, priced, or rewritten by someone else.
+
+> This is the new geography of power. The map has moved upward.
+
+:::: {.cr-section layout="sidebar-left"}
+
+::: {focus-on="cr-country" data-scene="formal" data-scene-title="Formal sovereignty"}
+<span class="scene-cue">Map 01 · Formal sovereignty</span>
+
+For centuries, the political map has made sovereignty look self-contained: a border,
+a capital, a flag, territory under one state's authority.
+:::
+
+Traditional geopolitics was built around visible choke points: straits, canals, ports,
+pipelines, mountain passes, maritime routes, industrial basins. These still matter.
+[@cr-country]{data-scene="physical" data-scene-title="Traditional choke points"}
+
+But they are no longer sufficient to describe where power lives. Beneath the political
+map is an operational one: cable landings, power corridors, data centers, government
+data, payment links, and technical institutions.
+[@cr-country]{data-scene="operational" data-scene-title="The operational map"}
+
+Pull back and the system no longer fits inside the border. Cloud control, models,
+semiconductor fabrication, lithography, payment clearing, and talent clusters sit
+across several jurisdictions.
+[@cr-country]{data-scene="external" data-scene-title="Control crosses borders"}
+
+Physical location is not operational control. A data center may stand on domestic soil
+while the systems that provision, update, finance, or repair it terminate elsewhere.
+[@cr-country]{data-scene="ownership" data-scene-title="Located here, controlled elsewhere"}
+
+The border is still intact. But once the administrative map fades, the infrastructure
+network becomes the real map of power.
+[@cr-country]{data-scene="faded" data-scene-title="The real map of power"}
+
+Geography has not disappeared. It has been recompiled. Now follow a single decision
+through that map.
+[@cr-country]{data-scene="handoff" data-scene-title="Follow one decision"}
+
+::: {#cr-country}
+<!-- country-visual-revision: 2 -->
+{{< include _country.qmd >}}
+:::
+
+::::
+
+:::: {.cr-section layout="sidebar-left"}
+
+::: {focus-on="cr-decision" data-scene="observe" data-scene-title="Observe"}
+## From Territory to Infrastructure
+
+A severe flood is approaching the country's largest coastal city. Before the state can
+order an evacuation, evidence must arrive: satellite imagery, river sensors, weather
+models, mobile-network signals, and emergency reports.
+:::
+
+The data does not travel directly from the river to the cabinet room. It leaves the
+country for cloud infrastructure, forecasting systems, geospatial services, and a model
+endpoint before returning as analysis.
+[@cr-decision]{data-scene="analyze" data-scene-title="Analyze · four jurisdictions"}
+
+The model can propose evacuation zones. It cannot carry sovereign responsibility. Raw
+evidence becomes model interpretation; human officials must still convert that
+interpretation into executive judgment.
+[@cr-decision]{data-scene="decide" data-scene-title="Decide · humans retain judgment"}
+
+A decision without resources is only language. Emergency fuel, shelter capacity,
+contractors, and cash support must move through domestic banks and international
+payment-clearing rails.
+[@cr-decision]{data-scene="fund" data-scene-title="Fund · clearing leaves the state"}
+
+The order must then reach the public through government cloud systems,
+telecommunications networks, mapping services, notification infrastructure, and public
+platforms. The state owns the decision. It may not own its distribution.
+[@cr-decision]{data-scene="communicate" data-scene-title="Communicate · distribution is conditional"}
+
+Only after buses move, shelters open, hospitals redirect patients, roads close, and
+contractors receive funds does the decision become physical.
+[@cr-decision]{data-scene="act" data-scene-title="Act · the decision becomes physical"}
+
+::: {focus-on="cr-decision" data-scene="pressure" data-scene-title="Administrative pressure"}
+## Infrastructure Is the New Veto
+
+The central error in weak discussions of AI sovereignty is treating infrastructure as a
+support function. It is not.
+
+Infrastructure is command authority in disguised form.
+:::
+
+Whoever controls compute can decide who trains, who scales, who waits, and who pays.
+Whoever controls cloud infrastructure can shape where sensitive workflows reside and
+under which jurisdictional exposure.
+
+Whoever controls data pipelines can determine what is visible and what remains invisible.
+Whoever controls payment rails can impose friction without firing a shot. Whoever
+controls model distribution can alter the decision environment of institutions that
+believe they are merely buying software.
+
+The veto does not need to be dramatic. It needs to be administrative.
+
+A capacity allocation changes. A compliance requirement appears. A vendor updates terms.
+A model endpoint is withdrawn. A bank tightens risk rules. A cloud provider delays
+provisioning. A chip shipment is slowed. A software dependency becomes unavailable.
+
+No invasion. No declaration. No spectacle. Just constraint.
+[@cr-decision]{data-scene="pressure" data-scene-title="No spectacle, just constraint"}
+
+A state that controls its chips but relies on a foreign-controlled energy grid for its
+data centers has merely moved the kill switch to the transformer.
+[@cr-decision]{data-scene="breaker" data-scene-title="The kill switch moved to the transformer" pan-to="-34%,-27%" scale-by="1.75"}
+
+This is why "access" is an inadequate strategic concept. Access is conditional by design.
+It can be granted, priced, monitored, modified, or revoked.
+
+Control is different. Control means the ability to continue operating when access is
+contested.
+[@cr-decision]{data-scene="control" data-scene-title="Access versus control"}
+
+A sovereign AI doctrine that does not begin with power, chips, networks, data centers,
+and talent is not doctrine. It is branding. The journey ends at a domestic data center.
+Walk through its doors.
+[@cr-decision]{data-scene="exit" data-scene-title="Walk through the doors"}
+
+::: {#cr-decision}
+{{< include _decision.qmd >}}
+:::
+
+::::
+
+## The Illusion of Rented Sovereignty
+
+There is a comfortable formulation often used in policy circles: sovereignty is partial,
+interdependent, and negotiated. This is true in normal conditions.
+
+It is useless in crisis.
+
+In a crisis, dependency hardens. The supplier does not need to become hostile; it only
+needs to prioritize itself. The foreign platform does not need to attack; it only needs
+to comply with its own state's law. The cloud provider does not need to censor; it only
+needs to enforce acceptable-use boundaries written elsewhere. The chip ecosystem does not
+need to embargo; it only needs to reallocate scarce capacity toward larger or more
+strategically favoured customers.
+
+A state running its intelligence, defence, financial supervision, industrial planning,
+and crisis-response systems on foreign-controlled infrastructure has not achieved digital
+modernization. It has transferred its nervous system into rented space.
+
+This does not mean every layer must be domestic. For most states, full autarky is
+impossible. But strategic autonomy requires identifying which dependencies are survivable
+and which are fatal.
+
+A country can import tools and remain sovereign. It cannot outsource the decisive layer
+and pretend it still commands the outcome.
+
+The key distinction is between ordinary dependence and veto dependence.
+
+Ordinary dependence
+
+:   Manageable. It involves foreign components, commercial suppliers, and international
+    standards.
+
+Veto dependence
+
+:   Different in kind. It exists when another actor can disable, delay, degrade, or
+    observe a function essential to national decision-making.
+
+A serious sovereign intelligence strategy must be built around eliminating veto
+dependence, not eliminating all dependence.
+
+:::: {.cr-section layout="sidebar-left"}
+
+::: {focus-on="cr-cathedral" data-scene="procured" data-scene-title="What capital can buy"}
+## The Human Chokehold
+
+The missing variable in most sovereign AI strategies is talent.
+
+States talk about chips because chips can be purchased. They talk about data centers
+because data centers can be photographed. They talk about national AI strategies because
+strategies can be published. The infrastructure arrives: accelerators, cooling,
+networks, model weights, and backup power.
+:::
+
+But the decisive asset is harder to procure: the small population of researchers,
+engineers, systems architects, security specialists, and operator-analysts capable of
+building and maintaining these systems under real constraints.
+[@cr-cathedral]{data-scene="control" data-scene-title="The human control plane"}
+
+Five rare roles may carry the operational knowledge of thousands of machines. A missing
+successor, unique production access, tacit recovery knowledge, or dependence on foreign
+support can turn an impressive facility into an organizational single point of failure.
+[@cr-cathedral]{data-scene="concentration" data-scene-title="Concentration risk"}
+
+The global AI labour market is already a strategic battlefield. The top researchers,
+engineers, and infrastructure specialists are not evenly distributed. They cluster around
+capital, compute, prestige, frontier problems, compensation, and professional community.
+
+This is not a labour-market inconvenience. It is a national-security constraint.
+[@cr-cathedral]{data-scene="attractors" data-scene-title="The external gravity field"}
+
+The infrastructure may sit in Abu Dhabi, Paris, London, Seoul, or Riyadh. But if the
+people who understand the stack are recruited, retained, promoted, and culturally
+absorbed elsewhere, the sovereign project becomes a shell.
+[@cr-cathedral]{data-scene="exodus" data-scene-title="Capability leaves"}
+
+A sovereign compute cluster without sovereign technical talent is an empty cathedral.
+The racks keep blinking for a time, while versions drift, alerts accumulate, access
+freezes, and recovery knowledge disappears.
+[@cr-cathedral]{data-scene="hollow" data-scene-title="Ownership remained, capability left"}
+
+The gap is filled with remote support contracts. Foreign specialists can provision,
+update, diagnose, and recover the system. The building is domestic; command remains
+rented.
+[@cr-cathedral]{data-scene="vendor" data-scene-title="Expertise access is revocable"}
+
+Durable capability cannot be solved by filling several vacancies. It requires institutions
+that continuously produce, retain, connect, and replace technical talent.
+[@cr-cathedral]{data-scene="rebuild" data-scene-title="Institutions reproduce capability"}
+
+::: {#cr-cathedral}
+{{< include _cathedral.qmd >}}
+:::
+
+::::
+
+Human capital policy is therefore national-security policy. A serious sovereign
+intelligence doctrine requires:
+
+- domestic elite technical education;
+- security-cleared AI engineering cadres;
+- compensation structures that can retain rare talent;
+- prestige pathways outside academia and generic civil service;
+- technical reserve corps for crisis mobilization;
+- immigration channels for aligned foreign talent;
+- institutions where engineers, statisticians, economists, intelligence analysts, and
+  operators work together rather than passing reports across bureaucratic walls.
+
+The state that cannot retain its cognitive elite will not retain technological sovereignty.
+
+## The Real Question
+
+The question is not whether a state uses foreign technology. Every state does. The
+question is which dependencies become kill switches.
+
+- Can the state continue to operate if foreign compute access is restricted?
+- Can it preserve critical data under legal and commercial pressure?
+- Can it audit the systems shaping public-sector decisions?
+- Can it maintain payment, logistics, and crisis-response functions under platform denial?
+- Can it retain the human capital required to adapt under stress?
+
+If the answer is no, sovereignty is formal rather than operational.
+
+The battlefield has moved into the stack. The kill switch is infrastructure.
+
+And the states that fail to understand this will not lose sovereignty all at once. They
+will lose it administratively, contractually, technically, and silently — one dependency
+at a time.

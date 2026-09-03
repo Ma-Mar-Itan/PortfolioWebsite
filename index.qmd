@@ -3,6 +3,11 @@ pagetitle: "Malek M. Itani"
 description-meta: "Research, writing, and prototypes"
 page-layout: full
 toc: false
+format:
+  html:
+    css:
+      - styles.css
+      - home.css
 listing:
   - id: featured
     contents:
@@ -40,6 +45,8 @@ listing:
     image-align: right
 ---
 
+::::::: {.home-page}
+
 :::::: {.hero}
 
 ::::: {.hero-text}
@@ -49,10 +56,10 @@ listing:
 ```
 
 :::: {.hero-tagline}
-Statiscian and Machine learning Researcher finding my niche in the world.
+Statistician and machine learning researcher finding my niche in the world.
 ::::
 
-:::: {.hero-links}
+:::: {.hero-links role="navigation" aria-label="Explore the portfolio"}
 [Read the blog](blog/index.qmd)
 [See the research](research/index.qmd)
 [Browse prototypes](prototypes/index.qmd)
@@ -68,15 +75,19 @@ Statiscian and Machine learning Researcher finding my niche in the world.
 ::::::
 
 ::: {.section-label}
-Selected work [All research →](research/index.qmd)
+<h2>Selected work</h2>
+[All research →](research/index.qmd)
 :::
 
 ::: {#featured}
 :::
 
 ::: {.section-label}
-Recent writing [All posts →](blog/index.qmd)
+<h2>Recent writing</h2>
+[All posts →](blog/index.qmd)
 :::
 
 ::: {#recent-writing}
 :::
+
+:::::::

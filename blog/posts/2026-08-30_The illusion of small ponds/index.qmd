@@ -7,16 +7,26 @@ image: ../../../assets/img/Small fish.gif
 image-alt: "Abstract layered shapes"
 ---
 
-Every few weeks someone hands me a model and asks whether it's any good. The
-honest answer is usually "I can't tell yet," so I've written down the order I
-work through it.
+For a long time, career advice relied on a comforting metaphor: be a big fish in a small pond. Find a narrow niche. Enter an overlooked market. Become the person everyone knows. Build an advantage before the larger players arrive.
 
-## 1. Find the target before the features
+It was never entirely wrong. But it has become dangerously incomplete. Today, the pond is rarely as small as it looks.
 
-The first question isn't what went into the model, it's what came out.
-Ask what the label actually measures, when it was recorded, and who decided it.
-A surprising share of models fail here: the target is a proxy for the thing
-anyone cares about, and nobody wrote down the gap.
+A freelance designer in Beirut may be competing with specialists in Warsaw, Bangalore, Lagos, Buenos Aires, and San Francisco. A local consultant is no longer compared only with other consultants in the city; clients can now access global expertise, automated research, AI-generated drafts, and highly polished work at a fraction of yesterday’s cost. A student who once stood out for writing a competent report now competes with peers using AI tools to research, code, analyze data, edit prose, translate sources, and produce professional-quality presentations in hours.
+
+The small pond has opened into an ocean. And the fish you thought were big may simply have been competing in a temporarily enclosed pool.
+
+## 1. The old advantage: limited comparison
+
+Before global digital markets, most competition was constrained by geography, institutions, and access.
+
+A company hired from the people it could find. A university compared applicants within a relatively limited pool. A client relied on local networks and referrals. Information was scarce, coordination was costly, and switching suppliers was difficult.
+
+Under those conditions, being competent could be enough to create distinction.
+
+You did not need to be the best analyst, designer, writer, programmer, teacher, or entrepreneur in the world. Often, you only needed to be better than the alternatives visible to the people making a decision. That is what created many “small ponds.” Not necessarily a lack of talent, but a lack of connection between talent and opportunity.
+The internet weakened those barriers. Remote work weakened them further. Global platforms made skills searchable and comparable. AI is now removing another barrier: the cost of producing credible work.
+
+The result is not merely more competition. It is more competent competition.
 
 ## 2. Draw the timeline
 

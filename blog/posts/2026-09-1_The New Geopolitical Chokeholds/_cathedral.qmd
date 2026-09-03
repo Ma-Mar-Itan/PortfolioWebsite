@@ -1,0 +1,176 @@
+```{=html}
+<div class="geo-scrolly scene-frame cathedral-scene" data-default-state="procured" data-default-title="What can be purchased">
+  <div class="mobile-state" aria-hidden="true">What can be purchased</div>
+  <svg viewBox="0 0 1000 1100" width="1000" height="1100" role="img"
+       aria-labelledby="cathedral-title cathedral-desc">
+    <title id="cathedral-title">The empty cathedral</title>
+    <desc id="cathedral-desc">A monumental data center resembles a cathedral. Five rare specialists form its human control plane, then leave for external centers of capital, compute and prestige. Machines remain lit but degrade. Remote vendor control enters through a revocable gate before domestic institutions begin rebuilding capability.</desc>
+    <defs>
+      <pattern id="cathedral-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+        <path d="M28 0H0V28" fill="none" stroke="var(--v-grid)"/>
+      </pattern>
+      <linearGradient id="cathedral-aisle" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="var(--v-land-2)"/><stop offset="1" stop-color="var(--v-paper)"/>
+      </linearGradient>
+      <filter id="cathedral-shadow" x="-30%" y="-30%" width="160%" height="170%">
+        <feDropShadow dy="12" stdDeviation="13" flood-color="#000" flood-opacity=".16"/>
+      </filter>
+      <filter id="human-glow" x="-100%" y="-100%" width="300%" height="300%">
+        <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <marker id="cathedral-red-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5 0 10Z" fill="var(--v-red)"/>
+      </marker>
+      <marker id="cathedral-teal-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5 0 10Z" fill="var(--v-teal)"/>
+      </marker>
+      <g id="cathedral-rack">
+        <rect width="116" height="314" rx="8" fill="var(--v-panel)" stroke="var(--v-rule)" stroke-width="2"/>
+        <path d="M15 28H101M15 68H101M15 108H101M15 148H101M15 188H101M15 228H101M15 268H101" class="hairline"/>
+        <g class="server-light" fill="var(--v-teal)">
+          <circle cx="28" cy="45" r="4"/><circle cx="28" cy="85" r="4"/><circle cx="28" cy="125" r="4"/>
+          <circle cx="28" cy="165" r="4"/><circle cx="28" cy="205" r="4"/><circle cx="28" cy="245" r="4"/>
+        </g>
+      </g>
+      <g id="cathedral-operator">
+        <circle cy="-12" r="11" fill="var(--v-red)"/>
+        <path d="M-18 22V13A18 18 0 0118 13V22Z" fill="var(--v-red)"/>
+        <circle r="28" fill="none" stroke="var(--v-red)" stroke-width="2" opacity=".5"/>
+      </g>
+      <g id="institution-node">
+        <circle r="31" fill="var(--v-panel)" stroke="var(--v-teal)" stroke-width="2"/>
+        <path d="M-12 0H12M0-12V12" class="route"/>
+      </g>
+    </defs>
+
+    <rect width="1000" height="1100" fill="var(--v-paper)"/>
+    <rect width="1000" height="1100" fill="url(#cathedral-grid)"/>
+    <text class="kicker" x="54" y="57">THE EMPTY CATHEDRAL / 03</text>
+    <text class="micro" x="946" y="57" text-anchor="end">INFRASTRUCTURE DOES NOT OPERATE ITSELF</text>
+
+    <!-- architecture: ribs, columns, central aisle -->
+    <path d="M72 986V362L500 126L928 362V986Z" fill="var(--v-land-2)" stroke="var(--v-ink)" stroke-width="3" filter="url(#cathedral-shadow)"/>
+    <path d="M500 126V341M72 362H928" class="hairline"/>
+    <path d="M150 986V423L500 228L850 423V986" fill="none" stroke="var(--v-rule)" stroke-width="3"/>
+    <path d="M235 986V484L500 337L765 484V986" fill="none" stroke="var(--v-rule)" stroke-width="3"/>
+    <path d="M500 341L359 986H641Z" fill="url(#cathedral-aisle)" stroke="var(--v-rule)" stroke-width="2"/>
+    <path d="M500 341L500 986M500 341L72 986M500 341L928 986" class="hairline" opacity=".55"/>
+    <circle cx="500" cy="277" r="61" fill="var(--v-teal-soft)" stroke="var(--v-teal)" stroke-width="3"/>
+    <path d="M465 277H535M500 242V312" class="route" stroke-width="5"/>
+    <text class="micro teal-text" x="500" y="363" text-anchor="middle">SOVEREIGN COMPUTE</text>
+
+    <!-- server columns -->
+    <g class="server-field">
+      <use href="#cathedral-rack" x="103" y="561"/><use href="#cathedral-rack" x="235" y="606" transform="scale(.82) translate(51 139)"/>
+      <use href="#cathedral-rack" x="781" y="561"/><use href="#cathedral-rack" x="670" y="606" transform="scale(.82) translate(140 139)"/>
+      <rect x="421" y="440" width="158" height="188" rx="10" fill="var(--v-panel)" stroke="var(--v-teal)" stroke-width="3"/>
+      <path d="M441 472H559M441 509H559M441 546H559M441 583H559" class="hairline"/>
+      <circle class="server-light" cx="457" cy="491" r="5" fill="var(--v-teal)"/>
+      <circle class="server-light" cx="457" cy="528" r="5" fill="var(--v-teal)"/>
+      <circle class="server-light" cx="457" cy="565" r="5" fill="var(--v-teal)"/>
+      <text class="micro teal-text" x="500" y="658" text-anchor="middle">CONTROL ROOM</text>
+    </g>
+
+    <!-- procurement register -->
+    <g class="procurement-layer">
+      <rect x="101" y="906" width="798" height="103" rx="14" fill="var(--v-panel)" stroke="var(--v-rule)"/>
+      <text class="kicker" x="500" y="941" text-anchor="middle">WHAT CAPITAL CAN BUY</text>
+      <text class="small" x="500" y="976" text-anchor="middle">accelerators · cooling · networks · model weights · backup power</text>
+      <path d="M212 1029H788" class="hairline"/>
+      <text class="serif" x="500" y="1068" text-anchor="middle" font-size="28">The infrastructure has arrived.</text>
+    </g>
+
+    <!-- five-person control plane -->
+    <g class="human-layer">
+      <path d="M418 495L294 470M449 569L270 677M548 495L715 468M551 569L756 682M500 659V821" class="route conditional" opacity=".65"/>
+      <g class="operator op-researcher"><use href="#cathedral-operator"/><text class="micro red-text" x="-47" y="-48" text-anchor="middle">RESEARCHER</text></g>
+      <g class="operator op-architect"><use href="#cathedral-operator"/><text class="micro red-text" x="50" y="-48" text-anchor="middle">ARCHITECT</text></g>
+      <g class="operator op-security"><use href="#cathedral-operator"/><text class="micro red-text" x="-67" y="54" text-anchor="middle">SECURITY</text></g>
+      <g class="operator op-engineer"><use href="#cathedral-operator"/><text class="micro red-text" x="68" y="54" text-anchor="middle">ENGINEER</text></g>
+      <g class="operator op-analyst"><use href="#cathedral-operator"/><text class="micro red-text" x="0" y="58" text-anchor="middle">OPERATOR–ANALYST</text></g>
+      <rect x="316" y="747" width="368" height="76" rx="38" fill="var(--v-red-soft)" stroke="var(--v-red)"/>
+      <text class="kicker red-text" x="500" y="777" text-anchor="middle">THE HUMAN CONTROL PLANE</text>
+      <text class="small" x="500" y="806" text-anchor="middle">five roles · thousands of machines</text>
+    </g>
+
+    <!-- concentration risks -->
+    <g class="risk-layer">
+      <g transform="translate(86 408)"><rect width="216" height="66" rx="10" fill="var(--v-panel)" stroke="var(--v-red)"/><text class="micro red-text" x="20" y="27">NO SUCCESSOR</text><text class="small" x="20" y="51">model adaptation</text></g>
+      <g transform="translate(698 408)"><rect width="216" height="66" rx="10" fill="var(--v-panel)" stroke="var(--v-red)"/><text class="micro red-text" x="20" y="27">UNIQUE ACCESS</text><text class="small" x="20" y="51">production systems</text></g>
+      <g transform="translate(80 697)"><rect width="216" height="66" rx="10" fill="var(--v-panel)" stroke="var(--v-red)"/><text class="micro red-text" x="20" y="27">TACIT KNOWLEDGE</text><text class="small" x="20" y="51">recovery procedures</text></g>
+      <g transform="translate(704 697)"><rect width="216" height="66" rx="10" fill="var(--v-panel)" stroke="var(--v-red)"/><text class="micro red-text" x="20" y="27">FOREIGN SUPPORT</text><text class="small" x="20" y="51">required to repair</text></g>
+    </g>
+
+    <!-- external talent gravity -->
+    <g class="attractor-layer">
+      <path d="M645 312C755 236 830 183 927 135M687 453C787 412 853 384 942 351M691 583C793 603 852 621 941 677M650 725C755 804 824 854 913 937" class="control-line conditional flow-line" marker-end="url(#cathedral-red-arrow)"/>
+      <g transform="translate(922 129)"><circle r="49" fill="var(--v-panel)" stroke="var(--v-red)" stroke-width="2"/><text class="micro red-text" text-anchor="middle">CAPITAL</text></g>
+      <g transform="translate(920 347)"><circle r="49" fill="var(--v-panel)" stroke="var(--v-red)" stroke-width="2"/><text class="micro red-text" text-anchor="middle">COMPUTE</text></g>
+      <g transform="translate(920 680)"><circle r="49" fill="var(--v-panel)" stroke="var(--v-red)" stroke-width="2"/><text class="micro red-text" text-anchor="middle">PRESTIGE</text></g>
+      <g transform="translate(912 946)"><circle r="49" fill="var(--v-panel)" stroke="var(--v-red)" stroke-width="2"/><text class="micro red-text" text-anchor="middle">FRONTIER</text></g>
+      <text class="micro red-text" x="780" y="519" text-anchor="middle">COMPENSATION · COMMUNITY</text>
+    </g>
+
+    <!-- degradation after the people leave -->
+    <g class="hollow-layer">
+      <rect x="80" y="348" width="840" height="541" rx="18" fill="var(--v-paper)" opacity=".72"/>
+      <g filter="url(#cathedral-shadow)">
+        <rect x="126" y="403" width="278" height="77" rx="11" fill="var(--v-panel)" stroke="var(--v-amber)"/>
+        <text class="micro amber-text" x="151" y="434">VERSION DRIFT</text><text class="small" x="151" y="461">model update overdue</text>
+        <rect x="596" y="403" width="278" height="77" rx="11" fill="var(--v-panel)" stroke="var(--v-amber)"/>
+        <text class="micro amber-text" x="621" y="434">ACCESS FROZEN</text><text class="small" x="621" y="461">only cleared operator left</text>
+        <rect x="126" y="748" width="278" height="77" rx="11" fill="var(--v-panel)" stroke="var(--v-amber)"/>
+        <text class="micro amber-text" x="151" y="779">ALERTS UNRESOLVED</text><text class="small" x="151" y="806">security queue growing</text>
+        <rect x="596" y="748" width="278" height="77" rx="11" fill="var(--v-panel)" stroke="var(--v-amber)"/>
+        <text class="micro amber-text" x="621" y="779">RECOVERY UNKNOWN</text><text class="small" x="621" y="806">tacit knowledge departed</text>
+      </g>
+      <text class="title" x="500" y="595" text-anchor="middle">Ownership remained.</text>
+      <text class="title red-text" x="500" y="641" text-anchor="middle">Capability left.</text>
+      <text class="small" x="500" y="681" text-anchor="middle">The lights stay on—temporarily.</text>
+    </g>
+
+    <!-- remote vendor control -->
+    <g class="vendor-layer">
+      <rect x="72" y="364" width="856" height="500" rx="20" fill="var(--v-paper)" opacity=".9"/>
+      <path d="M942 594C804 594 731 594 625 594" class="control-line conditional flow-line" marker-end="url(#cathedral-red-arrow)"/>
+      <g transform="translate(882 476)">
+        <rect width="72" height="236" rx="12" fill="var(--v-panel)" stroke="var(--v-red)" stroke-width="2"/>
+        <path d="M19 47H53M19 78H53M19 109H53M19 140H53" class="control-line" opacity=".65"/>
+        <text class="micro red-text" x="36" y="200" text-anchor="middle" transform="rotate(-90 36 200)">REMOTE VENDOR</text>
+      </g>
+      <g transform="translate(690 594)">
+        <rect x="-34" y="-34" width="68" height="68" rx="10" fill="var(--v-panel)" stroke="var(--v-red)" stroke-width="3"/>
+        <path d="M-16-16L16 16M16-16L-16 16" class="control-line" stroke-width="5"/>
+      </g>
+      <rect x="178" y="467" width="444" height="181" rx="17" fill="var(--v-panel)" stroke="var(--v-red)"/>
+      <text class="kicker red-text" x="212" y="507">EXPERTISE ACCESS: REVOCABLE</text>
+      <text class="title" x="212" y="558">The building is domestic.</text>
+      <text class="title" x="212" y="601">Command is rented.</text>
+    </g>
+
+    <!-- institutional recovery -->
+    <g class="rebuild-layer">
+      <path d="M500 615C430 758 309 849 169 946M500 615C462 786 447 886 420 1005M500 615C551 781 591 890 619 1005M500 615C639 758 748 848 862 946" class="route conditional flow-line" marker-end="url(#cathedral-teal-arrow)"/>
+      <g fill="var(--v-teal)">
+        <circle class="pulse-dot" cx="236" cy="890" r="7"/><circle class="pulse-dot" cx="351" cy="838" r="7"/>
+        <circle class="pulse-dot" cx="440" cy="903" r="7"/><circle class="pulse-dot" cx="472" cy="769" r="7"/>
+        <circle class="pulse-dot" cx="580" cy="890" r="7"/><circle class="pulse-dot" cx="545" cy="757" r="7"/>
+        <circle class="pulse-dot" cx="769" cy="875" r="7"/><circle class="pulse-dot" cx="658" cy="804" r="7"/>
+      </g>
+      <g transform="translate(156 947)"><use href="#institution-node"/><text class="micro teal-text" x="0" y="55" text-anchor="middle">EDUCATION</text></g>
+      <g transform="translate(409 1010)"><use href="#institution-node"/><text class="micro teal-text" x="0" y="55" text-anchor="middle">PUBLIC LAB</text></g>
+      <g transform="translate(626 1010)"><use href="#institution-node"/><text class="micro teal-text" x="0" y="55" text-anchor="middle">RESERVE CORPS</text></g>
+      <g transform="translate(869 947)"><use href="#institution-node"/><text class="micro teal-text" x="0" y="55" text-anchor="middle">TALENT PATHS</text></g>
+      <circle cx="500" cy="615" r="88" fill="var(--v-teal-soft)" stroke="var(--v-teal)" stroke-width="3"/>
+      <text class="kicker teal-text" x="500" y="602" text-anchor="middle">CAPABILITY</text>
+      <text class="small" x="500" y="634" text-anchor="middle">reproduces itself</text>
+    </g>
+
+    <g class="cathedral-final">
+      <rect x="114" y="130" width="772" height="90" rx="14" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+      <text class="serif" x="500" y="168" text-anchor="middle" font-size="27">Compute can be purchased.</text>
+      <text class="serif teal-text" x="500" y="201" text-anchor="middle" font-size="27">Technical sovereignty must be cultivated.</text>
+    </g>
+  </svg>
+</div>
+```

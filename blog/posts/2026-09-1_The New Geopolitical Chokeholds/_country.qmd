@@ -1,0 +1,265 @@
+```{=html}
+<div class="geo-scrolly scene-frame country-scene" data-default-state="formal" data-default-title="Formal sovereignty">
+  <div class="mobile-state" aria-hidden="true">Formal sovereignty</div>
+  <svg viewBox="0 0 1000 1100" width="1000" height="1100" role="img"
+       aria-labelledby="country-title country-desc">
+    <title id="country-title">The disappearing country</title>
+    <desc id="country-desc">A detailed fictional coastal country named Asterra changes from a conventional geographic map into maps of physical choke points, infrastructure, and external control. Each stage removes the previous annotations so labels remain readable.</desc>
+    <defs>
+      <pattern id="country-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+        <path d="M32 0H0V32" fill="none" stroke="var(--v-grid)"/>
+      </pattern>
+      <pattern id="country-sea-lines" width="80" height="46" patternUnits="userSpaceOnUse">
+        <path d="M0 23C18 13 38 33 56 23S78 13 96 23" fill="none" stroke="var(--v-teal)" stroke-opacity=".08" stroke-width="2"/>
+      </pattern>
+      <filter id="country-shadow" x="-20%" y="-20%" width="150%" height="160%">
+        <feDropShadow dy="13" stdDeviation="16" flood-color="#000" flood-opacity=".15"/>
+      </filter>
+      <filter id="country-label-shadow" x="-30%" y="-40%" width="160%" height="180%">
+        <feDropShadow dy="3" stdDeviation="4" flood-color="#000" flood-opacity=".12"/>
+      </filter>
+      <path id="asterra-shape" d="M292 146C338 122 391 130 432 151C488 132 553 146 599 180L650 228C681 257 672 296 701 337L676 383C709 419 694 460 727 505L704 551C735 590 718 631 745 674L714 721C730 765 700 806 704 851C663 888 616 926 557 942C510 930 472 950 427 927C393 896 357 886 333 848C302 815 300 774 274 738C247 699 258 660 240 622C221 582 239 547 224 508C208 468 232 434 222 392C218 353 244 323 240 284C246 242 267 198 292 146Z"/>
+      <clipPath id="asterra-clip"><use href="#asterra-shape"/></clipPath>
+      <linearGradient id="country-land-wash" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="var(--v-land-2)"/>
+        <stop offset=".48" stop-color="var(--v-land)"/>
+        <stop offset="1" stop-color="var(--v-land-2)"/>
+      </linearGradient>
+      <marker id="country-arrow-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5 0 10Z" fill="var(--v-teal)"/>
+      </marker>
+      <marker id="country-arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0L10 5 0 10Z" fill="var(--v-red)"/>
+      </marker>
+      <g id="country-veto">
+        <circle r="13" fill="var(--v-panel)" stroke="var(--v-red)" stroke-width="2"/>
+        <path d="M-5-5L5 5M5-5L-5 5" class="control-line" stroke-width="2"/>
+      </g>
+      <g id="country-node">
+        <circle r="13" fill="var(--v-panel)" stroke="var(--v-teal)" stroke-width="3"/>
+        <circle r="4" fill="var(--v-teal)"/>
+      </g>
+      <g id="country-city">
+        <circle r="5" fill="var(--v-ink)" stroke="var(--v-paper)" stroke-width="2"/>
+      </g>
+    </defs>
+
+    <rect width="1000" height="1100" fill="var(--v-paper)"/>
+    <rect width="1000" height="1100" fill="url(#country-grid)"/>
+    <rect x="0" y="96" width="235" height="1004" fill="var(--v-sea)"/>
+    <rect x="0" y="96" width="260" height="1004" fill="url(#country-sea-lines)"/>
+    <text class="kicker" x="54" y="58">THE DISAPPEARING COUNTRY / 01</text>
+    <text class="micro" x="946" y="58" text-anchor="end">ASTERRA · POLITICAL ATLAS</text>
+    <path d="M0 96H1000" class="hairline"/>
+
+    <!-- neighbouring territory establishes a plausible regional map -->
+    <g class="map-neighbours">
+      <path d="M292 146C338 122 391 130 432 151C488 132 553 146 599 180L650 228L730 160L1000 130V96H226Z" fill="var(--v-land-2)" stroke="var(--v-rule)"/>
+      <path d="M701 337L676 383C709 419 694 460 727 505L704 551C735 590 718 631 745 674L714 721C730 765 700 806 704 851L1000 905V130L730 160L650 228C681 257 672 296 701 337Z" fill="var(--v-land-2)" stroke="var(--v-rule)"/>
+      <path d="M704 851C663 888 616 926 557 942C510 930 472 950 427 927L380 1100H1000V905Z" fill="var(--v-land-2)" stroke="var(--v-rule)"/>
+      <text class="micro map-region-label" x="758" y="184">NORTHLAND</text>
+      <text class="micro map-region-label" x="829" y="505">ORIAN REPUBLIC</text>
+      <text class="micro map-region-label" x="735" y="1010">SOUTHERN TERRITORY</text>
+      <text class="micro teal-text" x="66" y="218" transform="rotate(-90 66 218)">SELENE SEA</text>
+    </g>
+
+    <!-- the political atlas: coastline, relief, provinces, roads and settlements -->
+    <g class="map-political">
+      <use href="#asterra-shape" class="map-border" fill="url(#country-land-wash)" stroke="var(--v-ink)" stroke-width="6" stroke-linejoin="round" filter="url(#country-shadow)"/>
+      <g clip-path="url(#asterra-clip)" class="map-relief">
+        <path d="M585 138C613 219 574 291 624 367C662 426 631 483 677 554C706 598 670 675 700 732C720 776 671 849 635 916" fill="none" stroke="var(--v-rule)" stroke-width="58" stroke-opacity=".28"/>
+        <path d="M590 142C619 218 580 289 630 364C668 421 638 484 682 551C710 594 676 671 704 729C720 775 678 844 640 915" fill="none" stroke="var(--v-rule)" stroke-width="2" stroke-dasharray="4 11"/>
+        <g fill="none" stroke="var(--v-muted)" stroke-opacity=".24" stroke-width="2">
+          <path d="M531 209C570 184 631 204 658 242"/><path d="M540 224C579 199 625 220 647 250"/>
+          <path d="M584 333C620 307 677 329 692 366"/><path d="M592 349C626 326 665 345 680 373"/>
+          <path d="M600 478C642 452 696 480 707 516"/><path d="M608 496C644 475 684 493 695 523"/>
+          <path d="M623 630C660 602 713 626 720 665"/><path d="M633 647C668 624 702 642 709 672"/>
+          <path d="M597 790C636 762 691 788 696 827"/><path d="M607 806C642 784 680 803 685 834"/>
+        </g>
+        <g class="map-admin" fill="none" stroke="var(--v-rule)" stroke-width="2">
+          <path d="M251 285C365 317 492 314 665 262"/>
+          <path d="M224 476C365 447 527 457 711 427"/>
+          <path d="M243 625C384 605 541 618 731 582"/>
+          <path d="M280 756C421 732 557 759 721 716"/>
+          <path d="M342 861C451 824 566 842 699 805"/>
+        </g>
+        <g class="map-road" fill="none" stroke="var(--v-muted)" stroke-opacity=".5" stroke-width="3">
+          <path d="M294 220C335 338 304 451 325 567C346 675 352 776 431 898"/>
+          <path d="M327 568C403 543 470 523 520 500S604 431 668 382"/>
+          <path d="M334 704C420 694 515 706 625 781"/>
+        </g>
+        <g class="map-rivers" fill="none" stroke="var(--v-teal)" stroke-opacity=".42" stroke-width="4">
+          <path d="M633 271C574 305 508 341 446 370S342 391 252 405"/>
+          <path d="M684 522C621 543 558 572 500 604S372 639 243 632"/>
+          <path d="M665 756C593 772 525 805 472 846S405 891 374 912"/>
+        </g>
+      </g>
+
+      <text class="country-name serif" x="466" y="585" text-anchor="middle" font-size="55" fill="var(--v-muted)" opacity=".35">Asterra</text>
+      <text class="micro" x="466" y="613" text-anchor="middle" opacity=".7">REPUBLIC OF ASTERRA</text>
+
+      <g class="map-settlements">
+        <use href="#country-city" x="313" y="300"/><text class="small" x="331" y="306">Northport</text>
+        <use href="#country-city" x="283" y="522"/><text class="small" x="301" y="528">Selene</text>
+        <use href="#country-city" x="352" y="716"/><text class="small" x="370" y="722">Ressa</text>
+        <use href="#country-city" x="612" y="781"/><text class="small" x="630" y="787">Dara</text>
+        <path d="M503 466l7 14 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2Z" fill="var(--v-ink)" stroke="var(--v-paper)" stroke-width="2"/>
+        <rect x="525" y="463" width="143" height="39" rx="8" fill="var(--v-panel)" stroke="var(--v-rule)"/>
+        <text class="label" x="543" y="489">Astera City</text>
+      </g>
+
+      <g class="map-scale" transform="translate(64 1014)">
+        <path d="M0 0H128M0-7V7M64-7V7M128-7V7" class="hairline"/>
+        <text class="micro" x="0" y="27">0</text><text class="micro" x="128" y="27" text-anchor="end">100 km</text>
+      </g>
+    </g>
+
+    <!-- state 2: visible geographic choke points -->
+    <g class="map-chokes state-layer">
+      <path d="M65 374C129 374 184 386 246 405" class="control-line" stroke-width="5"/>
+      <circle cx="235" cy="402" r="22" fill="var(--v-red-soft)" stroke="var(--v-red)" stroke-width="3"/>
+      <rect x="54" y="310" width="154" height="48" rx="10" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+      <text class="micro red-text" x="76" y="340">SELENE STRAIT</text>
+
+      <path d="M294 218C412 204 522 220 643 257" class="control-line conditional" stroke-width="5"/>
+      <rect x="380" y="165" width="172" height="48" rx="10" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+      <text class="micro red-text" x="403" y="195">NORTH PIPELINE</text>
+
+      <path d="M241 620l30-18 30 18-30 18Z" fill="var(--v-red-soft)" stroke="var(--v-red)" stroke-width="3"/>
+      <rect x="58" y="648" width="173" height="48" rx="10" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+      <text class="micro red-text" x="80" y="678">INDUSTRIAL PORT</text>
+
+      <path d="M698 491l21-34 22 34Z" fill="var(--v-red)"/>
+      <rect x="752" y="462" width="181" height="48" rx="10" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+      <text class="micro red-text" x="774" y="492">KARSTEN PASS</text>
+      <path d="M738 486H752" class="control-line"/>
+
+      <g class="map-caption-card" transform="translate(584 976)">
+        <rect width="349" height="68" rx="12" fill="var(--v-panel)" stroke="var(--v-red)"/>
+        <text class="kicker red-text" x="22" y="29">VISIBLE CHOKE POINTS</text>
+        <text class="small" x="22" y="52">strait · pipeline · port · pass</text>
+      </g>
+    </g>
+
+    <!-- state 3: domestic operating system -->
+    <g class="map-operational state-layer">
+      <path d="M38 672C123 671 188 649 270 620" class="route flow-line" stroke-width="5" marker-end="url(#country-arrow-teal)"/>
+      <path d="M270 620C337 570 421 526 503 487C562 459 610 417 661 356" class="route flow-line"/>
+      <path d="M503 487C545 553 576 627 594 716" class="route flow-line"/>
+      <path d="M594 716C538 763 496 797 449 835" class="route"/>
+      <path d="M503 487C452 445 411 414 365 386" class="route"/>
+
+      <use href="#country-node" x="270" y="620"/>
+      <g class="op-label"><rect x="64" y="598" width="175" height="46" rx="9" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+      <text class="micro teal-text" x="85" y="627">CABLE LANDING</text></g>
+
+      <use href="#country-node" x="365" y="386"/>
+      <g class="op-label"><rect x="252" y="330" width="210" height="46" rx="9" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+      <text class="micro teal-text" x="273" y="359">TECHNICAL INSTITUTE</text></g>
+
+      <use href="#country-node" x="503" y="487"/>
+      <g class="op-label"><rect x="527" y="456" width="191" height="46" rx="9" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+      <text class="micro teal-text" x="549" y="485">GOVERNMENT DATA</text></g>
+
+      <use href="#country-node" x="661" y="356"/>
+      <g class="op-label"><rect x="693" y="331" width="160" height="46" rx="9" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+      <text class="micro teal-text" x="715" y="360">GRID EXCHANGE</text></g>
+
+      <use href="#country-node" x="594" y="716"/>
+      <g class="op-label"><rect x="621" y="688" width="151" height="46" rx="9" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+      <text class="micro teal-text" x="643" y="717">CLOUD REGION</text></g>
+
+      <use href="#country-node" x="449" y="835"/>
+      <g class="op-label"><rect x="475" y="813" width="154" height="46" rx="9" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+      <text class="micro teal-text" x="497" y="842">PAYMENTS HUB</text></g>
+
+      <g class="map-caption-card" transform="translate(584 976)">
+        <rect width="349" height="68" rx="12" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+        <text class="kicker teal-text" x="22" y="29">THE OPERATIONAL MAP</text>
+        <text class="small" x="22" y="52">power · compute · data · money · people</text>
+      </g>
+    </g>
+
+    <!-- state 4: control paths terminate beyond the border -->
+    <g class="map-external state-layer">
+      <path d="M661 356C718 284 761 229 813 184" class="control-line conditional flow-line" marker-end="url(#country-arrow-red)"/>
+      <path d="M503 487C634 444 722 425 825 410" class="control-line conditional flow-line" marker-end="url(#country-arrow-red)"/>
+      <path d="M594 716C699 691 765 669 849 637" class="control-line conditional flow-line" marker-end="url(#country-arrow-red)"/>
+      <path d="M449 835C600 856 711 876 826 899" class="control-line conditional flow-line" marker-end="url(#country-arrow-red)"/>
+      <path d="M365 386C293 302 236 242 170 193" class="control-line conditional flow-line" marker-end="url(#country-arrow-red)"/>
+      <path d="M270 620C201 704 155 781 117 868" class="control-line conditional flow-line" marker-end="url(#country-arrow-red)"/>
+
+      <g transform="translate(745 116)">
+        <rect width="190" height="72" rx="13" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+        <text class="micro red-text" x="20" y="29">CHIP SUPPLY</text><text class="small" x="20" y="53">foreign allocation</text>
+      </g>
+      <g transform="translate(785 342)">
+        <rect width="170" height="72" rx="13" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+        <text class="micro red-text" x="20" y="29">MODEL UPDATES</text><text class="small" x="20" y="53">external provider</text>
+      </g>
+      <g transform="translate(804 566)">
+        <rect width="166" height="72" rx="13" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+        <text class="micro red-text" x="20" y="29">CLOUD ADMIN</text><text class="small" x="20" y="53">root authority</text>
+      </g>
+      <g transform="translate(776 864)">
+        <rect width="185" height="72" rx="13" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+        <text class="micro red-text" x="20" y="29">CLEARING RAIL</text><text class="small" x="20" y="53">foreign settlement</text>
+      </g>
+      <g transform="translate(47 121)">
+        <rect width="183" height="72" rx="13" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+        <text class="micro red-text" x="20" y="29">TALENT CLUSTER</text><text class="small" x="20" y="53">jobs and research</text>
+      </g>
+      <g transform="translate(42 866)">
+        <rect width="180" height="72" rx="13" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+        <text class="micro red-text" x="20" y="29">CABLE NETWORK</text><text class="small" x="20" y="53">landing access</text>
+      </g>
+      <use href="#country-veto" x="715" y="282"/><use href="#country-veto" x="716" y="435"/>
+      <use href="#country-veto" x="730" y="682"/><use href="#country-veto" x="707" y="878"/>
+    </g>
+
+    <!-- state 5: one asset, two jurisdictions -->
+    <g class="map-ownership state-layer">
+      <rect x="95" y="137" width="810" height="104" rx="16" fill="var(--v-panel)" stroke="var(--v-rule)" filter="url(#country-label-shadow)"/>
+      <text class="kicker" x="126" y="175">THE DATA CENTER IS DOMESTIC</text>
+      <text class="title" x="126" y="213">Its permissions are not.</text>
+
+      <circle cx="594" cy="716" r="47" fill="var(--v-teal-soft)" stroke="var(--v-teal)" stroke-width="4"/>
+      <rect x="562" y="686" width="64" height="65" rx="7" fill="var(--v-panel)" stroke="var(--v-teal)" stroke-width="3"/>
+      <path d="M575 701h38M575 716h38M575 731h38" class="route"/>
+      <rect x="300" y="665" width="218" height="95" rx="13" fill="var(--v-panel)" stroke="var(--v-teal)"/>
+      <text class="micro teal-text" x="326" y="697">PHYSICAL LOCATION</text>
+      <text class="label" x="326" y="728">Asterra</text>
+      <text class="small" x="326" y="751">building · power · staff</text>
+      <path d="M519 714H545" class="route" marker-end="url(#country-arrow-teal)"/>
+
+      <path d="M641 716C727 716 774 738 822 785" class="control-line conditional flow-line" marker-end="url(#country-arrow-red)"/>
+      <use href="#country-veto" x="730" y="724"/>
+      <rect x="743" y="790" width="218" height="101" rx="13" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+      <text class="micro red-text" x="769" y="822">ROOT AUTHORITY</text>
+      <text class="small" x="769" y="853" style="font-weight:650">Foreign headquarters</text>
+      <text class="small" x="769" y="878">updates · keys · recovery</text>
+
+      <rect x="96" y="956" width="808" height="73" rx="13" fill="var(--v-panel)" stroke="var(--v-rule)"/>
+      <text class="small" x="126" y="985">Domestic soil answers “where is it?”</text>
+      <text class="small" x="126" y="1012">Operational control answers “who can keep it running?”</text>
+    </g>
+
+    <!-- state 6: the national silhouette recedes while dependencies remain -->
+    <g class="map-final state-layer">
+      <rect x="300" y="120" width="444" height="92" rx="14" fill="var(--v-panel)" stroke="var(--v-red)" filter="url(#country-label-shadow)"/>
+      <text class="kicker red-text" x="328" y="156">THE REAL MAP OF POWER</text>
+      <text class="small" x="328" y="185">the border remains; command has moved</text>
+    </g>
+
+    <!-- state 7: hand the reader to the decision journey -->
+    <g class="handoff-pulse">
+      <circle class="pulse-dot" cx="503" cy="487" r="48" fill="var(--v-teal-soft)" stroke="var(--v-teal)" stroke-width="3"/>
+      <circle cx="503" cy="487" r="11" fill="var(--v-teal)"/>
+      <path d="M503 548V690" class="route flow-line" marker-end="url(#country-arrow-teal)"/>
+      <rect x="350" y="705" width="306" height="80" rx="14" fill="var(--v-panel)" stroke="var(--v-teal)" filter="url(#country-label-shadow)"/>
+      <text class="kicker teal-text" x="503" y="738" text-anchor="middle">FOLLOW ONE DECISION</text>
+      <text class="small" x="503" y="765" text-anchor="middle">from observation to action</text>
+    </g>
+  </svg>
+</div>
+```

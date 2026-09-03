@@ -15,3 +15,5 @@ Thumbs.db
 # python helpers used by research/stability-trap
 *.pyc
 .ipynb_checkpoints/
+
+/.luarc.json
