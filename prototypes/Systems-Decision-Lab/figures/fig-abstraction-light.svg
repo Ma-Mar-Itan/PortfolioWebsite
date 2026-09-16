@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="573.12pt" height="292.32pt" viewBox="0 0 573.12 292.32" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-05T09:00:14.932141</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 292.32 
+L 573.12 292.32 
+L 573.12 0 
+L 0 0 
+z
+" style="fill: #fdfdfc"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 254.925325 146.16 
+Q 286.560139 146.16 316.853313 146.16 
+" clip-path="url(#p2419de1d68)" style="fill: none; stroke: #8a2f2f; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 312.453313 143.96 
+L 316.853313 146.16 
+L 312.453313 148.36 
+z
+" clip-path="url(#p2419de1d68)" style="fill: #8a2f2f; stroke: #8a2f2f; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 35.0784 249.984 
+L 239.6736 249.984 
+Q 250.3296 249.984 250.3296 244.944 
+L 250.3296 47.376 
+Q 250.3296 42.336 239.6736 42.336 
+L 35.0784 42.336 
+Q 24.4224 42.336 24.4224 47.376 
+L 24.4224 244.944 
+Q 24.4224 249.984 35.0784 249.984 
+z
+" clip-path="url(#p2419de1d68)" style="fill: #fdfdfc; stroke: #e3e1dc; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 333.4464 249.984 
+L 538.0416 249.984 
+Q 548.6976 249.984 548.6976 244.944 
+L 548.6976 47.376 
+Q 548.6976 42.336 538.0416 42.336 
+L 333.4464 42.336 
+Q 322.7904 42.336 322.7904 47.376 
+L 322.7904 244.944 
+Q 322.7904 249.984 333.4464 249.984 
+z
+" clip-path="url(#p2419de1d68)" style="fill: #f4f3f0; stroke: #e3e1dc; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'Newsreader', 'Georgia', 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle; fill: #14181d" x="137.376" y="66.062438" transform="rotate(-0 137.376 66.062438)">One task, as it really is</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #e3e1dc" x="49.464" y="102.023438" transform="rotate(-0 49.464 102.023438)">—</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5c6672" x="70.776" y="102.023438" transform="rotate(-0 70.776 102.023438)">2.4 TB of detector strain data</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #e3e1dc" x="49.464" y="122.939438" transform="rotate(-0 49.464 122.939438)">—</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5c6672" x="70.776" y="122.939438" transform="rotate(-0 70.776 122.939438)">read from a distributed store</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #e3e1dc" x="49.464" y="143.855438" transform="rotate(-0 49.464 143.855438)">—</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5c6672" x="70.776" y="143.855438" transform="rotate(-0 70.776 143.855438)">40 minutes on 32 CPU cores</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #e3e1dc" x="49.464" y="164.771437" transform="rotate(-0 49.464 164.771437)">—</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5c6672" x="70.776" y="164.771437" transform="rotate(-0 70.776 164.771437)">96 GB of memory, no accelerator</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #e3e1dc" x="49.464" y="185.687438" transform="rotate(-0 49.464 185.687438)">—</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5c6672" x="70.776" y="185.687438" transform="rotate(-0 70.776 185.687438)">queued behind the calibration stage</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #e3e1dc" x="49.464" y="206.603438" transform="rotate(-0 49.464 206.603438)">—</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5c6672" x="70.776" y="206.603438" transform="rotate(-0 70.776 206.603438)">at 08:32 on a Tuesday</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #e3e1dc" x="49.464" y="227.519438" transform="rotate(-0 49.464 227.519438)">—</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5c6672" x="70.776" y="227.519438" transform="rotate(-0 70.776 227.519438)">one of 120,000 like it</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10px; font-family: 'Newsreader', 'Georgia', 'Times New Roman', 'DejaVu Serif', serif; text-anchor: middle; fill: #14181d" x="435.744" y="66.062438" transform="rotate(-0 435.744 66.062438)">What the simulator keeps</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #5c6672" x="347.832" y="99.216906" transform="rotate(-0 347.832 99.216906)">arrival_time_sec</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end; fill: #14181d" x="523.656" y="99.332328" transform="rotate(-0 523.656 99.332328)">512</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #5c6672" x="347.832" y="118.598859" transform="rotate(-0 347.832 118.598859)">estimated_runtime_sec</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end; fill: #14181d" x="523.656" y="118.736328" transform="rotate(-0 523.656 118.736328)">2400</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #5c6672" x="347.832" y="138.002859" transform="rotate(-0 347.832 138.002859)">cpu_required</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end; fill: #14181d" x="523.656" y="138.140328" transform="rotate(-0 523.656 138.140328)">32</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #5c6672" x="347.832" y="157.406859" transform="rotate(-0 347.832 157.406859)">gpu_required</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end; fill: #14181d" x="523.656" y="157.544328" transform="rotate(-0 523.656 157.544328)">0</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #5c6672" x="347.832" y="176.810859" transform="rotate(-0 347.832 176.810859)">memory_required_gb</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end; fill: #14181d" x="523.656" y="176.948328" transform="rotate(-0 523.656 176.948328)">96</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #5c6672" x="347.832" y="196.352328" transform="rotate(-0 347.832 196.352328)">priority</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end; fill: #14181d" x="523.656" y="196.352328" transform="rotate(-0 523.656 196.352328)">2</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #5c6672" x="347.832" y="215.618859" transform="rotate(-0 347.832 215.618859)">parent_task_ids</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end; fill: #14181d" x="523.656" y="215.756328" transform="rotate(-0 523.656 215.756328)">T00417</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: start; fill: #5c6672" x="347.832" y="235.044906" transform="rotate(-0 347.832 235.044906)">logical_input_size_gb</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 8.3px; font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Computer Modern Typewriter', 'Andale Mono', 'Nimbus Mono L', 'Courier New', 'Courier', 'Fixed', 'Terminal', monospace; text-anchor: end; fill: #14181d" x="523.656" y="235.160328" transform="rotate(-0 523.656 235.160328)">2400</text>
+   </g>
+   <g id="text_33">
+    <g id="patch_5">
+     <path d="M 252.09582 130.383203 
+L 321.02418 130.383203 
+L 321.02418 119.096797 
+L 252.09582 119.096797 
+z
+" style="fill: #fdfdfc"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #8a2f2f" x="286.56" y="127.085469" transform="rotate(-0 286.56 127.085469)">keep behaviour</text>
+   </g>
+   <g id="text_34">
+    <g id="patch_6">
+     <path d="M 262.322383 173.223203 
+L 310.797617 173.223203 
+L 310.797617 161.936797 
+L 262.322383 161.936797 
+z
+" style="fill: #fdfdfc"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #5c6672" x="286.56" y="169.925469" transform="rotate(-0 286.56 169.925469)">drop bytes</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2419de1d68">
+   <rect x="20.16" y="20.16" width="532.8" height="252"/>
+  </clipPath>
+ </defs>
+</svg>

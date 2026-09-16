@@ -1,0 +1,736 @@
+---
+title: "Day-Ahead Electricity Price Forecasting in the Baltic States"
+subtitle: "A short-window LEAR benchmark for Estonia, Latvia and Lithuania"
+description: |
+  A LASSO benchmark refitted every delivery day across 964 days of Baltic
+  day-ahead prices — and what happens to it when the market turns violent.
+date: 2026-08-21
+author:
+  - name: Malek M. Itani
+categories: [Electricity markets, Forecasting, LASSO, Time series]
+image: figures/fig-thumb-light.svg
+image-alt: "Three bars showing forecast error cut by 23%, 30% and 32% against a weekly naive benchmark"
+featured: true
+featured-order: 2
+lightbox: true
+
+# The section numbers below are the author's own, so Quarto's automatic section
+# numbering stays off. Figures and tables are cross-referenced, so those keep
+# Quarto's numbering.
+number-sections: false
+crossref:
+  fig-title: "Figure"
+  tbl-title: "Table"
+
+format:
+  html:
+    toc-depth: 3
+execute:
+  echo: false
+  warning: false
+---
+
+```{python}
+#| label: setup
+import sys, pathlib
+sys.path.insert(0, str(pathlib.Path().resolve()))
+import pandas as pd
+from IPython.display import Markdown
+from _theme import (DATA, DIR, MODEL_NAME, MODELS, ZONE_NAME, ZONES,
+                    md_table, show)
+if not (DIR / "figures" / "fig-rmae-light.svg").exists():
+    import matplotlib; matplotlib.use("Agg")
+    import _figures; _figures.build_all()
+
+M = pd.read_csv(DATA / "all_metrics.csv")
+V = pd.read_csv(DATA / "volatile_21d_model_metrics.csv")
+P = pd.read_csv(DATA / "volatile_periods.csv").set_index("country")
+
+def rows(df, period=None):
+    d = df[df.period == period] if period else df
+    out = []
+    for z in ZONES:
+        for m in MODELS:
+            r = d[(d.country == z) & (d.model == m)].iloc[0]
+            out.append(r)
+    return pd.DataFrame(out)
+```
+
+# Abstract
+
+I build and evaluate day-ahead electricity price forecasts for the three Baltic
+bidding zones — Estonia, Latvia and Lithuania — using the LEAR (LASSO Estimated
+AutoRegressive) benchmark of Lago et al. (2021). The question is whether a
+parsimonious statistical model, given only local price history and the two
+day-ahead exogenous forecasts published before gate closure, produces useful
+forecasts across three small, tightly coupled markets, and how that performance
+holds up when prices turn violent.
+
+A market database was assembled from the ENTSO-E Transparency Platform covering
+January 2015 to August 2026 — 29 distinct datasets across 150 dataset–area
+combinations — although the forecasting exercise deliberately draws on only
+three hourly series per zone. Each zone is modelled independently. Two rolling
+calibration windows are used, 8 weeks and 12 weeks, each refitted from scratch
+every delivery day, plus their arithmetic mean, referred to throughout as the
+short-window ensemble.
+
+Over 964 out-of-sample delivery days — 23,136 hourly forecasts per model and
+zone — every LEAR specification beat a weekly naive forecast in every zone, and
+the ensemble was the strongest specification everywhere. Its rMAE was 0.772 in
+Estonia, 0.702 in Latvia and 0.679 in Lithuania: reductions in mean absolute
+error of roughly 23%, 30% and 32% against using last week's price at the same
+hour.
+
+That average conceals the model's real weakness. Inside each zone's most
+volatile 21-day stretch, ensemble rMAE rose to 0.855, 0.905 and 0.826, and single
+hourly errors exceeded €600/MWh in Estonia and €780–815/MWh in Latvia and
+Lithuania. The ensemble still beat the naive benchmark under stress — in Latvia
+by only 9.5%, against 29.8% over the full sample. A model can be good on average
+and still miss precisely the hours that carry the commercial risk.
+
+**Keywords** — electricity price forecasting; LEAR; LASSO; ENTSO-E; Baltic
+electricity market; rolling recalibration; forecast combination; price
+volatility.
+
+
+# 1. Data
+
+## 1.1 Collection
+
+The dataset was pulled directly from the ENTSO-E Transparency Platform through
+its API, using Python and the `entsoe-py` interface. A dedicated downloader
+walked the archive month by month from January 2015. Monthly granularity was
+chosen deliberately: it makes the download resumable, and it stops a single API
+failure from corrupting or interrupting the full historical pull.
+
+Original ENTSO-E observations are stored separately by dataset, area and month
+in compressed CSV, preserving a raw layer beneath every later transformation.
+Requests that returned nothing were logged as empty rather than backfilled with
+artificial observations — an important distinction, because a silently
+interpolated gap is indistinguishable from data once it reaches a model. The
+resulting inventory holds 150 dataset–area combinations drawn from 29 dataset
+types across eight categories.
+
+```{python}
+#| label: tbl-catalogue
+#| tbl-cap: "The ENTSO-E archive behind the project. Only the three series marked in §1.2 enter the forecasting model; the rest is collected for the extensions in §5."
+cat = pd.DataFrame({
+    "Category": ["Market", "Load", "Generation", "Capacity", "Hydro",
+                 "Balancing", "Outages", "Transmission"],
+    "Datasets": [
+        "Day-ahead prices; net positions",
+        "Actual load; day-ahead load forecasts",
+        "Actual generation by technology; generation forecasts; wind and solar "
+        "forecasts; intraday renewable forecasts; generation by plant",
+        "Installed generation capacity; capacity by individual unit",
+        "Aggregated hydro-reservoir and storage information",
+        "Imbalance prices; imbalance volumes; activated balancing-energy prices",
+        "Generation-unit, production-unit and transmission unavailability",
+        "Physical flows; total imports and exports; scheduled exchanges; "
+        "day-ahead scheduled exchanges; intraday offered capacity; "
+        "day-, week-, month- and year-ahead transfer capacity"],
+})
+Markdown(md_table(cat, align=["l", "l"]))
+```
+
+The downloader also collected bilateral data for the main Baltic
+interconnections — Estonia–Latvia, Estonia–Finland, Latvia–Lithuania,
+Lithuania–Sweden (SE4) and Lithuania–Poland — querying both directions of every
+border. None of it enters the model below. It exists because the interesting
+version of this project is the one that uses it.
+
+Coverage is uneven, as it always is: not every ENTSO-E endpoint is populated for
+every country and period. Prices, load, generation and generation forecasts are
+close to complete across 2015–2026. Balancing, outage and some
+transfer-capacity series are considerably more fragmented.
+
+## 1.2 What the model is actually given
+
+Although the archive is broad, the LEAR exercise uses a deliberately restricted
+information set, to stay close to the Nord Pool benchmark design in Lago et al.
+That benchmark pairs hourly day-ahead prices with a day-ahead load forecast and
+a day-ahead wind-generation forecast. For each zone:
+
+- $p_{d,h}$ — the day-ahead price for delivery day $d$, hour $h$ (the target);
+- $x^{1}_{d,h}$ — the day-ahead load forecast;
+- $x^{2}_{d,h}$ — the day-ahead wind-generation forecast.
+
+Both exogenous series are published before the day-ahead auction closes, so they
+are legitimately available when the forecast for day $d$ has to be made. No
+realized load, realized generation or realized physical flow appears anywhere in
+the model. Estonia, Latvia and Lithuania are modelled independently: the Estonian
+model forecasts Estonian prices from Estonian predictors, and so on.
+
+@fig-prices is the series being forecast. Three things in it matter for
+everything that follows. Prices are spiky rather than merely variable — the
+daily high runs to €1,896/MWh in Estonia. The three zones move together closely
+enough that Latvia and Lithuania are frequently the same number. And the
+character of the series changes over the sample: the calm middle of 2025 and the
+turbulent turn of 2026 are different forecasting problems.
+
+::: {#fig-prices}
+
+```{python}
+Markdown(show("fig-prices", "Day-ahead price series for Estonia, Latvia and Lithuania from January 2024 to August 2026, showing the daily mean, a seven-day mean and the daily low-to-high range"))
+```
+
+**The target.** Day-ahead prices in the three Baltic zones over the evaluation
+period. The bold line is a seven-day mean, the thin line the daily mean, and the
+shaded band the daily low-to-high range. The axis is cut at €480/MWh; every zone
+has daily highs far above it.
+
+:::
+
+## 1.3 Preparation
+
+ENTSO-E series arrive at different temporal resolutions, so everything was
+converted to a consistent hourly structure. Daylight-saving transitions were
+handled by averaging the duplicated autumn hour and interpolating the missing
+spring hour, following the convention used for the benchmark datasets in Lago et
+al.
+
+Missing observations were treated conservatively. Short internal gaps were
+interpolated where the regular hourly structure `epftoolbox` requires demanded
+it. Estonia's evaluation period contained one isolated full-day gap in the wind
+forecast, reconstructed from the average of the same hour on the immediately
+preceding and following complete days. Larger historical gaps falling outside
+any rolling calibration window were left untouched. All of this was done on
+derived modelling files; the downloaded raw layer was never edited.
+
+
+# 2. Methodology
+
+## 2.1 The forecasting problem
+
+The object to forecast is the full vector of 24 day-ahead prices,
+
+$$
+\mathbf{p}_d = [\,p_{d,1},\, p_{d,2},\, \ldots,\, p_{d,24}\,]^{\top},
+$$
+
+with all 24 values committed at once, before gate closure. In a linear framework
+the price for delivery hour $h$ is
+
+$$
+p_{d,h} = \boldsymbol{\theta}_h^{\top}\mathbf{X}_{d,h} + \varepsilon_{d,h},
+$$
+
+where $\mathbf{X}_{d,h}$ holds the predictors available before delivery,
+$\boldsymbol{\theta}_h$ the coefficients for hour $h$, and $\varepsilon_{d,h}$
+the forecast error. Each of the 24 hours gets its own equation.
+
+## 2.2 The LEAR specification
+
+LEAR is a parameter-rich autoregressive model with exogenous variables. Rather
+than pre-selecting a small set of regressors, it is handed a large candidate set
+and lets $L_1$ regularisation decide what survives.
+
+For delivery day $d$ the information set contains four historical price vectors
+($\mathbf{p}_{d-1}$, $\mathbf{p}_{d-2}$, $\mathbf{p}_{d-3}$, $\mathbf{p}_{d-7}$),
+the two day-ahead exogenous forecasts for the delivery day itself
+($\mathbf{x}^1_d$, $\mathbf{x}^2_d$), their values one day and one week earlier
+($\mathbf{x}^1_{d-1}$, $\mathbf{x}^1_{d-7}$, $\mathbf{x}^2_{d-1}$,
+$\mathbf{x}^2_{d-7}$), and seven day-of-week dummies. Written out for hour $h$:
+
+$$
+\begin{aligned}
+p_{d,h} =\;&
+\sum_{i=1}^{24}\theta_{h,i}\,p_{d-1,i}
++ \sum_{i=1}^{24}\theta_{h,24+i}\,p_{d-2,i}
++ \sum_{i=1}^{24}\theta_{h,48+i}\,p_{d-3,i}
++ \sum_{i=1}^{24}\theta_{h,72+i}\,p_{d-7,i} \\[2pt]
+&+ \sum_{i=1}^{24}\theta_{h,96+i}\,x^{1}_{d,i}
++ \sum_{i=1}^{24}\theta_{h,120+i}\,x^{2}_{d,i} \\[2pt]
+&+ \sum_{i=1}^{24}\theta_{h,144+i}\,x^{1}_{d-1,i}
++ \sum_{i=1}^{24}\theta_{h,168+i}\,x^{2}_{d-1,i} \\[2pt]
+&+ \sum_{i=1}^{24}\theta_{h,192+i}\,x^{1}_{d-7,i}
++ \sum_{i=1}^{24}\theta_{h,216+i}\,x^{2}_{d-7,i}
++ \sum_{i=1}^{7}\theta_{h,240+i}\,z_{d,i}
++ \varepsilon_{d,h}.
+\end{aligned}
+$$
+
+That is 247 candidate predictors per hourly equation: 96 price lags, 72
+load-forecast terms, 72 wind-forecast terms and seven day-of-week indicators
+(@fig-design, left). The dimension is the point — it is high enough that
+regularisation has to do real feature selection.
+
+::: {#fig-design}
+
+```{python}
+Markdown(show("fig-design", "Left: a grid showing which lags of price, load forecast and wind forecast enter each hourly equation, totalling 247 predictors. Right: the 8-week and 12-week calibration windows sliding forward one day at a time"))
+```
+
+**The model, in two pictures.** *Left* — what feeds one hourly equation. Each
+filled cell is 24 hourly values; the price row has no day-$d$ entry because the
+price for the delivery day is what is being forecast. *Right* — every delivery
+day gets its own fit, on a window that ends at gate closure and slides forward
+with it.
+
+:::
+
+## 2.3 Estimation
+
+The coefficients are estimated by the LASSO objective
+
+$$
+\hat{\boldsymbol{\theta}}_h
+= \underset{\boldsymbol{\theta}_h}{\arg\min}
+\left[\, \mathrm{RSS} \;+\; \lambda \sum_{j=1}^{247}\lvert\theta_{h,j}\rvert \,\right],
+$$
+
+where $\mathrm{RSS}$ is the residual sum of squares and $\lambda$ sets the
+strength of the penalty. The $L_1$ penalty drives coefficients exactly to zero,
+so estimation and feature selection happen in one step: predictors that add
+nothing are removed from the equation rather than shrunk toward irrelevance.
+
+Following the `epftoolbox` implementation, $\lambda$ is chosen along the LARS
+path by the Akaike Information Criterion, after which the model is re-estimated
+by ordinary coordinate-descent LASSO. This is the computationally cheap
+procedure proposed in the benchmark study, and it is what makes daily
+recalibration affordable at all.
+
+## 2.4 Variance stabilisation
+
+Electricity prices are badly non-Gaussian: heavy right tails, and genuine
+negative values. A log transformation is therefore unavailable. LEAR instead
+uses the inverse hyperbolic sine,
+
+$$
+\operatorname{asinh}(x) = \ln\!\left(x + \sqrt{x^{2}+1}\right),
+$$
+
+applied after robust centring and scaling. It behaves approximately linearly
+near zero and logarithmically in both tails, so it compresses extreme
+observations without ever becoming undefined for zero or negative prices.
+
+## 2.5 Calibration windows and daily recalibration
+
+A calibration window is how much history is used to fit the model for one
+particular forecast day; the following day, the model is refitted on a window
+shifted forward by one. Lago et al. insist on daily recalibration because a
+model estimated once and left alone does not describe how electricity price
+forecasting actually works.
+
+The original benchmark evaluates four windows — 8 weeks, 12 weeks, three years
+and four years. Computational cost forced a narrower choice here:
+
+$$
+W_1 = 56 \text{ days}, \qquad W_2 = 84 \text{ days}.
+$$
+
+A separate model is re-estimated every day for each window, and the short-window
+ensemble is their arithmetic mean,
+
+$$
+\hat p^{\,\mathrm{ENS}}_{d,h}
+= \tfrac{1}{2}\left(\hat p^{\,8\mathrm{w}}_{d,h} + \hat p^{\,12\mathrm{w}}_{d,h}\right).
+$$
+
+This is an adaptation of the forecast-combination principle in Lago et al., not
+their four-window ensemble, and it is named accordingly throughout.
+
+## 2.6 Out-of-sample design
+
+The test period runs from **1 January 2024 to 21 August 2026**: 964 forecast
+days, 23,136 hourly forecasts per model and zone. It is the final segment of the
+available data rather than a random sample, so no test observation is ever
+available to a model that is forecasting an earlier day.
+
+For exploratory purposes, results are additionally split around **9 February
+2025**, when the three Baltic systems desynchronised from the Russian and
+Belarusian grids and joined the Continental European Synchronous Area. The split
+is descriptive. It is not, and is not treated as, evidence that synchronisation
+caused anything.
+
+## 2.7 Evaluation metrics
+
+Three point-forecast metrics are reported. Mean absolute error,
+
+$$
+\mathrm{MAE} = \frac{1}{24 N_d}\sum_{d=1}^{N_d}\sum_{h=1}^{24}
+\bigl\lvert p_{d,h} - \hat p_{d,h} \bigr\rvert ,
+$$
+
+root mean squared error, which punishes large misses far harder,
+
+$$
+\mathrm{RMSE} = \sqrt{\frac{1}{24 N_d}\sum_{d=1}^{N_d}\sum_{h=1}^{24}
+\bigl(p_{d,h} - \hat p_{d,h}\bigr)^{2}} ,
+$$
+
+and the relative measure that carries most of the argument below,
+
+$$
+\mathrm{rMAE} = \frac{\sum_{d,h}\lvert p_{d,h} - \hat p_{d,h}\rvert}
+{\sum_{d,h}\lvert p_{d,h} - \hat p^{\,\mathrm{naive}}_{d,h}\rvert},
+\qquad
+\hat p^{\,\mathrm{naive}}_{d,h} = p_{d-7,h}.
+$$
+
+The naive forecast is last week's price at the same hour — a benchmark that is
+harder to beat than it sounds, because it preserves both the daily and the
+weekly shape of the price curve for free. An rMAE below 1 means the model beats
+it. Lago et al. prefer this measure because it is comparable across markets of
+different price levels, which is exactly the comparison being made here.
+
+
+# 3. Results
+
+## 3.1 Full-sample accuracy
+
+Every specification beats the weekly naive benchmark in every zone, and the
+ensemble is the strongest specification everywhere, on all three metrics.
+
+```{python}
+#| label: tbl-overall
+#| tbl-cap: "Out-of-sample accuracy over 964 delivery days (23,136 hourly forecasts per model and zone)."
+d = rows(M, "overall")
+tbl = pd.DataFrame({
+    "Zone": [ZONE_NAME[z] for z in d.country],
+    "Model": [MODEL_NAME[m] for m in d.model],
+    "MAE (€/MWh)": d.MAE.map("{:.2f}".format).values,
+    "RMSE (€/MWh)": d.RMSE.map("{:.2f}".format).values,
+    "rMAE": d.rMAE.map("{:.3f}".format).values,
+    "MAE vs naive": [f"−{(1 - r) * 100:.1f}%" for r in d.rMAE],
+})
+Markdown(md_table(tbl, align=["l", "l", "r", "r", "r", "r"]))
+```
+
+::: {#fig-rmae}
+
+```{python}
+Markdown(show("fig-rmae", "Grouped bar chart of rMAE for the 8-week, 12-week and ensemble models in each of the three zones, all well below the naive benchmark of 1"))
+```
+
+**Everything beats the benchmark; the ensemble beats everything.** rMAE by zone
+and specification. Anything below the dashed line forecasts better than last
+week's price at the same hour.
+
+:::
+
+Lithuania is the easiest of the three markets for this information set, followed
+by Latvia; Estonia is the hardest. The ensemble cuts mean absolute error by
+22.8% in Estonia, 29.8% in Latvia and 32.1% in Lithuania (@fig-naive-gap).
+
+::: {#fig-naive-gap}
+
+```{python}
+Markdown(show("fig-naive-gap", "Dumbbell chart contrasting the weekly naive MAE near €50/MWh with the ensemble MAE between €34 and €39/MWh in each zone"))
+```
+
+**What the model is worth.** Mean absolute error of the weekly naive benchmark
+against the short-window ensemble. The naive benchmark costs almost exactly
+€50/MWh in all three zones; the ensemble takes between a fifth and a third off
+that.
+
+:::
+
+The 8-week specification edges out the 12-week one over the complete sample in
+all three zones, but the gaps are small — 0.015, 0.004 and 0.004 in rMAE — and
+without a Diebold–Mariano or Giacomini–White test there is no basis for calling
+any of them real. That test is the most obvious thing missing from this analysis
+and is listed as such in §5.
+
+## 3.2 Accuracy over time
+
+The aggregate table hides how unevenly that accuracy is distributed.
+@fig-rolling tracks a 28-day rolling MAE across the whole evaluation period. The
+three zones move almost in lockstep — unsurprising, given how tightly coupled
+they are — and the level wanders between roughly €20/MWh in the calm middle of
+2024 and €60/MWh in the spring of 2025 and again in early 2026. A single
+full-sample MAE is an average over regimes that differ by a factor of three.
+
+::: {#fig-rolling}
+
+```{python}
+Markdown(show("fig-rolling", "28-day rolling mean absolute error for the ensemble in all three zones, varying between about 20 and 60 euros per megawatt hour across the evaluation period"))
+```
+
+**One number, many regimes.** 28-day rolling MAE of the short-window ensemble.
+The zones track each other closely; the level does not hold still.
+
+:::
+
+The daily profile is just as uneven (@fig-hourly). Error concentrates in the
+morning ramp around 08:00 and the evening peak around 19:00–20:00, and collapses
+overnight. The hours that are hardest to forecast are the hours in which the
+most money changes hands.
+
+::: {#fig-hourly}
+
+```{python}
+Markdown(show("fig-hourly", "Mean absolute error by hour of the delivery day, peaking near 08:00 and again near 20:00, with the stress-window profile roughly twice as high"))
+```
+
+**Where the error lives.** MAE by delivery hour. Solid lines are the full 964
+days; dashed lines the same profile inside each zone's most volatile 21 days
+(§4). Stress does not move the shape of the profile much — it roughly doubles
+its amplitude.
+
+:::
+
+## 3.3 The shape of the errors
+
+@fig-calibration plots every hourly forecast against what actually cleared.
+The bulk of the mass sits along the diagonal, which is what a working forecast
+looks like. The interesting part is the vertical smear above it: hours where the
+market cleared far higher than the model expected. There is no comparable smear
+below the diagonal. The model rarely invents a spike; it routinely fails to
+anticipate one.
+
+::: {#fig-calibration}
+
+```{python}
+Markdown(show("fig-calibration", "Hexbin density plots of actual against forecast price for each zone, dense along the diagonal with a pronounced smear of under-forecast hours above it"))
+```
+
+**Forecast against outcome,** every hour of the 964-day sample. Colour is hour
+density on a log scale; the diagonal is a perfect forecast. The asymmetry above
+the line is the spike problem.
+
+:::
+
+The error distribution says the same thing more precisely (@fig-errdist). The
+centre is tight — the interquartile range is comfortably inside ±€30/MWh in all
+three zones, and the median error is within €1/MWh of zero — but 0.6% to 1.0% of
+hours land beyond ±€220/MWh, and the single worst hour of the sample reaches
+€1,745/MWh in Estonia. This is the distribution that produces an RMSE of
+€65/MWh from an MAE of €39/MWh.
+
+::: {#fig-errdist}
+
+```{python}
+Markdown(show("fig-errdist", "Violin plots of signed forecast error for each zone, tightly concentrated near zero with long tails in both directions"))
+```
+
+**A tight centre and a very long tail.** Signed ensemble error, actual minus
+forecast, clipped at ±€220/MWh for legibility. The white dot is the median, the
+thick bar the interquartile range, the thin line the 5th to 95th percentile.
+
+:::
+
+## 3.4 Around the February 2025 synchronisation
+
+The three metrics disagree about what happened after 9 February 2025, and the
+disagreement is the interesting part (@fig-sync).
+
+```{python}
+#| label: tbl-sync
+#| tbl-cap: "Short-window ensemble, before and after 9 February 2025. The split is descriptive: it identifies no causal effect of synchronisation."
+pre = M[(M.model == "LEAR_ensemble") & (M.period == "pre_sync")].set_index("country")
+post = M[(M.model == "LEAR_ensemble") & (M.period == "post_sync")].set_index("country")
+tbl = pd.DataFrame({
+    "Zone": [ZONE_NAME[z] for z in ZONES],
+    "Days before / after": [f"{int(pre.loc[z, 'days'])} / {int(post.loc[z, 'days'])}" for z in ZONES],
+    "MAE before → after": [f"€{pre.loc[z, 'MAE']:.2f} → €{post.loc[z, 'MAE']:.2f}" for z in ZONES],
+    "RMSE before → after": [f"€{pre.loc[z, 'RMSE']:.2f} → €{post.loc[z, 'RMSE']:.2f}" for z in ZONES],
+    "rMAE before → after": [f"{pre.loc[z, 'rMAE']:.3f} → {post.loc[z, 'rMAE']:.3f}" for z in ZONES],
+})
+Markdown(md_table(tbl, align=["l", "c", "r", "r", "r"]))
+```
+
+::: {#fig-sync}
+
+```{python}
+Markdown(show("fig-sync", "Three slope charts showing MAE rising, RMSE falling and rMAE improving slightly in all three zones after February 2025"))
+```
+
+**Three metrics, three stories.** Short-window ensemble before and after
+9 February 2025. Ordinary errors got a little larger; extreme errors got
+markedly smaller; relative performance improved.
+
+:::
+
+Relative performance does not deteriorate after synchronisation — it improves
+slightly in Estonia and Latvia and visibly in Lithuania, from 0.703 to 0.668.
+Absolute MAE rises modestly everywhere. But RMSE falls, and falls hard: from
+€71.52 to €60.81/MWh in Estonia, €59.41 to €53.80 in Latvia, €61.31 to €50.45 in
+Lithuania.
+
+One reading is that typical errors grew slightly while the largest errors became
+rarer or smaller. That is consistent with all three metrics, but it is inferred
+from aggregates, and it should be checked directly against the error
+distributions before anyone believes it. More importantly, none of this
+identifies an effect of synchronisation. A credible causal design would need
+formal change-point tests and controls for everything else that moved at the
+same time — fuel prices, renewable output, transmission conditions, demand and
+market coupling. What the table shows is that the model did not break.
+
+
+# 4. Under stress
+
+Aggregate accuracy hides the model's behaviour in exactly the conditions that
+matter most commercially. So each zone was evaluated again inside its own worst
+window: the 21-day interval with the highest rolling average of within-day price
+standard deviation.
+
+```{python}
+#| label: tbl-stress
+#| tbl-cap: "Performance inside each zone's most volatile 21-day interval (504 hourly forecasts per model). Estonia's window is 26 March – 15 April 2025; Latvia's and Lithuania's is 30 September – 20 October 2025."
+d = rows(V)
+ov = M[M.period == "overall"].set_index(["country", "model"])
+tbl = pd.DataFrame({
+    "Zone": [ZONE_NAME[z] for z in d.country],
+    "Model": [MODEL_NAME[m] for m in d.model],
+    "MAE (€/MWh)": d.MAE.map("{:.2f}".format).values,
+    "RMSE (€/MWh)": d.RMSE.map("{:.2f}".format).values,
+    "rMAE": d.rMAE.map("{:.3f}".format).values,
+    "rMAE, full sample": [f"{ov.loc[(z, m), 'rMAE']:.3f}" for z, m in zip(d.country, d.model)],
+    "Worst hour (€/MWh)": d.max_absolute_error.map("{:.0f}".format).values,
+})
+Markdown(md_table(tbl, align=["l", "l", "r", "r", "r", "r", "r"]))
+```
+
+The degradation is substantial. Estonia's ensemble rMAE rises from 0.772 to
+0.855, Latvia's from 0.702 to 0.905, Lithuania's from 0.679 to 0.826
+(@fig-stress).
+
+::: {#fig-stress}
+
+```{python}
+Markdown(show("fig-stress", "Left: dumbbell chart showing rMAE for every model and zone shifting from the full sample toward the naive benchmark inside the stress window. Right: bars of the worst single-hour error, €614 to €814 per megawatt hour"))
+```
+
+**Stress pushes every model toward the benchmark.** *Left* — rMAE for all nine
+zone–model combinations, full sample against stress window. *Right* — the worst
+single hour inside each stress window, for the ensemble.
+
+:::
+
+The Latvian result is the sharpest. Inside its most volatile 21 days, the
+ensemble keeps only a **9.5%** MAE advantage over a forecast that copies last
+week — against 29.8% over the full sample. Two thirds of the model's value
+evaporates precisely when it would be worth the most.
+
+Large hourly errors define these episodes. The ensemble's worst single hour
+reaches €614/MWh in Estonia, €814/MWh in Latvia and €784/MWh in Lithuania.
+@fig-stress-trace shows where those misses sit: the model tracks the general
+level competently and then flattens against a spike that arrives without
+warning in its own information set.
+
+::: {#fig-stress-trace}
+
+```{python}
+Markdown(show("fig-stress-trace", "Hourly actual and forecast prices through each zone's 21-day stress window, with the forecast tracking the base level but flattening against price spikes above 800 euros"))
+```
+
+**Inside the worst 21 days.** Actual price against the short-window ensemble,
+hour by hour. The shaded area is the error. The marked point is the single worst
+hour in each window. Latvia and Lithuania share a window — and, through most of
+it, the same price.
+
+:::
+
+Two further results are worth recording. First, the ensemble remains the best
+specification in every zone under stress, so forecast averaging buys robustness
+and not only average accuracy. Second, the ranking of the two individual windows
+flips: the 12-week model beats the 8-week model in Estonia and Lithuania inside
+their stress windows, and the two are indistinguishable in Latvia. The shortest
+available history is not automatically the best one when the price regime turns
+— more history can buy stability at exactly the moment adaptiveness stops
+helping.
+
+
+# 5. Limitations and extensions
+
+**This is not a full replication.** The original LEAR benchmark estimates 8-week,
+12-week, three-year and four-year specifications and combines all four.
+Computational cost restricted this work to the two short windows, which is why
+the combination is called a short-window ensemble everywhere above and never
+just "the ensemble".
+
+**The information set is deliberately thin.** The model sees local price history,
+a load forecast and a wind forecast. The Baltic zones are among the most tightly
+interconnected in Europe, and the archive already holds scheduled exchanges,
+physical cross-border flows, transmission and generation outages, installed
+capacity, balancing data and neighbouring-system series. Whether market
+integration variables improve accuracy is the natural next question. It has to
+be asked carefully: realized flows or realized generation for the delivery hour
+must never enter contemporaneously, only information known before gate closure
+or properly lagged realized values.
+
+**Missing data required judgement.** Short gaps were interpolated and one
+isolated Estonian wind-forecast day was reconstructed from its neighbours. The
+affected share of observations is small, but a production implementation should
+formalise the missing-data policy and test whether the choice of imputation
+moves the forecasts at all.
+
+**One implementation detail is load-bearing.** The `epftoolbox` LEAR routine
+needed a compatibility adjustment to `LassoLarsIC` under modern
+Python/scikit-learn when the number of candidate predictors exceeds the number
+of observations — which is exactly the regime the short windows sit in. The
+adjustment preserves the LEAR framework, but it is the kind of thing that has to
+be documented for anyone reproducing the numbers.
+
+**There is no significance testing.** Every comparison above is a comparison of
+point metrics. Lago et al. are explicit that predictive-accuracy differences
+need formal testing, and the multivariate Diebold–Mariano and Giacomini–White
+tests across the 8-week, 12-week, ensemble and naive forecasts are the single
+highest-value addition to this analysis.
+
+**The synchronisation analysis is descriptive.** February 2025 is an
+operationally significant date, but comparing metrics either side of it
+identifies nothing causal. A stronger design would use change-point tests on
+prices and on forecast errors, rolling coefficient stability, and interactions
+with transmission and balancing conditions.
+
+**The stress windows were selected after the fact.** They are a stress test, not
+an unbiased estimate of anything. The primary evidence remains the full 964-day
+evaluation. A more complete treatment would classify all days into volatility
+quantiles and compare accuracy across the whole distribution rather than the
+single most extreme interval.
+
+**Only one benchmark was run.** Lago et al. identify the DNN as the stronger and
+more expensive benchmark, with LEAR attractive for its low complexity and fast
+recalibration. Running the DNN on the same Baltic datasets would establish
+whether nonlinearity buys anything economically meaningful over a strong linear
+baseline.
+
+
+# 6. Conclusion
+
+This project runs an electricity price forecasting workflow end to end:
+automated collection of a large European power-market database, construction of
+leakage-safe day-ahead inputs, implementation of a recognised benchmark model,
+rolling out-of-sample evaluation across three bidding zones, and explicit stress
+testing where the model is most likely to fail.
+
+The central result is consistent across all three markets. LEAR substantially
+outperforms a weekly naive forecast, and averaging the 8-week and 12-week
+specifications improves on both. The short-window ensemble cuts MAE against the
+naive benchmark by roughly 23% in Estonia, 30% in Latvia and 32% in Lithuania.
+
+The second result matters as much. Accuracy degrades sharply when prices turn
+volatile. Relative performance stays better than naive, but the margin narrows —
+to 9.5% in Latvia — and individual hourly errors run past €600–800/MWh. The
+central difficulty of electricity price forecasting is visible in the gap
+between those two paragraphs: a model can look strong on average while remaining
+exposed to exactly the observations that carry the commercial risk.
+
+LEAR is a credible, cheap baseline for Baltic day-ahead prices. The ENTSO-E
+archive assembled here is the more valuable output — it is what makes the
+obvious next steps possible: cross-border information, outage and balancing
+variables, longer calibration windows, formal predictive-accuracy testing, and
+nonlinear benchmarks.
+
+
+# References
+
+Lago, J., Marcjasz, G., De Schutter, B., & Weron, R. (2021). *Forecasting
+day-ahead electricity prices: A review of state-of-the-art algorithms, best
+practices and an open-access benchmark.* Applied Energy, 293, 116983.
+[\[Paper\]](https://doi.org/10.1016/j.apenergy.2021.116983)
+[\[epftoolbox\]](https://github.com/jeslago/epftoolbox)
+
+Uniejewski, B., Weron, R., & Ziel, F. (2018). *Variance stabilizing
+transformations for electricity spot price forecasting.* IEEE Transactions on
+Power Systems, 33(2), 2219–2229.
+[\[Paper\]](https://doi.org/10.1109/TPWRS.2017.2734563)
+
+Diebold, F. X., & Mariano, R. S. (1995). *Comparing predictive accuracy.*
+Journal of Business & Economic Statistics, 13(3), 253–263.
+[\[Paper\]](https://doi.org/10.1080/07350015.1995.10524599)
+
+ENTSO-E. *Transparency Platform.*
+[\[Data\]](https://transparency.entsoe.eu/)
