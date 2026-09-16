@@ -120,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -170,6 +170,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="home.css">
 <meta property="og:title" content="Malek M. Itani">
 <meta property="og:image" content="https://ma-mar-itan.github.io/PortfolioWebsite/assets/img/portrait.svg">
 <meta property="og:site_name" content="Malek M. Itani">
@@ -416,13 +417,14 @@ window.Quarto = {
 
 
 
+<div class="home-page">
 <div class="hero">
 <div class="hero-text">
 <div class="hero-name" role="heading" aria-level="1">Malek M. Itani</div>
 <div class="hero-tagline">
-<p>Statiscian and Machine learning Researcher finding my niche in the world.</p>
+<p>Statistician and machine learning researcher finding my niche in the world.</p>
 </div>
-<div class="hero-links">
+<div class="hero-links" role="navigation" aria-label="Explore the portfolio">
 <p><a href="./blog/index.html">Read the blog</a> <a href="./research/index.html">See the research</a> <a href="./prototypes/index.html">Browse prototypes</a> <a href="./about.html">About me</a></p>
 </div>
 </div>
@@ -431,11 +433,39 @@ window.Quarto = {
 </div>
 </div>
 <div class="section-label">
-<p>Selected work <a href="./research/index.html">All research →</a></p>
+<h2 class="anchored">
+Selected work
+</h2>
+<p><a href="./research/index.html">All research →</a></p>
 </div>
 <div id="listing-featured" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="UmFkaW9taWNzJTJDTWVkaWNhbCUyMGltYWdpbmclMkNDbHVzdGVyaW5nJTJDUmVwcm9kdWNpYmlsaXR5" data-listing-date-sort="1781557200000" data-listing-file-modified-sort="1788254910910" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5733">
+<div class="g-col-1" data-index="0" data-categories="UmVzZWFyY2glMkNTeXN0ZW1zJTJDU2ltdWxhdGlvbg==" data-listing-date-sort="1788555600000" data-listing-file-modified-sort="1788599095023" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2535">
+<a href="./prototypes/Systems-Decision-Lab/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top">
+<img loading="lazy" src="./assets/img/SystemsDecisionLab.svg" class="thumbnail-image card-img" style="height: 160px;" alt="Dense workload rows condensing into a metadata table above an event timeline">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Systems Decision Lab
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3lzdGVtcw=='); return false;">Systems</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U2ltdWxhdGlvbg=='); return false;">Simulation</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Studying petabyte-scale scientific workflows on a laptop, by simulating their metadata instead of their data.</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="UmFkaW9taWNzJTJDTWVkaWNhbCUyMGltYWdpbmclMkNDbHVzdGVyaW5nJTJDUmVwcm9kdWNpYmlsaXR5" data-listing-date-sort="1781557200000" data-listing-file-modified-sort="1788257534154" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5733">
 <a href="./research/Acquisition-Aware Falsification/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left borderless">
 <p class="card-img-top">
@@ -462,15 +492,62 @@ Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Ven
 </div>
 </div></a>
 </div>
+<div class="g-col-1" data-index="2" data-categories="RWxlY3RyaWNpdHklMjBtYXJrZXRzJTJDRm9yZWNhc3RpbmclMkNMQVNTTyUyQ1RpbWUlMjBzZXJpZXM=" data-listing-date-sort="1787259600000" data-listing-file-modified-sort="1788600768054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4219">
+<a href="./research/Baltic Day-Ahead Price Forecasting/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left borderless">
+<p class="card-img-top">
+<img loading="lazy" src="./research/Baltic Day-Ahead Price Forecasting/figures/fig-thumb-light.svg" class="thumbnail-image card-img" style="height: 160px;" alt="Three bars showing forecast error cut by 23%, 30% and 32% against a weekly naive benchmark">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Day-Ahead Electricity Price Forecasting in the Baltic States
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RWxlY3RyaWNpdHklMjBtYXJrZXRz'); return false;">Electricity markets</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Rm9yZWNhc3Rpbmc='); return false;">Forecasting</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TEFTU08='); return false;">LASSO</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VGltZSUyMHNlcmllcw=='); return false;">Time series</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>A LASSO benchmark refitted every delivery day across 964 days of Baltic day-ahead prices — and what happens…</p>
+</div>
+</div>
+</div></a>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
 <div class="section-label">
-<p>Recent writing <a href="./blog/index.html">All posts →</a></p>
+<h2 class="anchored">
+Recent writing
+</h2>
+<p><a href="./blog/index.html">All posts →</a></p>
 </div>
 <div id="listing-recent-writing" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="VGhvdWdodHMlMkNMZXNzb25z" data-listing-date-sort="1787000400000" data-listing-file-modified-sort="1788254910818" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="167">
+<div class="quarto-post image-right" data-index="0" data-categories="R2VvcG9saXRpY3MlMkNBSSUyQ0luZnJhc3RydWN0dXJl" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1788435094174" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1471">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html" class="no-external">The New Geopolitical Chokeholds</a>
+</h3>
+<div class="delink listing-description"><a href="./blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html" class="no-external">
+<p>Power has moved up the stack — from straits and pipelines to lithography, compute, cloud and payment rails, and to the small number of…</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html" class="no-external">
+<div class="listing-date">
+Sep 1, 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="VGhvdWdodHMlMkNMZXNzb25z" data-listing-date-sort="1787000400000" data-listing-file-modified-sort="1788258281769" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="411">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./blog/posts/2026-08-30_The illusion of small ponds/index.html" class="no-external">The illusion of small ponds</a>
@@ -487,7 +564,7 @@ Aug 18, 2026
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="UGhpbGlzb3BoeQ==" data-listing-date-sort="1787000400000" data-listing-file-modified-sort="1788254910818" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="167">
+<div class="quarto-post image-right" data-index="2" data-categories="UGhpbGlzb3BoeQ==" data-listing-date-sort="1787000400000" data-listing-file-modified-sort="1788254910818" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="167">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./blog/posts/2026-08-30_We have no clue/index.html" class="no-external">We have no clue what we are doing</a>
@@ -506,6 +583,7 @@ Aug 18, 2026
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
+</div>
 </div>
 
 

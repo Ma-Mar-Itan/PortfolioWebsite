@@ -2,20 +2,25 @@
   {
     "listing": "/research/index.html",
     "items": [
+      "/research/Baltic Day-Ahead Price Forecasting/index.html",
       "/research/Acquisition-Aware Falsification/index.html"
-    ]
-  },
-  {
-    "listing": "/blog/index.html",
-    "items": [
-      "/blog/posts/2026-08-30_The illusion of small ponds/index.html",
-      "/blog/posts/2026-08-30_We have no clue/index.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
+      "/prototypes/Systems-Decision-Lab/index.html",
       "/research/Acquisition-Aware Falsification/index.html",
+      "/research/Baltic Day-Ahead Price Forecasting/index.html",
+      "/blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html",
+      "/blog/posts/2026-08-30_The illusion of small ponds/index.html",
+      "/blog/posts/2026-08-30_We have no clue/index.html"
+    ]
+  },
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html",
       "/blog/posts/2026-08-30_The illusion of small ponds/index.html",
       "/blog/posts/2026-08-30_We have no clue/index.html"
     ]
@@ -23,6 +28,7 @@
   {
     "listing": "/prototypes/index.html",
     "items": [
+      "/prototypes/Systems-Decision-Lab/index.html",
       "/prototypes/PanelScope/index.html",
       "/prototypes/BibBrief/index.html"
     ]

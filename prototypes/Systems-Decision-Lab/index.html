@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-09-05">
+<meta name="description" content="Studying petabyte-scale scientific workflows on a laptop, by simulating their metadata instead of their data.">
+
+<title>Systems Decision Lab – Malek M. Itani</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-73b0ff3878a4e6fc3716dc69a6aaefa3.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-a60fab2f8a066d0ce7bf48d8b28043cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-73b0ff3878a4e6fc3716dc69a6aaefa3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-105edf8004f9848bb1c5b5c0f91cc130.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-e045ed411a9396aabaef6f4bdfc2100d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-105edf8004f9848bb1c5b5c0f91cc130.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Systems Decision Lab – Malek M. Itani">
+<meta property="og:description" content="Studying petabyte-scale scientific workflows on a laptop, by simulating their metadata instead of their data.">
+<meta property="og:image" content="https://ma-mar-itan.github.io/PortfolioWebsite/assets/img/SystemsDecisionLab.svg">
+<meta property="og:site_name" content="Malek M. Itani">
+<meta property="og:image:alt" content="Dense workload rows condensing into a metadata table above an event timeline">
+<meta name="twitter:title" content="Systems Decision Lab – Malek M. Itani">
+<meta name="twitter:description" content="Studying petabyte-scale scientific workflows on a laptop, by simulating their metadata instead of their data.">
+<meta name="twitter:image" content="https://ma-mar-itan.github.io/PortfolioWebsite/assets/img/SystemsDecisionLab.svg">
+<meta name="twitter:image:alt" content="Dense workload rows condensing into a metadata table above an event timeline">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/img/logo.svg" alt="Site logo" class="navbar-logo light-content">
+    <img src="../../assets/img/logo.svg" alt="Site logo" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Malek M. Itani</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research/index.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../prototypes/index.html"> 
+<span class="menu-text">Prototypes</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/" target="_blank"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog/index.xml"> <i class="bi bi-rss" role="img" aria-label="RSS feed">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#simulating-the-description-instead-of-the-data" id="toc-simulating-the-description-instead-of-the-data" class="nav-link active" data-scroll-target="#simulating-the-description-instead-of-the-data">Simulating the description instead of the data</a></li>
+  <li><a href="#why-the-clock-jumps" id="toc-why-the-clock-jumps" class="nav-link" data-scroll-target="#why-the-clock-jumps">Why the clock jumps</a></li>
+  <li><a href="#how-the-engine-is-put-together" id="toc-how-the-engine-is-put-together" class="nav-link" data-scroll-target="#how-the-engine-is-put-together">How the engine is put together</a></li>
+  <li><a href="#what-one-run-looks-like" id="toc-what-one-run-looks-like" class="nav-link" data-scroll-target="#what-one-run-looks-like">What one run looks like</a></li>
+  <li><a href="#the-comparison-is-the-point" id="toc-the-comparison-is-the-point" class="nav-link" data-scroll-target="#the-comparison-is-the-point">The comparison is the point</a></li>
+  <li><a href="#the-workload-description-turned-out-to-be-the-hard-part" id="toc-the-workload-description-turned-out-to-be-the-hard-part" class="nav-link" data-scroll-target="#the-workload-description-turned-out-to-be-the-hard-part">The workload description turned out to be the hard part</a></li>
+  <li><a href="#what-it-cannot-do" id="toc-what-it-cannot-do" class="nav-link" data-scroll-target="#what-it-cannot-do">What it cannot do</a></li>
+  <li><a href="#what-i-would-want-to-do-next" id="toc-what-i-would-want-to-do-next" class="nav-link" data-scroll-target="#what-i-would-want-to-do-next">What I would want to do next</a></li>
+  <li><a href="#where-it-came-from" id="toc-where-it-came-from" class="nav-link" data-scroll-target="#where-it-came-from">Where it came from</a></li>
+  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Systems Decision Lab</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Research</div>
+    <div class="quarto-category">Systems</div>
+    <div class="quarto-category">Simulation</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Studying petabyte-scale scientific workflows on a laptop, by simulating their metadata instead of their data.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 5, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The Einstein Telescope is expected to produce data workflows at the petabyte scale, with heterogeneous compute demands and scheduling problems that nobody has solved yet. Someone has to design the methods that will manage those workflows. The awkward part is that designing them appears to require the thing being designed for: continuous access to petabyte datasets and to the expensive machines that process them. Students and research teams do not have that access, so the methods tend to get built late, by whoever is already inside the facility, and tested once rather than compared.</p>
+<p>This project is my attempt at the cheap layer that should come first. It represents a workflow as lightweight task metadata, simulates that metadata under constrained resources, and lets scheduling and capacity decisions be tested and compared on an ordinary laptop. It is not a replacement for experiments on real infrastructure. It is the thing you use before them, so that you arrive at the real machine with a short list instead of a blank page.</p>
+<section id="simulating-the-description-instead-of-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="simulating-the-description-instead-of-the-data">Simulating the description instead of the data</h2>
+<p>The move the whole project rests on is separating the logical scale of a workflow from its physical scale. A workflow might represent terabytes or petabytes of science, but if the question is when tasks run, what they wait for, and where queues form, then the contents of those bytes never enter the calculation. What matters is how long a task occupies which resources, and when it shows up. So the simulator keeps that and throws away everything else.</p>
+<div id="f-1">
+<div class="light-content">
+<p><a href="figures/fig-abstraction-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="figures/fig-abstraction-light.svg" class="img-fluid" alt="A real task described in six lines beside the eight metadata fields the simulator stores"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-abstraction-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="figures/fig-abstraction-dark.svg" class="img-fluid" alt="A real task described in six lines beside the eight metadata fields the simulator stores"></a></p>
+</div>
+</div>
+<div class="figure-caption">
+<p>Figure 1. What survives the abstraction. The left column is a task as it exists; the right column is everything the simulator needs in order to reason about when it runs.</p>
+</div>
+<p>The practical consequence is a change of several orders of magnitude. A workload of 120,000 tasks representing a few petabytes of logical data is roughly 40 MB of CSV. It loads into memory on any laptop, and a simulated run of it finishes in seconds.</p>
+<p>The limitation is in the same sentence as the benefit. This abstraction is only valid for questions where the content of the data does not matter. Ask about data movement, cache behaviour or network topology, and the thing you dropped is exactly the thing you needed. I come back to that below, because it is the honest boundary of the approach rather than a to-do item.</p>
+</section>
+<section id="why-the-clock-jumps" class="level2">
+<h2 class="anchored" data-anchor-id="why-the-clock-jumps">Why the clock jumps</h2>
+<p>The engine is a discrete-event simulator, and this is the part I would most want to defend, because it is what makes the rest affordable.</p>
+<p>A time-stepped simulation advances a fixed interval at a time and recomputes the state of the system at each step. Most of that work is wasted. Between one task finishing and the next arriving, nothing about the system changes, so there is nothing to recompute. An event-driven engine instead keeps a queue of the moments when the state <em>will</em> change and jumps the clock straight to the next one.</p>
+<div id="f-2">
+<div class="light-content">
+<p><a href="figures/fig-clock-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="figures/fig-clock-light.svg" class="img-fluid" alt="A dense comb of 450 one-second time steps above a sparse timeline with six labelled events"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-clock-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="figures/fig-clock-dark.svg" class="img-fluid" alt="A dense comb of 450 one-second time steps above a sparse timeline with six labelled events"></a></p>
+</div>
+</div>
+<div class="figure-caption">
+<p>Figure 2. The same three-task scenario under both schemes. Stepping one second at a time takes 450 evaluations, 444 of which find nothing has changed. The event-driven clock touches six moments, which are the only six at which anything happens.</p>
+</div>
+<p>The important property is what the cost scales with. A time-stepped run costs more if you simulate a longer horizon or choose a finer resolution, even when the workload is identical. An event-driven run costs what the workload costs: one arrival event per task, one completion event per task that runs. A month-long workload of 50,000 tasks is about 100,000 events, whichever way you slice the calendar.</p>
+<p>That is not just an efficiency note. It is what makes the experimental design possible. If a single run is cheap, you can afford to run the same workload under four scheduling policies, at a dozen seeds, across a sweep of cluster configurations, and talk about distributions of outcomes rather than one anecdote. An expensive simulator gets used once and quoted; a cheap one gets used properly.</p>
+</section>
+<section id="how-the-engine-is-put-together" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-engine-is-put-together">How the engine is put together</h2>
+<p>Five components carry the entire simulation.</p>
+<div id="f-3">
+<div class="light-content">
+<p><a href="figures/fig-loop-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="figures/fig-loop-light.svg" class="img-fluid" alt="Event queue, virtual clock, event handlers, system state and scheduler, connected in a loop"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-loop-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="figures/fig-loop-dark.svg" class="img-fluid" alt="Event queue, virtual clock, event handlers, system state and scheduler, connected in a loop"></a></p>
+</div>
+</div>
+<div class="figure-caption">
+<p>Figure 3. One turn of the loop. The queue holds the future, the clock jumps to it, a handler changes the state, and the scheduler decides who gets the capacity that just became available.</p>
+</div>
+<p>The <strong>event queue</strong> is the timeline. At the start it holds one arrival event per task, in time order; every time a task starts running, a completion event is pushed onto it at the appropriate future time. The <strong>virtual clock</strong> does no work of its own — it simply takes the timestamp of whatever event comes off the queue next. The <strong>system state</strong> is the simulated cluster: total and available CPUs, GPUs and memory, plus the waiting, running, completed and rejected tasks, updated after every event.</p>
+<p>The <strong>handlers</strong> contain the logic. When a task arrives, the first question is not whether it can run now but whether it could <em>ever</em> run: if it asks for more CPUs, GPUs or memory than the whole cluster has, it is marked rejected rather than left in a queue forever. That case is reported in the output rather than hidden, because in practice it usually means the workload assumptions and the cluster configuration disagree, and it is better to be told that than to watch a queue never drain. Otherwise the task joins the waiting queue and the scheduler is invoked. When a task completes, its resources go back to the pool, its timings are recorded, and the scheduler is invoked again, because capacity has just appeared.</p>
+<p>The <strong>scheduler</strong> is the part that is meant to be swapped. It orders the waiting queue according to a policy — first-come first-served, shortest job first, priority, random — and the engine then starts every task that fits, in that order. It is worth being explicit about one design decision here: a task the policy ranks first but that does not currently fit does not block the queue. The engine keeps looking, so a two-core job is not stuck behind a fourteen-core one waiting for a hole. That is a deliberate modelling choice resembling backfilling on a real batch system, and it materially changes the results, so it belongs in the description of the model rather than buried in the code.</p>
+</section>
+<section id="what-one-run-looks-like" class="level2">
+<h2 class="anchored" data-anchor-id="what-one-run-looks-like">What one run looks like</h2>
+<p>Here is an actual run: thirteen tasks against a cluster of 16 CPUs, 2 GPUs and 256 GB, under first-come first-served. The whole simulation is thirty-seven events.</p>
+<div id="f-4">
+<div class="light-content">
+<p><a href="figures/fig-run-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="figures/fig-run-light.svg" class="img-fluid" alt="Gantt chart of thirteen tasks showing waiting and running periods, above a step plot of CPU and GPU capacity in use"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-run-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="figures/fig-run-dark.svg" class="img-fluid" alt="Gantt chart of thirteen tasks showing waiting and running periods, above a step plot of CPU and GPU capacity in use"></a></p>
+</div>
+</div>
+<div class="figure-caption">
+<p>Figure 4. One simulated run. Each task waits (grey) and then runs (colour); the lower panel is the fraction of CPU and GPU capacity held at each moment. Nothing here was drawn by hand — it is the engine’s output for this workload.</p>
+</div>
+<p>The figure shows the kind of thing that is hard to reason about on paper. T01 takes twelve of the sixteen cores for the first 900 seconds, so for that whole period the cluster behaves as though it were a four-core machine, and only small tasks fit in the gap. T11 needs fourteen cores; it arrives at 360 seconds and does not start until 1920, having waited 1560 seconds for a hole large enough to hold it, while eight smaller tasks that arrived after it have come and gone. T13 asks for 24 cores on a 16-core cluster and is rejected at arrival. The GPU trace shows a resource that is either half idle or fully saturated and never anything in between, because only three tasks in this workload want one.</p>
+<p>Each run produces a task-level table with the full lifecycle of every task, a queue timeline, a resource-utilization timeline, and the aggregate metrics you would expect: makespan, completion rate, mean and median wait, turnaround, throughput, mean utilization per resource, and total core-seconds. The queue timeline is where backlog formation shows up; the utilization timeline is where you find out whether you are CPU-bound, GPU-bound, memory-bound, or simply scheduling badly.</p>
+</section>
+<section id="the-comparison-is-the-point" class="level2">
+<h2 class="anchored" data-anchor-id="the-comparison-is-the-point">The comparison is the point</h2>
+<p>A single run is a description. The reason to build the thing is comparison, and comparison is only meaningful if it is controlled: hold the workload fixed, hold the cluster fixed, hold the seeds and runtime assumptions fixed, change one policy, and attribute the difference to that policy under those stated conditions.</p>
+<div id="f-5">
+<div class="light-content">
+<p><a href="figures/fig-compare-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="figures/fig-compare-light.svg" class="img-fluid" alt="The same thirteen tasks scheduled by first-come first-served and by shortest job first, with different makespans and mean waits"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-compare-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="figures/fig-compare-dark.svg" class="img-fluid" alt="The same thirteen tasks scheduled by first-come first-served and by shortest job first, with different makespans and mean waits"></a></p>
+</div>
+</div>
+<div class="figure-caption">
+<p>Figure 5. Identical workload, identical cluster, identical seed; only the scheduling policy differs. Shortest job first, the textbook choice for minimising waiting time, does worse here on both measures.</p>
+</div>
+<p>That result is the reason I find this worth doing. Shortest job first is supposed to minimise mean waiting time, and in the classical setting — one resource, all jobs present at the start — it does. Here it loses on both counts: mean wait rises from 491 to 522 seconds and makespan from 2640 to 2880. The mechanism is visible in the figure. Because the engine already lets small tasks slip into gaps, first-come first-served is not actually starving them; meanwhile shortest job first keeps deferring the two widest tasks, T05 and T11, until almost everything else has drained, and the run acquires a long thin tail where the cluster is mostly idle. Priority scheduling and random selection both land near 658 seconds of mean wait, worse than either.</p>
+<p>I am not claiming first-come first-served is the better policy. The claim is narrower and more useful: with multiple resource dimensions, staggered arrivals and backfilling, the textbook ranking does not survive, and which policy wins depends on the shape of the workload rather than on the policy alone. That is precisely the kind of question you cannot settle by argument, and precisely why a cheap testbed earns its place.</p>
+</section>
+<section id="the-workload-description-turned-out-to-be-the-hard-part" class="level2">
+<h2 class="anchored" data-anchor-id="the-workload-description-turned-out-to-be-the-hard-part">The workload description turned out to be the hard part</h2>
+<p>The engine itself is a few hundred lines. Most of the code in the repository is not the simulator — it is the machinery for describing the workload, and that surprised me at first. The reason is that a simulation result is worth exactly as much as the workload description behind it, and a workload description is a scientific claim. If I tell you that a policy reduces mean wait by 12%, your next question should be where my runtime estimates came from, and whether you can reproduce the workload I ran them on. Without an answer, the number is decoration.</p>
+<p>So the metadata layer is built to answer that. The canonical schema is 81 fields, and its most important property is that it refuses to mix different kinds of statement: what a task <em>requested</em>, what it was <em>allocated</em>, what was <em>observed</em>, its <em>peak</em> use, what was <em>estimated</em> from assumed rates, and what was actually <em>billed</em> are separate fields that stay null when unknown. A measurement never quietly becomes an assumption. Validation runs structural, temporal, semantic, provenance, referential and dependency checks, produces a weighted quality score, and can block a release outright — a scenario with an unassigned owner or missing provenance is not fit to base a decision on, however clean its numbers look.</p>
+<p>Reproducibility is enforced rather than hoped for: the same configuration and seed produce byte-identical output, and a release is exported as a bundle carrying the configuration, validation report, per-artifact checksums, the runtime environment and a contract stating exactly what a third party needs in order to regenerate it. Real traces can be imported instead of generated — there are adapters for Slurm accounting records, Kubernetes, Airflow, Spark, Prometheus and others — with every canonical field traceable back to a source column, a documented default or an explicit rule, and automatic mappings always requiring review before they commit. Given a real trace, the system can also fit a synthetic twin and score how closely it matches on distributions, correlations, arrivals and tail coverage. That score is reported alongside a warning I think is important: fidelity is not validity. A twin can match a trace closely and still represent the wrong population.</p>
+</section>
+<section id="what-it-cannot-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-cannot-do">What it cannot do</h2>
+<p>The engine does not model data movement, network contention, storage latency or distributed file systems. It does not talk to SLURM, Kubernetes or MPI. It does not model node failures or real detector pipelines. These are deliberate exclusions at this stage rather than an unwritten roadmap: they are what keeps the model small enough to explain and cheap enough to run.</p>
+<p>Two limits matter more than that list. The first is that runtime is an input, not a prediction. Every result is conditional on runtime estimates being roughly right, and if they are systematically wrong the simulator will produce confident, internally consistent, wrong answers, with nothing in its output to indicate the problem. The second is that no simulator validates itself. Until this has been fitted to real scheduler logs and backtested against what those systems actually did, it is an instrument for generating hypotheses about scheduling, not evidence about any particular facility.</p>
+</section>
+<section id="what-i-would-want-to-do-next" class="level2">
+<h2 class="anchored" data-anchor-id="what-i-would-want-to-do-next">What I would want to do next</h2>
+<p>Four questions follow directly from the current state, and they are the ones I would want to work on.</p>
+<p>The first is uncertainty. Every result above treats runtime as a point estimate, when real runtimes are distributions with heavy tails. Propagating that properly means asking whether the ranking between policies is stable under runtime uncertainty or whether it flips, and the answer determines how much any comparison of this kind is worth.</p>
+<p>The second is learned policies. The natural use of a cheap simulator is to train a scheduling policy in it, which immediately raises the sim-to-real question: does a policy trained on metadata transfer to a real batch system, and can the size of the transfer gap be predicted from the fidelity score of the workload it was trained on? That is the question I find most interesting, because it makes the fidelity machinery do real work rather than sit in a report.</p>
+<p>The third is validation, which is the precondition for the other two: fit real HPC scheduler logs, backtest the simulator against recorded outcomes, and publish the gap honestly.</p>
+<p>The fourth is the boundary of the abstraction itself. Adding data movement and network constraints and then measuring how much the conclusions move would answer whether metadata-only simulation is sufficient, and for which class of question. If the answers barely change, the abstraction is justified; if they change a lot, that is a more interesting result and worth knowing early.</p>
+</section>
+<section id="where-it-came-from" class="level2">
+<h2 class="anchored" data-anchor-id="where-it-came-from">Where it came from</h2>
+<p>The project began as a research proposal for ETCETERA, the programme preparing the Einstein Telescope for the era of gravitational-wave astronomy, titled <em>Simulating Petabyte-Scale Scientific Workflows Without Petabyte Data</em>. Gravitational-wave computing is the motivating case, but nothing in the kernel is specific to it: tasks, events, resources, policies and evidence are domain-neutral, and the domain vocabulary lives in labels, adapters and extension fields. The same machinery applies to data centres, industrial workflows and other scientific facilities.</p>
+</section>
+<section id="status" class="level2">
+<h2 class="anchored" data-anchor-id="status">Status</h2>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Active research build.</strong> The metadata, validation, calibration and governance layers are usable end to end; the event-driven engine currently runs as a separate prototype and is being folded into the same pipeline. Interfaces will still change.</p>
+</div>
+</div>
+</div>
+<ul>
+<li><a href="https://github.com/Ma-Mar-Itan/Systems-Decision-Lab">Source</a></li>
+<li>Run it locally: <code>pip install -r requirements.txt</code>, then <code>python -m streamlit run app.py</code></li>
+<li>The engine used for Figures 2, 4 and 5 on this page is <code>_engine.py</code> in this folder; <code>_figures.py</code> rebuilds every figure from its output.</li>
+</ul>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ma-mar-itan\.github\.io\/PortfolioWebsite\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Malek M. Itani</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Ma-Mar-Itan">
+      <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/malek-ma-itani/">
+      <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:Malek.Ma.Itani@gmail.com">
+      <i class="bi bi-envelope" role="img" aria-label="Email">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

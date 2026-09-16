@@ -4,7 +4,7 @@
     "href": "research/index.html",
     "title": "Research",
     "section": "",
-    "text": "Radiomics\n\nMedical imaging\n\nClustering\n\nReproducibility\n\n\n\nDetecting sensor induced effects on high dimensional data.\n\n\n\n2026\n\n\n\n\n\n\nNo matching items"
+    "text": "Electricity markets\n\nForecasting\n\nLASSO\n\nTime series\n\n\n\nA LASSO benchmark refitted every delivery day across 964 days of Baltic day-ahead prices — and what happens to it when the market turns violent.\n\n\n\n2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRadiomics\n\nMedical imaging\n\nClustering\n\nReproducibility\n\n\n\nDetecting sensor induced effects on high dimensional data.\n\n\n\n2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "research/index.html#publications",
@@ -12,202 +12,6 @@
     "title": "Research",
     "section": "Publications",
     "text": "Publications\n\nMalek Itani, Mahmoud Arayssi, Noura Yassine (2026). Regime-Dependent Determinants of Systemic Banking Crises: Evidence from a Finite-Mixture Logit Model Under Review.\nMalek Itani, Mahmoud Arayssi, Noura Yassine (2026). *The Illusion of Predictability: Structural Heterogeneity and Informational Noise in Corporate Greenwashing. Under Review.\nMahmoud Arayssi, Azza Bejaoui, Malek Itani (2026). What Do Lenders See ? Disentangling Gender Signals from Organizational Substance in Credit Markets. Under Review.\nMahmoud Arayssi, Malek Itani (2026). ESG Misrepresentation in Corporate Sustainability Communication: A Comprehensive Review of Greenwashing, Brownwashing, Greenhushing, and CSR Decoupling. Under Review.\nFakih, H. H., Itani, M. M., & Karam, P. (2017). Gold nanoparticles-coated polystyrene beads for the multiplex detection of viral DNA. Sensors and Actuators B: Chemical, 250, 446-452. [Paper]"
-  },
-  {
-    "objectID": "prototypes/PanelScope/index.html",
-    "href": "prototypes/PanelScope/index.html",
-    "title": "PanelScope",
-    "section": "",
-    "text": "It helps identify the largest set of variables that can be analysed together while preserving a user-defined proportion of complete panel observations. Given a country-year, firm-year, bank-year, or other entity-year dataset, PanelScope can measures how the complete-case sample changes as variables are combined, and reports the variable set that retains the most usable data subject to a stated retention requirement. It is intended as a preparatory step before estimation, making the trade-off between variable breadth and sample retention explicit and reproducible."
-  },
-  {
-    "objectID": "prototypes/PanelScope/index.html#what-it-does",
-    "href": "prototypes/PanelScope/index.html#what-it-does",
-    "title": "PanelScope",
-    "section": "",
-    "text": "It helps identify the largest set of variables that can be analysed together while preserving a user-defined proportion of complete panel observations. Given a country-year, firm-year, bank-year, or other entity-year dataset, PanelScope can measures how the complete-case sample changes as variables are combined, and reports the variable set that retains the most usable data subject to a stated retention requirement. It is intended as a preparatory step before estimation, making the trade-off between variable breadth and sample retention explicit and reproducible."
-  },
-  {
-    "objectID": "prototypes/PanelScope/index.html#why-i-built-it",
-    "href": "prototypes/PanelScope/index.html#why-i-built-it",
-    "title": "PanelScope",
-    "section": "Why I built it",
-    "text": "Why I built it\nI struggled finding the best selection of variables for a dataset of 12 features. Then my professor sent an 18,000 feature dataset."
-  },
-  {
-    "objectID": "prototypes/PanelScope/index.html#status",
-    "href": "prototypes/PanelScope/index.html#status",
-    "title": "PanelScope",
-    "section": "Status",
-    "text": "Status\n\n\n\n\n\n\nWorking prototype. Not maintained. Fork it rather than depend on it."
-  },
-  {
-    "objectID": "prototypes/PanelScope/index.html#try-it",
-    "href": "prototypes/PanelScope/index.html#try-it",
-    "title": "PanelScope",
-    "section": "Try it",
-    "text": "Try it\n\nLive demo\nSource"
-  },
-  {
-    "objectID": "prototypes/BibBrief/index.html",
-    "href": "prototypes/BibBrief/index.html",
-    "title": "BibBrief",
-    "section": "",
-    "text": "Takes a BibTeX export, the kind you download from Scopus, Web of Science, or Zotero after a literature search and converts it into a clean, structured Microsoft Word document. Every article gets its own entry: the title, a formatted reference, and the full abstract (Must be selected in the export)."
-  },
-  {
-    "objectID": "prototypes/BibBrief/index.html#what-it-does",
-    "href": "prototypes/BibBrief/index.html#what-it-does",
-    "title": "BibBrief",
-    "section": "",
-    "text": "Takes a BibTeX export, the kind you download from Scopus, Web of Science, or Zotero after a literature search and converts it into a clean, structured Microsoft Word document. Every article gets its own entry: the title, a formatted reference, and the full abstract (Must be selected in the export)."
-  },
-  {
-    "objectID": "prototypes/BibBrief/index.html#why-i-built-it",
-    "href": "prototypes/BibBrief/index.html#why-i-built-it",
-    "title": "BibBrief",
-    "section": "Why I built it",
-    "text": "Why I built it\nA professor wanted me to collect the abstracts of a hundred papers (turns out she was exaggerating and just wanted 20)."
-  },
-  {
-    "objectID": "prototypes/BibBrief/index.html#status",
-    "href": "prototypes/BibBrief/index.html#status",
-    "title": "BibBrief",
-    "section": "Status",
-    "text": "Status\n\n\n\n\n\n\nWorking prototype. Not maintained. Fork it rather than depend on it."
-  },
-  {
-    "objectID": "prototypes/BibBrief/index.html#try-it",
-    "href": "prototypes/BibBrief/index.html#try-it",
-    "title": "BibBrief",
-    "section": "Try it",
-    "text": "Try it\n\nLive demo\nSource"
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_We have no clue/index.html",
-    "href": "blog/posts/2026-08-30_We have no clue/index.html",
-    "title": "We have no clue what we are doing",
-    "section": "",
-    "text": "Every few weeks someone hands me a model and asks whether it’s any good. The honest answer is usually “I can’t tell yet,” so I’ve written down the order I work through it."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#find-the-target-before-the-features",
-    "href": "blog/posts/2026-08-30_We have no clue/index.html#find-the-target-before-the-features",
-    "title": "We have no clue what we are doing",
-    "section": "1. Find the target before the features",
-    "text": "1. Find the target before the features\nThe first question isn’t what went into the model, it’s what came out. Ask what the label actually measures, when it was recorded, and who decided it. A surprising share of models fail here: the target is a proxy for the thing anyone cares about, and nobody wrote down the gap."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#draw-the-timeline",
-    "href": "blog/posts/2026-08-30_We have no clue/index.html#draw-the-timeline",
-    "title": "We have no clue what we are doing",
-    "section": "2. Draw the timeline",
-    "text": "2. Draw the timeline\nSketch when each feature becomes available relative to when the prediction is needed. Leakage is almost always a timeline problem wearing a statistics costume."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#ask-what-the-baseline-was",
-    "href": "blog/posts/2026-08-30_We have no clue/index.html#ask-what-the-baseline-was",
-    "title": "We have no clue what we are doing",
-    "section": "3. Ask what the baseline was",
-    "text": "3. Ask what the baseline was\nIf nobody can tell you what the naive rule scores, the model has not been evaluated — it has been described.\n\n\n\n\n\n\nNote\n\n\n\nThis is a placeholder post. Replace the text; keep the front matter shape."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#re-run-it-once",
-    "href": "blog/posts/2026-08-30_We have no clue/index.html#re-run-it-once",
-    "title": "We have no clue what we are doing",
-    "section": "4. Re-run it once",
-    "text": "4. Re-run it once\nNot to reproduce the numbers. To find out how long it takes, what breaks, and how much of the pipeline lives in someone’s head."
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nThe illusion of small ponds\n\n\n\nThoughts\n\nLessons\n\n\n\nThere are no big fish in small ponds, only small fish in big ponds.\n\n\n\n\n\nAug 18, 2026\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\nWe have no clue what we are doing\n\n\n\nPhilisophy\n\n\n\nA reality check that we all face at one point.\n\n\n\n\n\nAug 18, 2026\n\n1 min\n\n\n\n\nNo matching items\n Back to top"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Malek M. Itani",
-    "section": "",
-    "text": "I work on applied research problems where the statistics are only half the difficulty — the other half is that the data was collected by people, for reasons that had nothing to do with your question.\nRight now I’m interested in measurement: what a number has to survive before it deserves to be acted on. That pulls me across sampling design, time series drift, and the interfaces that put estimates in front of people who have to decide something.\nOutside of that I build small tools, write here, and keep a graveyard of prototypes."
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "Malek M. Itani",
-    "section": "Experience",
-    "text": "Experience\n\nRole Title · Organization\n\n2024 – present. One line on what you own and what changed because you were there.\n\nPrevious Role · Organization\n\n2021 – 2024. One line.\n\nEarlier Role · Organization\n\n2019 – 2021. One line."
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "Malek M. Itani",
-    "section": "Education",
-    "text": "Education\n\nMSc, Field of Study · University\n\n\nThesis: Title of your thesis.\n\n\nBSc, Field of Study · University"
-  },
-  {
-    "objectID": "about.html#tools",
-    "href": "about.html#tools",
-    "title": "Malek M. Itani",
-    "section": "Tools",
-    "text": "Tools\nDaily: R, Python, Quarto, SQL, git. Comfortable: Stan, Shiny, Observable, Docker. Occasionally: whatever the problem demands."
-  },
-  {
-    "objectID": "about.html#elsewhere",
-    "href": "about.html#elsewhere",
-    "title": "Malek M. Itani",
-    "section": "Elsewhere",
-    "text": "Elsewhere\nThe fastest way to reach me is email. I read everything and answer most things, usually slowly."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html",
-    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html",
-    "title": "The illusion of small ponds",
-    "section": "",
-    "text": "Every few weeks someone hands me a model and asks whether it’s any good. The honest answer is usually “I can’t tell yet,” so I’ve written down the order I work through it."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#find-the-target-before-the-features",
-    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#find-the-target-before-the-features",
-    "title": "The illusion of small ponds",
-    "section": "1. Find the target before the features",
-    "text": "1. Find the target before the features\nThe first question isn’t what went into the model, it’s what came out. Ask what the label actually measures, when it was recorded, and who decided it. A surprising share of models fail here: the target is a proxy for the thing anyone cares about, and nobody wrote down the gap."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#draw-the-timeline",
-    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#draw-the-timeline",
-    "title": "The illusion of small ponds",
-    "section": "2. Draw the timeline",
-    "text": "2. Draw the timeline\nSketch when each feature becomes available relative to when the prediction is needed. Leakage is almost always a timeline problem wearing a statistics costume."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#ask-what-the-baseline-was",
-    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#ask-what-the-baseline-was",
-    "title": "The illusion of small ponds",
-    "section": "3. Ask what the baseline was",
-    "text": "3. Ask what the baseline was\nIf nobody can tell you what the naive rule scores, the model has not been evaluated — it has been described.\n\n\n\n\n\n\nNote\n\n\n\nThis is a placeholder post. Replace the text; keep the front matter shape."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#re-run-it-once",
-    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#re-run-it-once",
-    "title": "The illusion of small ponds",
-    "section": "4. Re-run it once",
-    "text": "4. Re-run it once\nNot to reproduce the numbers. To find out how long it takes, what breaks, and how much of the pipeline lives in someone’s head."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Malek M. Itani",
-    "section": "",
-    "text": "Malek M. Itani\n\nStatiscian and Machine learning Researcher finding my niche in the world.\n\n\nRead the blog See the research Browse prototypes About me\n\n\n\n\n\n\n\nSelected work All research →\n\n\n\n\n\n\n\n\n\n\n\nAcquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI\n\n\n\nRadiomics\n\nMedical imaging\n\nClustering\n\nReproducibility\n\n\n\nDetecting sensor induced effects on high dimensional data.\n\n\n\n\n\nNo matching items\n\n\nRecent writing All posts →\n\n\n\n\n\n\nThe illusion of small ponds\n\n\nThere are no big fish in small ponds, only small fish in big ponds.\n\n\n\n\n\nAug 18, 2026\n\n\n\n\n\n\n\nWe have no clue what we are doing\n\n\nA reality check that we all face at one point.\n\n\n\n\n\nAug 18, 2026\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "prototypes/index.html",
-    "href": "prototypes/index.html",
-    "title": "Prototypes",
-    "section": "",
-    "text": "PanelScope\n\n\n\nResearch\n\nAutomation\n\n\n\nPanel-data coverage assistant.\n\n\n\n\n\n\n\n\n\n\n\n\nBibBrief\n\n\n\nResearch\n\nAutomation\n\n\n\nTurn your bibliography into a document you can read.\n\n\n\n\n\nNo matching items\n Back to top"
   },
   {
     "objectID": "research/Acquisition-Aware Falsification/index.html",
@@ -334,5 +138,502 @@
     "title": "Acquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI",
     "section": "5.5 Limitations",
     "text": "5.5 Limitations\nThis study has several limitations. First, the survival analysis pertaining to HR+/HER2+ should be taken with caution due to low sample count (N=10), a problem central to medical imaging analysis. The divergence between the subgroups is dramatic, but the CI is wide. More patients would be needed if one wishes to quantify any subtype-specific prognostic effect.\nSecond, k-means clustering utilizing principal components feature space was legible and justified for the purposes of this falsification exercise. But to further strengthen the argument of technical confounding, it is recommended to apply more unsupervised classifiers.\nLastly, harmonization is not ground truth. While ComBat and residualization are able to remove technical effects the post-harmonization subgroup are not inherently biological. One must treat the harmonization as an adversary, not an assurance of validity."
+  },
+  {
+    "objectID": "prototypes/PanelScope/index.html",
+    "href": "prototypes/PanelScope/index.html",
+    "title": "PanelScope",
+    "section": "",
+    "text": "It helps identify the largest set of variables that can be analysed together while preserving a user-defined proportion of complete panel observations. Given a country-year, firm-year, bank-year, or other entity-year dataset, PanelScope can measures how the complete-case sample changes as variables are combined, and reports the variable set that retains the most usable data subject to a stated retention requirement. It is intended as a preparatory step before estimation, making the trade-off between variable breadth and sample retention explicit and reproducible."
+  },
+  {
+    "objectID": "prototypes/PanelScope/index.html#what-it-does",
+    "href": "prototypes/PanelScope/index.html#what-it-does",
+    "title": "PanelScope",
+    "section": "",
+    "text": "It helps identify the largest set of variables that can be analysed together while preserving a user-defined proportion of complete panel observations. Given a country-year, firm-year, bank-year, or other entity-year dataset, PanelScope can measures how the complete-case sample changes as variables are combined, and reports the variable set that retains the most usable data subject to a stated retention requirement. It is intended as a preparatory step before estimation, making the trade-off between variable breadth and sample retention explicit and reproducible."
+  },
+  {
+    "objectID": "prototypes/PanelScope/index.html#why-i-built-it",
+    "href": "prototypes/PanelScope/index.html#why-i-built-it",
+    "title": "PanelScope",
+    "section": "Why I built it",
+    "text": "Why I built it\nI struggled finding the best selection of variables for a dataset of 12 features. Then my professor sent an 18,000 feature dataset."
+  },
+  {
+    "objectID": "prototypes/PanelScope/index.html#status",
+    "href": "prototypes/PanelScope/index.html#status",
+    "title": "PanelScope",
+    "section": "Status",
+    "text": "Status\n\n\n\n\n\n\nWorking prototype. Not maintained. Fork it rather than depend on it."
+  },
+  {
+    "objectID": "prototypes/PanelScope/index.html#try-it",
+    "href": "prototypes/PanelScope/index.html#try-it",
+    "title": "PanelScope",
+    "section": "Try it",
+    "text": "Try it\n\nLive demo\nSource"
+  },
+  {
+    "objectID": "prototypes/BibBrief/index.html",
+    "href": "prototypes/BibBrief/index.html",
+    "title": "BibBrief",
+    "section": "",
+    "text": "Takes a BibTeX export, the kind you download from Scopus, Web of Science, or Zotero after a literature search and converts it into a clean, structured Microsoft Word document. Every article gets its own entry: the title, a formatted reference, and the full abstract (Must be selected in the export)."
+  },
+  {
+    "objectID": "prototypes/BibBrief/index.html#what-it-does",
+    "href": "prototypes/BibBrief/index.html#what-it-does",
+    "title": "BibBrief",
+    "section": "",
+    "text": "Takes a BibTeX export, the kind you download from Scopus, Web of Science, or Zotero after a literature search and converts it into a clean, structured Microsoft Word document. Every article gets its own entry: the title, a formatted reference, and the full abstract (Must be selected in the export)."
+  },
+  {
+    "objectID": "prototypes/BibBrief/index.html#why-i-built-it",
+    "href": "prototypes/BibBrief/index.html#why-i-built-it",
+    "title": "BibBrief",
+    "section": "Why I built it",
+    "text": "Why I built it\nA professor wanted me to collect the abstracts of a hundred papers (turns out she was exaggerating and just wanted 20)."
+  },
+  {
+    "objectID": "prototypes/BibBrief/index.html#status",
+    "href": "prototypes/BibBrief/index.html#status",
+    "title": "BibBrief",
+    "section": "Status",
+    "text": "Status\n\n\n\n\n\n\nWorking prototype. Not maintained. Fork it rather than depend on it."
+  },
+  {
+    "objectID": "prototypes/BibBrief/index.html#try-it",
+    "href": "prototypes/BibBrief/index.html#try-it",
+    "title": "BibBrief",
+    "section": "Try it",
+    "text": "Try it\n\nLive demo\nSource"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Malek M. Itani",
+    "section": "",
+    "text": "Malek M. Itani\n\nStatistician and machine learning researcher finding my niche in the world.\n\n\nRead the blog See the research Browse prototypes About me\n\n\n\n\n\n\n\n\nSelected work\n\nAll research →\n\n\n\n\n\n\n\n\n\n\n\nSystems Decision Lab\n\n\n\nResearch\n\nSystems\n\nSimulation\n\n\n\nStudying petabyte-scale scientific workflows on a laptop, by simulating their metadata instead of their data.\n\n\n\n\n\n\n\n\n\n\n\n\nAcquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI\n\n\n\nRadiomics\n\nMedical imaging\n\nClustering\n\nReproducibility\n\n\n\nDetecting sensor induced effects on high dimensional data.\n\n\n\n\n\n\n\n\n\n\n\n\nDay-Ahead Electricity Price Forecasting in the Baltic States\n\n\n\nElectricity markets\n\nForecasting\n\nLASSO\n\nTime series\n\n\n\nA LASSO benchmark refitted every delivery day across 964 days of Baltic day-ahead prices — and what happens…\n\n\n\n\n\nNo matching items\n\n\n\nRecent writing\n\nAll posts →\n\n\n\n\n\n\nThe New Geopolitical Chokeholds\n\n\nPower has moved up the stack — from straits and pipelines to lithography, compute, cloud and payment rails, and to the small number of…\n\n\n\n\n\nSep 1, 2026\n\n\n\n\n\n\n\nThe illusion of small ponds\n\n\nThere are no big fish in small ponds, only small fish in big ponds.\n\n\n\n\n\nAug 18, 2026\n\n\n\n\n\n\n\nWe have no clue what we are doing\n\n\nA reality check that we all face at one point.\n\n\n\n\n\nAug 18, 2026\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_We have no clue/index.html",
+    "href": "blog/posts/2026-08-30_We have no clue/index.html",
+    "title": "We have no clue what we are doing",
+    "section": "",
+    "text": "Every few weeks someone hands me a model and asks whether it’s any good. The honest answer is usually “I can’t tell yet,” so I’ve written down the order I work through it."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#find-the-target-before-the-features",
+    "href": "blog/posts/2026-08-30_We have no clue/index.html#find-the-target-before-the-features",
+    "title": "We have no clue what we are doing",
+    "section": "1. Find the target before the features",
+    "text": "1. Find the target before the features\nThe first question isn’t what went into the model, it’s what came out. Ask what the label actually measures, when it was recorded, and who decided it. A surprising share of models fail here: the target is a proxy for the thing anyone cares about, and nobody wrote down the gap."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#draw-the-timeline",
+    "href": "blog/posts/2026-08-30_We have no clue/index.html#draw-the-timeline",
+    "title": "We have no clue what we are doing",
+    "section": "2. Draw the timeline",
+    "text": "2. Draw the timeline\nSketch when each feature becomes available relative to when the prediction is needed. Leakage is almost always a timeline problem wearing a statistics costume."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#ask-what-the-baseline-was",
+    "href": "blog/posts/2026-08-30_We have no clue/index.html#ask-what-the-baseline-was",
+    "title": "We have no clue what we are doing",
+    "section": "3. Ask what the baseline was",
+    "text": "3. Ask what the baseline was\nIf nobody can tell you what the naive rule scores, the model has not been evaluated — it has been described.\n\n\n\n\n\n\nNote\n\n\n\nThis is a placeholder post. Replace the text; keep the front matter shape."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_We have no clue/index.html#re-run-it-once",
+    "href": "blog/posts/2026-08-30_We have no clue/index.html#re-run-it-once",
+    "title": "We have no clue what we are doing",
+    "section": "4. Re-run it once",
+    "text": "4. Re-run it once\nNot to reproduce the numbers. To find out how long it takes, what breaks, and how much of the pipeline lives in someone’s head."
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nThe New Geopolitical Chokeholds\n\n\n\nGeopolitics\n\nAI\n\nInfrastructure\n\n\n\nPower has moved up the stack — from straits and pipelines to lithography, compute, cloud and payment rails, and to the small number of people who can operate any of it.\n\n\n\n\n\nSep 1, 2026\n\n8 min\n\n\n\n\n\n\n\n\n\n\n\nThe illusion of small ponds\n\n\n\nThoughts\n\nLessons\n\n\n\nThere are no big fish in small ponds, only small fish in big ponds.\n\n\n\n\n\nAug 18, 2026\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\nWe have no clue what we are doing\n\n\n\nPhilisophy\n\n\n\nA reality check that we all face at one point.\n\n\n\n\n\nAug 18, 2026\n\n1 min\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Malek M. Itani",
+    "section": "",
+    "text": "I work on applied research problems where the statistics are only half the difficulty — the other half is that the data was collected by people, for reasons that had nothing to do with your question.\nRight now I’m interested in measurement: what a number has to survive before it deserves to be acted on. That pulls me across sampling design, time series drift, and the interfaces that put estimates in front of people who have to decide something.\nOutside of that I build small tools, write here, and keep a graveyard of prototypes."
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "Malek M. Itani",
+    "section": "Experience",
+    "text": "Experience\n\nRole Title · Organization\n\n2024 – present. One line on what you own and what changed because you were there.\n\nPrevious Role · Organization\n\n2021 – 2024. One line.\n\nEarlier Role · Organization\n\n2019 – 2021. One line."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Malek M. Itani",
+    "section": "Education",
+    "text": "Education\n\nMSc, Field of Study · University\n\n\nThesis: Title of your thesis.\n\n\nBSc, Field of Study · University"
+  },
+  {
+    "objectID": "about.html#tools",
+    "href": "about.html#tools",
+    "title": "Malek M. Itani",
+    "section": "Tools",
+    "text": "Tools\nDaily: R, Python, Quarto, SQL, git. Comfortable: Stan, Shiny, Observable, Docker. Occasionally: whatever the problem demands."
+  },
+  {
+    "objectID": "about.html#elsewhere",
+    "href": "about.html#elsewhere",
+    "title": "Malek M. Itani",
+    "section": "Elsewhere",
+    "text": "Elsewhere\nThe fastest way to reach me is email. I read everything and answer most things, usually slowly."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html",
+    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html",
+    "title": "The illusion of small ponds",
+    "section": "",
+    "text": "For a long time, career advice relied on a comforting metaphor: be a big fish in a small pond. Find a narrow niche. Enter an overlooked market. Become the person everyone knows. Build an advantage before the larger players arrive.\nIt was never entirely wrong. But it has become dangerously incomplete. Today, the pond is rarely as small as it looks.\nA freelance designer in Beirut may be competing with specialists in Warsaw, Bangalore, Lagos, Buenos Aires, and San Francisco. A local consultant is no longer compared only with other consultants in the city; clients can now access global expertise, automated research, AI-generated drafts, and highly polished work at a fraction of yesterday’s cost. A student who once stood out for writing a competent report now competes with peers using AI tools to research, code, analyze data, edit prose, translate sources, and produce professional-quality presentations in hours.\nThe small pond has opened into an ocean. And the fish you thought were big may simply have been competing in a temporarily enclosed pool."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#the-old-advantage-limited-comparison",
+    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#the-old-advantage-limited-comparison",
+    "title": "The illusion of small ponds",
+    "section": "1. The old advantage: limited comparison",
+    "text": "1. The old advantage: limited comparison\nBefore global digital markets, most competition was constrained by geography, institutions, and access.\nA company hired from the people it could find. A university compared applicants within a relatively limited pool. A client relied on local networks and referrals. Information was scarce, coordination was costly, and switching suppliers was difficult.\nUnder those conditions, being competent could be enough to create distinction.\nYou did not need to be the best analyst, designer, writer, programmer, teacher, or entrepreneur in the world. Often, you only needed to be better than the alternatives visible to the people making a decision. That is what created many “small ponds.” Not necessarily a lack of talent, but a lack of connection between talent and opportunity. The internet weakened those barriers. Remote work weakened them further. Global platforms made skills searchable and comparable. AI is now removing another barrier: the cost of producing credible work.\nThe result is not merely more competition. It is more competent competition."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#draw-the-timeline",
+    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#draw-the-timeline",
+    "title": "The illusion of small ponds",
+    "section": "2. Draw the timeline",
+    "text": "2. Draw the timeline\nSketch when each feature becomes available relative to when the prediction is needed. Leakage is almost always a timeline problem wearing a statistics costume."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#ask-what-the-baseline-was",
+    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#ask-what-the-baseline-was",
+    "title": "The illusion of small ponds",
+    "section": "3. Ask what the baseline was",
+    "text": "3. Ask what the baseline was\nIf nobody can tell you what the naive rule scores, the model has not been evaluated — it has been described.\n\n\n\n\n\n\nNote\n\n\n\nThis is a placeholder post. Replace the text; keep the front matter shape."
+  },
+  {
+    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#re-run-it-once",
+    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#re-run-it-once",
+    "title": "The illusion of small ponds",
+    "section": "4. Re-run it once",
+    "text": "4. Re-run it once\nNot to reproduce the numbers. To find out how long it takes, what breaks, and how much of the pipeline lives in someone’s head."
+  },
+  {
+    "objectID": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html",
+    "href": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html",
+    "title": "The New Geopolitical Chokeholds",
+    "section": "",
+    "text": "Sovereignty is no longer measured by borders or armies. It is measured by who holds the kill switch to your national decision-making. It is measured by whether a state can continue to think, decide, transact, and act when the systems beneath it are placed under pressure.\nModern power does not always announce itself as occupation. It appears as dependency.\nIt appears as a cloud contract. A payment rail. A firmware update. A model API. A chip allocation queue. A data-center siting decision. A visa pathway. An export license.\nThe decisive question is no longer simply whether a state possesses territory. The decisive question is whether the systems on which its decisions depend can be denied, throttled, surveilled, priced, or rewritten by someone else.\nHuman capital policy is therefore national-security policy. A serious sovereign intelligence doctrine requires:\nThe state that cannot retain its cognitive elite will not retain technological sovereignty."
+  },
+  {
+    "objectID": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html#from-territory-to-infrastructure",
+    "href": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html#from-territory-to-infrastructure",
+    "title": "The New Geopolitical Chokeholds",
+    "section": "From Territory to Infrastructure",
+    "text": "From Territory to Infrastructure\nA severe flood is approaching the country’s largest coastal city. Before the state can order an evacuation, evidence must arrive: satellite imagery, river sensors, weather models, mobile-network signals, and emergency reports."
+  },
+  {
+    "objectID": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html#infrastructure-is-the-new-veto",
+    "href": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html#infrastructure-is-the-new-veto",
+    "title": "The New Geopolitical Chokeholds",
+    "section": "Infrastructure Is the New Veto",
+    "text": "Infrastructure Is the New Veto\nThe central error in weak discussions of AI sovereignty is treating infrastructure as a support function. It is not.\nInfrastructure is command authority in disguised form."
+  },
+  {
+    "objectID": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html#the-illusion-of-rented-sovereignty",
+    "href": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html#the-illusion-of-rented-sovereignty",
+    "title": "The New Geopolitical Chokeholds",
+    "section": "The Illusion of Rented Sovereignty",
+    "text": "The Illusion of Rented Sovereignty\nThere is a comfortable formulation often used in policy circles: sovereignty is partial, interdependent, and negotiated. This is true in normal conditions.\nIt is useless in crisis.\nIn a crisis, dependency hardens. The supplier does not need to become hostile; it only needs to prioritize itself. The foreign platform does not need to attack; it only needs to comply with its own state’s law. The cloud provider does not need to censor; it only needs to enforce acceptable-use boundaries written elsewhere. The chip ecosystem does not need to embargo; it only needs to reallocate scarce capacity toward larger or more strategically favoured customers.\nA state running its intelligence, defence, financial supervision, industrial planning, and crisis-response systems on foreign-controlled infrastructure has not achieved digital modernization. It has transferred its nervous system into rented space.\nThis does not mean every layer must be domestic. For most states, full autarky is impossible. But strategic autonomy requires identifying which dependencies are survivable and which are fatal.\nA country can import tools and remain sovereign. It cannot outsource the decisive layer and pretend it still commands the outcome.\nThe key distinction is between ordinary dependence and veto dependence.\n\nOrdinary dependence\n\nManageable. It involves foreign components, commercial suppliers, and international standards.\n\nVeto dependence\n\nDifferent in kind. It exists when another actor can disable, delay, degrade, or observe a function essential to national decision-making.\n\n\nA serious sovereign intelligence strategy must be built around eliminating veto dependence, not eliminating all dependence."
+  },
+  {
+    "objectID": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html#the-human-chokehold",
+    "href": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html#the-human-chokehold",
+    "title": "The New Geopolitical Chokeholds",
+    "section": "The Human Chokehold",
+    "text": "The Human Chokehold\nThe missing variable in most sovereign AI strategies is talent.\nStates talk about chips because chips can be purchased. They talk about data centers because data centers can be photographed. They talk about national AI strategies because strategies can be published. The infrastructure arrives: accelerators, cooling, networks, model weights, and backup power."
+  },
+  {
+    "objectID": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html#the-real-question",
+    "href": "blog/posts/2026-09-1_The New Geopolitical Chokeholds/index.html#the-real-question",
+    "title": "The New Geopolitical Chokeholds",
+    "section": "The Real Question",
+    "text": "The Real Question\nThe question is not whether a state uses foreign technology. Every state does. The question is which dependencies become kill switches.\n\nCan the state continue to operate if foreign compute access is restricted?\nCan it preserve critical data under legal and commercial pressure?\nCan it audit the systems shaping public-sector decisions?\nCan it maintain payment, logistics, and crisis-response functions under platform denial?\nCan it retain the human capital required to adapt under stress?\n\nIf the answer is no, sovereignty is formal rather than operational.\nThe battlefield has moved into the stack. The kill switch is infrastructure.\nAnd the states that fail to understand this will not lose sovereignty all at once. They will lose it administratively, contractually, technically, and silently — one dependency at a time."
+  },
+  {
+    "objectID": "PRODUCT.html",
+    "href": "PRODUCT.html",
+    "title": "Product",
+    "section": "",
+    "text": "web\n\n\n\nThe primary audiences are potential PhD supervisors and quantitative hiring managers. They visit to evaluate Malek M. Itani’s research ability, technical rigor, intellectual interests, and demonstrated work across research, writing, and prototypes.\nThe preferred visitor action or conversion is still an open decision.\n\n\n\nThis is Malek M. Itani’s professional portfolio. It brings together applied research, long-form writing, publications, and working prototypes so evaluators can inspect both the reasoning and the resulting work.\nThe site should make substantive work easy to discover, understand, and assess without flattening its uncertainty or complexity.\n\n\n\nOpen decision: Malek will revise the site’s positioning later. Future work must not silently turn the current homepage tagline or descriptive copy into a permanent positioning statement.\n\n\n\nVisitors enter through a portfolio homepage and move among four principal areas:\n\nBlog posts and essays\nResearch projects and publications\nWorking prototypes\nBiography, experience, education, tools, and contact links\n\nThe site is a Quarto website intended for static publishing. Content is authored in QMD, with automatic project and post listings, RSS, search, social metadata, and page-level assets.\n\n\n\n\nQuarto is the established publishing stack and repository structure.\nThe site supports research pages, blog posts, prototype pages, automatic listings, and long-form interactive articles.\nLight and dark themes, responsive layouts, RSS, search, and social metadata are existing capabilities.\nExisting factual copy, biography, experience, education, publications, links, portrait, and other content should be treated as confirmed rather than placeholder material unless Malek later changes them.\nThe current positioning is intentionally provisional.\nPreserve the distinction between research, writing, and prototypes while making their relationship legible.\n\n\n\n\n\nThe public name is Malek M. Itani.\nThe existing site content and identity assets are authoritative unless Malek explicitly replaces them.\nThe established voice is thoughtful, candid, technically literate, and evidence-conscious.\nClaims should remain specific and defensible; uncertainty should be communicated rather than concealed.\n\n\n\n\n\nResearch project pages and a publication list are present under research/.\nWorking prototype pages are present under prototypes/.\nEssays and interactive long-form writing are present under blog/posts/.\nIdentity and portfolio assets are present under assets/.\nThe About page contains confirmed biography, experience, education, tools, and contact information.\nThe existing CV link is confirmed content; if its referenced file is unavailable during future work, do not fabricate or silently replace it.\nDo not invent testimonials, employers, institutional affiliations, metrics, awards, or publication status.\n\n\n\n\n\nMake rigor inspectable for PhD supervisors and quantitative hiring managers.\nShow the reasoning behind the work, not only polished outcomes.\nConnect research depth with evidence of practical building ability.\nPreserve factual precision and clearly communicate uncertainty.\nHelp a serious evaluator reach the strongest evidence quickly.\n\n\n\n\nMaintain a readable, keyboard-accessible web experience across desktop and mobile, with meaningful document structure, image alternatives, sufficient contrast, dark-mode support, and reduced-motion behavior for interactive work."
+  },
+  {
+    "objectID": "PRODUCT.html#platform",
+    "href": "PRODUCT.html#platform",
+    "title": "Product",
+    "section": "",
+    "text": "web"
+  },
+  {
+    "objectID": "PRODUCT.html#users",
+    "href": "PRODUCT.html#users",
+    "title": "Product",
+    "section": "",
+    "text": "The primary audiences are potential PhD supervisors and quantitative hiring managers. They visit to evaluate Malek M. Itani’s research ability, technical rigor, intellectual interests, and demonstrated work across research, writing, and prototypes.\nThe preferred visitor action or conversion is still an open decision."
+  },
+  {
+    "objectID": "PRODUCT.html#product-purpose",
+    "href": "PRODUCT.html#product-purpose",
+    "title": "Product",
+    "section": "",
+    "text": "This is Malek M. Itani’s professional portfolio. It brings together applied research, long-form writing, publications, and working prototypes so evaluators can inspect both the reasoning and the resulting work.\nThe site should make substantive work easy to discover, understand, and assess without flattening its uncertainty or complexity."
+  },
+  {
+    "objectID": "PRODUCT.html#positioning",
+    "href": "PRODUCT.html#positioning",
+    "title": "Product",
+    "section": "",
+    "text": "Open decision: Malek will revise the site’s positioning later. Future work must not silently turn the current homepage tagline or descriptive copy into a permanent positioning statement."
+  },
+  {
+    "objectID": "PRODUCT.html#operating-context",
+    "href": "PRODUCT.html#operating-context",
+    "title": "Product",
+    "section": "",
+    "text": "Visitors enter through a portfolio homepage and move among four principal areas:\n\nBlog posts and essays\nResearch projects and publications\nWorking prototypes\nBiography, experience, education, tools, and contact links\n\nThe site is a Quarto website intended for static publishing. Content is authored in QMD, with automatic project and post listings, RSS, search, social metadata, and page-level assets."
+  },
+  {
+    "objectID": "PRODUCT.html#capabilities-and-constraints",
+    "href": "PRODUCT.html#capabilities-and-constraints",
+    "title": "Product",
+    "section": "",
+    "text": "Quarto is the established publishing stack and repository structure.\nThe site supports research pages, blog posts, prototype pages, automatic listings, and long-form interactive articles.\nLight and dark themes, responsive layouts, RSS, search, and social metadata are existing capabilities.\nExisting factual copy, biography, experience, education, publications, links, portrait, and other content should be treated as confirmed rather than placeholder material unless Malek later changes them.\nThe current positioning is intentionally provisional.\nPreserve the distinction between research, writing, and prototypes while making their relationship legible."
+  },
+  {
+    "objectID": "PRODUCT.html#brand-commitments",
+    "href": "PRODUCT.html#brand-commitments",
+    "title": "Product",
+    "section": "",
+    "text": "The public name is Malek M. Itani.\nThe existing site content and identity assets are authoritative unless Malek explicitly replaces them.\nThe established voice is thoughtful, candid, technically literate, and evidence-conscious.\nClaims should remain specific and defensible; uncertainty should be communicated rather than concealed."
+  },
+  {
+    "objectID": "PRODUCT.html#evidence-on-hand",
+    "href": "PRODUCT.html#evidence-on-hand",
+    "title": "Product",
+    "section": "",
+    "text": "Research project pages and a publication list are present under research/.\nWorking prototype pages are present under prototypes/.\nEssays and interactive long-form writing are present under blog/posts/.\nIdentity and portfolio assets are present under assets/.\nThe About page contains confirmed biography, experience, education, tools, and contact information.\nThe existing CV link is confirmed content; if its referenced file is unavailable during future work, do not fabricate or silently replace it.\nDo not invent testimonials, employers, institutional affiliations, metrics, awards, or publication status."
+  },
+  {
+    "objectID": "PRODUCT.html#product-principles",
+    "href": "PRODUCT.html#product-principles",
+    "title": "Product",
+    "section": "",
+    "text": "Make rigor inspectable for PhD supervisors and quantitative hiring managers.\nShow the reasoning behind the work, not only polished outcomes.\nConnect research depth with evidence of practical building ability.\nPreserve factual precision and clearly communicate uncertainty.\nHelp a serious evaluator reach the strongest evidence quickly."
+  },
+  {
+    "objectID": "PRODUCT.html#accessibility-inclusion",
+    "href": "PRODUCT.html#accessibility-inclusion",
+    "title": "Product",
+    "section": "",
+    "text": "Maintain a readable, keyboard-accessible web experience across desktop and mobile, with meaningful document structure, image alternatives, sufficient contrast, dark-mode support, and reduced-motion behavior for interactive work."
+  },
+  {
+    "objectID": "prototypes/index.html",
+    "href": "prototypes/index.html",
+    "title": "Prototypes",
+    "section": "",
+    "text": "Systems Decision Lab\n\n\n\nResearch\n\nSystems\n\nSimulation\n\n\n\nStudying petabyte-scale scientific workflows on a laptop, by simulating their metadata instead of their data.\n\n\n\n\n\n\n\n\n\n\n\n\nPanelScope\n\n\n\nResearch\n\nAutomation\n\n\n\nPanel-data coverage assistant.\n\n\n\n\n\n\n\n\n\n\n\n\nBibBrief\n\n\n\nResearch\n\nAutomation\n\n\n\nTurn your bibliography into a document you can read.\n\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "prototypes/Systems-Decision-Lab/index.html",
+    "href": "prototypes/Systems-Decision-Lab/index.html",
+    "title": "Systems Decision Lab",
+    "section": "",
+    "text": "The Einstein Telescope is expected to produce data workflows at the petabyte scale, with heterogeneous compute demands and scheduling problems that nobody has solved yet. Someone has to design the methods that will manage those workflows. The awkward part is that designing them appears to require the thing being designed for: continuous access to petabyte datasets and to the expensive machines that process them. Students and research teams do not have that access, so the methods tend to get built late, by whoever is already inside the facility, and tested once rather than compared.\nThis project is my attempt at the cheap layer that should come first. It represents a workflow as lightweight task metadata, simulates that metadata under constrained resources, and lets scheduling and capacity decisions be tested and compared on an ordinary laptop. It is not a replacement for experiments on real infrastructure. It is the thing you use before them, so that you arrive at the real machine with a short list instead of a blank page."
+  },
+  {
+    "objectID": "prototypes/Systems-Decision-Lab/index.html#simulating-the-description-instead-of-the-data",
+    "href": "prototypes/Systems-Decision-Lab/index.html#simulating-the-description-instead-of-the-data",
+    "title": "Systems Decision Lab",
+    "section": "Simulating the description instead of the data",
+    "text": "Simulating the description instead of the data\nThe move the whole project rests on is separating the logical scale of a workflow from its physical scale. A workflow might represent terabytes or petabytes of science, but if the question is when tasks run, what they wait for, and where queues form, then the contents of those bytes never enter the calculation. What matters is how long a task occupies which resources, and when it shows up. So the simulator keeps that and throws away everything else.\n\n\n\n\n\n\n\n\n\nFigure 1. What survives the abstraction. The left column is a task as it exists; the right column is everything the simulator needs in order to reason about when it runs.\n\nThe practical consequence is a change of several orders of magnitude. A workload of 120,000 tasks representing a few petabytes of logical data is roughly 40 MB of CSV. It loads into memory on any laptop, and a simulated run of it finishes in seconds.\nThe limitation is in the same sentence as the benefit. This abstraction is only valid for questions where the content of the data does not matter. Ask about data movement, cache behaviour or network topology, and the thing you dropped is exactly the thing you needed. I come back to that below, because it is the honest boundary of the approach rather than a to-do item."
+  },
+  {
+    "objectID": "prototypes/Systems-Decision-Lab/index.html#why-the-clock-jumps",
+    "href": "prototypes/Systems-Decision-Lab/index.html#why-the-clock-jumps",
+    "title": "Systems Decision Lab",
+    "section": "Why the clock jumps",
+    "text": "Why the clock jumps\nThe engine is a discrete-event simulator, and this is the part I would most want to defend, because it is what makes the rest affordable.\nA time-stepped simulation advances a fixed interval at a time and recomputes the state of the system at each step. Most of that work is wasted. Between one task finishing and the next arriving, nothing about the system changes, so there is nothing to recompute. An event-driven engine instead keeps a queue of the moments when the state will change and jumps the clock straight to the next one.\n\n\n\n\n\n\n\n\n\nFigure 2. The same three-task scenario under both schemes. Stepping one second at a time takes 450 evaluations, 444 of which find nothing has changed. The event-driven clock touches six moments, which are the only six at which anything happens.\n\nThe important property is what the cost scales with. A time-stepped run costs more if you simulate a longer horizon or choose a finer resolution, even when the workload is identical. An event-driven run costs what the workload costs: one arrival event per task, one completion event per task that runs. A month-long workload of 50,000 tasks is about 100,000 events, whichever way you slice the calendar.\nThat is not just an efficiency note. It is what makes the experimental design possible. If a single run is cheap, you can afford to run the same workload under four scheduling policies, at a dozen seeds, across a sweep of cluster configurations, and talk about distributions of outcomes rather than one anecdote. An expensive simulator gets used once and quoted; a cheap one gets used properly."
+  },
+  {
+    "objectID": "prototypes/Systems-Decision-Lab/index.html#how-the-engine-is-put-together",
+    "href": "prototypes/Systems-Decision-Lab/index.html#how-the-engine-is-put-together",
+    "title": "Systems Decision Lab",
+    "section": "How the engine is put together",
+    "text": "How the engine is put together\nFive components carry the entire simulation.\n\n\n\n\n\n\n\n\n\nFigure 3. One turn of the loop. The queue holds the future, the clock jumps to it, a handler changes the state, and the scheduler decides who gets the capacity that just became available.\n\nThe event queue is the timeline. At the start it holds one arrival event per task, in time order; every time a task starts running, a completion event is pushed onto it at the appropriate future time. The virtual clock does no work of its own — it simply takes the timestamp of whatever event comes off the queue next. The system state is the simulated cluster: total and available CPUs, GPUs and memory, plus the waiting, running, completed and rejected tasks, updated after every event.\nThe handlers contain the logic. When a task arrives, the first question is not whether it can run now but whether it could ever run: if it asks for more CPUs, GPUs or memory than the whole cluster has, it is marked rejected rather than left in a queue forever. That case is reported in the output rather than hidden, because in practice it usually means the workload assumptions and the cluster configuration disagree, and it is better to be told that than to watch a queue never drain. Otherwise the task joins the waiting queue and the scheduler is invoked. When a task completes, its resources go back to the pool, its timings are recorded, and the scheduler is invoked again, because capacity has just appeared.\nThe scheduler is the part that is meant to be swapped. It orders the waiting queue according to a policy — first-come first-served, shortest job first, priority, random — and the engine then starts every task that fits, in that order. It is worth being explicit about one design decision here: a task the policy ranks first but that does not currently fit does not block the queue. The engine keeps looking, so a two-core job is not stuck behind a fourteen-core one waiting for a hole. That is a deliberate modelling choice resembling backfilling on a real batch system, and it materially changes the results, so it belongs in the description of the model rather than buried in the code."
+  },
+  {
+    "objectID": "prototypes/Systems-Decision-Lab/index.html#what-one-run-looks-like",
+    "href": "prototypes/Systems-Decision-Lab/index.html#what-one-run-looks-like",
+    "title": "Systems Decision Lab",
+    "section": "What one run looks like",
+    "text": "What one run looks like\nHere is an actual run: thirteen tasks against a cluster of 16 CPUs, 2 GPUs and 256 GB, under first-come first-served. The whole simulation is thirty-seven events.\n\n\n\n\n\n\n\n\n\nFigure 4. One simulated run. Each task waits (grey) and then runs (colour); the lower panel is the fraction of CPU and GPU capacity held at each moment. Nothing here was drawn by hand — it is the engine’s output for this workload.\n\nThe figure shows the kind of thing that is hard to reason about on paper. T01 takes twelve of the sixteen cores for the first 900 seconds, so for that whole period the cluster behaves as though it were a four-core machine, and only small tasks fit in the gap. T11 needs fourteen cores; it arrives at 360 seconds and does not start until 1920, having waited 1560 seconds for a hole large enough to hold it, while eight smaller tasks that arrived after it have come and gone. T13 asks for 24 cores on a 16-core cluster and is rejected at arrival. The GPU trace shows a resource that is either half idle or fully saturated and never anything in between, because only three tasks in this workload want one.\nEach run produces a task-level table with the full lifecycle of every task, a queue timeline, a resource-utilization timeline, and the aggregate metrics you would expect: makespan, completion rate, mean and median wait, turnaround, throughput, mean utilization per resource, and total core-seconds. The queue timeline is where backlog formation shows up; the utilization timeline is where you find out whether you are CPU-bound, GPU-bound, memory-bound, or simply scheduling badly."
+  },
+  {
+    "objectID": "prototypes/Systems-Decision-Lab/index.html#the-comparison-is-the-point",
+    "href": "prototypes/Systems-Decision-Lab/index.html#the-comparison-is-the-point",
+    "title": "Systems Decision Lab",
+    "section": "The comparison is the point",
+    "text": "The comparison is the point\nA single run is a description. The reason to build the thing is comparison, and comparison is only meaningful if it is controlled: hold the workload fixed, hold the cluster fixed, hold the seeds and runtime assumptions fixed, change one policy, and attribute the difference to that policy under those stated conditions.\n\n\n\n\n\n\n\n\n\nFigure 5. Identical workload, identical cluster, identical seed; only the scheduling policy differs. Shortest job first, the textbook choice for minimising waiting time, does worse here on both measures.\n\nThat result is the reason I find this worth doing. Shortest job first is supposed to minimise mean waiting time, and in the classical setting — one resource, all jobs present at the start — it does. Here it loses on both counts: mean wait rises from 491 to 522 seconds and makespan from 2640 to 2880. The mechanism is visible in the figure. Because the engine already lets small tasks slip into gaps, first-come first-served is not actually starving them; meanwhile shortest job first keeps deferring the two widest tasks, T05 and T11, until almost everything else has drained, and the run acquires a long thin tail where the cluster is mostly idle. Priority scheduling and random selection both land near 658 seconds of mean wait, worse than either.\nI am not claiming first-come first-served is the better policy. The claim is narrower and more useful: with multiple resource dimensions, staggered arrivals and backfilling, the textbook ranking does not survive, and which policy wins depends on the shape of the workload rather than on the policy alone. That is precisely the kind of question you cannot settle by argument, and precisely why a cheap testbed earns its place."
+  },
+  {
+    "objectID": "prototypes/Systems-Decision-Lab/index.html#the-workload-description-turned-out-to-be-the-hard-part",
+    "href": "prototypes/Systems-Decision-Lab/index.html#the-workload-description-turned-out-to-be-the-hard-part",
+    "title": "Systems Decision Lab",
+    "section": "The workload description turned out to be the hard part",
+    "text": "The workload description turned out to be the hard part\nThe engine itself is a few hundred lines. Most of the code in the repository is not the simulator — it is the machinery for describing the workload, and that surprised me at first. The reason is that a simulation result is worth exactly as much as the workload description behind it, and a workload description is a scientific claim. If I tell you that a policy reduces mean wait by 12%, your next question should be where my runtime estimates came from, and whether you can reproduce the workload I ran them on. Without an answer, the number is decoration.\nSo the metadata layer is built to answer that. The canonical schema is 81 fields, and its most important property is that it refuses to mix different kinds of statement: what a task requested, what it was allocated, what was observed, its peak use, what was estimated from assumed rates, and what was actually billed are separate fields that stay null when unknown. A measurement never quietly becomes an assumption. Validation runs structural, temporal, semantic, provenance, referential and dependency checks, produces a weighted quality score, and can block a release outright — a scenario with an unassigned owner or missing provenance is not fit to base a decision on, however clean its numbers look.\nReproducibility is enforced rather than hoped for: the same configuration and seed produce byte-identical output, and a release is exported as a bundle carrying the configuration, validation report, per-artifact checksums, the runtime environment and a contract stating exactly what a third party needs in order to regenerate it. Real traces can be imported instead of generated — there are adapters for Slurm accounting records, Kubernetes, Airflow, Spark, Prometheus and others — with every canonical field traceable back to a source column, a documented default or an explicit rule, and automatic mappings always requiring review before they commit. Given a real trace, the system can also fit a synthetic twin and score how closely it matches on distributions, correlations, arrivals and tail coverage. That score is reported alongside a warning I think is important: fidelity is not validity. A twin can match a trace closely and still represent the wrong population."
+  },
+  {
+    "objectID": "prototypes/Systems-Decision-Lab/index.html#what-it-cannot-do",
+    "href": "prototypes/Systems-Decision-Lab/index.html#what-it-cannot-do",
+    "title": "Systems Decision Lab",
+    "section": "What it cannot do",
+    "text": "What it cannot do\nThe engine does not model data movement, network contention, storage latency or distributed file systems. It does not talk to SLURM, Kubernetes or MPI. It does not model node failures or real detector pipelines. These are deliberate exclusions at this stage rather than an unwritten roadmap: they are what keeps the model small enough to explain and cheap enough to run.\nTwo limits matter more than that list. The first is that runtime is an input, not a prediction. Every result is conditional on runtime estimates being roughly right, and if they are systematically wrong the simulator will produce confident, internally consistent, wrong answers, with nothing in its output to indicate the problem. The second is that no simulator validates itself. Until this has been fitted to real scheduler logs and backtested against what those systems actually did, it is an instrument for generating hypotheses about scheduling, not evidence about any particular facility."
+  },
+  {
+    "objectID": "prototypes/Systems-Decision-Lab/index.html#what-i-would-want-to-do-next",
+    "href": "prototypes/Systems-Decision-Lab/index.html#what-i-would-want-to-do-next",
+    "title": "Systems Decision Lab",
+    "section": "What I would want to do next",
+    "text": "What I would want to do next\nFour questions follow directly from the current state, and they are the ones I would want to work on.\nThe first is uncertainty. Every result above treats runtime as a point estimate, when real runtimes are distributions with heavy tails. Propagating that properly means asking whether the ranking between policies is stable under runtime uncertainty or whether it flips, and the answer determines how much any comparison of this kind is worth.\nThe second is learned policies. The natural use of a cheap simulator is to train a scheduling policy in it, which immediately raises the sim-to-real question: does a policy trained on metadata transfer to a real batch system, and can the size of the transfer gap be predicted from the fidelity score of the workload it was trained on? That is the question I find most interesting, because it makes the fidelity machinery do real work rather than sit in a report.\nThe third is validation, which is the precondition for the other two: fit real HPC scheduler logs, backtest the simulator against recorded outcomes, and publish the gap honestly.\nThe fourth is the boundary of the abstraction itself. Adding data movement and network constraints and then measuring how much the conclusions move would answer whether metadata-only simulation is sufficient, and for which class of question. If the answers barely change, the abstraction is justified; if they change a lot, that is a more interesting result and worth knowing early."
+  },
+  {
+    "objectID": "prototypes/Systems-Decision-Lab/index.html#where-it-came-from",
+    "href": "prototypes/Systems-Decision-Lab/index.html#where-it-came-from",
+    "title": "Systems Decision Lab",
+    "section": "Where it came from",
+    "text": "Where it came from\nThe project began as a research proposal for ETCETERA, the programme preparing the Einstein Telescope for the era of gravitational-wave astronomy, titled Simulating Petabyte-Scale Scientific Workflows Without Petabyte Data. Gravitational-wave computing is the motivating case, but nothing in the kernel is specific to it: tasks, events, resources, policies and evidence are domain-neutral, and the domain vocabulary lives in labels, adapters and extension fields. The same machinery applies to data centres, industrial workflows and other scientific facilities."
+  },
+  {
+    "objectID": "prototypes/Systems-Decision-Lab/index.html#status",
+    "href": "prototypes/Systems-Decision-Lab/index.html#status",
+    "title": "Systems Decision Lab",
+    "section": "Status",
+    "text": "Status\n\n\n\n\n\n\nActive research build. The metadata, validation, calibration and governance layers are usable end to end; the event-driven engine currently runs as a separate prototype and is being folded into the same pipeline. Interfaces will still change.\n\n\n\n\nSource\nRun it locally: pip install -r requirements.txt, then python -m streamlit run app.py\nThe engine used for Figures 2, 4 and 5 on this page is _engine.py in this folder; _figures.py rebuilds every figure from its output."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "",
+    "text": "I build and evaluate day-ahead electricity price forecasts for the three Baltic bidding zones — Estonia, Latvia and Lithuania — using the LEAR (LASSO Estimated AutoRegressive) benchmark of Lago et al. (2021). The question is whether a parsimonious statistical model, given only local price history and the two day-ahead exogenous forecasts published before gate closure, produces useful forecasts across three small, tightly coupled markets, and how that performance holds up when prices turn violent.\nA market database was assembled from the ENTSO-E Transparency Platform covering January 2015 to August 2026 — 29 distinct datasets across 150 dataset–area combinations — although the forecasting exercise deliberately draws on only three hourly series per zone. Each zone is modelled independently. Two rolling calibration windows are used, 8 weeks and 12 weeks, each refitted from scratch every delivery day, plus their arithmetic mean, referred to throughout as the short-window ensemble.\nOver 964 out-of-sample delivery days — 23,136 hourly forecasts per model and zone — every LEAR specification beat a weekly naive forecast in every zone, and the ensemble was the strongest specification everywhere. Its rMAE was 0.772 in Estonia, 0.702 in Latvia and 0.679 in Lithuania: reductions in mean absolute error of roughly 23%, 30% and 32% against using last week’s price at the same hour.\nThat average conceals the model’s real weakness. Inside each zone’s most volatile 21-day stretch, ensemble rMAE rose to 0.855, 0.905 and 0.826, and single hourly errors exceeded €600/MWh in Estonia and €780–815/MWh in Latvia and Lithuania. The ensemble still beat the naive benchmark under stress — in Latvia by only 9.5%, against 29.8% over the full sample. A model can be good on average and still miss precisely the hours that carry the commercial risk.\nKeywords — electricity price forecasting; LEAR; LASSO; ENTSO-E; Baltic electricity market; rolling recalibration; forecast combination; price volatility."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#collection",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#collection",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "1.1 Collection",
+    "text": "1.1 Collection\nThe dataset was pulled directly from the ENTSO-E Transparency Platform through its API, using Python and the entsoe-py interface. A dedicated downloader walked the archive month by month from January 2015. Monthly granularity was chosen deliberately: it makes the download resumable, and it stops a single API failure from corrupting or interrupting the full historical pull.\nOriginal ENTSO-E observations are stored separately by dataset, area and month in compressed CSV, preserving a raw layer beneath every later transformation. Requests that returned nothing were logged as empty rather than backfilled with artificial observations — an important distinction, because a silently interpolated gap is indistinguishable from data once it reaches a model. The resulting inventory holds 150 dataset–area combinations drawn from 29 dataset types across eight categories.\n\n\n\n\nTable 1: The ENTSO-E archive behind the project. Only the three series marked in §1.2 enter the forecasting model; the rest is collected for the extensions in §5.\n\n\n\n\n\n\n\n\n\n\nCategory\nDatasets\n\n\n\n\nMarket\nDay-ahead prices; net positions\n\n\nLoad\nActual load; day-ahead load forecasts\n\n\nGeneration\nActual generation by technology; generation forecasts; wind and solar forecasts; intraday renewable forecasts; generation by plant\n\n\nCapacity\nInstalled generation capacity; capacity by individual unit\n\n\nHydro\nAggregated hydro-reservoir and storage information\n\n\nBalancing\nImbalance prices; imbalance volumes; activated balancing-energy prices\n\n\nOutages\nGeneration-unit, production-unit and transmission unavailability\n\n\nTransmission\nPhysical flows; total imports and exports; scheduled exchanges; day-ahead scheduled exchanges; intraday offered capacity; day-, week-, month- and year-ahead transfer capacity\n\n\n\n\n\n\n\n\nThe downloader also collected bilateral data for the main Baltic interconnections — Estonia–Latvia, Estonia–Finland, Latvia–Lithuania, Lithuania–Sweden (SE4) and Lithuania–Poland — querying both directions of every border. None of it enters the model below. It exists because the interesting version of this project is the one that uses it.\nCoverage is uneven, as it always is: not every ENTSO-E endpoint is populated for every country and period. Prices, load, generation and generation forecasts are close to complete across 2015–2026. Balancing, outage and some transfer-capacity series are considerably more fragmented."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#what-the-model-is-actually-given",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#what-the-model-is-actually-given",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "1.2 What the model is actually given",
+    "text": "1.2 What the model is actually given\nAlthough the archive is broad, the LEAR exercise uses a deliberately restricted information set, to stay close to the Nord Pool benchmark design in Lago et al. That benchmark pairs hourly day-ahead prices with a day-ahead load forecast and a day-ahead wind-generation forecast. For each zone:\n\n\\(p_{d,h}\\) — the day-ahead price for delivery day \\(d\\), hour \\(h\\) (the target);\n\\(x^{1}_{d,h}\\) — the day-ahead load forecast;\n\\(x^{2}_{d,h}\\) — the day-ahead wind-generation forecast.\n\nBoth exogenous series are published before the day-ahead auction closes, so they are legitimately available when the forecast for day \\(d\\) has to be made. No realized load, realized generation or realized physical flow appears anywhere in the model. Estonia, Latvia and Lithuania are modelled independently: the Estonian model forecasts Estonian prices from Estonian predictors, and so on.\nFigure 1 is the series being forecast. Three things in it matter for everything that follows. Prices are spiky rather than merely variable — the daily high runs to €1,896/MWh in Estonia. The three zones move together closely enough that Latvia and Lithuania are frequently the same number. And the character of the series changes over the sample: the calm middle of 2025 and the turbulent turn of 2026 are different forecasting problems.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: The target. Day-ahead prices in the three Baltic zones over the evaluation period. The bold line is a seven-day mean, the thin line the daily mean, and the shaded band the daily low-to-high range. The axis is cut at €480/MWh; every zone has daily highs far above it."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#preparation",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#preparation",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "1.3 Preparation",
+    "text": "1.3 Preparation\nENTSO-E series arrive at different temporal resolutions, so everything was converted to a consistent hourly structure. Daylight-saving transitions were handled by averaging the duplicated autumn hour and interpolating the missing spring hour, following the convention used for the benchmark datasets in Lago et al.\nMissing observations were treated conservatively. Short internal gaps were interpolated where the regular hourly structure epftoolbox requires demanded it. Estonia’s evaluation period contained one isolated full-day gap in the wind forecast, reconstructed from the average of the same hour on the immediately preceding and following complete days. Larger historical gaps falling outside any rolling calibration window were left untouched. All of this was done on derived modelling files; the downloaded raw layer was never edited."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#the-forecasting-problem",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#the-forecasting-problem",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "2.1 The forecasting problem",
+    "text": "2.1 The forecasting problem\nThe object to forecast is the full vector of 24 day-ahead prices,\n\\[\n\\mathbf{p}_d = [\\,p_{d,1},\\, p_{d,2},\\, \\ldots,\\, p_{d,24}\\,]^{\\top},\n\\]\nwith all 24 values committed at once, before gate closure. In a linear framework the price for delivery hour \\(h\\) is\n\\[\np_{d,h} = \\boldsymbol{\\theta}_h^{\\top}\\mathbf{X}_{d,h} + \\varepsilon_{d,h},\n\\]\nwhere \\(\\mathbf{X}_{d,h}\\) holds the predictors available before delivery, \\(\\boldsymbol{\\theta}_h\\) the coefficients for hour \\(h\\), and \\(\\varepsilon_{d,h}\\) the forecast error. Each of the 24 hours gets its own equation."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#the-lear-specification",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#the-lear-specification",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "2.2 The LEAR specification",
+    "text": "2.2 The LEAR specification\nLEAR is a parameter-rich autoregressive model with exogenous variables. Rather than pre-selecting a small set of regressors, it is handed a large candidate set and lets \\(L_1\\) regularisation decide what survives.\nFor delivery day \\(d\\) the information set contains four historical price vectors (\\(\\mathbf{p}_{d-1}\\), \\(\\mathbf{p}_{d-2}\\), \\(\\mathbf{p}_{d-3}\\), \\(\\mathbf{p}_{d-7}\\)), the two day-ahead exogenous forecasts for the delivery day itself (\\(\\mathbf{x}^1_d\\), \\(\\mathbf{x}^2_d\\)), their values one day and one week earlier (\\(\\mathbf{x}^1_{d-1}\\), \\(\\mathbf{x}^1_{d-7}\\), \\(\\mathbf{x}^2_{d-1}\\), \\(\\mathbf{x}^2_{d-7}\\)), and seven day-of-week dummies. Written out for hour \\(h\\):\n\\[\n\\begin{aligned}\np_{d,h} =\\;&\n\\sum_{i=1}^{24}\\theta_{h,i}\\,p_{d-1,i}\n+ \\sum_{i=1}^{24}\\theta_{h,24+i}\\,p_{d-2,i}\n+ \\sum_{i=1}^{24}\\theta_{h,48+i}\\,p_{d-3,i}\n+ \\sum_{i=1}^{24}\\theta_{h,72+i}\\,p_{d-7,i} \\\\[2pt]\n&+ \\sum_{i=1}^{24}\\theta_{h,96+i}\\,x^{1}_{d,i}\n+ \\sum_{i=1}^{24}\\theta_{h,120+i}\\,x^{2}_{d,i} \\\\[2pt]\n&+ \\sum_{i=1}^{24}\\theta_{h,144+i}\\,x^{1}_{d-1,i}\n+ \\sum_{i=1}^{24}\\theta_{h,168+i}\\,x^{2}_{d-1,i} \\\\[2pt]\n&+ \\sum_{i=1}^{24}\\theta_{h,192+i}\\,x^{1}_{d-7,i}\n+ \\sum_{i=1}^{24}\\theta_{h,216+i}\\,x^{2}_{d-7,i}\n+ \\sum_{i=1}^{7}\\theta_{h,240+i}\\,z_{d,i}\n+ \\varepsilon_{d,h}.\n\\end{aligned}\n\\]\nThat is 247 candidate predictors per hourly equation: 96 price lags, 72 load-forecast terms, 72 wind-forecast terms and seven day-of-week indicators (Figure 2, left). The dimension is the point — it is high enough that regularisation has to do real feature selection.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: The model, in two pictures. Left — what feeds one hourly equation. Each filled cell is 24 hourly values; the price row has no day-\\(d\\) entry because the price for the delivery day is what is being forecast. Right — every delivery day gets its own fit, on a window that ends at gate closure and slides forward with it."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#estimation",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#estimation",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "2.3 Estimation",
+    "text": "2.3 Estimation\nThe coefficients are estimated by the LASSO objective\n\\[\n\\hat{\\boldsymbol{\\theta}}_h\n= \\underset{\\boldsymbol{\\theta}_h}{\\arg\\min}\n\\left[\\, \\mathrm{RSS} \\;+\\; \\lambda \\sum_{j=1}^{247}\\lvert\\theta_{h,j}\\rvert \\,\\right],\n\\]\nwhere \\(\\mathrm{RSS}\\) is the residual sum of squares and \\(\\lambda\\) sets the strength of the penalty. The \\(L_1\\) penalty drives coefficients exactly to zero, so estimation and feature selection happen in one step: predictors that add nothing are removed from the equation rather than shrunk toward irrelevance.\nFollowing the epftoolbox implementation, \\(\\lambda\\) is chosen along the LARS path by the Akaike Information Criterion, after which the model is re-estimated by ordinary coordinate-descent LASSO. This is the computationally cheap procedure proposed in the benchmark study, and it is what makes daily recalibration affordable at all."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#variance-stabilisation",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#variance-stabilisation",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "2.4 Variance stabilisation",
+    "text": "2.4 Variance stabilisation\nElectricity prices are badly non-Gaussian: heavy right tails, and genuine negative values. A log transformation is therefore unavailable. LEAR instead uses the inverse hyperbolic sine,\n\\[\n\\operatorname{asinh}(x) = \\ln\\!\\left(x + \\sqrt{x^{2}+1}\\right),\n\\]\napplied after robust centring and scaling. It behaves approximately linearly near zero and logarithmically in both tails, so it compresses extreme observations without ever becoming undefined for zero or negative prices."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#calibration-windows-and-daily-recalibration",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#calibration-windows-and-daily-recalibration",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "2.5 Calibration windows and daily recalibration",
+    "text": "2.5 Calibration windows and daily recalibration\nA calibration window is how much history is used to fit the model for one particular forecast day; the following day, the model is refitted on a window shifted forward by one. Lago et al. insist on daily recalibration because a model estimated once and left alone does not describe how electricity price forecasting actually works.\nThe original benchmark evaluates four windows — 8 weeks, 12 weeks, three years and four years. Computational cost forced a narrower choice here:\n\\[\nW_1 = 56 \\text{ days}, \\qquad W_2 = 84 \\text{ days}.\n\\]\nA separate model is re-estimated every day for each window, and the short-window ensemble is their arithmetic mean,\n\\[\n\\hat p^{\\,\\mathrm{ENS}}_{d,h}\n= \\tfrac{1}{2}\\left(\\hat p^{\\,8\\mathrm{w}}_{d,h} + \\hat p^{\\,12\\mathrm{w}}_{d,h}\\right).\n\\]\nThis is an adaptation of the forecast-combination principle in Lago et al., not their four-window ensemble, and it is named accordingly throughout."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#out-of-sample-design",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#out-of-sample-design",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "2.6 Out-of-sample design",
+    "text": "2.6 Out-of-sample design\nThe test period runs from 1 January 2024 to 21 August 2026: 964 forecast days, 23,136 hourly forecasts per model and zone. It is the final segment of the available data rather than a random sample, so no test observation is ever available to a model that is forecasting an earlier day.\nFor exploratory purposes, results are additionally split around 9 February 2025, when the three Baltic systems desynchronised from the Russian and Belarusian grids and joined the Continental European Synchronous Area. The split is descriptive. It is not, and is not treated as, evidence that synchronisation caused anything."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#evaluation-metrics",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#evaluation-metrics",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "2.7 Evaluation metrics",
+    "text": "2.7 Evaluation metrics\nThree point-forecast metrics are reported. Mean absolute error,\n\\[\n\\mathrm{MAE} = \\frac{1}{24 N_d}\\sum_{d=1}^{N_d}\\sum_{h=1}^{24}\n\\bigl\\lvert p_{d,h} - \\hat p_{d,h} \\bigr\\rvert ,\n\\]\nroot mean squared error, which punishes large misses far harder,\n\\[\n\\mathrm{RMSE} = \\sqrt{\\frac{1}{24 N_d}\\sum_{d=1}^{N_d}\\sum_{h=1}^{24}\n\\bigl(p_{d,h} - \\hat p_{d,h}\\bigr)^{2}} ,\n\\]\nand the relative measure that carries most of the argument below,\n\\[\n\\mathrm{rMAE} = \\frac{\\sum_{d,h}\\lvert p_{d,h} - \\hat p_{d,h}\\rvert}\n{\\sum_{d,h}\\lvert p_{d,h} - \\hat p^{\\,\\mathrm{naive}}_{d,h}\\rvert},\n\\qquad\n\\hat p^{\\,\\mathrm{naive}}_{d,h} = p_{d-7,h}.\n\\]\nThe naive forecast is last week’s price at the same hour — a benchmark that is harder to beat than it sounds, because it preserves both the daily and the weekly shape of the price curve for free. An rMAE below 1 means the model beats it. Lago et al. prefer this measure because it is comparable across markets of different price levels, which is exactly the comparison being made here."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#full-sample-accuracy",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#full-sample-accuracy",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "3.1 Full-sample accuracy",
+    "text": "3.1 Full-sample accuracy\nEvery specification beats the weekly naive benchmark in every zone, and the ensemble is the strongest specification everywhere, on all three metrics.\n\n\n\n\nTable 2: Out-of-sample accuracy over 964 delivery days (23,136 hourly forecasts per model and zone).\n\n\n\n\n\n\nZone\nModel\nMAE (€/MWh)\nRMSE (€/MWh)\nrMAE\nMAE vs naive\n\n\n\n\nEstonia\nLEAR 8w\n40.72\n68.87\n0.802\n−19.8%\n\n\nEstonia\nLEAR 12w\n41.46\n70.62\n0.817\n−18.3%\n\n\nEstonia\nEnsemble\n39.18\n65.52\n0.772\n−22.8%\n\n\nLatvia\nLEAR 8w\n36.41\n58.92\n0.734\n−26.6%\n\n\nLatvia\nLEAR 12w\n36.60\n58.79\n0.738\n−26.2%\n\n\nLatvia\nEnsemble\n34.83\n56.23\n0.702\n−29.8%\n\n\nLithuania\nLEAR 8w\n35.24\n57.20\n0.708\n−29.2%\n\n\nLithuania\nLEAR 12w\n35.43\n57.97\n0.712\n−28.8%\n\n\nLithuania\nEnsemble\n33.79\n55.27\n0.679\n−32.1%\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3: Everything beats the benchmark; the ensemble beats everything. rMAE by zone and specification. Anything below the dashed line forecasts better than last week’s price at the same hour.\n\n\n\nLithuania is the easiest of the three markets for this information set, followed by Latvia; Estonia is the hardest. The ensemble cuts mean absolute error by 22.8% in Estonia, 29.8% in Latvia and 32.1% in Lithuania (Figure 4).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: What the model is worth. Mean absolute error of the weekly naive benchmark against the short-window ensemble. The naive benchmark costs almost exactly €50/MWh in all three zones; the ensemble takes between a fifth and a third off that.\n\n\n\nThe 8-week specification edges out the 12-week one over the complete sample in all three zones, but the gaps are small — 0.015, 0.004 and 0.004 in rMAE — and without a Diebold–Mariano or Giacomini–White test there is no basis for calling any of them real. That test is the most obvious thing missing from this analysis and is listed as such in §5."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#accuracy-over-time",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#accuracy-over-time",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "3.2 Accuracy over time",
+    "text": "3.2 Accuracy over time\nThe aggregate table hides how unevenly that accuracy is distributed. Figure 5 tracks a 28-day rolling MAE across the whole evaluation period. The three zones move almost in lockstep — unsurprising, given how tightly coupled they are — and the level wanders between roughly €20/MWh in the calm middle of 2024 and €60/MWh in the spring of 2025 and again in early 2026. A single full-sample MAE is an average over regimes that differ by a factor of three.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5: One number, many regimes. 28-day rolling MAE of the short-window ensemble. The zones track each other closely; the level does not hold still.\n\n\n\nThe daily profile is just as uneven (Figure 6). Error concentrates in the morning ramp around 08:00 and the evening peak around 19:00–20:00, and collapses overnight. The hours that are hardest to forecast are the hours in which the most money changes hands.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6: Where the error lives. MAE by delivery hour. Solid lines are the full 964 days; dashed lines the same profile inside each zone’s most volatile 21 days (§4). Stress does not move the shape of the profile much — it roughly doubles its amplitude."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#the-shape-of-the-errors",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#the-shape-of-the-errors",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "3.3 The shape of the errors",
+    "text": "3.3 The shape of the errors\nFigure 7 plots every hourly forecast against what actually cleared. The bulk of the mass sits along the diagonal, which is what a working forecast looks like. The interesting part is the vertical smear above it: hours where the market cleared far higher than the model expected. There is no comparable smear below the diagonal. The model rarely invents a spike; it routinely fails to anticipate one.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 7: Forecast against outcome, every hour of the 964-day sample. Colour is hour density on a log scale; the diagonal is a perfect forecast. The asymmetry above the line is the spike problem.\n\n\n\nThe error distribution says the same thing more precisely (Figure 8). The centre is tight — the interquartile range is comfortably inside ±€30/MWh in all three zones, and the median error is within €1/MWh of zero — but 0.6% to 1.0% of hours land beyond ±€220/MWh, and the single worst hour of the sample reaches €1,745/MWh in Estonia. This is the distribution that produces an RMSE of €65/MWh from an MAE of €39/MWh.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 8: A tight centre and a very long tail. Signed ensemble error, actual minus forecast, clipped at ±€220/MWh for legibility. The white dot is the median, the thick bar the interquartile range, the thin line the 5th to 95th percentile."
+  },
+  {
+    "objectID": "research/Baltic Day-Ahead Price Forecasting/index.html#around-the-february-2025-synchronisation",
+    "href": "research/Baltic Day-Ahead Price Forecasting/index.html#around-the-february-2025-synchronisation",
+    "title": "Day-Ahead Electricity Price Forecasting in the Baltic States",
+    "section": "3.4 Around the February 2025 synchronisation",
+    "text": "3.4 Around the February 2025 synchronisation\nThe three metrics disagree about what happened after 9 February 2025, and the disagreement is the interesting part (Figure 9).\n\n\n\n\nTable 3: Short-window ensemble, before and after 9 February 2025. The split is descriptive: it identifies no causal effect of synchronisation.\n\n\n\n\n\n\n\n\n\n\n\n\n\nZone\nDays before / after\nMAE before → after\nRMSE before → after\nrMAE before → after\n\n\n\n\nEstonia\n405 / 559\n€37.37 → €40.50\n€71.52 → €60.81\n0.780 → 0.773\n\n\nLatvia\n405 / 559\n€33.74 → €35.62\n€59.41 → €53.80\n0.712 → 0.701\n\n\nLithuania\n405 / 559\n€33.38 → €34.10\n€61.31 → €50.45\n0.703 → 0.668\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 9: Three metrics, three stories. Short-window ensemble before and after 9 February 2025. Ordinary errors got a little larger; extreme errors got markedly smaller; relative performance improved.\n\n\n\nRelative performance does not deteriorate after synchronisation — it improves slightly in Estonia and Latvia and visibly in Lithuania, from 0.703 to 0.668. Absolute MAE rises modestly everywhere. But RMSE falls, and falls hard: from €71.52 to €60.81/MWh in Estonia, €59.41 to €53.80 in Latvia, €61.31 to €50.45 in Lithuania.\nOne reading is that typical errors grew slightly while the largest errors became rarer or smaller. That is consistent with all three metrics, but it is inferred from aggregates, and it should be checked directly against the error distributions before anyone believes it. More importantly, none of this identifies an effect of synchronisation. A credible causal design would need formal change-point tests and controls for everything else that moved at the same time — fuel prices, renewable output, transmission conditions, demand and market coupling. What the table shows is that the model did not break."
   }
 ]

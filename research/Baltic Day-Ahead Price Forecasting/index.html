@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Malek M. Itani">
+<meta name="dcterms.date" content="2026-08-21">
+<meta name="description" content="A LASSO benchmark refitted every delivery day across 964 days of Baltic day-ahead prices — and what happens to it when the market turns violent.">
+
+<title>Day-Ahead Electricity Price Forecasting in the Baltic States – Malek M. Itani</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-73b0ff3878a4e6fc3716dc69a6aaefa3.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-a60fab2f8a066d0ce7bf48d8b28043cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-73b0ff3878a4e6fc3716dc69a6aaefa3.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-105edf8004f9848bb1c5b5c0f91cc130.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-e045ed411a9396aabaef6f4bdfc2100d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-105edf8004f9848bb1c5b5c0f91cc130.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Day-Ahead Electricity Price Forecasting in the Baltic States – Malek M. Itani">
+<meta property="og:description" content="A LASSO benchmark refitted every delivery day across 964 days of Baltic day-ahead prices — and what happens to it when the market turns violent.">
+<meta property="og:image" content="https://ma-mar-itan.github.io/PortfolioWebsite/research/Baltic Day-Ahead Price Forecasting/figures/fig-thumb-light.svg">
+<meta property="og:site_name" content="Malek M. Itani">
+<meta property="og:image:alt" content="Three bars showing forecast error cut by 23%, 30% and 32% against a weekly naive benchmark">
+<meta name="twitter:title" content="Day-Ahead Electricity Price Forecasting in the Baltic States – Malek M. Itani">
+<meta name="twitter:description" content="A LASSO benchmark refitted every delivery day across 964 days of Baltic day-ahead prices — and what happens to it when the market turns violent.">
+<meta name="twitter:image" content="https://ma-mar-itan.github.io/PortfolioWebsite/research/Baltic Day-Ahead Price Forecasting/figures/fig-thumb-light.svg">
+<meta name="twitter:image:alt" content="Three bars showing forecast error cut by 23%, 30% and 32% against a weekly naive benchmark">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/img/logo.svg" alt="Site logo" class="navbar-logo light-content">
+    <img src="../../assets/img/logo.svg" alt="Site logo" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Malek M. Itani</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research/index.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../prototypes/index.html"> 
+<span class="menu-text">Prototypes</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/" target="_blank"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog/index.xml"> <i class="bi bi-rss" role="img" aria-label="RSS feed">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">1. Data</a>
+  <ul class="collapse">
+  <li><a href="#collection" id="toc-collection" class="nav-link" data-scroll-target="#collection">1.1 Collection</a></li>
+  <li><a href="#what-the-model-is-actually-given" id="toc-what-the-model-is-actually-given" class="nav-link" data-scroll-target="#what-the-model-is-actually-given">1.2 What the model is actually given</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation">1.3 Preparation</a></li>
+  </ul></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">2. Methodology</a>
+  <ul class="collapse">
+  <li><a href="#the-forecasting-problem" id="toc-the-forecasting-problem" class="nav-link" data-scroll-target="#the-forecasting-problem">2.1 The forecasting problem</a></li>
+  <li><a href="#the-lear-specification" id="toc-the-lear-specification" class="nav-link" data-scroll-target="#the-lear-specification">2.2 The LEAR specification</a></li>
+  <li><a href="#estimation" id="toc-estimation" class="nav-link" data-scroll-target="#estimation">2.3 Estimation</a></li>
+  <li><a href="#variance-stabilisation" id="toc-variance-stabilisation" class="nav-link" data-scroll-target="#variance-stabilisation">2.4 Variance stabilisation</a></li>
+  <li><a href="#calibration-windows-and-daily-recalibration" id="toc-calibration-windows-and-daily-recalibration" class="nav-link" data-scroll-target="#calibration-windows-and-daily-recalibration">2.5 Calibration windows and daily recalibration</a></li>
+  <li><a href="#out-of-sample-design" id="toc-out-of-sample-design" class="nav-link" data-scroll-target="#out-of-sample-design">2.6 Out-of-sample design</a></li>
+  <li><a href="#evaluation-metrics" id="toc-evaluation-metrics" class="nav-link" data-scroll-target="#evaluation-metrics">2.7 Evaluation metrics</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">3. Results</a>
+  <ul class="collapse">
+  <li><a href="#full-sample-accuracy" id="toc-full-sample-accuracy" class="nav-link" data-scroll-target="#full-sample-accuracy">3.1 Full-sample accuracy</a></li>
+  <li><a href="#accuracy-over-time" id="toc-accuracy-over-time" class="nav-link" data-scroll-target="#accuracy-over-time">3.2 Accuracy over time</a></li>
+  <li><a href="#the-shape-of-the-errors" id="toc-the-shape-of-the-errors" class="nav-link" data-scroll-target="#the-shape-of-the-errors">3.3 The shape of the errors</a></li>
+  <li><a href="#around-the-february-2025-synchronisation" id="toc-around-the-february-2025-synchronisation" class="nav-link" data-scroll-target="#around-the-february-2025-synchronisation">3.4 Around the February 2025 synchronisation</a></li>
+  </ul></li>
+  <li><a href="#under-stress" id="toc-under-stress" class="nav-link" data-scroll-target="#under-stress">4. Under stress</a></li>
+  <li><a href="#limitations-and-extensions" id="toc-limitations-and-extensions" class="nav-link" data-scroll-target="#limitations-and-extensions">5. Limitations and extensions</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">6. Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Day-Ahead Electricity Price Forecasting in the Baltic States</h1>
+<p class="subtitle lead">A short-window LEAR benchmark for Estonia, Latvia and Lithuania</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Electricity markets</div>
+    <div class="quarto-category">Forecasting</div>
+    <div class="quarto-category">LASSO</div>
+    <div class="quarto-category">Time series</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>A LASSO benchmark refitted every delivery day across 964 days of Baltic day-ahead prices — and what happens to it when the market turns violent.</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Malek M. Itani </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 21, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="abstract" class="level1">
+<h1>Abstract</h1>
+<p>I build and evaluate day-ahead electricity price forecasts for the three Baltic bidding zones — Estonia, Latvia and Lithuania — using the LEAR (LASSO Estimated AutoRegressive) benchmark of Lago et al.&nbsp;(2021). The question is whether a parsimonious statistical model, given only local price history and the two day-ahead exogenous forecasts published before gate closure, produces useful forecasts across three small, tightly coupled markets, and how that performance holds up when prices turn violent.</p>
+<p>A market database was assembled from the ENTSO-E Transparency Platform covering January 2015 to August 2026 — 29 distinct datasets across 150 dataset–area combinations — although the forecasting exercise deliberately draws on only three hourly series per zone. Each zone is modelled independently. Two rolling calibration windows are used, 8 weeks and 12 weeks, each refitted from scratch every delivery day, plus their arithmetic mean, referred to throughout as the short-window ensemble.</p>
+<p>Over 964 out-of-sample delivery days — 23,136 hourly forecasts per model and zone — every LEAR specification beat a weekly naive forecast in every zone, and the ensemble was the strongest specification everywhere. Its rMAE was 0.772 in Estonia, 0.702 in Latvia and 0.679 in Lithuania: reductions in mean absolute error of roughly 23%, 30% and 32% against using last week’s price at the same hour.</p>
+<p>That average conceals the model’s real weakness. Inside each zone’s most volatile 21-day stretch, ensemble rMAE rose to 0.855, 0.905 and 0.826, and single hourly errors exceeded €600/MWh in Estonia and €780–815/MWh in Latvia and Lithuania. The ensemble still beat the naive benchmark under stress — in Latvia by only 9.5%, against 29.8% over the full sample. A model can be good on average and still miss precisely the hours that carry the commercial risk.</p>
+<p><strong>Keywords</strong> — electricity price forecasting; LEAR; LASSO; ENTSO-E; Baltic electricity market; rolling recalibration; forecast combination; price volatility.</p>
+</section>
+<section id="data" class="level1">
+<h1>1. Data</h1>
+<section id="collection" class="level2">
+<h2 class="anchored" data-anchor-id="collection">1.1 Collection</h2>
+<p>The dataset was pulled directly from the ENTSO-E Transparency Platform through its API, using Python and the <code>entsoe-py</code> interface. A dedicated downloader walked the archive month by month from January 2015. Monthly granularity was chosen deliberately: it makes the download resumable, and it stops a single API failure from corrupting or interrupting the full historical pull.</p>
+<p>Original ENTSO-E observations are stored separately by dataset, area and month in compressed CSV, preserving a raw layer beneath every later transformation. Requests that returned nothing were logged as empty rather than backfilled with artificial observations — an important distinction, because a silently interpolated gap is indistinguishable from data once it reaches a model. The resulting inventory holds 150 dataset–area combinations drawn from 29 dataset types across eight categories.</p>
+<div class="cell" data-execution_count="2">
+<div id="tbl-catalogue" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-catalogue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: The ENTSO-E archive behind the project. Only the three series marked in §1.2 enter the forecasting model; the rest is collected for the extensions in §5.
+</figcaption>
+<div aria-describedby="tbl-catalogue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="2">
+<table class="cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Datasets</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Market</td>
+<td style="text-align: left;">Day-ahead prices; net positions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Load</td>
+<td style="text-align: left;">Actual load; day-ahead load forecasts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Generation</td>
+<td style="text-align: left;">Actual generation by technology; generation forecasts; wind and solar forecasts; intraday renewable forecasts; generation by plant</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Capacity</td>
+<td style="text-align: left;">Installed generation capacity; capacity by individual unit</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hydro</td>
+<td style="text-align: left;">Aggregated hydro-reservoir and storage information</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Balancing</td>
+<td style="text-align: left;">Imbalance prices; imbalance volumes; activated balancing-energy prices</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Outages</td>
+<td style="text-align: left;">Generation-unit, production-unit and transmission unavailability</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Transmission</td>
+<td style="text-align: left;">Physical flows; total imports and exports; scheduled exchanges; day-ahead scheduled exchanges; intraday offered capacity; day-, week-, month- and year-ahead transfer capacity</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The downloader also collected bilateral data for the main Baltic interconnections — Estonia–Latvia, Estonia–Finland, Latvia–Lithuania, Lithuania–Sweden (SE4) and Lithuania–Poland — querying both directions of every border. None of it enters the model below. It exists because the interesting version of this project is the one that uses it.</p>
+<p>Coverage is uneven, as it always is: not every ENTSO-E endpoint is populated for every country and period. Prices, load, generation and generation forecasts are close to complete across 2015–2026. Balancing, outage and some transfer-capacity series are considerably more fragmented.</p>
+</section>
+<section id="what-the-model-is-actually-given" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-model-is-actually-given">1.2 What the model is actually given</h2>
+<p>Although the archive is broad, the LEAR exercise uses a deliberately restricted information set, to stay close to the Nord Pool benchmark design in Lago et al. That benchmark pairs hourly day-ahead prices with a day-ahead load forecast and a day-ahead wind-generation forecast. For each zone:</p>
+<ul>
+<li><span class="math inline">\(p_{d,h}\)</span> — the day-ahead price for delivery day <span class="math inline">\(d\)</span>, hour <span class="math inline">\(h\)</span> (the target);</li>
+<li><span class="math inline">\(x^{1}_{d,h}\)</span> — the day-ahead load forecast;</li>
+<li><span class="math inline">\(x^{2}_{d,h}\)</span> — the day-ahead wind-generation forecast.</li>
+</ul>
+<p>Both exogenous series are published before the day-ahead auction closes, so they are legitimately available when the forecast for day <span class="math inline">\(d\)</span> has to be made. No realized load, realized generation or realized physical flow appears anywhere in the model. Estonia, Latvia and Lithuania are modelled independently: the Estonian model forecasts Estonian prices from Estonian predictors, and so on.</p>
+<p><a href="#fig-prices" class="quarto-xref">Figure&nbsp;1</a> is the series being forecast. Three things in it matter for everything that follows. Prices are spiky rather than merely variable — the daily high runs to €1,896/MWh in Estonia. The three zones move together closely enough that Latvia and Lithuania are frequently the same number. And the character of the series changes over the sample: the calm middle of 2025 and the turbulent turn of 2026 are different forecasting problems.</p>
+<div id="fig-prices" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prices-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="d93b06a8" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="3">
+<div class="light-content">
+<p><a href="figures/fig-prices-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: The target. Day-ahead prices in the three Baltic zones over the evaluation period. The bold line is a seven-day mean, the thin line the daily mean, and the shaded band the daily low-to-high range. The axis is cut at €480/MWh; every zone has daily highs far above it."><img src="figures/fig-prices-light.svg" class="img-fluid figure-img" alt="Day-ahead price series for Estonia, Latvia and Lithuania from January 2024 to August 2026, showing the daily mean, a seven-day mean and the daily low-to-high range"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-prices-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;1: The target. Day-ahead prices in the three Baltic zones over the evaluation period. The bold line is a seven-day mean, the thin line the daily mean, and the shaded band the daily low-to-high range. The axis is cut at €480/MWh; every zone has daily highs far above it."><img src="figures/fig-prices-dark.svg" class="img-fluid figure-img" alt="Day-ahead price series for Estonia, Latvia and Lithuania from January 2024 to August 2026, showing the daily mean, a seven-day mean and the daily low-to-high range"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prices-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <strong>The target.</strong> Day-ahead prices in the three Baltic zones over the evaluation period. The bold line is a seven-day mean, the thin line the daily mean, and the shaded band the daily low-to-high range. The axis is cut at €480/MWh; every zone has daily highs far above it.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="preparation" class="level2">
+<h2 class="anchored" data-anchor-id="preparation">1.3 Preparation</h2>
+<p>ENTSO-E series arrive at different temporal resolutions, so everything was converted to a consistent hourly structure. Daylight-saving transitions were handled by averaging the duplicated autumn hour and interpolating the missing spring hour, following the convention used for the benchmark datasets in Lago et al.</p>
+<p>Missing observations were treated conservatively. Short internal gaps were interpolated where the regular hourly structure <code>epftoolbox</code> requires demanded it. Estonia’s evaluation period contained one isolated full-day gap in the wind forecast, reconstructed from the average of the same hour on the immediately preceding and following complete days. Larger historical gaps falling outside any rolling calibration window were left untouched. All of this was done on derived modelling files; the downloaded raw layer was never edited.</p>
+</section>
+</section>
+<section id="methodology" class="level1">
+<h1>2. Methodology</h1>
+<section id="the-forecasting-problem" class="level2">
+<h2 class="anchored" data-anchor-id="the-forecasting-problem">2.1 The forecasting problem</h2>
+<p>The object to forecast is the full vector of 24 day-ahead prices,</p>
+<p><span class="math display">\[
+\mathbf{p}_d = [\,p_{d,1},\, p_{d,2},\, \ldots,\, p_{d,24}\,]^{\top},
+\]</span></p>
+<p>with all 24 values committed at once, before gate closure. In a linear framework the price for delivery hour <span class="math inline">\(h\)</span> is</p>
+<p><span class="math display">\[
+p_{d,h} = \boldsymbol{\theta}_h^{\top}\mathbf{X}_{d,h} + \varepsilon_{d,h},
+\]</span></p>
+<p>where <span class="math inline">\(\mathbf{X}_{d,h}\)</span> holds the predictors available before delivery, <span class="math inline">\(\boldsymbol{\theta}_h\)</span> the coefficients for hour <span class="math inline">\(h\)</span>, and <span class="math inline">\(\varepsilon_{d,h}\)</span> the forecast error. Each of the 24 hours gets its own equation.</p>
+</section>
+<section id="the-lear-specification" class="level2">
+<h2 class="anchored" data-anchor-id="the-lear-specification">2.2 The LEAR specification</h2>
+<p>LEAR is a parameter-rich autoregressive model with exogenous variables. Rather than pre-selecting a small set of regressors, it is handed a large candidate set and lets <span class="math inline">\(L_1\)</span> regularisation decide what survives.</p>
+<p>For delivery day <span class="math inline">\(d\)</span> the information set contains four historical price vectors (<span class="math inline">\(\mathbf{p}_{d-1}\)</span>, <span class="math inline">\(\mathbf{p}_{d-2}\)</span>, <span class="math inline">\(\mathbf{p}_{d-3}\)</span>, <span class="math inline">\(\mathbf{p}_{d-7}\)</span>), the two day-ahead exogenous forecasts for the delivery day itself (<span class="math inline">\(\mathbf{x}^1_d\)</span>, <span class="math inline">\(\mathbf{x}^2_d\)</span>), their values one day and one week earlier (<span class="math inline">\(\mathbf{x}^1_{d-1}\)</span>, <span class="math inline">\(\mathbf{x}^1_{d-7}\)</span>, <span class="math inline">\(\mathbf{x}^2_{d-1}\)</span>, <span class="math inline">\(\mathbf{x}^2_{d-7}\)</span>), and seven day-of-week dummies. Written out for hour <span class="math inline">\(h\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+p_{d,h} =\;&amp;
+\sum_{i=1}^{24}\theta_{h,i}\,p_{d-1,i}
++ \sum_{i=1}^{24}\theta_{h,24+i}\,p_{d-2,i}
++ \sum_{i=1}^{24}\theta_{h,48+i}\,p_{d-3,i}
++ \sum_{i=1}^{24}\theta_{h,72+i}\,p_{d-7,i} \\[2pt]
+&amp;+ \sum_{i=1}^{24}\theta_{h,96+i}\,x^{1}_{d,i}
++ \sum_{i=1}^{24}\theta_{h,120+i}\,x^{2}_{d,i} \\[2pt]
+&amp;+ \sum_{i=1}^{24}\theta_{h,144+i}\,x^{1}_{d-1,i}
++ \sum_{i=1}^{24}\theta_{h,168+i}\,x^{2}_{d-1,i} \\[2pt]
+&amp;+ \sum_{i=1}^{24}\theta_{h,192+i}\,x^{1}_{d-7,i}
++ \sum_{i=1}^{24}\theta_{h,216+i}\,x^{2}_{d-7,i}
++ \sum_{i=1}^{7}\theta_{h,240+i}\,z_{d,i}
++ \varepsilon_{d,h}.
+\end{aligned}
+\]</span></p>
+<p>That is 247 candidate predictors per hourly equation: 96 price lags, 72 load-forecast terms, 72 wind-forecast terms and seven day-of-week indicators (<a href="#fig-design" class="quarto-xref">Figure&nbsp;2</a>, left). The dimension is the point — it is high enough that regularisation has to do real feature selection.</p>
+<div id="fig-design" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-design-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="7ee3feae" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="4">
+<div class="light-content">
+<p><a href="figures/fig-design-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: The model, in two pictures. Left — what feeds one hourly equation. Each filled cell is 24 hourly values; the price row has no day-d entry because the price for the delivery day is what is being forecast. Right — every delivery day gets its own fit, on a window that ends at gate closure and slides forward with it."><img src="figures/fig-design-light.svg" class="img-fluid figure-img" alt="Left: a grid showing which lags of price, load forecast and wind forecast enter each hourly equation, totalling 247 predictors. Right: the 8-week and 12-week calibration windows sliding forward one day at a time"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-design-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;2: The model, in two pictures. Left — what feeds one hourly equation. Each filled cell is 24 hourly values; the price row has no day-d entry because the price for the delivery day is what is being forecast. Right — every delivery day gets its own fit, on a window that ends at gate closure and slides forward with it."><img src="figures/fig-design-dark.svg" class="img-fluid figure-img" alt="Left: a grid showing which lags of price, load forecast and wind forecast enter each hourly equation, totalling 247 predictors. Right: the 8-week and 12-week calibration windows sliding forward one day at a time"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-design-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: <strong>The model, in two pictures.</strong> <em>Left</em> — what feeds one hourly equation. Each filled cell is 24 hourly values; the price row has no day-<span class="math inline">\(d\)</span> entry because the price for the delivery day is what is being forecast. <em>Right</em> — every delivery day gets its own fit, on a window that ends at gate closure and slides forward with it.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="estimation" class="level2">
+<h2 class="anchored" data-anchor-id="estimation">2.3 Estimation</h2>
+<p>The coefficients are estimated by the LASSO objective</p>
+<p><span class="math display">\[
+\hat{\boldsymbol{\theta}}_h
+= \underset{\boldsymbol{\theta}_h}{\arg\min}
+\left[\, \mathrm{RSS} \;+\; \lambda \sum_{j=1}^{247}\lvert\theta_{h,j}\rvert \,\right],
+\]</span></p>
+<p>where <span class="math inline">\(\mathrm{RSS}\)</span> is the residual sum of squares and <span class="math inline">\(\lambda\)</span> sets the strength of the penalty. The <span class="math inline">\(L_1\)</span> penalty drives coefficients exactly to zero, so estimation and feature selection happen in one step: predictors that add nothing are removed from the equation rather than shrunk toward irrelevance.</p>
+<p>Following the <code>epftoolbox</code> implementation, <span class="math inline">\(\lambda\)</span> is chosen along the LARS path by the Akaike Information Criterion, after which the model is re-estimated by ordinary coordinate-descent LASSO. This is the computationally cheap procedure proposed in the benchmark study, and it is what makes daily recalibration affordable at all.</p>
+</section>
+<section id="variance-stabilisation" class="level2">
+<h2 class="anchored" data-anchor-id="variance-stabilisation">2.4 Variance stabilisation</h2>
+<p>Electricity prices are badly non-Gaussian: heavy right tails, and genuine negative values. A log transformation is therefore unavailable. LEAR instead uses the inverse hyperbolic sine,</p>
+<p><span class="math display">\[
+\operatorname{asinh}(x) = \ln\!\left(x + \sqrt{x^{2}+1}\right),
+\]</span></p>
+<p>applied after robust centring and scaling. It behaves approximately linearly near zero and logarithmically in both tails, so it compresses extreme observations without ever becoming undefined for zero or negative prices.</p>
+</section>
+<section id="calibration-windows-and-daily-recalibration" class="level2">
+<h2 class="anchored" data-anchor-id="calibration-windows-and-daily-recalibration">2.5 Calibration windows and daily recalibration</h2>
+<p>A calibration window is how much history is used to fit the model for one particular forecast day; the following day, the model is refitted on a window shifted forward by one. Lago et al.&nbsp;insist on daily recalibration because a model estimated once and left alone does not describe how electricity price forecasting actually works.</p>
+<p>The original benchmark evaluates four windows — 8 weeks, 12 weeks, three years and four years. Computational cost forced a narrower choice here:</p>
+<p><span class="math display">\[
+W_1 = 56 \text{ days}, \qquad W_2 = 84 \text{ days}.
+\]</span></p>
+<p>A separate model is re-estimated every day for each window, and the short-window ensemble is their arithmetic mean,</p>
+<p><span class="math display">\[
+\hat p^{\,\mathrm{ENS}}_{d,h}
+= \tfrac{1}{2}\left(\hat p^{\,8\mathrm{w}}_{d,h} + \hat p^{\,12\mathrm{w}}_{d,h}\right).
+\]</span></p>
+<p>This is an adaptation of the forecast-combination principle in Lago et al., not their four-window ensemble, and it is named accordingly throughout.</p>
+</section>
+<section id="out-of-sample-design" class="level2">
+<h2 class="anchored" data-anchor-id="out-of-sample-design">2.6 Out-of-sample design</h2>
+<p>The test period runs from <strong>1 January 2024 to 21 August 2026</strong>: 964 forecast days, 23,136 hourly forecasts per model and zone. It is the final segment of the available data rather than a random sample, so no test observation is ever available to a model that is forecasting an earlier day.</p>
+<p>For exploratory purposes, results are additionally split around <strong>9 February 2025</strong>, when the three Baltic systems desynchronised from the Russian and Belarusian grids and joined the Continental European Synchronous Area. The split is descriptive. It is not, and is not treated as, evidence that synchronisation caused anything.</p>
+</section>
+<section id="evaluation-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-metrics">2.7 Evaluation metrics</h2>
+<p>Three point-forecast metrics are reported. Mean absolute error,</p>
+<p><span class="math display">\[
+\mathrm{MAE} = \frac{1}{24 N_d}\sum_{d=1}^{N_d}\sum_{h=1}^{24}
+\bigl\lvert p_{d,h} - \hat p_{d,h} \bigr\rvert ,
+\]</span></p>
+<p>root mean squared error, which punishes large misses far harder,</p>
+<p><span class="math display">\[
+\mathrm{RMSE} = \sqrt{\frac{1}{24 N_d}\sum_{d=1}^{N_d}\sum_{h=1}^{24}
+\bigl(p_{d,h} - \hat p_{d,h}\bigr)^{2}} ,
+\]</span></p>
+<p>and the relative measure that carries most of the argument below,</p>
+<p><span class="math display">\[
+\mathrm{rMAE} = \frac{\sum_{d,h}\lvert p_{d,h} - \hat p_{d,h}\rvert}
+{\sum_{d,h}\lvert p_{d,h} - \hat p^{\,\mathrm{naive}}_{d,h}\rvert},
+\qquad
+\hat p^{\,\mathrm{naive}}_{d,h} = p_{d-7,h}.
+\]</span></p>
+<p>The naive forecast is last week’s price at the same hour — a benchmark that is harder to beat than it sounds, because it preserves both the daily and the weekly shape of the price curve for free. An rMAE below 1 means the model beats it. Lago et al.&nbsp;prefer this measure because it is comparable across markets of different price levels, which is exactly the comparison being made here.</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>3. Results</h1>
+<section id="full-sample-accuracy" class="level2">
+<h2 class="anchored" data-anchor-id="full-sample-accuracy">3.1 Full-sample accuracy</h2>
+<p>Every specification beats the weekly naive benchmark in every zone, and the ensemble is the strongest specification everywhere, on all three metrics.</p>
+<div class="cell" data-execution_count="5">
+<div id="tbl-overall" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="5">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Out-of-sample accuracy over 964 delivery days (23,136 hourly forecasts per model and zone).
+</figcaption>
+<div aria-describedby="tbl-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="5">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Zone</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">MAE (€/MWh)</th>
+<th style="text-align: right;">RMSE (€/MWh)</th>
+<th style="text-align: right;">rMAE</th>
+<th style="text-align: right;">MAE vs naive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Estonia</td>
+<td style="text-align: left;">LEAR 8w</td>
+<td style="text-align: right;">40.72</td>
+<td style="text-align: right;">68.87</td>
+<td style="text-align: right;">0.802</td>
+<td style="text-align: right;">−19.8%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Estonia</td>
+<td style="text-align: left;">LEAR 12w</td>
+<td style="text-align: right;">41.46</td>
+<td style="text-align: right;">70.62</td>
+<td style="text-align: right;">0.817</td>
+<td style="text-align: right;">−18.3%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Estonia</td>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: right;">39.18</td>
+<td style="text-align: right;">65.52</td>
+<td style="text-align: right;">0.772</td>
+<td style="text-align: right;">−22.8%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Latvia</td>
+<td style="text-align: left;">LEAR 8w</td>
+<td style="text-align: right;">36.41</td>
+<td style="text-align: right;">58.92</td>
+<td style="text-align: right;">0.734</td>
+<td style="text-align: right;">−26.6%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Latvia</td>
+<td style="text-align: left;">LEAR 12w</td>
+<td style="text-align: right;">36.60</td>
+<td style="text-align: right;">58.79</td>
+<td style="text-align: right;">0.738</td>
+<td style="text-align: right;">−26.2%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Latvia</td>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: right;">34.83</td>
+<td style="text-align: right;">56.23</td>
+<td style="text-align: right;">0.702</td>
+<td style="text-align: right;">−29.8%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lithuania</td>
+<td style="text-align: left;">LEAR 8w</td>
+<td style="text-align: right;">35.24</td>
+<td style="text-align: right;">57.20</td>
+<td style="text-align: right;">0.708</td>
+<td style="text-align: right;">−29.2%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lithuania</td>
+<td style="text-align: left;">LEAR 12w</td>
+<td style="text-align: right;">35.43</td>
+<td style="text-align: right;">57.97</td>
+<td style="text-align: right;">0.712</td>
+<td style="text-align: right;">−28.8%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lithuania</td>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: right;">33.79</td>
+<td style="text-align: right;">55.27</td>
+<td style="text-align: right;">0.679</td>
+<td style="text-align: right;">−32.1%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div id="fig-rmae" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rmae-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="e17a7b49" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="6">
+<div class="light-content">
+<p><a href="figures/fig-rmae-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;3: Everything beats the benchmark; the ensemble beats everything. rMAE by zone and specification. Anything below the dashed line forecasts better than last week’s price at the same hour."><img src="figures/fig-rmae-light.svg" class="img-fluid figure-img" alt="Grouped bar chart of rMAE for the 8-week, 12-week and ensemble models in each of the three zones, all well below the naive benchmark of 1"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-rmae-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;3: Everything beats the benchmark; the ensemble beats everything. rMAE by zone and specification. Anything below the dashed line forecasts better than last week’s price at the same hour."><img src="figures/fig-rmae-dark.svg" class="img-fluid figure-img" alt="Grouped bar chart of rMAE for the 8-week, 12-week and ensemble models in each of the three zones, all well below the naive benchmark of 1"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rmae-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: <strong>Everything beats the benchmark; the ensemble beats everything.</strong> rMAE by zone and specification. Anything below the dashed line forecasts better than last week’s price at the same hour.
+</figcaption>
+</figure>
+</div>
+<p>Lithuania is the easiest of the three markets for this information set, followed by Latvia; Estonia is the hardest. The ensemble cuts mean absolute error by 22.8% in Estonia, 29.8% in Latvia and 32.1% in Lithuania (<a href="#fig-naive-gap" class="quarto-xref">Figure&nbsp;4</a>).</p>
+<div id="fig-naive-gap" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-naive-gap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="1378ff6a" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
+<div class="light-content">
+<p><a href="figures/fig-naive-gap-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;4: What the model is worth. Mean absolute error of the weekly naive benchmark against the short-window ensemble. The naive benchmark costs almost exactly €50/MWh in all three zones; the ensemble takes between a fifth and a third off that."><img src="figures/fig-naive-gap-light.svg" class="img-fluid figure-img" alt="Dumbbell chart contrasting the weekly naive MAE near €50/MWh with the ensemble MAE between €34 and €39/MWh in each zone"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-naive-gap-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;4: What the model is worth. Mean absolute error of the weekly naive benchmark against the short-window ensemble. The naive benchmark costs almost exactly €50/MWh in all three zones; the ensemble takes between a fifth and a third off that."><img src="figures/fig-naive-gap-dark.svg" class="img-fluid figure-img" alt="Dumbbell chart contrasting the weekly naive MAE near €50/MWh with the ensemble MAE between €34 and €39/MWh in each zone"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-naive-gap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: <strong>What the model is worth.</strong> Mean absolute error of the weekly naive benchmark against the short-window ensemble. The naive benchmark costs almost exactly €50/MWh in all three zones; the ensemble takes between a fifth and a third off that.
+</figcaption>
+</figure>
+</div>
+<p>The 8-week specification edges out the 12-week one over the complete sample in all three zones, but the gaps are small — 0.015, 0.004 and 0.004 in rMAE — and without a Diebold–Mariano or Giacomini–White test there is no basis for calling any of them real. That test is the most obvious thing missing from this analysis and is listed as such in §5.</p>
+</section>
+<section id="accuracy-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="accuracy-over-time">3.2 Accuracy over time</h2>
+<p>The aggregate table hides how unevenly that accuracy is distributed. <a href="#fig-rolling" class="quarto-xref">Figure&nbsp;5</a> tracks a 28-day rolling MAE across the whole evaluation period. The three zones move almost in lockstep — unsurprising, given how tightly coupled they are — and the level wanders between roughly €20/MWh in the calm middle of 2024 and €60/MWh in the spring of 2025 and again in early 2026. A single full-sample MAE is an average over regimes that differ by a factor of three.</p>
+<div id="fig-rolling" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rolling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="ce9cb33c" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="8">
+<div class="light-content">
+<p><a href="figures/fig-rolling-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;5: One number, many regimes. 28-day rolling MAE of the short-window ensemble. The zones track each other closely; the level does not hold still."><img src="figures/fig-rolling-light.svg" class="img-fluid figure-img" alt="28-day rolling mean absolute error for the ensemble in all three zones, varying between about 20 and 60 euros per megawatt hour across the evaluation period"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-rolling-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figure&nbsp;5: One number, many regimes. 28-day rolling MAE of the short-window ensemble. The zones track each other closely; the level does not hold still."><img src="figures/fig-rolling-dark.svg" class="img-fluid figure-img" alt="28-day rolling mean absolute error for the ensemble in all three zones, varying between about 20 and 60 euros per megawatt hour across the evaluation period"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rolling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: <strong>One number, many regimes.</strong> 28-day rolling MAE of the short-window ensemble. The zones track each other closely; the level does not hold still.
+</figcaption>
+</figure>
+</div>
+<p>The daily profile is just as uneven (<a href="#fig-hourly" class="quarto-xref">Figure&nbsp;6</a>). Error concentrates in the morning ramp around 08:00 and the evening peak around 19:00–20:00, and collapses overnight. The hours that are hardest to forecast are the hours in which the most money changes hands.</p>
+<div id="fig-hourly" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hourly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="0725795b" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="9">
+<div class="light-content">
+<p><a href="figures/fig-hourly-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;6: Where the error lives. MAE by delivery hour. Solid lines are the full 964 days; dashed lines the same profile inside each zone’s most volatile 21 days (§4). Stress does not move the shape of the profile much — it roughly doubles its amplitude."><img src="figures/fig-hourly-light.svg" class="img-fluid figure-img" alt="Mean absolute error by hour of the delivery day, peaking near 08:00 and again near 20:00, with the stress-window profile roughly twice as high"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-hourly-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figure&nbsp;6: Where the error lives. MAE by delivery hour. Solid lines are the full 964 days; dashed lines the same profile inside each zone’s most volatile 21 days (§4). Stress does not move the shape of the profile much — it roughly doubles its amplitude."><img src="figures/fig-hourly-dark.svg" class="img-fluid figure-img" alt="Mean absolute error by hour of the delivery day, peaking near 08:00 and again near 20:00, with the stress-window profile roughly twice as high"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hourly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: <strong>Where the error lives.</strong> MAE by delivery hour. Solid lines are the full 964 days; dashed lines the same profile inside each zone’s most volatile 21 days (§4). Stress does not move the shape of the profile much — it roughly doubles its amplitude.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-shape-of-the-errors" class="level2">
+<h2 class="anchored" data-anchor-id="the-shape-of-the-errors">3.3 The shape of the errors</h2>
+<p><a href="#fig-calibration" class="quarto-xref">Figure&nbsp;7</a> plots every hourly forecast against what actually cleared. The bulk of the mass sits along the diagonal, which is what a working forecast looks like. The interesting part is the vertical smear above it: hours where the market cleared far higher than the model expected. There is no comparable smear below the diagonal. The model rarely invents a spike; it routinely fails to anticipate one.</p>
+<div id="fig-calibration" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-calibration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="788ff9af" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="10">
+<div class="light-content">
+<p><a href="figures/fig-calibration-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figure&nbsp;7: Forecast against outcome, every hour of the 964-day sample. Colour is hour density on a log scale; the diagonal is a perfect forecast. The asymmetry above the line is the spike problem."><img src="figures/fig-calibration-light.svg" class="img-fluid figure-img" alt="Hexbin density plots of actual against forecast price for each zone, dense along the diagonal with a pronounced smear of under-forecast hours above it"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-calibration-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figure&nbsp;7: Forecast against outcome, every hour of the 964-day sample. Colour is hour density on a log scale; the diagonal is a perfect forecast. The asymmetry above the line is the spike problem."><img src="figures/fig-calibration-dark.svg" class="img-fluid figure-img" alt="Hexbin density plots of actual against forecast price for each zone, dense along the diagonal with a pronounced smear of under-forecast hours above it"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-calibration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: <strong>Forecast against outcome,</strong> every hour of the 964-day sample. Colour is hour density on a log scale; the diagonal is a perfect forecast. The asymmetry above the line is the spike problem.
+</figcaption>
+</figure>
+</div>
+<p>The error distribution says the same thing more precisely (<a href="#fig-errdist" class="quarto-xref">Figure&nbsp;8</a>). The centre is tight — the interquartile range is comfortably inside ±€30/MWh in all three zones, and the median error is within €1/MWh of zero — but 0.6% to 1.0% of hours land beyond ±€220/MWh, and the single worst hour of the sample reaches €1,745/MWh in Estonia. This is the distribution that produces an RMSE of €65/MWh from an MAE of €39/MWh.</p>
+<div id="fig-errdist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-errdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="70982f25" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="11">
+<div class="light-content">
+<p><a href="figures/fig-errdist-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figure&nbsp;8: A tight centre and a very long tail. Signed ensemble error, actual minus forecast, clipped at ±€220/MWh for legibility. The white dot is the median, the thick bar the interquartile range, the thin line the 5th to 95th percentile."><img src="figures/fig-errdist-light.svg" class="img-fluid figure-img" alt="Violin plots of signed forecast error for each zone, tightly concentrated near zero with long tails in both directions"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-errdist-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figure&nbsp;8: A tight centre and a very long tail. Signed ensemble error, actual minus forecast, clipped at ±€220/MWh for legibility. The white dot is the median, the thick bar the interquartile range, the thin line the 5th to 95th percentile."><img src="figures/fig-errdist-dark.svg" class="img-fluid figure-img" alt="Violin plots of signed forecast error for each zone, tightly concentrated near zero with long tails in both directions"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-errdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: <strong>A tight centre and a very long tail.</strong> Signed ensemble error, actual minus forecast, clipped at ±€220/MWh for legibility. The white dot is the median, the thick bar the interquartile range, the thin line the 5th to 95th percentile.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="around-the-february-2025-synchronisation" class="level2">
+<h2 class="anchored" data-anchor-id="around-the-february-2025-synchronisation">3.4 Around the February 2025 synchronisation</h2>
+<p>The three metrics disagree about what happened after 9 February 2025, and the disagreement is the interesting part (<a href="#fig-sync" class="quarto-xref">Figure&nbsp;9</a>).</p>
+<div class="cell" data-execution_count="12">
+<div id="tbl-sync" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="12">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sync-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Short-window ensemble, before and after 9 February 2025. The split is descriptive: it identifies no causal effect of synchronisation.
+</figcaption>
+<div aria-describedby="tbl-sync-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="12">
+<table class="cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Zone</th>
+<th style="text-align: center;">Days before / after</th>
+<th style="text-align: right;">MAE before → after</th>
+<th style="text-align: right;">RMSE before → after</th>
+<th style="text-align: right;">rMAE before → after</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Estonia</td>
+<td style="text-align: center;">405 / 559</td>
+<td style="text-align: right;">€37.37 → €40.50</td>
+<td style="text-align: right;">€71.52 → €60.81</td>
+<td style="text-align: right;">0.780 → 0.773</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Latvia</td>
+<td style="text-align: center;">405 / 559</td>
+<td style="text-align: right;">€33.74 → €35.62</td>
+<td style="text-align: right;">€59.41 → €53.80</td>
+<td style="text-align: right;">0.712 → 0.701</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lithuania</td>
+<td style="text-align: center;">405 / 559</td>
+<td style="text-align: right;">€33.38 → €34.10</td>
+<td style="text-align: right;">€61.31 → €50.45</td>
+<td style="text-align: right;">0.703 → 0.668</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div id="fig-sync" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sync-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="1b4848f0" class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="13">
+<div class="light-content">
+<p><a href="figures/fig-sync-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figure&nbsp;9: Three metrics, three stories. Short-window ensemble before and after 9 February 2025. Ordinary errors got a little larger; extreme errors got markedly smaller; relative performance improved."><img src="figures/fig-sync-light.svg" class="img-fluid figure-img" alt="Three slope charts showing MAE rising, RMSE falling and rMAE improving slightly in all three zones after February 2025"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-sync-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Figure&nbsp;9: Three metrics, three stories. Short-window ensemble before and after 9 February 2025. Ordinary errors got a little larger; extreme errors got markedly smaller; relative performance improved."><img src="figures/fig-sync-dark.svg" class="img-fluid figure-img" alt="Three slope charts showing MAE rising, RMSE falling and rMAE improving slightly in all three zones after February 2025"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sync-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: <strong>Three metrics, three stories.</strong> Short-window ensemble before and after 9 February 2025. Ordinary errors got a little larger; extreme errors got markedly smaller; relative performance improved.
+</figcaption>
+</figure>
+</div>
+<p>Relative performance does not deteriorate after synchronisation — it improves slightly in Estonia and Latvia and visibly in Lithuania, from 0.703 to 0.668. Absolute MAE rises modestly everywhere. But RMSE falls, and falls hard: from €71.52 to €60.81/MWh in Estonia, €59.41 to €53.80 in Latvia, €61.31 to €50.45 in Lithuania.</p>
+<p>One reading is that typical errors grew slightly while the largest errors became rarer or smaller. That is consistent with all three metrics, but it is inferred from aggregates, and it should be checked directly against the error distributions before anyone believes it. More importantly, none of this identifies an effect of synchronisation. A credible causal design would need formal change-point tests and controls for everything else that moved at the same time — fuel prices, renewable output, transmission conditions, demand and market coupling. What the table shows is that the model did not break.</p>
+</section>
+</section>
+<section id="under-stress" class="level1">
+<h1>4. Under stress</h1>
+<p>Aggregate accuracy hides the model’s behaviour in exactly the conditions that matter most commercially. So each zone was evaluated again inside its own worst window: the 21-day interval with the highest rolling average of within-day price standard deviation.</p>
+<div class="cell" data-execution_count="14">
+<div id="tbl-stress" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="14">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Performance inside each zone’s most volatile 21-day interval (504 hourly forecasts per model). Estonia’s window is 26 March – 15 April 2025; Latvia’s and Lithuania’s is 30 September – 20 October 2025.
+</figcaption>
+<div aria-describedby="tbl-stress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="14">
+<table class="cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Zone</th>
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">MAE (€/MWh)</th>
+<th style="text-align: right;">RMSE (€/MWh)</th>
+<th style="text-align: right;">rMAE</th>
+<th style="text-align: right;">rMAE, full sample</th>
+<th style="text-align: right;">Worst hour (€/MWh)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Estonia</td>
+<td style="text-align: left;">LEAR 8w</td>
+<td style="text-align: right;">65.66</td>
+<td style="text-align: right;">97.34</td>
+<td style="text-align: right;">0.913</td>
+<td style="text-align: right;">0.802</td>
+<td style="text-align: right;">625</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Estonia</td>
+<td style="text-align: left;">LEAR 12w</td>
+<td style="text-align: right;">63.84</td>
+<td style="text-align: right;">93.02</td>
+<td style="text-align: right;">0.888</td>
+<td style="text-align: right;">0.817</td>
+<td style="text-align: right;">603</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Estonia</td>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: right;">61.50</td>
+<td style="text-align: right;">90.73</td>
+<td style="text-align: right;">0.855</td>
+<td style="text-align: right;">0.772</td>
+<td style="text-align: right;">614</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Latvia</td>
+<td style="text-align: left;">LEAR 8w</td>
+<td style="text-align: right;">58.12</td>
+<td style="text-align: right;">103.04</td>
+<td style="text-align: right;">0.935</td>
+<td style="text-align: right;">0.734</td>
+<td style="text-align: right;">814</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Latvia</td>
+<td style="text-align: left;">LEAR 12w</td>
+<td style="text-align: right;">58.15</td>
+<td style="text-align: right;">100.55</td>
+<td style="text-align: right;">0.936</td>
+<td style="text-align: right;">0.738</td>
+<td style="text-align: right;">815</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Latvia</td>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: right;">56.21</td>
+<td style="text-align: right;">99.29</td>
+<td style="text-align: right;">0.905</td>
+<td style="text-align: right;">0.702</td>
+<td style="text-align: right;">814</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lithuania</td>
+<td style="text-align: left;">LEAR 8w</td>
+<td style="text-align: right;">54.73</td>
+<td style="text-align: right;">94.35</td>
+<td style="text-align: right;">0.881</td>
+<td style="text-align: right;">0.708</td>
+<td style="text-align: right;">809</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lithuania</td>
+<td style="text-align: left;">LEAR 12w</td>
+<td style="text-align: right;">52.53</td>
+<td style="text-align: right;">92.14</td>
+<td style="text-align: right;">0.845</td>
+<td style="text-align: right;">0.712</td>
+<td style="text-align: right;">760</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lithuania</td>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: right;">51.35</td>
+<td style="text-align: right;">90.60</td>
+<td style="text-align: right;">0.826</td>
+<td style="text-align: right;">0.679</td>
+<td style="text-align: right;">784</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The degradation is substantial. Estonia’s ensemble rMAE rises from 0.772 to 0.855, Latvia’s from 0.702 to 0.905, Lithuania’s from 0.679 to 0.826 (<a href="#fig-stress" class="quarto-xref">Figure&nbsp;10</a>).</p>
+<div id="fig-stress" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="25ff781d" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="15">
+<div class="light-content">
+<p><a href="figures/fig-stress-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Figure&nbsp;10: Stress pushes every model toward the benchmark. Left — rMAE for all nine zone–model combinations, full sample against stress window. Right — the worst single hour inside each stress window, for the ensemble."><img src="figures/fig-stress-light.svg" class="img-fluid figure-img" alt="Left: dumbbell chart showing rMAE for every model and zone shifting from the full sample toward the naive benchmark inside the stress window. Right: bars of the worst single-hour error, €614 to €814 per megawatt hour"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-stress-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Figure&nbsp;10: Stress pushes every model toward the benchmark. Left — rMAE for all nine zone–model combinations, full sample against stress window. Right — the worst single hour inside each stress window, for the ensemble."><img src="figures/fig-stress-dark.svg" class="img-fluid figure-img" alt="Left: dumbbell chart showing rMAE for every model and zone shifting from the full sample toward the naive benchmark inside the stress window. Right: bars of the worst single-hour error, €614 to €814 per megawatt hour"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: <strong>Stress pushes every model toward the benchmark.</strong> <em>Left</em> — rMAE for all nine zone–model combinations, full sample against stress window. <em>Right</em> — the worst single hour inside each stress window, for the ensemble.
+</figcaption>
+</figure>
+</div>
+<p>The Latvian result is the sharpest. Inside its most volatile 21 days, the ensemble keeps only a <strong>9.5%</strong> MAE advantage over a forecast that copies last week — against 29.8% over the full sample. Two thirds of the model’s value evaporates precisely when it would be worth the most.</p>
+<p>Large hourly errors define these episodes. The ensemble’s worst single hour reaches €614/MWh in Estonia, €814/MWh in Latvia and €784/MWh in Lithuania. <a href="#fig-stress-trace" class="quarto-xref">Figure&nbsp;11</a> shows where those misses sit: the model tracks the general level competently and then flattens against a spike that arrives without warning in its own information set.</p>
+<div id="fig-stress-trace" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stress-trace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="ac52ae8a" class="cell" data-execution_count="16">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="16">
+<div class="light-content">
+<p><a href="figures/fig-stress-trace-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Figure&nbsp;11: Inside the worst 21 days. Actual price against the short-window ensemble, hour by hour. The shaded area is the error. The marked point is the single worst hour in each window. Latvia and Lithuania share a window — and, through most of it, the same price."><img src="figures/fig-stress-trace-light.svg" class="img-fluid figure-img" alt="Hourly actual and forecast prices through each zone's 21-day stress window, with the forecast tracking the base level but flattening against price spikes above 800 euros"></a></p>
+</div>
+<div class="dark-content">
+<p><a href="figures/fig-stress-trace-dark.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Figure&nbsp;11: Inside the worst 21 days. Actual price against the short-window ensemble, hour by hour. The shaded area is the error. The marked point is the single worst hour in each window. Latvia and Lithuania share a window — and, through most of it, the same price."><img src="figures/fig-stress-trace-dark.svg" class="img-fluid figure-img" alt="Hourly actual and forecast prices through each zone's 21-day stress window, with the forecast tracking the base level but flattening against price spikes above 800 euros"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stress-trace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: <strong>Inside the worst 21 days.</strong> Actual price against the short-window ensemble, hour by hour. The shaded area is the error. The marked point is the single worst hour in each window. Latvia and Lithuania share a window — and, through most of it, the same price.
+</figcaption>
+</figure>
+</div>
+<p>Two further results are worth recording. First, the ensemble remains the best specification in every zone under stress, so forecast averaging buys robustness and not only average accuracy. Second, the ranking of the two individual windows flips: the 12-week model beats the 8-week model in Estonia and Lithuania inside their stress windows, and the two are indistinguishable in Latvia. The shortest available history is not automatically the best one when the price regime turns — more history can buy stability at exactly the moment adaptiveness stops helping.</p>
+</section>
+<section id="limitations-and-extensions" class="level1">
+<h1>5. Limitations and extensions</h1>
+<p><strong>This is not a full replication.</strong> The original LEAR benchmark estimates 8-week, 12-week, three-year and four-year specifications and combines all four. Computational cost restricted this work to the two short windows, which is why the combination is called a short-window ensemble everywhere above and never just “the ensemble”.</p>
+<p><strong>The information set is deliberately thin.</strong> The model sees local price history, a load forecast and a wind forecast. The Baltic zones are among the most tightly interconnected in Europe, and the archive already holds scheduled exchanges, physical cross-border flows, transmission and generation outages, installed capacity, balancing data and neighbouring-system series. Whether market integration variables improve accuracy is the natural next question. It has to be asked carefully: realized flows or realized generation for the delivery hour must never enter contemporaneously, only information known before gate closure or properly lagged realized values.</p>
+<p><strong>Missing data required judgement.</strong> Short gaps were interpolated and one isolated Estonian wind-forecast day was reconstructed from its neighbours. The affected share of observations is small, but a production implementation should formalise the missing-data policy and test whether the choice of imputation moves the forecasts at all.</p>
+<p><strong>One implementation detail is load-bearing.</strong> The <code>epftoolbox</code> LEAR routine needed a compatibility adjustment to <code>LassoLarsIC</code> under modern Python/scikit-learn when the number of candidate predictors exceeds the number of observations — which is exactly the regime the short windows sit in. The adjustment preserves the LEAR framework, but it is the kind of thing that has to be documented for anyone reproducing the numbers.</p>
+<p><strong>There is no significance testing.</strong> Every comparison above is a comparison of point metrics. Lago et al.&nbsp;are explicit that predictive-accuracy differences need formal testing, and the multivariate Diebold–Mariano and Giacomini–White tests across the 8-week, 12-week, ensemble and naive forecasts are the single highest-value addition to this analysis.</p>
+<p><strong>The synchronisation analysis is descriptive.</strong> February 2025 is an operationally significant date, but comparing metrics either side of it identifies nothing causal. A stronger design would use change-point tests on prices and on forecast errors, rolling coefficient stability, and interactions with transmission and balancing conditions.</p>
+<p><strong>The stress windows were selected after the fact.</strong> They are a stress test, not an unbiased estimate of anything. The primary evidence remains the full 964-day evaluation. A more complete treatment would classify all days into volatility quantiles and compare accuracy across the whole distribution rather than the single most extreme interval.</p>
+<p><strong>Only one benchmark was run.</strong> Lago et al.&nbsp;identify the DNN as the stronger and more expensive benchmark, with LEAR attractive for its low complexity and fast recalibration. Running the DNN on the same Baltic datasets would establish whether nonlinearity buys anything economically meaningful over a strong linear baseline.</p>
+</section>
+<section id="conclusion" class="level1">
+<h1>6. Conclusion</h1>
+<p>This project runs an electricity price forecasting workflow end to end: automated collection of a large European power-market database, construction of leakage-safe day-ahead inputs, implementation of a recognised benchmark model, rolling out-of-sample evaluation across three bidding zones, and explicit stress testing where the model is most likely to fail.</p>
+<p>The central result is consistent across all three markets. LEAR substantially outperforms a weekly naive forecast, and averaging the 8-week and 12-week specifications improves on both. The short-window ensemble cuts MAE against the naive benchmark by roughly 23% in Estonia, 30% in Latvia and 32% in Lithuania.</p>
+<p>The second result matters as much. Accuracy degrades sharply when prices turn volatile. Relative performance stays better than naive, but the margin narrows — to 9.5% in Latvia — and individual hourly errors run past €600–800/MWh. The central difficulty of electricity price forecasting is visible in the gap between those two paragraphs: a model can look strong on average while remaining exposed to exactly the observations that carry the commercial risk.</p>
+<p>LEAR is a credible, cheap baseline for Baltic day-ahead prices. The ENTSO-E archive assembled here is the more valuable output — it is what makes the obvious next steps possible: cross-border information, outage and balancing variables, longer calibration windows, formal predictive-accuracy testing, and nonlinear benchmarks.</p>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<p>Lago, J., Marcjasz, G., De Schutter, B., &amp; Weron, R. (2021). <em>Forecasting day-ahead electricity prices: A review of state-of-the-art algorithms, best practices and an open-access benchmark.</em> Applied Energy, 293, 116983. <a href="https://doi.org/10.1016/j.apenergy.2021.116983">[Paper]</a> <a href="https://github.com/jeslago/epftoolbox">[epftoolbox]</a></p>
+<p>Uniejewski, B., Weron, R., &amp; Ziel, F. (2018). <em>Variance stabilizing transformations for electricity spot price forecasting.</em> IEEE Transactions on Power Systems, 33(2), 2219–2229. <a href="https://doi.org/10.1109/TPWRS.2017.2734563">[Paper]</a></p>
+<p>Diebold, F. X., &amp; Mariano, R. S. (1995). <em>Comparing predictive accuracy.</em> Journal of Business &amp; Economic Statistics, 13(3), 253–263. <a href="https://doi.org/10.1080/07350015.1995.10524599">[Paper]</a></p>
+<p>ENTSO-E. <em>Transparency Platform.</em> <a href="https://transparency.entsoe.eu/">[Data]</a></p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ma-mar-itan\.github\.io\/PortfolioWebsite\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Malek M. Itani</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Ma-Mar-Itan">
+      <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/malek-ma-itani/">
+      <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:Malek.Ma.Itani@gmail.com">
+      <i class="bi bi-envelope" role="img" aria-label="Email">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

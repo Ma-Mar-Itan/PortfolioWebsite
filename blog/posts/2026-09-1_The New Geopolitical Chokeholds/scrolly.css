@@ -1,0 +1,436 @@
+/* The New Geopolitical Chokeholds — editorial scrollytelling system */
+
+.geo-scrolly {
+  --v-ink: #12171c;
+  --v-muted: #64707b;
+  --v-paper: #fbfaf7;
+  --v-land: #e8e4dc;
+  --v-land-2: #f1eee8;
+  --v-panel: rgba(255, 255, 255, .94);
+  --v-rule: #c7c4bc;
+  --v-grid: rgba(18, 23, 28, .065);
+  --v-sea: #dce8e6;
+  --v-teal: #087e80;
+  --v-teal-soft: rgba(8, 126, 128, .16);
+  --v-red: #d94b36;
+  --v-red-soft: rgba(217, 75, 54, .15);
+  --v-amber: #be7b24;
+  --v-shadow: rgba(18, 23, 28, .16);
+}
+
+body.quarto-dark .geo-scrolly,
+html[data-bs-theme="dark"] .geo-scrolly {
+  --v-ink: #f1eee7;
+  --v-muted: #a1aab2;
+  --v-paper: #0e1318;
+  --v-land: #242a30;
+  --v-land-2: #1a2026;
+  --v-panel: rgba(24, 30, 36, .95);
+  --v-rule: #3b434c;
+  --v-grid: rgba(241, 238, 231, .055);
+  --v-sea: #14272a;
+  --v-teal: #50c4bd;
+  --v-teal-soft: rgba(80, 196, 189, .16);
+  --v-red: #ff7159;
+  --v-red-soft: rgba(255, 113, 89, .16);
+  --v-amber: #e1a44e;
+  --v-shadow: rgba(0, 0, 0, .38);
+}
+
+.geo-scrolly.scene-frame {
+  position: relative;
+  overflow: hidden;
+  width: min(100%, 820px);
+  border: 1px solid var(--v-rule);
+  border-radius: 20px;
+  background: var(--v-paper);
+  box-shadow: 0 28px 80px var(--v-shadow);
+  isolation: isolate;
+}
+
+.geo-scrolly svg {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 86svh;
+  margin-inline: auto;
+}
+
+.cr-section .sticky-col-stack .sticky {
+  width: fit-content;
+  transition: transform 720ms cubic-bezier(.2, .78, .2, 1);
+  will-change: transform;
+}
+
+.geo-scrolly text {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  fill: var(--v-ink);
+}
+
+.geo-scrolly .serif {
+  font-family: Newsreader, Georgia, serif;
+  font-weight: 500;
+}
+
+.geo-scrolly .kicker {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .17em;
+  fill: var(--v-muted);
+}
+
+.geo-scrolly .micro {
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: .09em;
+  fill: var(--v-muted);
+}
+
+.geo-scrolly .small {
+  font-size: 17px;
+  fill: var(--v-muted);
+}
+
+.geo-scrolly .label {
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.geo-scrolly .title {
+  font-family: Newsreader, Georgia, serif;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.geo-scrolly .teal-text { fill: var(--v-teal); }
+.geo-scrolly .red-text { fill: var(--v-red); }
+.geo-scrolly .amber-text { fill: var(--v-amber); }
+
+.geo-scrolly .hairline,
+.geo-scrolly .route,
+.geo-scrolly .control-line,
+.geo-scrolly .broken-line {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.geo-scrolly .hairline { stroke: var(--v-rule); stroke-width: 1.5; }
+.geo-scrolly .route { stroke: var(--v-teal); stroke-width: 3; }
+.geo-scrolly .control-line { stroke: var(--v-red); stroke-width: 3; }
+.geo-scrolly .conditional { stroke-dasharray: 9 9; }
+.geo-scrolly .broken-line { stroke: var(--v-red); stroke-width: 3; stroke-dasharray: 18 10 3 10; }
+
+.geo-scrolly .state-layer,
+.geo-scrolly .state-label,
+.geo-scrolly .state-note {
+  opacity: 0;
+  transition: opacity 520ms ease, transform 680ms cubic-bezier(.2, .78, .2, 1);
+}
+
+.geo-scrolly .map-border,
+.geo-scrolly .map-road,
+.geo-scrolly .map-admin,
+.geo-scrolly .country-name {
+  transition: opacity 620ms ease, stroke-width 620ms ease;
+}
+
+.geo-scrolly .pulse-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: geo-pulse 2.2s ease-in-out infinite;
+}
+
+.geo-scrolly .flow-line {
+  stroke-dasharray: 10 11;
+  animation: geo-flow 1.55s linear infinite;
+}
+
+.geo-scrolly .mobile-state {
+  position: absolute;
+  inset: 14px 14px auto;
+  z-index: 5;
+  display: none;
+  padding: .45rem .65rem;
+  border: 1px solid var(--v-rule);
+  border-radius: 999px;
+  background: var(--v-panel);
+  color: var(--v-ink);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+@keyframes geo-pulse {
+  0%, 100% { opacity: .45; transform: scale(.82); }
+  50% { opacity: 1; transform: scale(1.14); }
+}
+
+@keyframes geo-flow { to { stroke-dashoffset: -42; } }
+
+/* Country sequence -------------------------------------------------------- */
+.country-scene .kicker,
+.country-scene .micro { font-size: 16px; }
+.country-scene .micro { letter-spacing: .065em; }
+.country-scene .small { font-size: 19px; }
+.country-scene .label { font-size: 20px; }
+
+.country-scene .map-chokes,
+.country-scene .map-operational,
+.country-scene .map-external,
+.country-scene .map-ownership,
+.country-scene .map-final,
+.country-scene .handoff-pulse { opacity: 0; }
+
+.country-scene[data-state="physical"] .map-chokes { opacity: 1; }
+.country-scene[data-state="physical"] .map-settlements { opacity: .48; }
+
+/* Keep each explanatory layer legible instead of accumulating every prior layer. */
+.country-scene[data-state="operational"] .map-operational { opacity: 1; }
+.country-scene[data-state="operational"] .map-political { opacity: .62; }
+.country-scene[data-state="operational"] .map-settlements,
+.country-scene[data-state="operational"] .country-name { opacity: .18; }
+
+.country-scene[data-state="external"] .map-operational { opacity: .46; }
+.country-scene[data-state="external"] .map-external { opacity: 1; }
+.country-scene[data-state="external"] .map-political { opacity: .28; }
+.country-scene[data-state="external"] .map-neighbours { opacity: .34; }
+.country-scene[data-state="external"] .map-operational .op-label,
+.country-scene[data-state="external"] .map-operational .map-caption-card { opacity: 0; }
+.country-scene[data-state="external"] .map-settlements,
+.country-scene[data-state="external"] .country-name { opacity: .08; }
+
+.country-scene[data-state="ownership"] .map-ownership { opacity: 1; }
+.country-scene[data-state="ownership"] .map-political { opacity: .2; }
+.country-scene[data-state="ownership"] .map-settlements,
+.country-scene[data-state="ownership"] .country-name { opacity: .05; }
+
+.country-scene[data-state="faded"] .map-operational { opacity: .34; }
+.country-scene[data-state="faded"] .map-external,
+.country-scene[data-state="faded"] .map-final { opacity: 1; }
+.country-scene[data-state="faded"] .map-operational .op-label,
+.country-scene[data-state="faded"] .map-operational .map-caption-card { opacity: 0; }
+.country-scene[data-state="faded"] .map-political { opacity: .12; }
+.country-scene[data-state="faded"] .map-neighbours { opacity: .22; }
+.country-scene[data-state="faded"] .map-border { opacity: .16; stroke-width: 2; }
+.country-scene[data-state="faded"] .country-name { opacity: .04; }
+
+.country-scene[data-state="handoff"] .map-operational { opacity: .3; }
+.country-scene[data-state="handoff"] .map-operational .op-label,
+.country-scene[data-state="handoff"] .map-operational .map-caption-card { opacity: 0; }
+.country-scene[data-state="handoff"] .map-political { opacity: .16; }
+.country-scene[data-state="handoff"] .map-neighbours { opacity: .25; }
+.country-scene[data-state="handoff"] .map-border { opacity: .18; stroke-width: 2; }
+.country-scene[data-state="handoff"] .country-name,
+.country-scene[data-state="handoff"] .map-settlements { opacity: .04; }
+.country-scene[data-state="handoff"] .handoff-pulse { opacity: 1; }
+
+.country-scene .map-chokes,
+.country-scene .map-operational,
+.country-scene .map-external,
+.country-scene .map-ownership,
+.country-scene .map-final,
+.country-scene .handoff-pulse,
+.country-scene .map-political,
+.country-scene .map-neighbours,
+.country-scene .map-settlements {
+  transition: opacity 600ms ease;
+}
+
+/* Decision sequence ------------------------------------------------------- */
+.decision-scene .journey-progress {
+  stroke-dasharray: 0 100;
+  transition: stroke-dasharray 850ms cubic-bezier(.2, .78, .2, 1), opacity 400ms ease;
+}
+
+.decision-scene .journey-node {
+  transition: opacity 420ms ease, transform 520ms cubic-bezier(.2, .78, .2, 1);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.decision-scene .active-ring,
+.decision-scene .decision-detail,
+.decision-scene .pressure-layer,
+.decision-scene .breaker-layer,
+.decision-scene .control-layer,
+.decision-scene .exit-layer { opacity: 0; transition: opacity 480ms ease; }
+
+.decision-scene[data-state="observe"] .journey-progress { stroke-dasharray: 12 100; }
+.decision-scene[data-state="analyze"] .journey-progress { stroke-dasharray: 28 100; }
+.decision-scene[data-state="decide"] .journey-progress { stroke-dasharray: 45 100; }
+.decision-scene[data-state="fund"] .journey-progress { stroke-dasharray: 62 100; }
+.decision-scene[data-state="communicate"] .journey-progress { stroke-dasharray: 80 100; }
+.decision-scene[data-state="act"] .journey-progress,
+.decision-scene[data-state="pressure"] .journey-progress,
+.decision-scene[data-state="breaker"] .journey-progress,
+.decision-scene[data-state="control"] .journey-progress,
+.decision-scene[data-state="exit"] .journey-progress { stroke-dasharray: 100 100; }
+
+.decision-scene[data-state="observe"] .ring-observe,
+.decision-scene[data-state="analyze"] .ring-analyze,
+.decision-scene[data-state="decide"] .ring-decide,
+.decision-scene[data-state="fund"] .ring-fund,
+.decision-scene[data-state="communicate"] .ring-communicate,
+.decision-scene[data-state="act"] .ring-act { opacity: 1; }
+
+.decision-scene[data-state="observe"] .detail-observe,
+.decision-scene[data-state="analyze"] .detail-analyze,
+.decision-scene[data-state="decide"] .detail-decide,
+.decision-scene[data-state="fund"] .detail-fund,
+.decision-scene[data-state="communicate"] .detail-communicate,
+.decision-scene[data-state="act"] .detail-act { opacity: 1; }
+
+.decision-scene[data-state="pressure"] .pressure-layer,
+.decision-scene[data-state="breaker"] .pressure-layer { opacity: 1; }
+.decision-scene[data-state="breaker"] .breaker-layer { opacity: 1; }
+.decision-scene[data-state="breaker"] .journey-progress { opacity: .16; }
+.decision-scene[data-state="control"] .control-layer { opacity: 1; }
+.decision-scene[data-state="exit"] .exit-layer { opacity: 1; }
+
+.decision-scene .stage-dot,
+.decision-scene .stage-word { transition: fill 420ms ease, opacity 420ms ease; }
+.decision-scene[data-state="observe"] .stage-observe .stage-dot,
+.decision-scene[data-state="analyze"] .stage-analyze .stage-dot,
+.decision-scene[data-state="decide"] .stage-decide .stage-dot,
+.decision-scene[data-state="fund"] .stage-fund .stage-dot,
+.decision-scene[data-state="communicate"] .stage-communicate .stage-dot,
+.decision-scene[data-state="act"] .stage-act .stage-dot { fill: var(--v-teal); }
+.decision-scene[data-state="observe"] .stage-observe .stage-word,
+.decision-scene[data-state="analyze"] .stage-analyze .stage-word,
+.decision-scene[data-state="decide"] .stage-decide .stage-word,
+.decision-scene[data-state="fund"] .stage-fund .stage-word,
+.decision-scene[data-state="communicate"] .stage-communicate .stage-word,
+.decision-scene[data-state="act"] .stage-act .stage-word { fill: var(--v-ink); opacity: 1; }
+
+/* Cathedral sequence ------------------------------------------------------ */
+.cathedral-scene .human-layer,
+.cathedral-scene .risk-layer,
+.cathedral-scene .attractor-layer,
+.cathedral-scene .hollow-layer,
+.cathedral-scene .vendor-layer,
+.cathedral-scene .rebuild-layer,
+.cathedral-scene .cathedral-final { opacity: 0; transition: opacity 600ms ease; }
+
+.cathedral-scene[data-state="control"] .human-layer,
+.cathedral-scene[data-state="concentration"] .human-layer,
+.cathedral-scene[data-state="attractors"] .human-layer,
+.cathedral-scene[data-state="exodus"] .human-layer,
+.cathedral-scene[data-state="hollow"] .human-layer,
+.cathedral-scene[data-state="vendor"] .human-layer { opacity: 1; }
+
+.cathedral-scene[data-state="concentration"] .risk-layer,
+.cathedral-scene[data-state="attractors"] .risk-layer,
+.cathedral-scene[data-state="exodus"] .risk-layer,
+.cathedral-scene[data-state="hollow"] .risk-layer,
+.cathedral-scene[data-state="vendor"] .risk-layer { opacity: 1; }
+
+.cathedral-scene[data-state="attractors"] .attractor-layer,
+.cathedral-scene[data-state="exodus"] .attractor-layer,
+.cathedral-scene[data-state="hollow"] .attractor-layer,
+.cathedral-scene[data-state="vendor"] .attractor-layer { opacity: 1; }
+
+.cathedral-scene .operator {
+  transition: transform 1000ms cubic-bezier(.2, .78, .2, 1), opacity 700ms ease;
+  transform-origin: 0 0;
+}
+.cathedral-scene .op-researcher { transform: translate(418px, 495px); }
+.cathedral-scene .op-architect { transform: translate(548px, 495px); }
+.cathedral-scene .op-security { transform: translate(449px, 569px); }
+.cathedral-scene .op-engineer { transform: translate(551px, 569px); }
+.cathedral-scene .op-analyst { transform: translate(500px, 659px); }
+.cathedral-scene[data-state="exodus"] .op-researcher,
+.cathedral-scene[data-state="hollow"] .op-researcher,
+.cathedral-scene[data-state="vendor"] .op-researcher { transform: translate(748px, 215px); opacity: .22; }
+.cathedral-scene[data-state="exodus"] .op-architect,
+.cathedral-scene[data-state="hollow"] .op-architect,
+.cathedral-scene[data-state="vendor"] .op-architect { transform: translate(845px, 375px); opacity: .2; }
+.cathedral-scene[data-state="exodus"] .op-security,
+.cathedral-scene[data-state="hollow"] .op-security,
+.cathedral-scene[data-state="vendor"] .op-security { transform: translate(808px, 650px); opacity: .2; }
+.cathedral-scene[data-state="exodus"] .op-engineer,
+.cathedral-scene[data-state="hollow"] .op-engineer,
+.cathedral-scene[data-state="vendor"] .op-engineer { transform: translate(866px, 799px); opacity: .2; }
+.cathedral-scene[data-state="exodus"] .op-analyst,
+.cathedral-scene[data-state="hollow"] .op-analyst,
+.cathedral-scene[data-state="vendor"] .op-analyst { transform: translate(930px, 940px); opacity: .2; }
+
+.cathedral-scene[data-state="hollow"] .hollow-layer,
+.cathedral-scene[data-state="vendor"] .hollow-layer { opacity: 1; }
+.cathedral-scene[data-state="hollow"] .server-light,
+.cathedral-scene[data-state="vendor"] .server-light { fill: var(--v-amber); }
+.cathedral-scene[data-state="vendor"] .vendor-layer { opacity: 1; }
+.cathedral-scene[data-state="rebuild"] .rebuild-layer,
+.cathedral-scene[data-state="rebuild"] .cathedral-final { opacity: 1; }
+.cathedral-scene[data-state="rebuild"] .risk-layer,
+.cathedral-scene[data-state="rebuild"] .attractor-layer,
+.cathedral-scene[data-state="rebuild"] .hollow-layer,
+.cathedral-scene[data-state="rebuild"] .vendor-layer { opacity: 0; }
+.cathedral-scene .procurement-layer { transition: opacity 500ms ease; }
+.cathedral-scene[data-state="rebuild"] .procurement-layer { opacity: 0; }
+.cathedral-scene[data-state="rebuild"] .operator { opacity: 1; }
+
+/* Closeread narrative ----------------------------------------------------- */
+.cr-section .narrative p,
+.cr-section .narrative li {
+  max-width: none;
+  text-align: left;
+  hyphens: manual;
+}
+.cr-section .narrative p { margin-bottom: .7rem; }
+.cr-section .narrative p:last-child { margin-bottom: 0; }
+.cr-section .narrative h2 {
+  margin-top: 0;
+  margin-bottom: .65rem;
+  font-size: 1.45rem;
+}
+.cr-section .narrative-col .narrative {
+  border-left: 2px solid var(--bs-border-color);
+  padding-inline-start: 1rem !important;
+}
+.cr-section .narrative .scene-cue {
+  display: inline-block;
+  margin-bottom: .55rem;
+  color: var(--bs-secondary-color);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 575.98px) {
+  .cr-section .sticky-col-stack .sticky {
+    transform: none !important;
+  }
+  .geo-scrolly.scene-frame { border-radius: 12px; }
+  .geo-scrolly .mobile-state { display: block; }
+  .geo-scrolly .kicker { font-size: 17px; }
+  .geo-scrolly .micro { font-size: 16px; }
+  .geo-scrolly .small { font-size: 19px; }
+  .geo-scrolly .label { font-size: 20px; }
+  .cr-section .narrative-col .narrative { border-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cr-section .sticky-col-stack .sticky,
+  .geo-scrolly *,
+  .geo-scrolly *::before,
+  .geo-scrolly *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+body.visual-reduced-motion .cr-section .sticky-col-stack .sticky,
+body.visual-reduced-motion .geo-scrolly *,
+body.visual-reduced-motion .geo-scrolly *::before,
+body.visual-reduced-motion .geo-scrolly *::after {
+  animation-duration: .001ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: .001ms !important;
+}
