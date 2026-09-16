@@ -1,0 +1,190 @@
+/* Homepage refinements. Loaded AFTER home.css — overrides only, so home.css
+   stays untouched and this file can be removed to revert. */
+
+/* --- Hero: eyebrow, second beat, tiered actions --------------------------- */
+
+.home-page .hero-eyebrow,
+.home-page .hero-eyebrow p {
+  margin: 0 0 1.2rem;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--home-muted);
+}
+
+.home-page .hero-tagline,
+.home-page .hero-tagline p {
+  max-width: 42ch;
+  color: var(--home-ink);
+  margin-bottom: .8rem;
+}
+
+.home-page .hero-note,
+.home-page .hero-note p {
+  max-width: 52ch;
+  margin: 0 0 1.75rem;
+  font-size: .97rem;
+  line-height: 1.6;
+  color: var(--home-muted);
+  text-wrap: pretty;
+}
+
+/* One filled primary; the rest stay outlined. */
+.home-page .hero-links a.hero-primary {
+  color: var(--bs-body-bg);
+  background: var(--home-accent);
+  border-color: var(--home-accent);
+}
+
+.home-page .hero-links a.hero-primary:hover {
+  color: var(--bs-body-bg);
+  background: color-mix(in srgb, var(--home-accent) 82%, #000);
+  border-color: color-mix(in srgb, var(--home-accent) 82%, #000);
+}
+
+/* Email / CV read as quiet text links, not as peers of the nav buttons. */
+.home-page .hero-quiet,
+.home-page .hero-quiet p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .55rem 1.6rem;
+  margin: 1.4rem 0 0;
+}
+
+.home-page .hero-quiet a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .9rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+  color: var(--home-ink);
+  text-decoration: none;
+}
+
+.home-page .hero-quiet a i {
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--home-muted);
+  transition: color 150ms ease;
+}
+
+.home-page .hero-quiet a span {
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.home-page .hero-quiet a:hover i { color: var(--home-accent); }
+
+.home-page .hero-quiet a:hover span {
+  color: var(--home-accent);
+  border-bottom-color: color-mix(in srgb, var(--home-accent) 45%, transparent);
+}
+
+/* --- Selected work: one lead card + a two-up ------------------------------ */
+
+.home-page #listing-featured .list.grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1.25rem;
+}
+
+.home-page #listing-featured .g-col-1 {
+  grid-column: auto;
+}
+
+.home-page #listing-featured .g-col-1:first-child {
+  grid-column: 1 / -1;
+}
+
+/* Cards 2 and 3 stack image over body. */
+.home-page #listing-featured .quarto-grid-item {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+  height: 100%;
+  border: 1px solid var(--home-rule);
+}
+
+.home-page #listing-featured .card-img-top,
+.home-page #listing-featured .thumbnail-image {
+  min-height: 168px;
+  height: 168px !important;
+}
+
+.home-page #listing-featured .card-body {
+  align-self: stretch;
+  padding: 1.6rem 1.6rem 1.75rem;
+}
+
+.home-page #listing-featured .card-title {
+  font-size: 1.5rem;
+}
+
+/* The lead card keeps the wide image-beside-text treatment. */
+.home-page #listing-featured .g-col-1:first-child .quarto-grid-item {
+  grid-template-columns: minmax(300px, 44%) minmax(0, 1fr);
+  min-height: 286px;
+}
+
+.home-page #listing-featured .g-col-1:first-child .card-img-top,
+.home-page #listing-featured .g-col-1:first-child .thumbnail-image {
+  min-height: 286px;
+  height: 100% !important;
+}
+
+.home-page #listing-featured .g-col-1:first-child .card-body {
+  align-self: center;
+  padding: clamp(1.65rem, 3.5vw, 2.75rem);
+}
+
+.home-page #listing-featured .g-col-1:first-child .card-title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+/* Kind + date form a single eyebrow row above the title. */
+.home-page #listing-featured .listing-kind {
+  float: left;
+  margin-right: .75rem;
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--home-accent);
+}
+
+.home-page #listing-featured .listing-date {
+  font-size: .7rem;
+  letter-spacing: .025em;
+  color: var(--home-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.home-page #listing-featured .card-title {
+  clear: both;
+  margin-top: .7rem;
+}
+
+@media (max-width: 700px) {
+  .home-page .hero-quiet p {
+    gap: 1rem;
+  }
+
+  .home-page #listing-featured .list.grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-page #listing-featured .g-col-1:first-child .quarto-grid-item {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .home-page #listing-featured .g-col-1:first-child .card-img-top,
+  .home-page #listing-featured .g-col-1:first-child .thumbnail-image {
+    min-height: 190px;
+    height: 190px !important;
+  }
+
+  }

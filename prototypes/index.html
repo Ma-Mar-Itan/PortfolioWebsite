@@ -82,20 +82,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-prototypes .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-image','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-description','listing-date','listing-categories','listing-kind','listing-status','listing-demo','listing-source',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-editor","listing-engines","listing-language","listing-title","listing-description","listing-date","listing-categories","listing-image","listing-image-alt","listing-featured","listing-kind","listing-status","listing-demo","listing-source","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-featured-order","listing-lightbox"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-prototypes'] = new List('listing-prototypes', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -141,6 +141,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../prototypes-refine.css">
 <meta property="og:title" content="Prototypes – Malek M. Itani">
 <meta property="og:description" content="Small things built to answer a question. Some work, some are here as evidence of what didn’t.">
 <meta property="og:image" content="https://ma-mar-itan.github.io/PortfolioWebsite/assets/img/SystemsDecisionLab.svg">
@@ -407,92 +408,56 @@ window.Quarto = {
 </header>
 
 
+<div id="listing-prototypes" class="quarto-listing quarto-listing-container-custom">
+<div class="proto-list">
 
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+  <article class="proto-card proto-lead">
+    
+    <a class="proto-thumb" href="../prototypes/Systems-Decision-Lab/index.html"><img src="../assets/img/SystemsDecisionLab.svg" alt="Dense workload rows condensing into a metadata table above an event timeline"></a>
+    
+    <div class="proto-body">
+      <div class="proto-eyebrow"><span class="proto-kind">Research tool</span><span class="proto-dash"></span><span class="proto-date">Sep 5, 2026</span></div>
+      <h3 class="proto-title anchored"><a href="../prototypes/Systems-Decision-Lab/index.html">Systems Decision Lab</a></h3>
+      <p class="proto-desc">Studying petabyte-scale scientific workflows on a laptop, by simulating their metadata instead of their data.</p>
+      <div class="proto-foot"><span class="proto-status">Active build · interfaces changing</span><div class="proto-actions"><a class="proto-btn" href="https://github.com/Ma-Mar-Itan/Systems-Decision-Lab">Source</a><a class="proto-btn proto-btn-read" href="../prototypes/Systems-Decision-Lab/index.html">Write-up</a></div></div>
+      <div class="proto-cats"><span class="proto-cat">Research</span><span class="proto-cat">Systems</span><span class="proto-cat">Simulation</span></div>
     </div>
-</div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="UmVzZWFyY2glMkNTeXN0ZW1zJTJDU2ltdWxhdGlvbg==" data-listing-date-sort="1788555600000" data-listing-file-modified-sort="1788599095023" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2535">
-<a href="../prototypes/Systems-Decision-Lab/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../assets/img/SystemsDecisionLab.svg" class="thumbnail-image card-img" style="height: 150px;" alt="Dense workload rows condensing into a metadata table above an event timeline">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Systems Decision Lab
-</h5>
-<div class="listing-categories">
+  </article>
 
-<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
+  <article class="proto-card">
+    
+    <a class="proto-thumb" href="../prototypes/PanelScope/index.html"><img src="../assets/img/PanelScope.png" alt="Prototype thumbnail"></a>
+    
+    <div class="proto-body">
+      <div class="proto-eyebrow"><span class="proto-kind">Live app</span><span class="proto-dash"></span><span class="proto-date">Jun 23, 2026</span></div>
+      <h3 class="proto-title anchored"><a href="../prototypes/PanelScope/index.html">PanelScope</a></h3>
+      <p class="proto-desc">Panel-data coverage assistant.</p>
+      <div class="proto-foot"><span class="proto-status">Working · not maintained</span><div class="proto-actions"><a class="proto-btn" href="https://panelscope-ktfjvxg6bdkgeeb6rhdtly.streamlit.app/">Live demo</a><a class="proto-btn" href="https://github.com/Ma-Mar-Itan/PanelScope">Source</a><a class="proto-btn proto-btn-read" href="../prototypes/PanelScope/index.html">Write-up</a></div></div>
+      <div class="proto-cats"><span class="proto-cat">Research</span><span class="proto-cat">Automation</span></div>
+    </div>
+  </article>
 
-<div class="listing-category" onclick="window.quartoListingCategory('U3lzdGVtcw=='); return false;">Systems</div>
+  <article class="proto-card">
+    
+    <a class="proto-thumb" href="../prototypes/BibBrief/index.html"><img src="../assets/img/BibBrief.png" alt="Prototype thumbnail"></a>
+    
+    <div class="proto-body">
+      <div class="proto-eyebrow"><span class="proto-kind">Live app</span><span class="proto-dash"></span><span class="proto-date">Apr 2, 2026</span></div>
+      <h3 class="proto-title anchored"><a href="../prototypes/BibBrief/index.html">BibBrief</a></h3>
+      <p class="proto-desc">Turn your bibliography into a document you can read.</p>
+      <div class="proto-foot"><span class="proto-status">Working · not maintained</span><div class="proto-actions"><a class="proto-btn" href="https://bibbrief-rexvitzkduhce2j9zitkgv.streamlit.app/">Live demo</a><a class="proto-btn" href="https://github.com/Ma-Mar-Itan/BibBrief">Source</a><a class="proto-btn proto-btn-read" href="../prototypes/BibBrief/index.html">Write-up</a></div></div>
+      <div class="proto-cats"><span class="proto-cat">Research</span><span class="proto-cat">Automation</span></div>
+    </div>
+  </article>
 
-<div class="listing-category" onclick="window.quartoListingCategory('U2ltdWxhdGlvbg=='); return false;">Simulation</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Studying petabyte-scale scientific workflows on a laptop, by simulating their metadata instead of their data.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="UmVzZWFyY2glMkNBdXRvbWF0aW9u" data-listing-date-sort="1782162000000" data-listing-file-modified-sort="1788254910823" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="125">
-<a href="../prototypes/PanelScope/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../assets/img/PanelScope.png" class="thumbnail-image card-img" style="height: 150px;" alt="Prototype thumbnail">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-PanelScope
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QXV0b21hdGlvbg=='); return false;">Automation</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Panel-data coverage assistant.</p>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="UmVzZWFyY2glMkNBdXRvbWF0aW9u" data-listing-date-sort="1775077200000" data-listing-file-modified-sort="1788254910821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="93">
-<a href="../prototypes/BibBrief/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../assets/img/BibBrief.png" class="thumbnail-image card-img" style="height: 150px;" alt="Prototype thumbnail">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-BibBrief
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmVzZWFyY2g='); return false;">Research</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QXV0b21hdGlvbg=='); return false;">Automation</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Turn your bibliography into a document you can read.</p>
-</div>
-</div>
-</div></a>
-</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</div>
+
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

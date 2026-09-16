@@ -1,3 +1,20 @@
+/* === Site tokens ============================================================
+   Defined here because every page's `css:` list includes styles.css, so these
+   resolve everywhere. Two of these exist because the refinement CSS originally
+   referenced Bootstrap variables that do not mean what they look like:
+     --bs-teal       is Bootstrap's own #20c997 (bright mint), NOT the site teal
+     --bs-font-serif does not exist in Quarto's Bootstrap build at all
+   ========================================================================= */
+
+:root {
+  --site-serif: Newsreader, Georgia, "Times New Roman", serif;
+  --site-accent-2: #1f5f5b;   /* matches $accent-2 in assets/theme-light.scss */
+}
+
+body.quarto-dark {
+  --site-accent-2: #6fbfae;   /* matches $accent-2 in assets/theme-dark.scss */
+}
+
 /* Project-specific overrides.
    Theme-level styling lives in assets/theme-light.scss and assets/theme-dark.scss —
    edit those for colors, fonts, and components. Use this file for one-off tweaks. */

@@ -1,0 +1,108 @@
+/* Publications list. Shared by the homepage and research/index.qmd — it lived
+   in both home-refine.css and research-refine.css verbatim before this. */
+
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--bs-border-color, #e3e1dc);
+}
+
+.pub-row {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) 9rem;
+  gap: 2rem;
+  align-items: baseline;
+  padding: 1.15rem .8rem;
+  border-bottom: 1px solid var(--bs-border-color, #e3e1dc);
+}
+
+.pub-year {
+  color: var(--bs-secondary-color, #5c6672);
+  font-size: .78rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .025em;
+}
+
+.pub-title {
+  font-family: var(--site-serif);
+  font-size: 1.12rem;
+  line-height: 1.28;
+  color: var(--bs-body-color, #14181d);
+}
+
+.pub-meta {
+  margin-top: .3rem;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--bs-secondary-color, #5c6672);
+}
+
+.pub-meta strong {
+  font-weight: 600;
+  color: var(--bs-body-color, #14181d);
+}
+
+.pub-status {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pub-pill,
+.pub-link {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: 1px solid var(--bs-border-color, #e3e1dc);
+  border-radius: 999px;
+  padding: .24rem .7rem;
+  white-space: nowrap;
+  color: var(--bs-secondary-color, #5c6672);
+}
+
+.pub-link {
+  color: var(--site-accent-2);
+  border-color: color-mix(in srgb, var(--site-accent-2) 32%, var(--bs-border-color, #e3e1dc));
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.pub-link:hover {
+  color: var(--bs-body-bg, #fdfdfc);
+  background: var(--site-accent-2);
+}
+
+.pub-more,
+.pub-more p {
+  margin: .9rem 0 0;
+  font-size: .85rem;
+  color: var(--bs-secondary-color, #5c6672);
+}
+
+
+/* research/index.qmd runs the full list slightly larger. */
+#publications { margin-top: 4rem; }
+#publications .pub-row { padding: 1.35rem .8rem; }
+#publications .pub-title { font-size: 1.18rem; }
+
+.pub-count {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--bs-secondary-color, #5c6672);
+  margin: -.4rem 0 1.2rem;
+}
+
+/* The homepage includes the same partial but shows only the first three. */
+.pub-compact .pub-row:nth-child(n+4) { display: none; }
+
+@media (max-width: 700px) {
+  .pub-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .5rem;
+    padding: 1.1rem .2rem;
+  }
+  .pub-status { justify-content: flex-start; }
+}

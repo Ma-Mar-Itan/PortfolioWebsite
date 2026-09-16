@@ -528,7 +528,7 @@ Table&nbsp;1: The ENTSO-E archive behind the project. Only the three series mark
 <div id="fig-prices" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-prices-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="d93b06a8" class="cell" data-execution_count="3">
+<div id="1d5b2e08" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="3">
 <div class="light-content">
 <p><a href="figures/fig-prices-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: The target. Day-ahead prices in the three Baltic zones over the evaluation period. The bold line is a seven-day mean, the thin line the daily mean, and the shaded band the daily low-to-high range. The axis is cut at €480/MWh; every zone has daily highs far above it."><img src="figures/fig-prices-light.svg" class="img-fluid figure-img" alt="Day-ahead price series for Estonia, Latvia and Lithuania from January 2024 to August 2026, showing the daily mean, a seven-day mean and the daily low-to-high range"></a></p>
@@ -590,7 +590,7 @@ p_{d,h} =\;&amp;
 <div id="fig-design" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-design-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="7ee3feae" class="cell" data-execution_count="4">
+<div id="64fb51a8" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="4">
 <div class="light-content">
 <p><a href="figures/fig-design-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: The model, in two pictures. Left — what feeds one hourly equation. Each filled cell is 24 hourly values; the price row has no day-d entry because the price for the delivery day is what is being forecast. Right — every delivery day gets its own fit, on a window that ends at gate closure and slides forward with it."><img src="figures/fig-design-light.svg" class="img-fluid figure-img" alt="Left: a grid showing which lags of price, load forecast and wind forecast enter each hourly equation, totalling 247 predictors. Right: the 8-week and 12-week calibration windows sliding forward one day at a time"></a></p>
@@ -774,7 +774,7 @@ Table&nbsp;2: Out-of-sample accuracy over 964 delivery days (23,136 hourly forec
 <div id="fig-rmae" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rmae-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="e17a7b49" class="cell" data-execution_count="6">
+<div id="7fb67d36" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="6">
 <div class="light-content">
 <p><a href="figures/fig-rmae-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;3: Everything beats the benchmark; the ensemble beats everything. rMAE by zone and specification. Anything below the dashed line forecasts better than last week’s price at the same hour."><img src="figures/fig-rmae-light.svg" class="img-fluid figure-img" alt="Grouped bar chart of rMAE for the 8-week, 12-week and ensemble models in each of the three zones, all well below the naive benchmark of 1"></a></p>
@@ -794,7 +794,7 @@ Figure&nbsp;3: <strong>Everything beats the benchmark; the ensemble beats everyt
 <div id="fig-naive-gap" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-naive-gap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="1378ff6a" class="cell" data-execution_count="7">
+<div id="b6c38bd5" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
 <div class="light-content">
 <p><a href="figures/fig-naive-gap-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;4: What the model is worth. Mean absolute error of the weekly naive benchmark against the short-window ensemble. The naive benchmark costs almost exactly €50/MWh in all three zones; the ensemble takes between a fifth and a third off that."><img src="figures/fig-naive-gap-light.svg" class="img-fluid figure-img" alt="Dumbbell chart contrasting the weekly naive MAE near €50/MWh with the ensemble MAE between €34 and €39/MWh in each zone"></a></p>
@@ -818,7 +818,7 @@ Figure&nbsp;4: <strong>What the model is worth.</strong> Mean absolute error of 
 <div id="fig-rolling" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rolling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="ce9cb33c" class="cell" data-execution_count="8">
+<div id="ef8bb88f" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="8">
 <div class="light-content">
 <p><a href="figures/fig-rolling-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;5: One number, many regimes. 28-day rolling MAE of the short-window ensemble. The zones track each other closely; the level does not hold still."><img src="figures/fig-rolling-light.svg" class="img-fluid figure-img" alt="28-day rolling mean absolute error for the ensemble in all three zones, varying between about 20 and 60 euros per megawatt hour across the evaluation period"></a></p>
@@ -838,7 +838,7 @@ Figure&nbsp;5: <strong>One number, many regimes.</strong> 28-day rolling MAE of 
 <div id="fig-hourly" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hourly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="0725795b" class="cell" data-execution_count="9">
+<div id="83a503ca" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="9">
 <div class="light-content">
 <p><a href="figures/fig-hourly-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figure&nbsp;6: Where the error lives. MAE by delivery hour. Solid lines are the full 964 days; dashed lines the same profile inside each zone’s most volatile 21 days (§4). Stress does not move the shape of the profile much — it roughly doubles its amplitude."><img src="figures/fig-hourly-light.svg" class="img-fluid figure-img" alt="Mean absolute error by hour of the delivery day, peaking near 08:00 and again near 20:00, with the stress-window profile roughly twice as high"></a></p>
@@ -861,7 +861,7 @@ Figure&nbsp;6: <strong>Where the error lives.</strong> MAE by delivery hour. Sol
 <div id="fig-calibration" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-calibration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="788ff9af" class="cell" data-execution_count="10">
+<div id="02fdc965" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="10">
 <div class="light-content">
 <p><a href="figures/fig-calibration-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figure&nbsp;7: Forecast against outcome, every hour of the 964-day sample. Colour is hour density on a log scale; the diagonal is a perfect forecast. The asymmetry above the line is the spike problem."><img src="figures/fig-calibration-light.svg" class="img-fluid figure-img" alt="Hexbin density plots of actual against forecast price for each zone, dense along the diagonal with a pronounced smear of under-forecast hours above it"></a></p>
@@ -881,7 +881,7 @@ Figure&nbsp;7: <strong>Forecast against outcome,</strong> every hour of the 964-
 <div id="fig-errdist" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-errdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="70982f25" class="cell" data-execution_count="11">
+<div id="a08da664" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="11">
 <div class="light-content">
 <p><a href="figures/fig-errdist-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figure&nbsp;8: A tight centre and a very long tail. Signed ensemble error, actual minus forecast, clipped at ±€220/MWh for legibility. The white dot is the median, the thick bar the interquartile range, the thin line the 5th to 95th percentile."><img src="figures/fig-errdist-light.svg" class="img-fluid figure-img" alt="Violin plots of signed forecast error for each zone, tightly concentrated near zero with long tails in both directions"></a></p>
@@ -958,7 +958,7 @@ Table&nbsp;3: Short-window ensemble, before and after 9 February 2025. The split
 <div id="fig-sync" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sync-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="1b4848f0" class="cell" data-execution_count="13">
+<div id="208dc6f7" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="13">
 <div class="light-content">
 <p><a href="figures/fig-sync-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figure&nbsp;9: Three metrics, three stories. Short-window ensemble before and after 9 February 2025. Ordinary errors got a little larger; extreme errors got markedly smaller; relative performance improved."><img src="figures/fig-sync-light.svg" class="img-fluid figure-img" alt="Three slope charts showing MAE rising, RMSE falling and rMAE improving slightly in all three zones after February 2025"></a></p>
@@ -1103,7 +1103,7 @@ Table&nbsp;4: Performance inside each zone’s most volatile 21-day interval (50
 <div id="fig-stress" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-stress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="25ff781d" class="cell" data-execution_count="15">
+<div id="29f06a1a" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="15">
 <div class="light-content">
 <p><a href="figures/fig-stress-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Figure&nbsp;10: Stress pushes every model toward the benchmark. Left — rMAE for all nine zone–model combinations, full sample against stress window. Right — the worst single hour inside each stress window, for the ensemble."><img src="figures/fig-stress-light.svg" class="img-fluid figure-img" alt="Left: dumbbell chart showing rMAE for every model and zone shifting from the full sample toward the naive benchmark inside the stress window. Right: bars of the worst single-hour error, €614 to €814 per megawatt hour"></a></p>
@@ -1124,7 +1124,7 @@ Figure&nbsp;10: <strong>Stress pushes every model toward the benchmark.</strong>
 <div id="fig-stress-trace" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-stress-trace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="ac52ae8a" class="cell" data-execution_count="16">
+<div id="b6af21f5" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="16">
 <div class="light-content">
 <p><a href="figures/fig-stress-trace-light.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Figure&nbsp;11: Inside the worst 21 days. Actual price against the short-window ensemble, hour by hour. The shaded area is the error. The marked point is the single worst hour in each window. Latvia and Lithuania share a window — and, through most of it, the same price."><img src="figures/fig-stress-trace-light.svg" class="img-fluid figure-img" alt="Hourly actual and forecast prices through each zone's 21-day stress window, with the forecast tracking the base level but flattening against price spikes above 800 euros"></a></p>
