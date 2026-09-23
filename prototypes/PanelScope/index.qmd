@@ -3,17 +3,20 @@ title: "PanelScope"
 description: "Panel-data coverage assistant."
 date: 2026-06-23
 categories: [Research, Automation]
-image: ../../assets/img/PanelScope.png
-image-alt: "Prototype thumbnail"
+image: ../../assets/img/PanelScope.webp
+image-alt: "PanelScope interface summarizing panel-data coverage"
 featured: false
-featured-order: 
+kind: "Live app"
+status: "Working · not maintained"
+demo: "https://panelscope-ktfjvxg6bdkgeeb6rhdtly.streamlit.app/"
+source: "https://github.com/Ma-Mar-Itan/PanelScope"
 ---
 
 ## What it does
 It helps identify the largest set of variables that can be analysed together while preserving a user-defined proportion of complete panel observations. Given a country-year, firm-year, bank-year, or other entity-year dataset, PanelScope can measures how the complete-case sample changes as variables are combined, and reports the variable set that retains the most usable data subject to a stated retention requirement. It is intended as a preparatory step before estimation, making the trade-off between variable breadth and sample retention explicit and reproducible.
 
 ## Why I built it
-I struggled finding the best selection of variables for a dataset of 12 features. Then my professor sent an 18,000 feature dataset. 
+I struggled finding the best selection of variables for a dataset of 12 features. Then my professor sent an 18,000 feature dataset.
 
 ## Status
 

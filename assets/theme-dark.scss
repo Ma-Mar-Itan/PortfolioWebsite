@@ -32,7 +32,7 @@ $input-bg: $paper-2 !default;
 
 /*-- scss:rules --*/
 
-.hero-portrait img { filter: brightness(0.8) saturate(0.85); }
+.hero-portrait img { filter: brightness(0.9) saturate(0.9); }
 
 .quarto-grid-item { background: $paper-2; }
 .quarto-grid-item:hover { border-color: $ink-muted !important; }

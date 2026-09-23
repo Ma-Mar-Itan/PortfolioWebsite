@@ -4,7 +4,7 @@ subtitle: "Applied researcher and builder"
 toc: false
 about:
   template: trestles
-  image: assets/img/portrait.svg
+  image: assets/img/portrait.webp
   image-shape: round
   image-width: 14em
   links:
@@ -19,13 +19,6 @@ about:
       text: LinkedIn
       href: https://www.linkedin.com/in/malek-ma-itani/
       target: _blank
-    - icon: mortarboard
-      text: Scholar
-      href: https://scholar.google.com/
-      target: _blank
-    - icon: file-earmark-text
-      text: CV
-      href: assets/cv.pdf
 ---
 
 I work on applied research problems where the statistics are only half the
@@ -39,26 +32,6 @@ decide something.
 
 Outside of that I build small tools, write [here](blog/index.qmd), and keep a
 graveyard of [prototypes](prototypes/index.qmd).
-
-## Experience
-
-**Role Title** · Organization
-: 2024 – present. One line on what you own and what changed because you were
-  there.
-
-**Previous Role** · Organization
-: 2021 – 2024. One line.
-
-**Earlier Role** · Organization
-: 2019 – 2021. One line.
-
-## Education
-
-**MSc, Field of Study** · University
-: 2021. Thesis: *Title of your thesis.*
-
-**BSc, Field of Study** · University
-: 2019.
 
 ## Tools
 

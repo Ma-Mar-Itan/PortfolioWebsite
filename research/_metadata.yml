@@ -1,0 +1,19 @@
+# Defaults for every page under research/.
+#
+# These pages import a local _theme.py and rebuild figures from local data.
+# The project sets `execute-dir: file`, so an intentional execution starts in
+# the manuscript directory and can resolve those local modules and data paths.
+#
+# Their computed output is committed under _freeze/, so freeze is pinned to
+# `true`: Quarto serves the saved figures and never re-runs the analysis. This
+# means editing prose or front matter (e.g. adding `kind:`) will not trigger a
+# failing re-execution.
+#
+# To intentionally re-run the analysis after changing the code, install the
+# local Python package (`python -m pip install -e .`) and temporarily set this
+# to `auto` before rendering the relevant manuscript.
+execute:
+  freeze: true
+# Override with `draft: true` to render a manuscript without featuring it on
+# the research index, homepage, site search, or sitemap.
+draft: false

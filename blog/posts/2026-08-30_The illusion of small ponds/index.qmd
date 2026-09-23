@@ -2,9 +2,11 @@
 title: "The illusion of small ponds"
 description: "There are no big fish in small ponds, only small fish in big ponds."
 date: 2026-08-18
+draft: false
 categories: [Thoughts, Lessons]
-image: ../../../assets/img/Small fish.gif
-image-alt: "Abstract layered shapes"
+image: ../../../assets/img/small-fish.webp
+image-alt: "Small fish moving through a much larger pond"
+kind: "Essay"
 ---
 
 For a long time, career advice relied on a comforting metaphor: be a big fish in a small pond. Find a narrow niche. Enter an overlooked market. Become the person everyone knows. Build an advantage before the larger players arrive.

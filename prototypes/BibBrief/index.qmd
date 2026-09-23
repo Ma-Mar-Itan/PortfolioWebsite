@@ -1,12 +1,15 @@
 ---
 title: "BibBrief"
 description: "Turn your bibliography into a document you can read."
-date: 2026-04-2
+date: 2026-04-02
 categories: [Research, Automation]
-image: ../../assets/img/BibBrief.png
-image-alt: "Prototype thumbnail"
+image: ../../assets/img/BibBrief.webp
+image-alt: "BibBrief interface showing a bibliography converted into a readable document"
 featured: false
-featured-order: 
+kind: "Live app"
+status: "Working · not maintained"
+demo: "https://bibbrief-rexvitzkduhce2j9zitkgv.streamlit.app/"
+source: "https://github.com/Ma-Mar-Itan/BibBrief"
 ---
 
 ## What it does
@@ -15,7 +18,7 @@ Takes a BibTeX export, the kind you download from Scopus, Web of Science, or Zot
 
 ## Why I built it
 
-A professor wanted me to collect the abstracts of a hundred papers (turns out she was exaggerating and just wanted 20). 
+A professor wanted me to collect the abstracts of a hundred papers (turns out she was exaggerating and just wanted 20).
 
 ## Status
 

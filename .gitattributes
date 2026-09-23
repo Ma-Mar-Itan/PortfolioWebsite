@@ -1,0 +1,9 @@
+# Normalise line endings so editors on different platforms stop producing
+# whole-file diffs. After adding this once: git add --renormalize .
+* text=auto
+
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary
+*.woff2 binary

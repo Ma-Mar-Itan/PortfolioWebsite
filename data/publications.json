@@ -1,0 +1,53 @@
+[
+  {
+    "year": 2017,
+    "title": "Gold nanoparticles-coated polystyrene beads for the multiplex detection of viral DNA",
+    "authors": [
+      {"name": "Fakih, H. H."},
+      {"name": "Itani, M. M.", "self": true},
+      {"name": "Karam, P."}
+    ],
+    "venue": "Sensors and Actuators B: Chemical, 250, 446–452",
+    "status": "Published",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0925400517306676"
+  },
+  {
+    "year": 2026,
+    "title": "Regime-Dependent Determinants of Systemic Banking Crises: Evidence from a Finite-Mixture Logit Model",
+    "authors": [
+      {"name": "Malek Itani", "self": true},
+      {"name": "Mahmoud Arayssi"},
+      {"name": "Noura Yassine"}
+    ],
+    "status": "Under review"
+  },
+  {
+    "year": 2026,
+    "title": "The Illusion of Predictability: Structural Heterogeneity and Informational Noise in Corporate Greenwashing",
+    "authors": [
+      {"name": "Malek Itani", "self": true},
+      {"name": "Mahmoud Arayssi"},
+      {"name": "Noura Yassine"}
+    ],
+    "status": "Under review"
+  },
+  {
+    "year": 2026,
+    "title": "What Do Lenders See? Disentangling Gender Signals from Organizational Substance in Credit Markets",
+    "authors": [
+      {"name": "Mahmoud Arayssi"},
+      {"name": "Azza Bejaoui"},
+      {"name": "Malek Itani", "self": true}
+    ],
+    "status": "Under review"
+  },
+  {
+    "year": 2026,
+    "title": "ESG Misrepresentation in Corporate Sustainability Communication: A Comprehensive Review of Greenwashing, Brownwashing, Greenhushing, and CSR Decoupling",
+    "authors": [
+      {"name": "Mahmoud Arayssi"},
+      {"name": "Malek Itani", "self": true}
+    ],
+    "status": "Under review"
+  }
+]

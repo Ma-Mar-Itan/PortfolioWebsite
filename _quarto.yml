@@ -1,6 +1,9 @@
 project:
   type: website
+  execute-dir: file
   output-dir: _site
+  pre-render:
+    - python scripts/render_content.py
   preview:
     port: 4200
     browser: true
@@ -9,6 +12,9 @@ website:
   title: "Malek M. Itani"
   description: "Research, writing, and prototypes."
   site-url: https://ma-mar-itan.github.io/PortfolioWebsite/
+  # `draft: true` pages still render at their direct URL, but stay out of
+  # listings, navigation, search, feeds, and the sitemap.
+  draft-mode: unlinked
   favicon: assets/img/favicon.svg
   open-graph: true
   twitter-card: true
@@ -36,11 +42,11 @@ website:
       - href: about.qmd
         text: About me
       - icon: github
-        href: https://github.com/
+        href: https://github.com/Ma-Mar-Itan
         aria-label: GitHub
         target: _blank
       - icon: linkedin
-        href: https://www.linkedin.com/
+        href: https://www.linkedin.com/in/malek-ma-itani/
         aria-label: LinkedIn
         target: _blank
       - icon: rss
@@ -70,6 +76,11 @@ format:
       light: [cosmo, assets/theme-light.scss]
       dark: [cosmo, assets/theme-light.scss, assets/theme-dark.scss]
     css: styles.css
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,500;0,600;1,6..72,400&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
     toc: true
     toc-location: right
     toc-depth: 3

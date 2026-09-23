@@ -3,6 +3,7 @@ title: "The New Geopolitical Chokeholds"
 subtitle: "Sovereignty is no longer measured by borders or armies. It is measured by who holds the kill switch to your national decision-making."
 description: "Power has moved up the stack — from straits and pipelines to lithography, compute, cloud and payment rails, and to the small number of people who can operate any of it."
 date: 2026-09-01
+draft: false
 categories: [Geopolitics, AI, Infrastructure]
 image: thumb.svg
 image-alt: "A political map fading into an infrastructure and control network"
@@ -25,6 +26,7 @@ format:
       narrative-font-size: "1.02rem"
       narrative-sidebar-width: "minmax(320px, 1fr)"
       narrative-border-radius: "10px"
+kind: "Interactive essay"
 ---
 
 Sovereignty is no longer measured by borders or armies. It is measured by who holds
@@ -43,7 +45,7 @@ throttled, surveilled, priced, or rewritten by someone else.
 
 > This is the new geography of power. The map has moved upward.
 
-:::: {.cr-section layout="sidebar-left"}
+:::: {.cr-section}
 
 ::: {focus-on="cr-country" data-scene="formal" data-scene-title="Formal sovereignty"}
 <span class="scene-cue">Map 01 · Formal sovereignty</span>
@@ -85,7 +87,7 @@ through that map.
 
 ::::
 
-:::: {.cr-section layout="sidebar-left"}
+:::: {.cr-section}
 
 ::: {focus-on="cr-decision" data-scene="observe" data-scene-title="Observe"}
 ## From Territory to Infrastructure
@@ -208,7 +210,7 @@ Veto dependence
 A serious sovereign intelligence strategy must be built around eliminating veto
 dependence, not eliminating all dependence.
 
-:::: {.cr-section layout="sidebar-left"}
+:::: {.cr-section}
 
 ::: {focus-on="cr-cathedral" data-scene="procured" data-scene-title="What capital can buy"}
 ## The Human Chokehold

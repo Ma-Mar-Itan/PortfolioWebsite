@@ -60,11 +60,10 @@ html[data-bs-theme="dark"] .geo-scrolly {
 .cr-section .sticky-col-stack .sticky {
   width: fit-content;
   transition: transform 720ms cubic-bezier(.2, .78, .2, 1);
-  will-change: transform;
 }
 
 .geo-scrolly text {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--site-sans);
   fill: var(--v-ink);
 }
 
@@ -132,7 +131,7 @@ html[data-bs-theme="dark"] .geo-scrolly {
 .geo-scrolly .map-road,
 .geo-scrolly .map-admin,
 .geo-scrolly .country-name {
-  transition: opacity 620ms ease, stroke-width 620ms ease;
+  transition: opacity 620ms ease;
 }
 
 .geo-scrolly .pulse-dot {
@@ -418,10 +417,9 @@ html[data-bs-theme="dark"] .geo-scrolly {
   .geo-scrolly *,
   .geo-scrolly *::before,
   .geo-scrolly *::after {
-    animation-duration: .001ms !important;
-    animation-iteration-count: 1 !important;
+    animation: none !important;
     scroll-behavior: auto !important;
-    transition-duration: .001ms !important;
+    transition: none !important;
   }
 }
 
@@ -429,8 +427,7 @@ body.visual-reduced-motion .cr-section .sticky-col-stack .sticky,
 body.visual-reduced-motion .geo-scrolly *,
 body.visual-reduced-motion .geo-scrolly *::before,
 body.visual-reduced-motion .geo-scrolly *::after {
-  animation-duration: .001ms !important;
-  animation-iteration-count: 1 !important;
+  animation: none !important;
   scroll-behavior: auto !important;
-  transition-duration: .001ms !important;
+  transition: none !important;
 }

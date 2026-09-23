@@ -8,6 +8,9 @@ image-alt: "Dense workload rows condensing into a metadata table above an event 
 featured: true
 featured-order: 1
 lightbox: true
+kind: "Research tool"
+status: "Active build · interfaces changing"
+source: "https://github.com/Ma-Mar-Itan/Systems-Decision-Lab"
 ---
 
 The Einstein Telescope is expected to produce data workflows at the petabyte scale,

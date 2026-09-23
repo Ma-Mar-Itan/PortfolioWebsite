@@ -2,9 +2,11 @@
 title: "We have no clue what we are doing"
 description: "A reality check that we all face at one point."
 date: 2026-08-18
-categories: [Philisophy]
+draft: true
+categories: [Philosophy]
 image: ../../../assets/img/thumb-1.svg
 image-alt: "Abstract layered shapes"
+kind: "Essay"
 ---
 
 Every few weeks someone hands me a model and asks whether it's any good. The

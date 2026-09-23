@@ -1,0 +1,10 @@
+::: {.page-stats}
+::: {.stat}
+[2]{.stat-value}
+[Projects]{.stat-label}
+:::
+::: {.stat}
+[5]{.stat-value}
+[Publications]{.stat-label}
+:::
+:::

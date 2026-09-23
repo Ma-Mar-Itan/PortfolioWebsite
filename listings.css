@@ -1,0 +1,39 @@
+/* Category filter chips. Shared by the research and blog listings — this block
+   was duplicated verbatim in research-refine.css and blog-refine.css. */
+
+
+.quarto-listing-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 0 0 1.6rem;
+  padding: 0;
+}
+
+.quarto-listing-category-title {
+  display: none;
+}
+
+.quarto-listing-category .category {
+  font-size: .7rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--site-muted);
+  border: 1px solid var(--site-rule);
+  border-radius: 999px;
+  padding: .2rem .7rem;
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.quarto-listing-category .category:hover {
+  color: var(--site-accent);
+  border-color: var(--site-accent);
+}
+
+.quarto-listing-category .category.active {
+  color: var(--site-paper);
+  background: var(--site-accent);
+  border-color: var(--site-accent);
+  font-weight: 500;
+}

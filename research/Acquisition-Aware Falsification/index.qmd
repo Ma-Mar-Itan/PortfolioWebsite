@@ -4,6 +4,7 @@ subtitle: "A falsification framework for acquisition-driven radiomic phenotypes"
 description: |
  Detecting sensor induced effects on high dimensional data.
 date: 2026-06-16
+draft: false
 author:
   - name: Malek M. Itani
 categories: [Radiomics, Medical imaging, Clustering, Reproducibility]
@@ -36,8 +37,10 @@ format:
   html:
     toc-depth: 3
 execute:
+  freeze: true
   echo: false
   warning: false
+kind: "Manuscript"
 ---
 
 ```{python}

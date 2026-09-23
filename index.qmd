@@ -8,6 +8,7 @@ format:
     css:
       - styles.css
       - home.css
+      - publications.css
 listing:
   - id: featured
     contents:
@@ -19,14 +20,18 @@ listing:
     include:
       featured: true
     type: grid
-    grid-columns: 3
+    grid-columns: 2
     grid-item-border: false
     image-height: 160px
-    fields: [image, title, description, categories]
+    # `kind` is a custom front-matter field ("Research" / "Prototype").
+    fields: [image, kind, date, title, description, categories]
+    field-display-names:
+      kind: "Type"
+    date-format: "MMM YYYY"
     sort:
       - "featured-order"
       - "date desc"
-    max-items: 6
+    max-items: 3
     max-description-length: 110
     sort-ui: false
     filter-ui: false
@@ -37,7 +42,7 @@ listing:
     type: default
     fields: [date, title, description]
     sort: "date desc"
-    max-items: 4
+    max-items: 3
     max-description-length: 140
     sort-ui: false
     filter-ui: false
@@ -51,25 +56,38 @@ listing:
 
 ::::: {.hero-text}
 
+::: {.hero-eyebrow}
+Statistics · ML · Complex Adaptive Systems
+:::
+
 ```{=html}
-<div class="hero-name" role="heading" aria-level="1">Malek M. Itani</div>
+<h1 class="hero-name">Malek M. Itani</h1>
 ```
 
 :::: {.hero-tagline}
 Statistician and machine learning researcher finding my niche in the world.
 ::::
 
+:::: {.hero-note}
+Right now I'm interested in developing statistical methodology for systems with heterogeneous and non-stationary data-generating processes.
+::::
+
 :::: {.hero-links role="navigation" aria-label="Explore the portfolio"}
+[See the research](research/index.qmd){.hero-primary}
 [Read the blog](blog/index.qmd)
-[See the research](research/index.qmd)
 [Browse prototypes](prototypes/index.qmd)
-[About me](about.qmd)
+::::
+
+:::: {.hero-quiet}
+```{=html}
+<a href="mailto:Malek.Ma.Itani@gmail.com"><i class="bi bi-envelope" aria-hidden="true"></i><span>Email</span></a>
+```
 ::::
 
 :::::
 
 ::::: {.hero-portrait}
-![](assets/img/portrait.svg){fig-alt="Portrait of Malek M. Itani"}
+![](assets/img/portrait.webp){fig-alt="Portrait of Malek M. Itani"}
 :::::
 
 ::::::
@@ -80,6 +98,19 @@ Statistician and machine learning researcher finding my niche in the world.
 :::
 
 ::: {#featured}
+:::
+
+::: {.section-label}
+<h2>Publications</h2>
+[All publications →](research/index.qmd#publications)
+:::
+
+::: {.pub-compact}
+{{< include _generated/publications-home.qmd >}}
+:::
+
+::: {.pub-more}
+{{< include _generated/publications-home-summary.qmd >}}
 :::
 
 ::: {.section-label}

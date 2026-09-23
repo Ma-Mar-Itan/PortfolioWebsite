@@ -4,3 +4,6 @@ toc: true
 toc-depth: 3
 author: "Malek Itani"
 freeze: auto
+# Override with `draft: true` to keep a written post off public listings while
+# retaining a directly accessible preview URL.
+draft: false

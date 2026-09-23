@@ -1,0 +1,28 @@
+```{=html}
+<ol class="pub-list">
+  <li class="pub-row">
+    <div class="pub-year">2017</div>
+    <div class="pub-body">
+      <div class="pub-title">Gold nanoparticles-coated polystyrene beads for the multiplex detection of viral DNA</div>
+      <div class="pub-meta">Fakih, H. H., <strong>Itani, M. M.</strong>, &amp; Karam, P. · <em>Sensors and Actuators B: Chemical, 250, 446–452</em></div>
+    </div>
+    <div class="pub-status"><a class="pub-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0925400517306676" aria-label="Open publication: Gold nanoparticles-coated polystyrene beads for the multiplex detection of viral DNA">Paper <span aria-hidden="true">→</span></a></div>
+  </li>
+  <li class="pub-row">
+    <div class="pub-year">2026</div>
+    <div class="pub-body">
+      <div class="pub-title">Regime-Dependent Determinants of Systemic Banking Crises: Evidence from a Finite-Mixture Logit Model</div>
+      <div class="pub-meta"><strong>Malek Itani</strong>, Mahmoud Arayssi, &amp; Noura Yassine</div>
+    </div>
+    <div class="pub-status"><span class="pub-pill">Under review</span></div>
+  </li>
+  <li class="pub-row">
+    <div class="pub-year">2026</div>
+    <div class="pub-body">
+      <div class="pub-title">The Illusion of Predictability: Structural Heterogeneity and Informational Noise in Corporate Greenwashing</div>
+      <div class="pub-meta"><strong>Malek Itani</strong>, Mahmoud Arayssi, &amp; Noura Yassine</div>
+    </div>
+    <div class="pub-status"><span class="pub-pill">Under review</span></div>
+  </li>
+</ol>
+```

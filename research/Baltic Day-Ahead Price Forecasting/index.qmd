@@ -5,11 +5,12 @@ description: |
   A LASSO benchmark refitted every delivery day across 964 days of Baltic
   day-ahead prices — and what happens to it when the market turns violent.
 date: 2026-08-21
+draft: false
 author:
   - name: Malek M. Itani
 categories: [Electricity markets, Forecasting, LASSO, Time series]
 image: figures/fig-thumb-light.svg
-image-alt: "Three bars showing forecast error cut by 23%, 30% and 32% against a weekly naive benchmark"
+image-alt: "Three bars showing forecast error reductions of 23 percent, 30 percent, and 32 percent against a weekly naive benchmark"
 featured: true
 featured-order: 2
 lightbox: true
@@ -26,8 +27,10 @@ format:
   html:
     toc-depth: 3
 execute:
+  freeze: true
   echo: false
   warning: false
+kind: "Manuscript"
 ---
 
 ```{python}

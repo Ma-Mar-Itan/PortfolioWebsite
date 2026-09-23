@@ -3,34 +3,41 @@ title: "Research"
 subtitle: "Projects, papers, and work that took longer than a blog post."
 toc: false
 page-layout: full
+format:
+  html:
+    css:
+      - ../styles.css
+      - ../research.css
+      - ../listings.css
+      - ../publications.css
 listing:
   - id: projects
     contents: "*/index.qmd"
     type: grid
     grid-columns: 2
     grid-item-border: true
-    image-height: 180px
-    fields: [image, title, description, date, categories]
+    image-height: 210px
+    # `kind` is a custom front-matter field ("Manuscript", "Working paper", …).
+    fields: [image, kind, date, title, description, categories]
+    field-display-names:
+      kind: "Type"
     sort: "date desc"
-    categories: numbered
+    categories: unnumbered
     sort-ui: false
     filter-ui: true
     date-format: "YYYY"
     max-description-length: 200
 ---
 
+{{< include ../_generated/research-stats.qmd >}}
+
 ::: {#projects}
 :::
 
-## Publications
+## Publications {#publications}
 
-1. **Malek Itani**, Mahmoud Arayssi, Noura Yassine (2026). *Regime-Dependent Determinants of Systemic Banking Crises: Evidence from a Finite-Mixture Logit Model* Under Review.
+::: {.pub-count}
+{{< include ../_generated/publications-count.qmd >}}
+:::
 
-1. **Malek Itani**, Mahmoud Arayssi, Noura Yassine (2026). *The Illusion of Predictability: Structural Heterogeneity and Informational Noise in Corporate Greenwashing. Under Review.
-
-1. Mahmoud Arayssi, Azza Bejaoui, **Malek Itani** (2026). *What Do Lenders See ? Disentangling Gender Signals from Organizational Substance in Credit Markets.* Under Review.
-
-2. Mahmoud Arayssi, **Malek Itani** (2026). *ESG Misrepresentation in Corporate Sustainability Communication: A Comprehensive Review of Greenwashing, Brownwashing, Greenhushing, and CSR Decoupling.* Under Review.
-
-3. Fakih, H. H., **Itani, M. M.**, & Karam, P. (2017). *Gold nanoparticles-coated polystyrene beads for the multiplex detection of viral DNA*. Sensors and Actuators B: Chemical, 250, 446-452.
-   [\[Paper\]](https://www.sciencedirect.com/science/article/abs/pii/S0925400517306676)
+{{< include ../_generated/publications-all.qmd >}}

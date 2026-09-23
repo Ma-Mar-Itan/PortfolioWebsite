@@ -2,6 +2,12 @@
 title: "Blog"
 subtitle: "Notes on things I'm working through — usually half-finished, occasionally useful."
 toc: false
+format:
+  html:
+    css:
+      - ../styles.css
+      - ../blog.css
+      - ../listings.css
 listing:
   contents: posts
   type: default
@@ -10,7 +16,10 @@ listing:
   feed:
     items: 20
     type: full
-  fields: [image, date, title, description, categories, reading-time]
+  # `kind` is a custom front-matter field ("Essay", "Interactive essay", …).
+  fields: [image, kind, date, title, description, categories]
+  field-display-names:
+    kind: "Type"
   sort-ui: [date, title]
   filter-ui: true
   page-size: 12

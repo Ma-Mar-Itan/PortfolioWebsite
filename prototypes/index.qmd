@@ -3,16 +3,24 @@ title: "Prototypes"
 subtitle: "Small things built to answer a question. Some work, some are here as evidence of what didn't."
 toc: false
 page-layout: full
+format:
+  html:
+    css:
+      - ../styles.css
+      - ../prototypes.css
 listing:
+  id: prototypes
   contents: "*/index.qmd"
-  type: grid
-  grid-columns: 3
-  grid-item-border: true
-  image-height: 150px
-  fields: [image, title, description, categories]
+  # Custom template so status and the live/source links can sit on the card.
+  template: _card.ejs
   sort: "date desc"
   categories: unnumbered
   sort-ui: false
-  filter-ui: true
-  max-description-length: 130
+  filter-ui: false
+  fields: [image, title, description, date, categories, kind, status, demo, source]
+  field-display-names:
+    kind: "Type"
 ---
+
+::: {#prototypes}
+:::
