@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: malek-portfolio-tools
+Version: 0.1.0
+Summary: Shared data and figure tooling for the portfolio website
+Requires-Python: >=3.10
+Requires-Dist: jupyter<2,>=1.1
+Requires-Dist: matplotlib<4,>=3.8
+Requires-Dist: numpy<3,>=1.26
+Requires-Dist: pandas<3,>=2.1

@@ -56,15 +56,6 @@ if not (DIR / "figures" / "fig-scree-light.svg").exists():
 ```
 
 ::: {.title-page}
-BEIRUT ARAB UNIVERSITY  
-Faculty of Science  
-Department of Mathematics  
-Project · Medical Statistics  
-Trapped by Stability:  
-A Falsification Framework for Acquisition-Driven Radiomic Phenotypes  
-PREPARED BY   Malek M. Itani  
-SUPERVISED BY   Dr. Lama Affara  
-ACADEMIC YEAR   2025 – 2026  
 :::
 
 

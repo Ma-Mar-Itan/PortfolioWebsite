@@ -65,7 +65,7 @@ Statistics · ML · Complex Adaptive Systems
 ```
 
 :::: {.hero-tagline}
-Statistician and machine learning researcher finding my niche in the world.
+Statistician and machine learning researcher.
 ::::
 
 :::: {.hero-note}
