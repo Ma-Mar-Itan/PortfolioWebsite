@@ -252,41 +252,6 @@
     "text": "The Real Question\nThe question is not whether a state uses foreign technology. Every state does. The question is which dependencies become kill switches.\n\nCan the state continue to operate if foreign compute access is restricted?\nCan it preserve critical data under legal and commercial pressure?\nCan it audit the systems shaping public-sector decisions?\nCan it maintain payment, logistics, and crisis-response functions under platform denial?\nCan it retain the human capital required to adapt under stress?\n\nIf the answer is no, sovereignty is formal rather than operational.\nThe battlefield has moved into the stack. The kill switch is infrastructure.\nAnd the states that fail to understand this will not lose sovereignty all at once. They will lose it administratively, contractually, technically, and silently — one dependency at a time."
   },
   {
-    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html",
-    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html",
-    "title": "The illusion of small ponds",
-    "section": "",
-    "text": "For a long time, career advice relied on a comforting metaphor: be a big fish in a small pond. Find a narrow niche. Enter an overlooked market. Become the person everyone knows. Build an advantage before the larger players arrive.\nIt was never entirely wrong. But it has become dangerously incomplete. Today, the pond is rarely as small as it looks.\nA freelance designer in Beirut may be competing with specialists in Warsaw, Bangalore, Lagos, Buenos Aires, and San Francisco. A local consultant is no longer compared only with other consultants in the city; clients can now access global expertise, automated research, AI-generated drafts, and highly polished work at a fraction of yesterday’s cost. A student who once stood out for writing a competent report now competes with peers using AI tools to research, code, analyze data, edit prose, translate sources, and produce professional-quality presentations in hours.\nThe small pond has opened into an ocean. And the fish you thought were big may simply have been competing in a temporarily enclosed pool."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#the-old-advantage-limited-comparison",
-    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#the-old-advantage-limited-comparison",
-    "title": "The illusion of small ponds",
-    "section": "1. The old advantage: limited comparison",
-    "text": "1. The old advantage: limited comparison\nBefore global digital markets, most competition was constrained by geography, institutions, and access.\nA company hired from the people it could find. A university compared applicants within a relatively limited pool. A client relied on local networks and referrals. Information was scarce, coordination was costly, and switching suppliers was difficult.\nUnder those conditions, being competent could be enough to create distinction.\nYou did not need to be the best analyst, designer, writer, programmer, teacher, or entrepreneur in the world. Often, you only needed to be better than the alternatives visible to the people making a decision. That is what created many “small ponds.” Not necessarily a lack of talent, but a lack of connection between talent and opportunity. The internet weakened those barriers. Remote work weakened them further. Global platforms made skills searchable and comparable. AI is now removing another barrier: the cost of producing credible work.\nThe result is not merely more competition. It is more competent competition."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#draw-the-timeline",
-    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#draw-the-timeline",
-    "title": "The illusion of small ponds",
-    "section": "2. Draw the timeline",
-    "text": "2. Draw the timeline\nSketch when each feature becomes available relative to when the prediction is needed. Leakage is almost always a timeline problem wearing a statistics costume."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#ask-what-the-baseline-was",
-    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#ask-what-the-baseline-was",
-    "title": "The illusion of small ponds",
-    "section": "3. Ask what the baseline was",
-    "text": "3. Ask what the baseline was\nIf nobody can tell you what the naive rule scores, the model has not been evaluated — it has been described.\n\n\n\n\n\n\nNote\n\n\n\nThis is a placeholder post. Replace the text; keep the front matter shape."
-  },
-  {
-    "objectID": "blog/posts/2026-08-30_The illusion of small ponds/index.html#re-run-it-once",
-    "href": "blog/posts/2026-08-30_The illusion of small ponds/index.html#re-run-it-once",
-    "title": "The illusion of small ponds",
-    "section": "4. Re-run it once",
-    "text": "4. Re-run it once\nNot to reproduce the numbers. To find out how long it takes, what breaks, and how much of the pipeline lives in someone’s head."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Malek M. Itani",
@@ -312,14 +277,14 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nThe New Geopolitical Chokeholds\n\n\n\nGeopolitics\n\nAI\n\nInfrastructure\n\n\n\nPower has moved up the stack — from straits and pipelines to lithography, compute, cloud and payment rails, and to the small number of people who can operate any of it.\n\n\n\n\n\nSep 1, 2026\n\n\nInteractive essay\n\n\n\n\n\n\n\n\n\n\n\n\nThe illusion of small ponds\n\n\n\nThoughts\n\nLessons\n\n\n\nThere are no big fish in small ponds, only small fish in big ponds.\n\n\n\n\n\nAug 18, 2026\n\n\nEssay\n\n\n\n\n\nNo matching items\n Back to top"
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nThe New Geopolitical Chokeholds\n\n\n\nGeopolitics\n\nAI\n\nInfrastructure\n\n\n\nPower has moved up the stack — from straits and pipelines to lithography, compute, cloud and payment rails, and to the small number of people who can operate any of it.\n\n\n\n\n\nSep 1, 2026\n\n\nInteractive essay\n\n\n\n\n\nNo matching items\n Back to top"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Malek M. Itani",
     "section": "",
-    "text": "Statistics · ML · Complex Adaptive Systems\n\nMalek M. Itani\n\nStatistician and machine learning researcher finding my niche in the world.\n\n\nRight now I’m interested in developing statistical methodology for systems with heterogeneous and non-stationary data-generating processes.\n\n\nSee the research Read the blog Browse prototypes\n\n\nEmail\n\n\n\n\n\n\n\n\nSelected work\n\nAll research →\n\n\n\n\n\n\n\n\n\n\n\nSystems Decision Lab\n\n\n\nResearch\n\nSystems\n\nSimulation\n\n\n\nStudying petabyte-scale scientific workflows on a laptop, by simulating their metadata instead of their data.\n\n\n\nSep 2026\n\n\n\n\n\n\nType\n\n\nResearch tool\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAcquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI\n\n\n\nRadiomics\n\nMedical imaging\n\nClustering\n\nReproducibility\n\n\n\nDetecting sensor induced effects on high dimensional data.\n\n\n\nJun 2026\n\n\n\n\n\n\nType\n\n\nManuscript\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay-Ahead Electricity Price Forecasting in the Baltic States\n\n\n\nElectricity markets\n\nForecasting\n\nLASSO\n\nTime series\n\n\n\nA LASSO benchmark refitted every delivery day across 964 days of Baltic day-ahead prices — and what happens…\n\n\n\nAug 2026\n\n\n\n\n\n\nType\n\n\nManuscript\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\nPublications\n\nAll publications →\n\n\n\n  \n    2017\n    \n      Gold nanoparticles-coated polystyrene beads for the multiplex detection of viral DNA\n      Fakih, H. H., Itani, M. M., & Karam, P. · Sensors and Actuators B: Chemical, 250, 446–452\n    \n    Paper →\n  \n  \n    2026\n    \n      Regime-Dependent Determinants of Systemic Banking Crises: Evidence from a Finite-Mixture Logit Model\n      Malek Itani, Mahmoud Arayssi, & Noura Yassine\n    \n    Under review\n  \n  \n    2026\n    \n      The Illusion of Predictability: Structural Heterogeneity and Informational Noise in Corporate Greenwashing\n      Malek Itani, Mahmoud Arayssi, & Noura Yassine\n    \n    Under review\n  \n\n\n\n2 further co-authored papers are under review — see the full list.\n\n\n\nRecent writing\n\nAll posts →\n\n\n\n\n\n\nThe New Geopolitical Chokeholds\n\n\nPower has moved up the stack — from straits and pipelines to lithography, compute, cloud and payment rails, and to the small number of…\n\n\n\n\n\nSep 1, 2026\n\n\n\n\n\n\n\nThe illusion of small ponds\n\n\nThere are no big fish in small ponds, only small fish in big ponds.\n\n\n\n\n\nAug 18, 2026\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n Back to top"
+    "text": "Statistics · ML · Complex Adaptive Systems\n\nMalek M. Itani\n\nStatistician and machine learning researcher.\n\n\nRight now I’m interested in developing statistical methodology for systems with heterogeneous and non-stationary data-generating processes.\n\n\nSee the research Read the blog Browse prototypes\n\n\nEmail\n\n\n\n\n\n\n\n\nSelected work\n\nAll research →\n\n\n\n\n\n\n\n\n\n\n\nSystems Decision Lab\n\n\n\nResearch\n\nSystems\n\nSimulation\n\n\n\nStudying petabyte-scale scientific workflows on a laptop, by simulating their metadata instead of their data.\n\n\n\nSep 2026\n\n\n\n\n\n\nType\n\n\nResearch tool\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAcquisition-Aware Falsification of Unsupervised Radiomic Phenotypes in Multi-Vendor Breast MRI\n\n\n\nRadiomics\n\nMedical imaging\n\nClustering\n\nReproducibility\n\n\n\nDetecting sensor induced effects on high dimensional data.\n\n\n\nJun 2026\n\n\n\n\n\n\nType\n\n\nManuscript\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDay-Ahead Electricity Price Forecasting in the Baltic States\n\n\n\nElectricity markets\n\nForecasting\n\nLASSO\n\nTime series\n\n\n\nA LASSO benchmark refitted every delivery day across 964 days of Baltic day-ahead prices — and what happens…\n\n\n\nAug 2026\n\n\n\n\n\n\nType\n\n\nManuscript\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\nPublications\n\nAll publications →\n\n\n\n  \n    2017\n    \n      Gold nanoparticles-coated polystyrene beads for the multiplex detection of viral DNA\n      Fakih, H. H., Itani, M. M., & Karam, P. · Sensors and Actuators B: Chemical, 250, 446–452\n    \n    Paper →\n  \n  \n    2026\n    \n      Regime-Dependent Determinants of Systemic Banking Crises: Evidence from a Finite-Mixture Logit Model\n      Malek Itani, Mahmoud Arayssi, & Noura Yassine\n    \n    Under review\n  \n  \n    2026\n    \n      The Illusion of Predictability: Structural Heterogeneity and Informational Noise in Corporate Greenwashing\n      Malek Itani, Mahmoud Arayssi, & Noura Yassine\n    \n    Under review\n  \n\n\n\n2 further co-authored papers are under review — see the full list.\n\n\n\nRecent writing\n\nAll posts →\n\n\n\n\n\n\nThe New Geopolitical Chokeholds\n\n\nPower has moved up the stack — from straits and pipelines to lithography, compute, cloud and payment rails, and to the small number of…\n\n\n\n\n\nSep 1, 2026\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "prototypes/index.html",

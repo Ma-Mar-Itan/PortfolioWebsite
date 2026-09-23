@@ -19,15 +19,15 @@
       <!-- user-provided yaml closeread style options -->
       <style>
         :root {
-          --cr-narrative-text-color-sidebar: var(–bs-body-color);
+          --cr-section-background-color: var(–bs-body-bg);
 --cr-narrative-text-color-overlay: #ffffff;
---cr-narrative-background-color-sidebar: transparent;
---cr-narrative-border-radius: 10px;
 --cr-narrative-sidebar-width: minmax(320px, 1fr);
 --cr-narrative-font-family: Inter, -apple-system, ‘Segoe UI’, sans-serif;
---cr-section-background-color: var(–bs-body-bg);
---cr-narrative-background-color-overlay: rgba(18, 23, 28, 0.82);
+--cr-narrative-text-color-sidebar: var(–bs-body-color);
 --cr-narrative-font-size: 1.02rem;
+--cr-narrative-background-color-sidebar: transparent;
+--cr-narrative-border-radius: 10px;
+--cr-narrative-background-color-overlay: rgba(18, 23, 28, 0.82);
         }
       </style>
     
@@ -44,38 +44,38 @@
 </blockquote>
 <div class="cr-section cr-column-screen sidebar-left">
 <div class="narrative-col">
-<div class="trigger new-trigger" data-scene="formal" data-scene-title="Formal sovereignty" data-focus-on="cr-country">
+<div class="trigger new-trigger" data-scene-title="Formal sovereignty" data-focus-on="cr-country" data-scene="formal">
 <div class="narrative">
 <p><span class="scene-cue">Map 01 · Formal sovereignty</span></p>
 <p>For centuries, the political map has made sovereignty look self-contained: a border, a capital, a flag, territory under one state’s authority.</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="physical" data-scene-title="Traditional choke points" data-focus-on="cr-country">
+<div class="trigger new-trigger" data-scene-title="Traditional choke points" data-focus-on="cr-country" data-scene="physical">
 <div class="narrative">
 <p>Traditional geopolitics was built around visible choke points: straits, canals, ports, pipelines, mountain passes, maritime routes, industrial basins. These still matter. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="operational" data-scene-title="The operational map" data-focus-on="cr-country">
+<div class="trigger new-trigger" data-scene-title="The operational map" data-focus-on="cr-country" data-scene="operational">
 <div class="narrative">
 <p>But they are no longer sufficient to describe where power lives. Beneath the political map is an operational one: cable landings, power corridors, data centers, government data, payment links, and technical institutions. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="external" data-scene-title="Control crosses borders" data-focus-on="cr-country">
+<div class="trigger new-trigger" data-scene-title="Control crosses borders" data-focus-on="cr-country" data-scene="external">
 <div class="narrative">
 <p>Pull back and the system no longer fits inside the border. Cloud control, models, semiconductor fabrication, lithography, payment clearing, and talent clusters sit across several jurisdictions. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="ownership" data-scene-title="Located here, controlled elsewhere" data-focus-on="cr-country">
+<div class="trigger new-trigger" data-scene-title="Located here, controlled elsewhere" data-focus-on="cr-country" data-scene="ownership">
 <div class="narrative">
 <p>Physical location is not operational control. A data center may stand on domestic soil while the systems that provision, update, finance, or repair it terminate elsewhere. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="faded" data-scene-title="The real map of power" data-focus-on="cr-country">
+<div class="trigger new-trigger" data-scene-title="The real map of power" data-focus-on="cr-country" data-scene="faded">
 <div class="narrative">
 <p>The border is still intact. But once the administrative map fades, the infrastructure network becomes the real map of power. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="handoff" data-scene-title="Follow one decision" data-focus-on="cr-country">
+<div class="trigger new-trigger" data-scene-title="Follow one decision" data-focus-on="cr-country" data-scene="handoff">
 <div class="narrative">
 <p>Geography has not disappeared. It has been recompiled. Now follow a single decision through that map. </p>
 </div>
@@ -353,38 +353,38 @@
 </div>
 <div class="cr-section cr-column-screen sidebar-left">
 <div class="narrative-col">
-<div class="trigger new-trigger" data-scene="observe" data-scene-title="Observe" data-focus-on="cr-decision">
+<div class="trigger new-trigger" data-scene-title="Observe" data-focus-on="cr-decision" data-scene="observe">
 <section id="from-territory-to-infrastructure" class="level2 narrative">
 <h2 class="anchored" data-anchor-id="from-territory-to-infrastructure">From Territory to Infrastructure</h2>
 <p>A severe flood is approaching the country’s largest coastal city. Before the state can order an evacuation, evidence must arrive: satellite imagery, river sensors, weather models, mobile-network signals, and emergency reports.</p>
 </section>
 </div>
-<div class="trigger new-trigger" data-scene="analyze" data-scene-title="Analyze · four jurisdictions" data-focus-on="cr-decision">
+<div class="trigger new-trigger" data-scene-title="Analyze · four jurisdictions" data-focus-on="cr-decision" data-scene="analyze">
 <div class="narrative">
 <p>The data does not travel directly from the river to the cabinet room. It leaves the country for cloud infrastructure, forecasting systems, geospatial services, and a model endpoint before returning as analysis. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="decide" data-scene-title="Decide · humans retain judgment" data-focus-on="cr-decision">
+<div class="trigger new-trigger" data-scene-title="Decide · humans retain judgment" data-focus-on="cr-decision" data-scene="decide">
 <div class="narrative">
 <p>The model can propose evacuation zones. It cannot carry sovereign responsibility. Raw evidence becomes model interpretation; human officials must still convert that interpretation into executive judgment. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="fund" data-scene-title="Fund · clearing leaves the state" data-focus-on="cr-decision">
+<div class="trigger new-trigger" data-scene-title="Fund · clearing leaves the state" data-focus-on="cr-decision" data-scene="fund">
 <div class="narrative">
 <p>A decision without resources is only language. Emergency fuel, shelter capacity, contractors, and cash support must move through domestic banks and international payment-clearing rails. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="communicate" data-scene-title="Communicate · distribution is conditional" data-focus-on="cr-decision">
+<div class="trigger new-trigger" data-scene-title="Communicate · distribution is conditional" data-focus-on="cr-decision" data-scene="communicate">
 <div class="narrative">
 <p>The order must then reach the public through government cloud systems, telecommunications networks, mapping services, notification infrastructure, and public platforms. The state owns the decision. It may not own its distribution. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="act" data-scene-title="Act · the decision becomes physical" data-focus-on="cr-decision">
+<div class="trigger new-trigger" data-scene-title="Act · the decision becomes physical" data-focus-on="cr-decision" data-scene="act">
 <div class="narrative">
 <p>Only after buses move, shelters open, hospitals redirect patients, roads close, and contractors receive funds does the decision become physical. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="pressure" data-scene-title="Administrative pressure" data-focus-on="cr-decision">
+<div class="trigger new-trigger" data-scene-title="Administrative pressure" data-focus-on="cr-decision" data-scene="pressure">
 <section id="infrastructure-is-the-new-veto" class="level2 narrative">
 <h2 class="anchored" data-anchor-id="infrastructure-is-the-new-veto">Infrastructure Is the New Veto</h2>
 <p>The central error in weak discussions of AI sovereignty is treating infrastructure as a support function. It is not.</p>
@@ -411,12 +411,12 @@
 <p>A capacity allocation changes. A compliance requirement appears. A vendor updates terms. A model endpoint is withdrawn. A bank tightens risk rules. A cloud provider delays provisioning. A chip shipment is slowed. A software dependency becomes unavailable.</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="pressure" data-scene-title="No spectacle, just constraint" data-focus-on="cr-decision">
+<div class="trigger new-trigger" data-scene-title="No spectacle, just constraint" data-focus-on="cr-decision" data-scene="pressure">
 <div class="narrative">
 <p>No invasion. No declaration. No spectacle. Just constraint. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="breaker" data-scene-title="The kill switch moved to the transformer" data-scale-by="1.75" data-focus-on="cr-decision" data-pan-to="-34%,-27%">
+<div class="trigger new-trigger" data-scale-by="1.75" data-scene="breaker" data-scene-title="The kill switch moved to the transformer" data-focus-on="cr-decision" data-pan-to="-34%,-27%">
 <div class="narrative">
 <p>A state that controls its chips but relies on a foreign-controlled energy grid for its data centers has merely moved the kill switch to the transformer. </p>
 </div>
@@ -426,12 +426,12 @@
 <p>This is why “access” is an inadequate strategic concept. Access is conditional by design. It can be granted, priced, monitored, modified, or revoked.</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="control" data-scene-title="Access versus control" data-focus-on="cr-decision">
+<div class="trigger new-trigger" data-scene-title="Access versus control" data-focus-on="cr-decision" data-scene="control">
 <div class="narrative">
 <p>Control is different. Control means the ability to continue operating when access is contested. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="exit" data-scene-title="Walk through the doors" data-focus-on="cr-decision">
+<div class="trigger new-trigger" data-scene-title="Walk through the doors" data-focus-on="cr-decision" data-scene="exit">
 <div class="narrative">
 <p>A sovereign AI doctrine that does not begin with power, chips, networks, data centers, and talent is not doctrine. It is branding. The journey ends at a domestic data center. Walk through its doors. </p>
 </div>
@@ -650,19 +650,19 @@
 </section>
 <div class="cr-section cr-column-screen sidebar-left">
 <div class="narrative-col">
-<div class="trigger new-trigger" data-scene="procured" data-scene-title="What capital can buy" data-focus-on="cr-cathedral">
+<div class="trigger new-trigger" data-scene-title="What capital can buy" data-focus-on="cr-cathedral" data-scene="procured">
 <section id="the-human-chokehold" class="level2 narrative">
 <h2 class="anchored" data-anchor-id="the-human-chokehold">The Human Chokehold</h2>
 <p>The missing variable in most sovereign AI strategies is talent.</p>
 <p>States talk about chips because chips can be purchased. They talk about data centers because data centers can be photographed. They talk about national AI strategies because strategies can be published. The infrastructure arrives: accelerators, cooling, networks, model weights, and backup power.</p>
 </section>
 </div>
-<div class="trigger new-trigger" data-scene="control" data-scene-title="The human control plane" data-focus-on="cr-cathedral">
+<div class="trigger new-trigger" data-scene-title="The human control plane" data-focus-on="cr-cathedral" data-scene="control">
 <div class="narrative">
 <p>But the decisive asset is harder to procure: the small population of researchers, engineers, systems architects, security specialists, and operator-analysts capable of building and maintaining these systems under real constraints. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="concentration" data-scene-title="Concentration risk" data-focus-on="cr-cathedral">
+<div class="trigger new-trigger" data-scene-title="Concentration risk" data-focus-on="cr-cathedral" data-scene="concentration">
 <div class="narrative">
 <p>Five rare roles may carry the operational knowledge of thousands of machines. A missing successor, unique production access, tacit recovery knowledge, or dependence on foreign support can turn an impressive facility into an organizational single point of failure. </p>
 </div>
@@ -672,27 +672,27 @@
 <p>The global AI labour market is already a strategic battlefield. The top researchers, engineers, and infrastructure specialists are not evenly distributed. They cluster around capital, compute, prestige, frontier problems, compensation, and professional community.</p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="attractors" data-scene-title="The external gravity field" data-focus-on="cr-cathedral">
+<div class="trigger new-trigger" data-scene-title="The external gravity field" data-focus-on="cr-cathedral" data-scene="attractors">
 <div class="narrative">
 <p>This is not a labour-market inconvenience. It is a national-security constraint. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="exodus" data-scene-title="Capability leaves" data-focus-on="cr-cathedral">
+<div class="trigger new-trigger" data-scene-title="Capability leaves" data-focus-on="cr-cathedral" data-scene="exodus">
 <div class="narrative">
 <p>The infrastructure may sit in Abu Dhabi, Paris, London, Seoul, or Riyadh. But if the people who understand the stack are recruited, retained, promoted, and culturally absorbed elsewhere, the sovereign project becomes a shell. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="hollow" data-scene-title="Ownership remained, capability left" data-focus-on="cr-cathedral">
+<div class="trigger new-trigger" data-scene-title="Ownership remained, capability left" data-focus-on="cr-cathedral" data-scene="hollow">
 <div class="narrative">
 <p>A sovereign compute cluster without sovereign technical talent is an empty cathedral. The racks keep blinking for a time, while versions drift, alerts accumulate, access freezes, and recovery knowledge disappears. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="vendor" data-scene-title="Expertise access is revocable" data-focus-on="cr-cathedral">
+<div class="trigger new-trigger" data-scene-title="Expertise access is revocable" data-focus-on="cr-cathedral" data-scene="vendor">
 <div class="narrative">
 <p>The gap is filled with remote support contracts. Foreign specialists can provision, update, diagnose, and recover the system. The building is domestic; command remains rented. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scene="rebuild" data-scene-title="Institutions reproduce capability" data-focus-on="cr-cathedral">
+<div class="trigger new-trigger" data-scene-title="Institutions reproduce capability" data-focus-on="cr-cathedral" data-scene="rebuild">
 <div class="narrative">
 <p>Durable capability cannot be solved by filling several vacancies. It requires institutions that continuously produce, retain, connect, and replace technical talent. </p>
 </div>
@@ -913,63 +913,6 @@
   <guid>https://ma-mar-itan.github.io/PortfolioWebsite/blog/posts/2026-09-1_The New Geopolitical Chokeholds/</guid>
   <pubDate>Mon, 31 Aug 2026 21:00:00 GMT</pubDate>
   <media:content url="https://ma-mar-itan.github.io/PortfolioWebsite/blog/posts/2026-09-1_The New Geopolitical Chokeholds/thumb.svg" medium="image" type="image/svg+xml"/>
-</item>
-<item>
-  <title>The illusion of small ponds</title>
-  <dc:creator>Malek Itani</dc:creator>
-  <link>https://ma-mar-itan.github.io/PortfolioWebsite/blog/posts/2026-08-30_The illusion of small ponds/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>For a long time, career advice relied on a comforting metaphor: be a big fish in a small pond. Find a narrow niche. Enter an overlooked market. Become the person everyone knows. Build an advantage before the larger players arrive.</p>
-<p>It was never entirely wrong. But it has become dangerously incomplete. Today, the pond is rarely as small as it looks.</p>
-<p>A freelance designer in Beirut may be competing with specialists in Warsaw, Bangalore, Lagos, Buenos Aires, and San Francisco. A local consultant is no longer compared only with other consultants in the city; clients can now access global expertise, automated research, AI-generated drafts, and highly polished work at a fraction of yesterday’s cost. A student who once stood out for writing a competent report now competes with peers using AI tools to research, code, analyze data, edit prose, translate sources, and produce professional-quality presentations in hours.</p>
-<p>The small pond has opened into an ocean. And the fish you thought were big may simply have been competing in a temporarily enclosed pool.</p>
-<section id="the-old-advantage-limited-comparison" class="level2">
-<h2 class="anchored" data-anchor-id="the-old-advantage-limited-comparison">1. The old advantage: limited comparison</h2>
-<p>Before global digital markets, most competition was constrained by geography, institutions, and access.</p>
-<p>A company hired from the people it could find. A university compared applicants within a relatively limited pool. A client relied on local networks and referrals. Information was scarce, coordination was costly, and switching suppliers was difficult.</p>
-<p>Under those conditions, being competent could be enough to create distinction.</p>
-<p>You did not need to be the best analyst, designer, writer, programmer, teacher, or entrepreneur in the world. Often, you only needed to be better than the alternatives visible to the people making a decision. That is what created many “small ponds.” Not necessarily a lack of talent, but a lack of connection between talent and opportunity. The internet weakened those barriers. Remote work weakened them further. Global platforms made skills searchable and comparable. AI is now removing another barrier: the cost of producing credible work.</p>
-<p>The result is not merely more competition. It is more competent competition.</p>
-</section>
-<section id="draw-the-timeline" class="level2">
-<h2 class="anchored" data-anchor-id="draw-the-timeline">2. Draw the timeline</h2>
-<p>Sketch when each feature becomes available relative to when the prediction is needed. Leakage is almost always a timeline problem wearing a statistics costume.</p>
-</section>
-<section id="ask-what-the-baseline-was" class="level2">
-<h2 class="anchored" data-anchor-id="ask-what-the-baseline-was">3. Ask what the baseline was</h2>
-<p>If nobody can tell you what the naive rule scores, the model has not been evaluated — it has been described.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is a placeholder post. Replace the text; keep the front matter shape.</p>
-</div>
-</div>
-</section>
-<section id="re-run-it-once" class="level2">
-<h2 class="anchored" data-anchor-id="re-run-it-once">4. Re-run it once</h2>
-<p>Not to reproduce the numbers. To find out how long it takes, what breaks, and how much of the pipeline lives in someone’s head.</p>
-
-
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <category>Thoughts</category>
-  <category>Lessons</category>
-  <guid>https://ma-mar-itan.github.io/PortfolioWebsite/blog/posts/2026-08-30_The illusion of small ponds/</guid>
-  <pubDate>Mon, 17 Aug 2026 21:00:00 GMT</pubDate>
-  <media:content url="https://ma-mar-itan.github.io/PortfolioWebsite/assets/img/small-fish.webp" medium="image" type="image/webp"/>
 </item>
 </channel>
 </rss>
