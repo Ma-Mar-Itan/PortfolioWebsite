@@ -2,10 +2,10 @@
 
 :root,
 .quarto-listing {
-  --res-ink: var(--bs-body-color, #14181d);
-  --res-muted: var(--bs-secondary-color, #5c6672);
-  --res-rule: var(--bs-border-color, #e3e1dc);
-  --res-accent: var(--bs-link-color, #8a2f2f);
+  --res-ink: var(--site-ink);
+  --res-muted: var(--site-muted);
+  --res-rule: var(--site-rule);
+  --res-accent: var(--site-accent);
 }
 
 /* --- Counts beside the page title ---------------------------------------- */
@@ -41,7 +41,7 @@
 
 #listing-projects .quarto-grid-item {
   height: 100%;
-  border-radius: 14px;
+  border-radius: var(--site-radius-card);
 }
 
 #listing-projects .card-body {
@@ -51,18 +51,11 @@
 #listing-projects .listing-kind {
   float: left;
   margin-right: .75rem;
-  font-size: .66rem;
-  font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--bs-link-color, #8a2f2f);
+  color: var(--site-accent);
 }
 
 #listing-projects .listing-date {
-  font-size: .7rem;
-  letter-spacing: .025em;
-  color: var(--bs-secondary-color, #5c6672);
-  font-variant-numeric: tabular-nums;
+  color: var(--site-muted);
 }
 
 #listing-projects .card-title {

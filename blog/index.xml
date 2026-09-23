@@ -19,15 +19,15 @@
       <!-- user-provided yaml closeread style options -->
       <style>
         :root {
-          --cr-narrative-background-color-sidebar: transparent;
---cr-narrative-text-color-overlay: #ffffff;
---cr-narrative-font-size: 1.02rem;
---cr-narrative-border-radius: 10px;
+          --cr-narrative-font-size: 1.02rem;
+--cr-narrative-background-color-sidebar: transparent;
 --cr-section-background-color: var(–bs-body-bg);
+--cr-narrative-text-color-overlay: #ffffff;
 --cr-narrative-text-color-sidebar: var(–bs-body-color);
 --cr-narrative-sidebar-width: minmax(320px, 1fr);
 --cr-narrative-background-color-overlay: rgba(18, 23, 28, 0.82);
 --cr-narrative-font-family: Inter, -apple-system, ‘Segoe UI’, sans-serif;
+--cr-narrative-border-radius: 10px;
         }
       </style>
     
@@ -416,7 +416,7 @@
 <p>No invasion. No declaration. No spectacle. Just constraint. </p>
 </div>
 </div>
-<div class="trigger new-trigger" data-scale-by="1.75" data-pan-to="-34%,-27%" data-focus-on="cr-decision" data-scene="breaker" data-scene-title="The kill switch moved to the transformer">
+<div class="trigger new-trigger" data-focus-on="cr-decision" data-scene="breaker" data-scene-title="The kill switch moved to the transformer" data-pan-to="-34%,-27%" data-scale-by="1.75">
 <div class="narrative">
 <p>A state that controls its chips but relies on a foreign-controlled energy grid for its data centers has merely moved the kill switch to the transformer. </p>
 </div>
@@ -969,56 +969,7 @@ Note
   <category>Lessons</category>
   <guid>https://ma-mar-itan.github.io/PortfolioWebsite/blog/posts/2026-08-30_The illusion of small ponds/</guid>
   <pubDate>Mon, 17 Aug 2026 21:00:00 GMT</pubDate>
-  <media:content url="https://ma-mar-itan.github.io/PortfolioWebsite/assets/img/Small fish.gif" medium="image" type="image/gif"/>
-</item>
-<item>
-  <title>We have no clue what we are doing</title>
-  <dc:creator>Malek Itani</dc:creator>
-  <link>https://ma-mar-itan.github.io/PortfolioWebsite/blog/posts/2026-08-30_We have no clue/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Every few weeks someone hands me a model and asks whether it’s any good. The honest answer is usually “I can’t tell yet,” so I’ve written down the order I work through it.</p>
-<section id="find-the-target-before-the-features" class="level2">
-<h2 class="anchored" data-anchor-id="find-the-target-before-the-features">1. Find the target before the features</h2>
-<p>The first question isn’t what went into the model, it’s what came out. Ask what the label actually measures, when it was recorded, and who decided it. A surprising share of models fail here: the target is a proxy for the thing anyone cares about, and nobody wrote down the gap.</p>
-</section>
-<section id="draw-the-timeline" class="level2">
-<h2 class="anchored" data-anchor-id="draw-the-timeline">2. Draw the timeline</h2>
-<p>Sketch when each feature becomes available relative to when the prediction is needed. Leakage is almost always a timeline problem wearing a statistics costume.</p>
-</section>
-<section id="ask-what-the-baseline-was" class="level2">
-<h2 class="anchored" data-anchor-id="ask-what-the-baseline-was">3. Ask what the baseline was</h2>
-<p>If nobody can tell you what the naive rule scores, the model has not been evaluated — it has been described.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is a placeholder post. Replace the text; keep the front matter shape.</p>
-</div>
-</div>
-</section>
-<section id="re-run-it-once" class="level2">
-<h2 class="anchored" data-anchor-id="re-run-it-once">4. Re-run it once</h2>
-<p>Not to reproduce the numbers. To find out how long it takes, what breaks, and how much of the pipeline lives in someone’s head.</p>
-
-
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <category>Philosophy</category>
-  <guid>https://ma-mar-itan.github.io/PortfolioWebsite/blog/posts/2026-08-30_We have no clue/</guid>
-  <pubDate>Mon, 17 Aug 2026 21:00:00 GMT</pubDate>
-  <media:content url="https://ma-mar-itan.github.io/PortfolioWebsite/assets/img/thumb-1.svg" medium="image" type="image/svg+xml"/>
+  <media:content url="https://ma-mar-itan.github.io/PortfolioWebsite/assets/img/small-fish.webp" medium="image" type="image/webp"/>
 </item>
 </channel>
 </rss>

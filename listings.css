@@ -18,8 +18,8 @@
   font-size: .7rem;
   letter-spacing: .06em;
   text-transform: uppercase;
-  color: var(--bs-secondary-color, #5c6672);
-  border: 1px solid var(--bs-border-color, #e3e1dc);
+  color: var(--site-muted);
+  border: 1px solid var(--site-rule);
   border-radius: 999px;
   padding: .2rem .7rem;
   cursor: pointer;
@@ -27,14 +27,13 @@
 }
 
 .quarto-listing-category .category:hover {
-  color: var(--bs-link-color, #8a2f2f);
-  border-color: var(--bs-link-color, #8a2f2f);
+  color: var(--site-accent);
+  border-color: var(--site-accent);
 }
 
 .quarto-listing-category .category.active {
-  color: var(--bs-body-bg, #fdfdfc);
-  background: var(--bs-link-color, #8a2f2f);
-  border-color: var(--bs-link-color, #8a2f2f);
+  color: var(--site-paper);
+  background: var(--site-accent);
+  border-color: var(--site-accent);
   font-weight: 500;
 }
-

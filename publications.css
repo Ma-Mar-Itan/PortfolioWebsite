@@ -5,7 +5,10 @@
 .pub-list {
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   border-top: 1px solid var(--bs-border-color, #e3e1dc);
+  list-style: none;
 }
 
 .pub-row {
@@ -62,6 +65,7 @@
 }
 
 .pub-link {
+  justify-content: center;
   color: var(--site-accent-2);
   border-color: color-mix(in srgb, var(--site-accent-2) 32%, var(--bs-border-color, #e3e1dc));
   text-decoration: none;
